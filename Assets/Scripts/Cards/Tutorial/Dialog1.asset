@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: Dialog1
+  m_EditorClassIdentifier: 
+  characterName: Desconocida
+  dialog: "\xA1Hola! Estoy encantada de verte por aqu\xED, llegas en el momento justo
+    para ayudar a nuestra gente. \xBFSab\xEDas que puedes deslizarte con el dedo
+    hacia la derecha o la izquierda para contestarme?"
+  reward: 4
+  type: 0
+  choice: {fileID: 11400000, guid: fffe1fb9c7e073d47940b9a14fb0b4a9, type: 2}
+  nextCardIfAnswerCorrect: {fileID: 11400000, guid: b8ca057ea9c51824aba038b4cb128697,
+    type: 2}
+  nextCardIfAnswerIncorrect: {fileID: 11400000, guid: dc968251d5adb5b45b092f687a3822c6,
+    type: 2}

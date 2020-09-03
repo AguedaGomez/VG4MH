@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: Dialog1_1
+  m_EditorClassIdentifier: 
+  characterName: Desconocida
+  dialog: "\xA1Genial! De esta manera podr\xE1s ayudar a los habitantes del pueblo
+    que necesitan tu consejo. \xBFQuieres m\xE1s informaci\xF3n?"
+  reward: 4
+  type: 0
+  choice: {fileID: 11400000, guid: e69fcd9fab9dd45419a1effb46ec48cc, type: 2}
+  nextCardIfAnswerCorrect: {fileID: 11400000, guid: f6523d23085b71b40aa244e57b911b7e,
+    type: 2}
+  nextCardIfAnswerIncorrect: {fileID: 11400000, guid: ca9bf741fe71cfe4396dde2e4d8c44ef,
+    type: 2}

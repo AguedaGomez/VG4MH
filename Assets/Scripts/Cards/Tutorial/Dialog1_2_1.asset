@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: Dialog1_2_1
+  m_EditorClassIdentifier: 
+  characterName: Desconocida
+  dialog: "Muy bien. Ahora puedes probar los movimientos sin que contin\xFAe la historia.
+    Cuando est\xE9s listo, elige \"Lo tengo\""
+  reward: 4
+  type: 0
+  choice: {fileID: 11400000, guid: e3e7dc10d2472c747b4f44996c883a38, type: 2}
+  nextCardIfAnswerCorrect: {fileID: 11400000, guid: f6523d23085b71b40aa244e57b911b7e,
+    type: 2}
+  nextCardIfAnswerIncorrect: {fileID: 11400000}
