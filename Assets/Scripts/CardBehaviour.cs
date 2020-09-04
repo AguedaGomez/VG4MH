@@ -12,10 +12,12 @@ public class CardBehaviour : MonoBehaviour
     private Vector3 offsetVector;
     private Vector3 touchPosition;
     private bool directionChosen;
+    private bool touchingCard;
     private float rotationAngle;
-    private float minLong = 2.5f;
+    private float minLong = 2.0f;
     private GameManager.Direction currentDirection;
     private SingleCardDisplay singleCardDisplay;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class CardBehaviour : MonoBehaviour
         singleCardDisplay = GetComponent<SingleCardDisplay>();
     }
 
-    // Update is called once per frame
+
     void LateUpdate()
     {
         if (Input.touchCount > 0)
@@ -37,30 +39,37 @@ public class CardBehaviour : MonoBehaviour
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    //check if touch card
                     startPos = Camera.main.ScreenToWorldPoint(touchPosition);
                     offsetVector = transform.position - startPos;
+
+                    //Check if card is touched
+                    touchingCard = Physics2D.OverlapPoint(startPos); 
+
                     break;
 
                 case TouchPhase.Moved:
                     
-                    // Behaviour 
-                    Vector3 currentTouchWorld = Camera.main.ScreenToWorldPoint(touchPosition);
-                    transform.position = currentTouchWorld + offsetVector;
-                    rotationAngle = currentTouchWorld.x * (-10f) / 2.5f;
-                    transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
+                    if (touchingCard)
+                    {
+                        // Behaviour 
+                        Vector3 currentTouchWorld = Camera.main.ScreenToWorldPoint(touchPosition);
+                        transform.position = currentTouchWorld + offsetVector;
+                        rotationAngle = currentTouchWorld.x * (-10f) / 2.5f;
+                        transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
 
-                    direction = currentTouchWorld - startPos;
-                    if (Mathf.Sign(direction.x) == 1) // show right option
-                    {
-                        currentDirection = GameManager.Direction.RIGHT;
-                        
+                        direction = currentTouchWorld - startPos;
+                        if (Mathf.Sign(direction.x) == 1) // show right option
+                        {
+                            currentDirection = GameManager.Direction.RIGHT;
+
+                        }
+                        else if (Mathf.Sign(direction.x) == -1) // show left option
+                        {
+                            currentDirection = GameManager.Direction.LEFT;
+                        }
+                        singleCardDisplay.ShowOption(currentDirection);
                     }
-                    else if (Mathf.Sign(direction.x) == -1) // show left option
-                    {
-                        currentDirection = GameManager.Direction.LEFT;
-                    }
-                    singleCardDisplay.ShowOption(currentDirection);
+
                     break;
 
                 case TouchPhase.Ended:
@@ -89,4 +98,5 @@ public class CardBehaviour : MonoBehaviour
             }
         }
     }
+
 }
