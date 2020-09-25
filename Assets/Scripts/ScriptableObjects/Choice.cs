@@ -9,7 +9,8 @@ public class Choice : ScriptableObject
     {
         RIGHT,
         LEFT,
-        BOTH
+        BOTH,
+        NONE
     }
 
     public Sprite image;

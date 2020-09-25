@@ -15,8 +15,9 @@ public class CardBehaviour : MonoBehaviour
     private bool touchingCard;
     private float rotationAngle;
     private float minLong = 2.0f;
-    private GameManager.Direction currentDirection;
+    private Choice.Direction currentDirection;
     private SingleCardDisplay singleCardDisplay;
+    private SingleCardRewardManager singleCardRewardManager;
 
 
     // Start is called before the first frame update
@@ -24,8 +25,9 @@ public class CardBehaviour : MonoBehaviour
     {
         initialPos = transform.position;
         directionChosen = false;
-        currentDirection = GameManager.Direction.NONE;
+        currentDirection = Choice.Direction.NONE;
         singleCardDisplay = GetComponent<SingleCardDisplay>();
+        singleCardRewardManager = GetComponent<SingleCardRewardManager>();
     }
 
 
@@ -60,12 +62,12 @@ public class CardBehaviour : MonoBehaviour
                         direction = currentTouchWorld - startPos;
                         if (Mathf.Sign(direction.x) == 1) // show right option
                         {
-                            currentDirection = GameManager.Direction.RIGHT;
+                            currentDirection = Choice.Direction.RIGHT;
 
                         }
                         else if (Mathf.Sign(direction.x) == -1) // show left option
                         {
-                            currentDirection = GameManager.Direction.LEFT;
+                            currentDirection = Choice.Direction.LEFT;
                         }
                         singleCardDisplay.ShowOption(currentDirection);
                     }
@@ -87,11 +89,12 @@ public class CardBehaviour : MonoBehaviour
             {
                 if (Mathf.Abs(direction.x) > minLong)
                 {
-                    singleCardDisplay.ChooseOption(currentDirection);
+                    //singleCardDisplay.ChooseOption(currentDirection);
+                    singleCardRewardManager.CheckOptionChosen(currentDirection);
                 }
                 else
                 {
-                    currentDirection = GameManager.Direction.NONE;
+                    currentDirection = Choice.Direction.NONE;
                     singleCardDisplay.ShowOption(currentDirection);
                 }
                 directionChosen = false;

@@ -7,12 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public Card currentCard;
 
-    public enum Direction
-    {
-        RIGHT,
-        LEFT,
-        NONE
-    }
     // Start is called before the first frame update
     void Awake()
     {

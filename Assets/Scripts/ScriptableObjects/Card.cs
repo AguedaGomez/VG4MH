@@ -12,7 +12,7 @@ public abstract class Card : ScriptableObject
         MOTIVATION,
         FLEXIBILITY,
         ACTIVATION,
-        POSITIVITY,
+        POSITIVE,
         NONE
     }
 

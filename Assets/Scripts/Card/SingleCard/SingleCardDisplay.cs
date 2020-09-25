@@ -22,26 +22,26 @@ public class SingleCardDisplay : MonoBehaviour
 
     private void DisplayCard()
     {
-        // put image
         // write options
+        // put image
         rightOptionText.text = ((Single)currentCard).choice.rightText;
         leftOptionText.text = ((Single)currentCard).choice.leftText;
         image.sprite = ((Single)currentCard).choice.image;
     }
 
-    public void ShowOption(GameManager.Direction direction)
+    public void ShowOption(Choice.Direction direction)
     {
         switch (direction)
         {
-            case GameManager.Direction.RIGHT:
+            case Choice.Direction.RIGHT:
                 rightOptionText.gameObject.SetActive(true);
                 leftOptionText.gameObject.SetActive(false);
                 break;
-            case GameManager.Direction.LEFT:
+            case Choice.Direction.LEFT:
                 rightOptionText.gameObject.SetActive(false);
                 leftOptionText.gameObject.SetActive(true);
                 break;
-            case GameManager.Direction.NONE:
+            case Choice.Direction.NONE:
                 rightOptionText.gameObject.SetActive(false);
                 leftOptionText.gameObject.SetActive(false);
                 break;
@@ -50,21 +50,23 @@ public class SingleCardDisplay : MonoBehaviour
         }
     }
 
-    public void ChooseOption(GameManager.Direction direction)
+    public void ChooseOption(Choice.Direction direction)
     {
-        switch (direction)
-        {
-            case GameManager.Direction.RIGHT:
-                GameManager.Instance.currentCard = ((Single)currentCard).nextCardIfAnswerCorrect;
-                break;
-            case GameManager.Direction.LEFT:
-                GameManager.Instance.currentCard = ((Single)currentCard).nextCardIfAnswerIncorrect;
-                break;
-            case GameManager.Direction.NONE:
-                break;
-            default:
-                break;
-        }
+        //hay que cambiar esto
+        //switch (direction)
+        //{
+        //    case Choice.Direction.RIGHT:
+        //        GameManager.Instance.currentCard = ((Single)currentCard).nextCardIfAnswerCorrect;
+        //        break;
+        //    case Choice.Direction.LEFT:
+        //        GameManager.Instance.currentCard = ((Single)currentCard).nextCardIfAnswerIncorrect;
+        //        break;
+        //    case Choice.Direction.NONE:
+        //        break;
+        //    default:
+        //        break;
+        //}
+
 
         DestroyCardEvent();
     }
