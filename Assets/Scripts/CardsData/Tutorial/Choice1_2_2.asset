@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29608e4086b63044d8ea9a2a5426d17a, type: 3}
   m_Name: Choice1_2_2
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 6de5e4a2cac37e0438780a03429b8fc1, type: 3}
   text: 
   rightText: "S\xED"
   leftText: No

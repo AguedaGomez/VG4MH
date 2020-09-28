@@ -43,6 +43,11 @@ public class CardManager : MonoBehaviour
         
     }
 
+    public void UpdateCurrentCard(Card nextCard)
+    {
+        GameManager.Instance.currentCard = nextCard;
+    }
+
     private void CardManager_DestroyCardEvent()
     {
         singleCardDisplay.DestroyCardEvent -= CardManager_DestroyCardEvent;
