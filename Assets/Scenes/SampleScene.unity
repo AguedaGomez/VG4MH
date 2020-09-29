@@ -932,7 +932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singleCardPrefab: {fileID: 7455811750027591717, guid: 36ed905086f0bc74fb4e54173a9dbb02,
     type: 3}
-  multipleCardPrefab: {fileID: 0}
+  multipleCardPrefab: {fileID: 2720805393523218097, guid: 670f0d453425e6044a18cf474c1685b6,
+    type: 3}
   dialogText: {fileID: 475797484}
   characterNameText: {fileID: 463410325}
 --- !u!4 &527653945
