@@ -9,10 +9,11 @@ public class SingleCardDisplay : MonoBehaviour
     public TextMeshPro rightOptionText;
     public TextMeshPro leftOptionText;
     public SpriteRenderer image;
+    public bool startedInitialMovement = false;
 
     private Card currentCard;
     private float rotationSpeed = 150f;
-    private bool startedInitialMovement = false;
+
     //fov perspective 53.2
 
     void Start()

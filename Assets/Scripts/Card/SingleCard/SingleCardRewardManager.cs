@@ -20,20 +20,9 @@ public class SingleCardRewardManager : MonoBehaviour
     {
         GetCurrentCard();
         Card.Resource currentResource = currentCard.reward;
-        
-        int valueModifier;
-        Card nextCard;
 
-        if (OptionIsCorrect(directionChosen))
-        {
-            valueModifier = INCREMENT;
-            nextCard = currentCard.nextCardIfAnswerCorrect;
-
-        } else
-        {
-            valueModifier = DECREMENT;
-            nextCard = currentCard.nextCardIfAnswerIncorrect;
-        }
+        int valueModifier = OptionIsCorrect(directionChosen) ? INCREMENT : DECREMENT;
+        Card nextCard = directionChosen == Choice.Direction.RIGHT ? currentCard.nextCardIfRight : currentCard.nextCardIfLeft; // change if more directions are added
         
         rewardManager.UpdateResource(currentResource, valueModifier);
         cardManager.UpdateCurrentCard(nextCard);
@@ -44,6 +33,7 @@ public class SingleCardRewardManager : MonoBehaviour
     {
         currentCard = (Single)GameManager.Instance.currentCard;
     }
+
     private bool OptionIsCorrect(Choice.Direction directionChosen)
     {
         return currentCard.choice.correctDirection == directionChosen;

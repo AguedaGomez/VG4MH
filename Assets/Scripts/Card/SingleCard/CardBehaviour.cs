@@ -51,7 +51,7 @@ public class CardBehaviour : MonoBehaviour
 
                 case TouchPhase.Moved:
                     
-                    if (touchingCard)
+                    if (touchingCard && !singleCardDisplay.startedInitialMovement) // if card is touched and the initial movement has finished
                     {
                         // Behaviour 
                         Vector3 currentTouchWorld = Camera.main.ScreenToWorldPoint(touchPosition);

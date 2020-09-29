@@ -7,6 +7,6 @@ using UnityEngine;
 public class Single : Card
 {
     public Choice choice;
-    public Card nextCardIfAnswerCorrect;
-    public Card nextCardIfAnswerIncorrect;
+    public Card nextCardIfRight;
+    public Card nextCardIfLeft;
 }
