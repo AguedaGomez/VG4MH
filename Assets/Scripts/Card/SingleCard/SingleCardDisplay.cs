@@ -10,10 +10,11 @@ public class SingleCardDisplay : MonoBehaviour
     public TextMeshPro leftOptionText;
     public SpriteRenderer image;
 
-    public delegate void DestroyCardEventHandler();
-    public event DestroyCardEventHandler DestroyCardEvent;
-
     private Card currentCard;
+    private float rotationSpeed = 150f;
+    private bool startedInitialMovement = false;
+    //fov perspective 53.2
+
     void Start()
     {
         currentCard = GameManager.Instance.currentCard;
@@ -22,8 +23,11 @@ public class SingleCardDisplay : MonoBehaviour
 
     private void DisplayCard()
     {
-        // write options
-        // put image
+        // preparing camera for initial movement of card
+        Camera.main.orthographic = false;
+        startedInitialMovement = true;
+
+        // preparing card data
         rightOptionText.text = ((Single)currentCard).choice.rightText;
         leftOptionText.text = ((Single)currentCard).choice.leftText;
         image.sprite = ((Single)currentCard).choice.image;
@@ -50,24 +54,20 @@ public class SingleCardDisplay : MonoBehaviour
         }
     }
 
-    public void ChooseOption(Choice.Direction direction)
+    void Update()
     {
-        //hay que cambiar esto
-        //switch (direction)
-        //{
-        //    case Choice.Direction.RIGHT:
-        //        GameManager.Instance.currentCard = ((Single)currentCard).nextCardIfAnswerCorrect;
-        //        break;
-        //    case Choice.Direction.LEFT:
-        //        GameManager.Instance.currentCard = ((Single)currentCard).nextCardIfAnswerIncorrect;
-        //        break;
-        //    case Choice.Direction.NONE:
-        //        break;
-        //    default:
-        //        break;
-        //}
-
-
-        DestroyCardEvent();
+        if (startedInitialMovement)
+        {
+            if (transform.rotation.y > 0)
+            {
+                transform.RotateAround(transform.position, -transform.up, Time.deltaTime * rotationSpeed);
+            }
+            else
+            {
+                Camera.main.orthographic = true;
+                startedInitialMovement = false;
+            }
+        }
     }
+
 }

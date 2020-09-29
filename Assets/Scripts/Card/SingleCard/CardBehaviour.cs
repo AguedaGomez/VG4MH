@@ -89,7 +89,6 @@ public class CardBehaviour : MonoBehaviour
             {
                 if (Mathf.Abs(direction.x) > minLong)
                 {
-                    //singleCardDisplay.ChooseOption(currentDirection);
                     singleCardRewardManager.CheckOptionChosen(currentDirection);
                 }
                 else

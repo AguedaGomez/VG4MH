@@ -15,11 +15,14 @@ public class RewardManager : MonoBehaviour
 
    public void UpdateResource(Card.Resource resource, int valueModifier)
     {
-        if (Mathf.Sign(valueModifier) == 1 && PlayerData.resources[resource] < MAXCUANTITY ||
-            Mathf.Sign(valueModifier) == -1 && PlayerData.resources[resource] > MINCUANTITY)
+        if (PlayerData.resources.ContainsKey(resource)) // NONE y BOTH cases
         {
-            PlayerData.resources[resource] += valueModifier;
-            print(PlayerData.resources[resource]);
+            if (Mathf.Sign(valueModifier) == 1 && PlayerData.resources[resource] < MAXCUANTITY ||
+            Mathf.Sign(valueModifier) == -1 && PlayerData.resources[resource] > MINCUANTITY)
+            {
+                PlayerData.resources[resource] += valueModifier;
+                print(PlayerData.resources[resource]);
+            }
         }
 
     }

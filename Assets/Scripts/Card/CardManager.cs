@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class CardManager : MonoBehaviour
         CommonDisplay();
         CreateCard();
     }
+
     // Show dialog text and character name
     private void CommonDisplay()
     {
@@ -34,25 +36,22 @@ public class CardManager : MonoBehaviour
         if (GameManager.Instance.currentCard.type == Card.CardType.SINGLE)
         {
             cardGameObject = Instantiate(singleCardPrefab, transform);
-            singleCardDisplay = cardGameObject.GetComponent<SingleCardDisplay>();
-            singleCardDisplay.DestroyCardEvent += CardManager_DestroyCardEvent;
         }
-           
+
         else if (GameManager.Instance.currentCard.type == Card.CardType.MULTIPLE)
             cardGameObject = Instantiate(multipleCardPrefab, transform);
-        
+
     }
 
     public void UpdateCurrentCard(Card nextCard)
     {
-        GameManager.Instance.currentCard = nextCard;
-    }
-
-    private void CardManager_DestroyCardEvent()
-    {
-        singleCardDisplay.DestroyCardEvent -= CardManager_DestroyCardEvent;
-        Destroy(cardGameObject);
-        CommonDisplay();
-        CreateCard();
+        if (GameManager.Instance.currentCard.type == Card.CardType.SINGLE)
+        {
+            GameManager.Instance.currentCard = nextCard;
+            Destroy(cardGameObject);
+            CommonDisplay();
+            CreateCard();
+        }
+        // Qué pasa en el caso múltiple
     }
 }
