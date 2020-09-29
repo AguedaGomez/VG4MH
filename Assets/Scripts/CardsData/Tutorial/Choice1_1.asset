@@ -18,4 +18,4 @@ MonoBehaviour:
     largo hacia el lado que corresponda. \xBFQuieres practicar?"
   rightText: "S\xED"
   leftText: No
-  correctDirection: 2
+  correctDirection: 3

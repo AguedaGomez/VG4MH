@@ -18,7 +18,5 @@ MonoBehaviour:
   reward: 4
   type: 0
   choice: {fileID: 11400000, guid: 24983c5c81bf54b4d86c814b5a211d30, type: 2}
-  nextCardIfAnswerCorrect: {fileID: 11400000, guid: 498abe7c038308c40ac0b7599de9c680,
-    type: 2}
-  nextCardIfAnswerIncorrect: {fileID: 11400000, guid: ed0386265eee32d4f8c0e3ee0e94903d,
-    type: 2}
+  nextCardIfRight: {fileID: 11400000, guid: 498abe7c038308c40ac0b7599de9c680, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: ed0386265eee32d4f8c0e3ee0e94903d, type: 2}

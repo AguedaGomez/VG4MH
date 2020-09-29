@@ -16,4 +16,4 @@ MonoBehaviour:
   text: 
   rightText: "S\xED"
   leftText: No
-  correctDirection: 2
+  correctDirection: 3

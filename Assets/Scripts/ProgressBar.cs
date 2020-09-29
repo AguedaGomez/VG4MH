@@ -9,11 +9,12 @@ public class ProgressBar : MonoBehaviour
     public Image fill;
 
     private const int MAX_VALUE = 100;
+    private float currentFillQuantity;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentFillQuantity = (float)PlayerData.resources[myResource] / (float)MAX_VALUE;
     }
 
     // Update is called once per frame
@@ -24,7 +25,24 @@ public class ProgressBar : MonoBehaviour
 
     public void SetCurrentFill(int current)
     {
-        float fillQuantity = (float)current / (float)MAX_VALUE;
-        fill.fillAmount = fillQuantity;
+        float newFillQuantity = (float)current / (float)MAX_VALUE;
+        if (currentFillQuantity < newFillQuantity)
+        {
+            StartCoroutine(ChangeColor(Palette.GREEN));
+        }
+        else if (currentFillQuantity > newFillQuantity)
+        {
+            StartCoroutine(ChangeColor(Palette.RED));
+        }
+        fill.fillAmount = newFillQuantity;
+        currentFillQuantity = newFillQuantity;
+
     }
+
+    IEnumerator ChangeColor(Color32 color)
+    {
+        fill.color = color;
+        yield return new WaitForSeconds(.5f);
+        fill.color = Palette.BLUE;
+    } 
 }
