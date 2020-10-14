@@ -45,7 +45,8 @@ public class CardBehaviour : MonoBehaviour
                     offsetVector = transform.position - startPos;
 
                     //Check if card is touched
-                    touchingCard = Physics2D.OverlapPoint(startPos); 
+                    touchingCard = Physics2D.OverlapPoint(startPos);
+                    print("transform name " + transform.name + "is touching card? " + touchingCard);
 
                     break;
 

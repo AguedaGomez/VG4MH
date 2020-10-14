@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8094050603698711157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559238613042803272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decabc95c76dc1a4abf115c730731e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightOptionText: {fileID: 5002962784903281222}
+  leftOptionText: {fileID: 2722344027330037398}
+  image: {fileID: 4781319706095015929}
+  startedInitialMovement: 0
 --- !u!1 &2720805393523218097
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,8 +26,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5742993102333087231}
   - component: {fileID: 4907985788283941632}
-  - component: {fileID: 2486580137729223488}
-  - component: {fileID: 4284422247255571446}
   - component: {fileID: 6101801170640497366}
   - component: {fileID: 4170751206974182192}
   - component: {fileID: 7093727029325398610}
@@ -95,34 +109,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2486580137729223488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2720805393523218097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6853c4a036027d047ac9dc99a5999b27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4284422247255571446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2720805393523218097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: decabc95c76dc1a4abf115c730731e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightOptionText: {fileID: 0}
-  leftOptionText: {fileID: 0}
-  image: {fileID: 4907985788283941632}
-  startedInitialMovement: 0
 --- !u!61 &6101801170640497366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -765,11 +751,48 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8777287019283737954, guid: 36ed905086f0bc74fb4e54173a9dbb02, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36ed905086f0bc74fb4e54173a9dbb02, type: 3}
+--- !u!1 &2559238613042803272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7455811750027591717, guid: 36ed905086f0bc74fb4e54173a9dbb02,
+    type: 3}
+  m_PrefabInstance: {fileID: 4970954454405034605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5329225305429059846 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 939377187640449899, guid: 36ed905086f0bc74fb4e54173a9dbb02,
     type: 3}
   m_PrefabInstance: {fileID: 4970954454405034605}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &4781319706095015929 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 479290646053217684, guid: 36ed905086f0bc74fb4e54173a9dbb02,
+    type: 3}
+  m_PrefabInstance: {fileID: 4970954454405034605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5002962784903281222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 113285536275073067, guid: 36ed905086f0bc74fb4e54173a9dbb02,
+    type: 3}
+  m_PrefabInstance: {fileID: 4970954454405034605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2722344027330037398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7006428687660545275, guid: 36ed905086f0bc74fb4e54173a9dbb02,
+    type: 3}
+  m_PrefabInstance: {fileID: 4970954454405034605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

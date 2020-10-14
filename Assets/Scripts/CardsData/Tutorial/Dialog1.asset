@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: "\xA1Hola! Estoy encantada de verte por aqu\xED, llegas en el momento justo
     para ayudar a nuestra gente. \xBFSab\xEDas que puedes deslizarte con el dedo
     hacia la derecha o la izquierda para contestarme?"
-  reward: 4
+  reward: 0
   type: 0
   choice: {fileID: 11400000, guid: fffe1fb9c7e073d47940b9a14fb0b4a9, type: 2}
   nextCardIfRight: {fileID: 11400000, guid: b8ca057ea9c51824aba038b4cb128697, type: 2}
