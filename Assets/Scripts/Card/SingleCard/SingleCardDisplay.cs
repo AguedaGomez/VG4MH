@@ -11,7 +11,7 @@ public class SingleCardDisplay : MonoBehaviour
     public SpriteRenderer image;
     public bool startedInitialMovement = false;
 
-    private Card currentCard;
+    public Card currentCard;
     private float rotationSpeed = 150f;
 
     //fov perspective 53.2
@@ -22,16 +22,17 @@ public class SingleCardDisplay : MonoBehaviour
         DisplayCard();
     }
 
-    private void DisplayCard()
+    public virtual void DisplayCard()
     {
-        // preparing camera for initial movement of card
-        Camera.main.orthographic = false;
-        startedInitialMovement = true;
+        //// preparing camera for initial movement of card
+        //Camera.main.orthographic = false;
+        //startedInitialMovement = true;
 
-        // preparing card data
-        rightOptionText.text = ((Single)currentCard).choice.rightText;
-        leftOptionText.text = ((Single)currentCard).choice.leftText;
-        image.sprite = ((Single)currentCard).choice.image;
+        //// preparing card data
+        //rightOptionText.text = ((Single)currentCard).choice.rightText;
+        //leftOptionText.text = ((Single)currentCard).choice.leftText;
+        //image.sprite = ((Single)currentCard).choice.image;
+
     }
 
     public void ShowOption(Choice.Direction direction)

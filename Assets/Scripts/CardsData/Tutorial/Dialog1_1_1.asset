@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Desconocida
   dialog: "Tu labor en estas tierras ser\xE1 ayudar a mantener el bienestar y el
-    quelibrio del pueblo. \xBFSabes lo que significan los s\xEDmbolos de arriba?"
+    equilibrio del pueblo. \xBFSabes lo que significan los s\xEDmbolos de arriba?"
   reward: 4
   type: 0
   choice: {fileID: 11400000, guid: 24983c5c81bf54b4d86c814b5a211d30, type: 2}

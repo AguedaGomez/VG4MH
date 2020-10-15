@@ -18,6 +18,7 @@ public class CardBehaviour : MonoBehaviour
     private Choice.Direction currentDirection;
     private SingleCardDisplay singleCardDisplay;
     private SingleCardRewardManager singleCardRewardManager;
+    private Collider2D touchedCollider;
 
 
     // Start is called before the first frame update
@@ -45,9 +46,9 @@ public class CardBehaviour : MonoBehaviour
                     offsetVector = transform.position - startPos;
 
                     //Check if card is touched
-                    touchingCard = Physics2D.OverlapPoint(startPos);
-                    print("transform name " + transform.name + "is touching card? " + touchingCard);
-
+                    touchedCollider = Physics2D.OverlapPoint(startPos);
+                   // print("transform name " + transform.name + "qué collider estoy tocando " + collider.name);
+                    touchingCard = touchedCollider.name == transform.name ? true : false;
                     break;
 
                 case TouchPhase.Moved:
