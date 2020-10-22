@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Rendering;
 
-public class SingleCardDisplay : MonoBehaviour
+public class CardDisplay : MonoBehaviour
 {
     public TextMeshPro rightOptionText;
     public TextMeshPro leftOptionText;
@@ -14,9 +14,10 @@ public class SingleCardDisplay : MonoBehaviour
     public Card currentCard;
     private float rotationSpeed = 150f;
 
+
     //fov perspective 53.2
 
-    void Start()
+    protected virtual void Start()
     {
         currentCard = GameManager.Instance.currentCard;
         DisplayCard();
@@ -24,19 +25,11 @@ public class SingleCardDisplay : MonoBehaviour
 
     public virtual void DisplayCard()
     {
-        //// preparing camera for initial movement of card
-        //Camera.main.orthographic = false;
-        //startedInitialMovement = true;
-
-        //// preparing card data
-        //rightOptionText.text = ((Single)currentCard).choice.rightText;
-        //leftOptionText.text = ((Single)currentCard).choice.leftText;
-        //image.sprite = ((Single)currentCard).choice.image;
-
     }
 
-    public void ShowOption(Choice.Direction direction)
+    public virtual void ShowOption(Choice.Direction direction)
     {
+        
         switch (direction)
         {
             case Choice.Direction.RIGHT:
@@ -71,5 +64,9 @@ public class SingleCardDisplay : MonoBehaviour
             }
         }
     }
+}
 
+public interface IDisplay
+{
+    void DisplayCard();
 }

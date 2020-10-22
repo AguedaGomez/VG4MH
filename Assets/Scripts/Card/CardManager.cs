@@ -15,7 +15,7 @@ public class CardManager : MonoBehaviour
     public TextMeshProUGUI characterNameText;
 
     private GameObject cardGameObject;
-    private SingleCardDisplay singleCardDisplay;
+    private CardDisplay cardDisplay;
 
     // Start is called before the first frame update
     void Start()

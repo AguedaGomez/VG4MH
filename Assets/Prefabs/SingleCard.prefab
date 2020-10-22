@@ -230,7 +230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4249794215454758579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.013, y: 0.001, z: 0.08}
+  m_LocalPosition: {x: 0.013, y: 0.001, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 939377187640449899}
@@ -407,7 +407,8 @@ MonoBehaviour:
   rightOptionText: {fileID: 113285536275073067}
   leftOptionText: {fileID: 7006428687660545275}
   image: {fileID: 479290646053217684}
-  back: {fileID: 4249794215454758579}
+  startedInitialMovement: 0
+  currentCard: {fileID: 0}
 --- !u!61 &1591899914561518658
 BoxCollider2D:
   m_ObjectHideFlags: 0

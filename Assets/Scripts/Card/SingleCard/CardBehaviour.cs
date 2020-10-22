@@ -16,7 +16,7 @@ public class CardBehaviour : MonoBehaviour
     private float rotationAngle;
     private float minLong = 2.0f;
     private Choice.Direction currentDirection;
-    private SingleCardDisplay singleCardDisplay;
+    private CardDisplay cardDisplay;
     private SingleCardRewardManager singleCardRewardManager;
     private Collider2D touchedCollider;
 
@@ -27,7 +27,7 @@ public class CardBehaviour : MonoBehaviour
         initialPos = transform.position;
         directionChosen = false;
         currentDirection = Choice.Direction.NONE;
-        singleCardDisplay = GetComponent<SingleCardDisplay>();
+        cardDisplay = GetComponent<CardDisplay>();
         singleCardRewardManager = GetComponent<SingleCardRewardManager>();
     }
 
@@ -53,7 +53,7 @@ public class CardBehaviour : MonoBehaviour
 
                 case TouchPhase.Moved:
                     
-                    if (touchingCard && !singleCardDisplay.startedInitialMovement) // if card is touched and the initial movement has finished
+                    if (touchingCard && !cardDisplay.startedInitialMovement) // if card is touched and the initial movement has finished
                     {
                         // Behaviour 
                         Vector3 currentTouchWorld = Camera.main.ScreenToWorldPoint(touchPosition);
@@ -71,7 +71,8 @@ public class CardBehaviour : MonoBehaviour
                         {
                             currentDirection = Choice.Direction.LEFT;
                         }
-                        singleCardDisplay.ShowOption(currentDirection);
+                        
+                        cardDisplay.ShowOption(currentDirection);
                     }
 
                     break;
@@ -96,7 +97,7 @@ public class CardBehaviour : MonoBehaviour
                 else
                 {
                     currentDirection = Choice.Direction.NONE;
-                    singleCardDisplay.ShowOption(currentDirection);
+                    cardDisplay.ShowOption(currentDirection);
                 }
                 directionChosen = false;
             }

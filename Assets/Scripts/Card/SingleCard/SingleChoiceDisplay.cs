@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OneChoiceDisplay : SingleCardDisplay
+public class SingleChoiceDisplay : CardDisplay, IDisplay
 {
-    void Start()
-    {
-        currentCard = GameManager.Instance.currentCard;
-        DisplayCard();
-    }
-
+    // Start is called before the first frame update
     public override void DisplayCard()
     {
         // preparing camera for initial movement of card
@@ -20,7 +15,8 @@ public class OneChoiceDisplay : SingleCardDisplay
         rightOptionText.text = ((Single)currentCard).choice.rightText;
         leftOptionText.text = ((Single)currentCard).choice.leftText;
         image.sprite = ((Single)currentCard).choice.image;
-
     }
+
+
 
 }
