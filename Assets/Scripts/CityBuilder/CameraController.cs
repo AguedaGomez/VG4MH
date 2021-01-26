@@ -6,8 +6,9 @@ public class CameraController : MonoBehaviour
 {
     Vector3 initialTouch;
     Vector3 offset;
-    float zoomOutMin = 1;
-    float zoomOutMax = 6;
+    float zoomOutMin = 6;
+    float zoomOutMax = 15;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +43,6 @@ public class CameraController : MonoBehaviour
 
                         initialTouch = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
                         offset = initialTouch - transform.position;
-
                         break;
                     case TouchPhase.Moved:
                         transform.position = initialTouch - offset;

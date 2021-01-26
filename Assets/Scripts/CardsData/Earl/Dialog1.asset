@@ -17,7 +17,7 @@ MonoBehaviour:
     una situaci\xF3n peliaguda. Creemos que deber\xEDamos trasladarnos y dejar este
     lugar pero nos da miedo tomar una mala decisi\xF3n. \xBFNos ayudas a ver qu\xE9
     es lo mejor?"
-  reward: 0
+  reward: 4
   type: 0
   choice: {fileID: 11400000, guid: 84bf9bd7b2a12c544ba21c5f32ef21a2, type: 2}
   nextCardIfRight: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
