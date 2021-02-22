@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   cost: 0
-  buildingName: House
+  buildingName: H
 --- !u!1 &8686041328433697346
 GameObject:
   m_ObjectHideFlags: 0
