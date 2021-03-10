@@ -38,4 +38,9 @@ public class UIController : MonoBehaviour
     {
         powerRButtonImg.color = new Color(0.18f, 0.4f, 0.83f, city.powerR / 100f);
     }
+
+    public void ShowAndHideMenu(GameObject menu)
+    {
+        menu.SetActive(!menu.activeSelf);
+    }
 }

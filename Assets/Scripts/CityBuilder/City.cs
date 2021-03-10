@@ -47,7 +47,7 @@ public class City : MonoBehaviour
             materialsPerSecond += MIN_MATERIALS * CalculatePowerRFactor();
             Materials = BaseMaterials() + materialsPerSecond;
 
-            yield return new WaitForSeconds(seconds);
+            yield return new WaitForSeconds(1f);
         }
         
     }
