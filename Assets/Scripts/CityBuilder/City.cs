@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +9,12 @@ public class City : MonoBehaviour
 
     public float Activation { get; set; }
     public int Materials { get; set; }
-    public int powerR = 0;
+    public float powerR = 0;
 
     private const int MIN_MATERIALS = 2;
     private const float SECONDS = 15;
     private const int DAILY_STEPS = 3000;
+    private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
     private int materialsPerSecond = 0;
     private int population;
     private int questionaryDone = 0;
@@ -20,6 +22,7 @@ public class City : MonoBehaviour
     private int activationValue = 0;
     private int currentSteps = 0;
     private bool fullActivation = false;
+    private float esencias = 0;
 
 
 
@@ -35,11 +38,14 @@ public class City : MonoBehaviour
         population += newBuilding.nLocals;
     }
 
+    #region Activation
+
     public void CalculateActivation()
     {
         if (!fullActivation)
         {
             Activation = 10 + 10 * questionaryDone + 10 * libraryAccess + 0.7f * activationValue;
+            CalculatePowerR();
             if (Activation >= 100)
             {
                 Activation = 100;
@@ -50,22 +56,16 @@ public class City : MonoBehaviour
         print("valor activación = " + Activation);
     }
 
-    public void FinishQuestionary()
+    public void FinishQuestionary(bool toggleState)
     {
-        questionaryDone = 1;
+        questionaryDone = Convert.ToInt32(toggleState);
         CalculateActivation();
     }
 
-    public void VisitLibrary()
+    public void VisitLibrary(bool toggleState)
     {
-        libraryAccess = 1;
+        libraryAccess = Convert.ToInt32(toggleState);
         CalculateActivation();
-    }
-
-    public void IncreasePowerR()
-    {
-        if (powerR <= 100)
-            powerR += 10;
     }
     public void CalculatePhysicalActivity()
     {
@@ -82,6 +82,7 @@ public class City : MonoBehaviour
 
         CalculatePhysicalActivity();
     }
+    #endregion
 
     IEnumerator CalculateMaterialsPerSecond()
     {
@@ -98,6 +99,17 @@ public class City : MonoBehaviour
     private int BaseMaterials()
     {
         return population;
+    }
+
+    public void CalculatePowerR()
+    {
+        powerR = esencias * (1 + Activation / 100); // taking to account penalization
+    }
+
+    public void SolveConflict()
+    {
+        esencias += SOLVED_CONFLICT_VALUE;
+        CalculatePowerR();
     }
 
     private int CalculatePowerRFactor()
