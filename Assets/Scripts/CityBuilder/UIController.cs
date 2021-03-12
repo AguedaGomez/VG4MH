@@ -9,8 +9,11 @@ public class UIController : MonoBehaviour
     public Text materials;
     public Button powerRButton;
     public City city;
+    public InputField stepsInputField;
 
     private Image powerRButtonImg;
+
+    private TouchScreenKeyboard keyboard;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,8 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
+        if (keyboard != null)
+            keyboard.active = true;
         ShowActivation();
         ShowMaterials();
     }
@@ -42,5 +47,11 @@ public class UIController : MonoBehaviour
     public void ShowAndHideMenu(GameObject menu)
     {
         menu.SetActive(!menu.activeSelf);
+    }
+
+    //from GUI
+    public void SaveCurrentSteps ()
+    {
+        city.SaveCurrentSteps(int.Parse(stepsInputField.text));
     }
 }
