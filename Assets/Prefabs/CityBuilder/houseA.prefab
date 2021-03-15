@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  cost: 0
+  cost: 50
   buildingName: HouseA
   nLocals: 2
+  activationRequired: 25

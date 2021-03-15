@@ -8,5 +8,6 @@ public class Building : MonoBehaviour
     public int cost;
     public string buildingName;
     public int nLocals;
+    public int activationRequired;
 
 }

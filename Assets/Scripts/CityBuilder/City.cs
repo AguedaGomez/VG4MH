@@ -10,6 +10,8 @@ public class City : MonoBehaviour
     public float Activation { get; set; }
     public int Materials { get; set; }
     public float powerR = 0;
+    public List<Building> buildingsInGame = new List<Building>(); // Change to dictionary?
+    public Dictionary<string, Building> availableBuildigs = new Dictionary<string, Building>();
 
     private const int MIN_MATERIALS = 2;
     private const float SECONDS = 15;
@@ -51,6 +53,7 @@ public class City : MonoBehaviour
                 Activation = 100;
                 fullActivation = true;
             }
+            CheckAvailableBuildings();
         }
         
         print("valor activación = " + Activation);
@@ -92,6 +95,16 @@ public class City : MonoBehaviour
             Materials = BaseMaterials() + materialsPerSecond;
 
             yield return new WaitForSeconds(SECONDS);
+        }
+        
+    }
+    private void CheckAvailableBuildings()
+    {
+        foreach (var b in buildingsInGame)
+        {
+            if (b.activationRequired <= Activation)
+                if (!availableBuildigs.ContainsKey(b.buildingName))
+                    availableBuildigs.Add(b.buildingName, b);
         }
         
     }
