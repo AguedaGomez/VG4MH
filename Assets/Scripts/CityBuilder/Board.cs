@@ -7,7 +7,7 @@ public class Board : MonoBehaviour
     // TODO: configuracion inicial
     public GameObject staticBuildingA;
     public GameObject staticBuildingB;
-    public City city;
+    public City city; //Eliminar city de aquí?
 
     private float cellSize = 4f;
     private float boardHeight, boardWidth;
@@ -38,7 +38,8 @@ public class Board : MonoBehaviour
             Building buildingScript = createdBuilding.GetComponent<Building>();
             buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
 
-            city.CalculatePopulation(buildingScript);
+            //city.CalculatePopulation(buildingScript);
+            //city.DecreaseMaterials(buildingScript.cost);
 
         }
         

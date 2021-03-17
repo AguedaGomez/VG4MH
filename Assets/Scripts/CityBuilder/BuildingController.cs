@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BuildingController : MonoBehaviour
 {
+    public City city; //mirar cambiar city de aqui
     [SerializeField]
     private Board board;
-    public GameObject[] buildings; //Prefabs available buildings
     private GameObject selectedBuilding;
     // Start is called before the first frame update
     void Start()
@@ -32,14 +32,24 @@ public class BuildingController : MonoBehaviour
             Vector3 gridPosition = board.CalculateGridPosition(hit.point);
             if (board.CheckForBuildingAtPosition(gridPosition))
             {
-                board.AddBuilding(selectedBuilding, gridPosition);
+                Building buildingScript = selectedBuilding.GetComponent<Building>();
+
+                if (buildingScript.cost <= city.Materials)
+                {
+                    board.AddBuilding(selectedBuilding, gridPosition);
+
+                    city.CalculatePopulation(buildingScript);
+                    city.DecreaseMaterials(buildingScript.cost);
+                }
                 selectedBuilding = null;
             }
         }
     }
-    public void EnableBuilder(int buildingIndex)
+    public void EnableBuilder(string buildingName)
     {
-        selectedBuilding = buildings[buildingIndex];
-        
+       if(city.availableBuildigs.ContainsKey(buildingName))
+        {
+            selectedBuilding = city.availableBuildigs[buildingName];
+        }
     }
 }

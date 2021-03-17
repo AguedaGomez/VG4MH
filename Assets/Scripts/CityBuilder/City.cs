@@ -10,8 +10,8 @@ public class City : MonoBehaviour
     public float Activation { get; set; }
     public int Materials { get; set; }
     public float powerR = 0;
-    public List<Building> buildingsInGame = new List<Building>(); // Change to dictionary?
-    public Dictionary<string, Building> availableBuildigs = new Dictionary<string, Building>();
+    public List<GameObject> buildingsInGame = new List<GameObject>(); // Gameobject for Addbuilding in board (the model is needed)
+    public Dictionary<string, GameObject> availableBuildigs = new Dictionary<string, GameObject>();
 
     private const int MIN_MATERIALS = 2;
     private const float SECONDS = 15;
@@ -102,9 +102,10 @@ public class City : MonoBehaviour
     {
         foreach (var b in buildingsInGame)
         {
-            if (b.activationRequired <= Activation)
-                if (!availableBuildigs.ContainsKey(b.buildingName))
-                    availableBuildigs.Add(b.buildingName, b);
+            Building building = b.GetComponent<Building>();
+            if (building.activationRequired <= Activation)
+                if (!availableBuildigs.ContainsKey(building.buildingName))
+                    availableBuildigs.Add(building.buildingName, b);
         }
         
     }
@@ -123,6 +124,10 @@ public class City : MonoBehaviour
     {
         esencias += SOLVED_CONFLICT_VALUE;
         CalculatePowerR();
+    }
+    public void DecreaseMaterials(int buildingPrice)
+    {
+        Materials -= buildingPrice;
     }
 
     private int CalculatePowerRFactor()
