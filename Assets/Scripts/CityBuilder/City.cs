@@ -55,8 +55,7 @@ public class City : MonoBehaviour
             }
             CheckAvailableBuildings();
         }
-        
-        print("valor activación = " + Activation);
+       
     }
 
     public void FinishQuestionary(bool toggleState)
@@ -144,6 +143,17 @@ public class City : MonoBehaviour
         else if (powerR <= 100)
             return 8;
         else
-            return 0;        
+            return 0;
+    }
+
+    // TODO change to another script
+    private SaveData CreateObjectToSave()
+    {
+        return new SaveData(Materials, powerR);
+    }
+
+    public string DataToJson()
+    {
+        return JsonUtility.ToJson(CreateObjectToSave());
     }
 }

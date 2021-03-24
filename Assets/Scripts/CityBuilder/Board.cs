@@ -12,6 +12,7 @@ public class Board : MonoBehaviour
     private float cellSize = 4f;
     private float boardHeight, boardWidth;
     private int numCells;
+    [SerializeField]
     private Building[,] buildings;
 
     void Start()
@@ -76,4 +77,10 @@ public class Board : MonoBehaviour
             }
         }
     }
+
+    public string SaveToString()
+    {
+        return JsonUtility.ToJson(buildings[2,3]);
+    }
 }
+ 
