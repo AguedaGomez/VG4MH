@@ -30,10 +30,24 @@ public class City : MonoBehaviour
 
     void Start()
     {
+        //StartCoroutine(CalculateMaterialsPerSecond());
+        //CalculateActivation();
+    }
+
+    public void InitializeCity(string lastAccess)
+    {
+        CheckInactiveTime(lastAccess);
         StartCoroutine(CalculateMaterialsPerSecond());
         CalculateActivation();
     }
 
+    private void CheckInactiveTime(string lastAccess)
+    {
+        DateTime lA = DateTime.Parse(lastAccess);
+        DateTime now = DateTime.Now;
+        TimeSpan inactiveTime = now.Subtract(lA);
+        print(inactiveTime);
+    }
 
     public void CalculatePopulation (Building newBuilding)
     {
@@ -146,14 +160,4 @@ public class City : MonoBehaviour
             return 0;
     }
 
-    // TODO change to another script
-    private SaveData CreateObjectToSave()
-    {
-        return new SaveData(Materials, powerR);
-    }
-
-    public string DataToJson()
-    {
-        return JsonUtility.ToJson(CreateObjectToSave());
-    }
 }

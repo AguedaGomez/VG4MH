@@ -237,7 +237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 104.8, y: -1823.6}
+  m_AnchoredPosition: {x: 104.80078, y: -1823.5996}
   m_SizeDelta: {x: 189.67398, y: 169.27795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &65268671
@@ -7793,6 +7793,7 @@ GameObject:
   - component: {fileID: 1538201033}
   - component: {fileID: 1538201032}
   - component: {fileID: 1538201034}
+  - component: {fileID: 1538201035}
   m_Layer: 0
   m_Name: City
   m_TagString: Untagged
@@ -7843,6 +7844,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 1945131900}
+  city: {fileID: 1538201032}
+--- !u!114 &1538201035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538201031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd4e3edcaa86ce409e6b6c59e36b6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials: 0
+  powerR: 0
+  date: 
 --- !u!1001 &1575667105
 PrefabInstance:
   m_ObjectHideFlags: 0

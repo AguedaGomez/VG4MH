@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SaveAndLoadDataManager : MonoBehaviour
 {
     public Board board;
+    public City city;
     void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus) // Save
@@ -23,15 +25,31 @@ public class SaveAndLoadDataManager : MonoBehaviour
     {
         if (focus)
         {
-            SaveAndLoadData.LoadFromFile("state-game.dat", out var content);
-            SaveData loadedSaveObject = JsonUtility.FromJson<SaveData>(content);
+            SaveAndLoadData.LoadFromFile("state-game.json", out var content);
+            SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
             print("app abierta");
         }   
         else
         {
-            SaveAndLoadData.SaveinFile("state-game.dat", board.city.DataToJson());
+            ObjectToSaveData();
+            SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
             print("app cerrada");
         }
     
+    }
+
+    private void ObjectToSaveData()
+    {
+        SaveObject.Instance.materials = city.Materials;
+        SaveObject.Instance.powerR = city.powerR;
+        SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+    }
+
+    private void SaveDataToObject(SaveObject loadedSaveObject)
+    {
+        city.Materials = loadedSaveObject.materials;
+        city.powerR = loadedSaveObject.powerR;
+        city.InitializeCity(loadedSaveObject.date);
+
     }
 }

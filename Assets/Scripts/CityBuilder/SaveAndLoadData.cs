@@ -14,7 +14,6 @@ public static class SaveAndLoadData
         try
         {
             File.WriteAllText(fullPath, fileContent);
-            Debug.Log("guardando: " + fileContent);
             return true;
         }
         catch (Exception e)
