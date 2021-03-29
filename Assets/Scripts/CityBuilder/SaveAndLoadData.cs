@@ -10,6 +10,7 @@ public static class SaveAndLoadData
     public static bool SaveinFile(string fileName, string fileContent)
     {
         var fullPath = Path.Combine(Application.persistentDataPath, fileName);
+        Debug.Log(fullPath);
 
         try
         {

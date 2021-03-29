@@ -17,7 +17,8 @@ public class City : MonoBehaviour
     private const float SECONDS = 15;
     private const int DAILY_STEPS = 3000;
     private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
-    private int materialsPerSecond = 0;
+    //public?
+    public int materialsPerSecond = 0;
     private int population;
     private int questionaryDone = 0;
     private int libraryAccess = 0;
@@ -36,7 +37,8 @@ public class City : MonoBehaviour
 
     public void InitializeCity(string lastAccess)
     {
-        CheckInactiveTime(lastAccess);
+        if (lastAccess != "")
+            CheckInactiveTime(lastAccess);
         StartCoroutine(CalculateMaterialsPerSecond());
         CalculateActivation();
     }
@@ -46,6 +48,8 @@ public class City : MonoBehaviour
         DateTime lA = DateTime.Parse(lastAccess);
         DateTime now = DateTime.Now;
         TimeSpan inactiveTime = now.Subtract(lA);
+        materialsPerSecond +=(BaseMaterials() + MIN_MATERIALS * CalculatePowerRFactor()) 
+            * Convert.ToInt32(inactiveTime.TotalSeconds / SECONDS);
         print(inactiveTime);
     }
 

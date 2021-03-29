@@ -14,7 +14,9 @@ public sealed class SaveObject
 
     private SaveObject()
     {
-
+        materials = 0;
+        powerR = 0;
+        date = "";
     }
 
 

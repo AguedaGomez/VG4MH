@@ -25,8 +25,10 @@ public class SaveAndLoadDataManager : MonoBehaviour
     {
         if (focus)
         {
-            SaveAndLoadData.LoadFromFile("state-game.json", out var content);
-            SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
+            if (SaveAndLoadData.LoadFromFile("state-game.json", out var content))
+                SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
+            else
+                SaveDataToObject(SaveObject.Instance);
             print("app abierta");
         }   
         else
@@ -40,14 +42,14 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     private void ObjectToSaveData()
     {
-        SaveObject.Instance.materials = city.Materials;
+        SaveObject.Instance.materials = city.materialsPerSecond;
         SaveObject.Instance.powerR = city.powerR;
         SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
     }
 
     private void SaveDataToObject(SaveObject loadedSaveObject)
     {
-        city.Materials = loadedSaveObject.materials;
+        city.materialsPerSecond = loadedSaveObject.materials;
         city.powerR = loadedSaveObject.powerR;
         city.InitializeCity(loadedSaveObject.date);
 
