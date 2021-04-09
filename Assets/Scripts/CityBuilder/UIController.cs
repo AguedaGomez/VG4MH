@@ -6,9 +6,12 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    public GameObject messagesPanel;
+    public Text messagesText;
     public Slider activationSlider;
     public Text materials;
     public Button powerRButton;
+    public LocalsMessages localsMessages;
     public City city;
     public InputField stepsInputField; //change to text?
     public List<Button> buildingButtons = new List<Button>();
@@ -20,8 +23,15 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        localsMessages.ShowGeneralMessage += LocalsMessages_ShowGeneralMessage;
         powerRButtonImg = powerRButton.GetComponent<Image>();
         CreateDictionaryButtons();
+    }
+
+    private void LocalsMessages_ShowGeneralMessage(string message)
+    {
+        messagesText.text = message;
+        messagesPanel.SetActive(true);
     }
 
     void Update()

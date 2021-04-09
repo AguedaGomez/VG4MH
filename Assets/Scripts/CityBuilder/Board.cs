@@ -39,8 +39,6 @@ public class Board : MonoBehaviour
             Building buildingScript = createdBuilding.GetComponent<Building>();
             buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
 
-            //city.CalculatePopulation(buildingScript);
-            //city.DecreaseMaterials(buildingScript.cost);
 
         }
         
@@ -62,7 +60,7 @@ public class Board : MonoBehaviour
 
     private int CalculateRowColumn(float cordPosition)
     {
-        return Mathf.RoundToInt(cordPosition / cellSize);
+        return Mathf.RoundToInt(cordPosition / cellSize); // number of cell
     }
 
     private void OnDrawGizmos()
@@ -78,9 +76,26 @@ public class Board : MonoBehaviour
         }
     }
 
-    public string SaveToString()
+    public string SaveBoardStateToString()
     {
-        return JsonUtility.ToJson(buildings[2,3]);
+        string jsonData="";
+        for (int x = 0; x < buildings.GetLength(0); x++)
+        {
+            for (int z = 0; z < buildings.GetLength(1); z++)
+            {
+                if (buildings[x, z] != null)
+                {
+                    Debug.Log("row: " + x + " column: " + z + " Grid: " + buildings[x, z]);
+                    //format the json data here
+                    jsonData += "row : " + x + ",\n";
+                    jsonData += "col : " + z + ",\n";
+                    jsonData += "buildingName : " + buildings[x,z].buildingName + "\n";
+                }
+            }
+        }
+        print(jsonData);
+        return jsonData;
+
     }
 }
  

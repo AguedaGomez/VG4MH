@@ -10,5 +10,6 @@ public class Building : MonoBehaviour
     public string buildingName;
     public int nLocals;
     public int activationRequired;
-
+    public int row;
+    public int col;
 }

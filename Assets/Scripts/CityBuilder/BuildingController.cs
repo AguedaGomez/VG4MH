@@ -1,12 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingController : MonoBehaviour
 {
     public City city; //mirar cambiar city de aqui
-    [SerializeField]
-    private Board board;
+    public LocalsMessages localsMessages;
+    public Board board;
     private GameObject selectedBuilding;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,23 @@ public class BuildingController : MonoBehaviour
         if( Input.GetMouseButtonDown(0) && selectedBuilding != null)
         {
             InteractWithBoard();
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            CheckInteractionWithLocal();
+        }
+    }
+
+    private void CheckInteractionWithLocal()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // change for mobile
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.tag == "local")
+            {
+                localsMessages.GenerateGeneralMessage();
+            }
         }
     }
 

@@ -10,6 +10,7 @@ public class City : MonoBehaviour
     public float Activation { get; set; }
     public int Materials { get; set; }
     public float powerR = 0;
+    public float powerRLastCheckPoint = 0;
     public List<GameObject> buildingsInGame = new List<GameObject>(); // Gameobject for Addbuilding in board (the model is needed)
     public Dictionary<string, GameObject> availableBuildigs = new Dictionary<string, GameObject>();
 
@@ -26,6 +27,7 @@ public class City : MonoBehaviour
     private int currentSteps = 0;
     private bool fullActivation = false;
     private float esencias = 0;
+    private TimeSpan inactiveTime;
 
 
 
@@ -40,16 +42,19 @@ public class City : MonoBehaviour
         if (lastAccess != "")
             CheckInactiveTime(lastAccess);
         StartCoroutine(CalculateMaterialsPerSecond());
-        CalculateActivation();
+        CalculateActivation(); //Also call to calclulatepowerR
     }
 
     private void CheckInactiveTime(string lastAccess)
     {
         DateTime lA = DateTime.Parse(lastAccess);
         DateTime now = DateTime.Now;
-        TimeSpan inactiveTime = now.Subtract(lA);
+        // changa to local variable
+        inactiveTime = now.Subtract(lA);
+        
         materialsPerSecond +=(BaseMaterials() + MIN_MATERIALS * CalculatePowerRFactor()) 
             * Convert.ToInt32(inactiveTime.TotalSeconds / SECONDS);
+        ApplyPenalization(inactiveTime.Days);
         print(inactiveTime);
     }
 
@@ -134,7 +139,12 @@ public class City : MonoBehaviour
 
     public void CalculatePowerR()
     {
-        powerR = esencias * (1 + Activation / 100); // taking to account penalization
+        powerR = powerRLastCheckPoint + esencias * (1 + Activation / 100); // taking to account penalization
+    }
+
+    private void ApplyPenalization(int inactiveDays)
+    {
+        //powerRLastCheckPoint
     }
 
     public void SolveConflict()

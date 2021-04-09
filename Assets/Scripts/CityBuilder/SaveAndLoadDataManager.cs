@@ -45,12 +45,13 @@ public class SaveAndLoadDataManager : MonoBehaviour
         SaveObject.Instance.materials = city.materialsPerSecond;
         SaveObject.Instance.powerR = city.powerR;
         SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+        SaveObject.Instance.boardMatrix = board.SaveBoardStateToString();
     }
 
     private void SaveDataToObject(SaveObject loadedSaveObject)
     {
         city.materialsPerSecond = loadedSaveObject.materials;
-        city.powerR = loadedSaveObject.powerR;
+        city.powerRLastCheckPoint = loadedSaveObject.powerR;
         city.InitializeCity(loadedSaveObject.date);
 
     }

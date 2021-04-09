@@ -11,12 +11,14 @@ public sealed class SaveObject
     public int materials;
     public float powerR;
     public string date;
+    public string boardMatrix;
 
     private SaveObject()
     {
         materials = 0;
         powerR = 0;
         date = "";
+        boardMatrix = "";
     }
 
 
