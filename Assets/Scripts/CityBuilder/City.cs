@@ -14,8 +14,8 @@ public class City : MonoBehaviour
     public List<GameObject> buildingsInGame = new List<GameObject>(); // Gameobject for Addbuilding in board (the model is needed)
     public Dictionary<string, GameObject> availableBuildigs = new Dictionary<string, GameObject>();
 
-    private const int MIN_MATERIALS = 2;
-    private const float SECONDS = 15;
+    private const int MIN_MATERIALS = 1;
+    private const float SECONDS = 60;
     private const int DAILY_STEPS = 3000;
     private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
     //public?
@@ -55,7 +55,7 @@ public class City : MonoBehaviour
         materialsPerSecond +=(BaseMaterials() + MIN_MATERIALS * CalculatePowerRFactor()) 
             * Convert.ToInt32(inactiveTime.TotalSeconds / SECONDS);
         ApplyPenalization(inactiveTime.Days);
-        print(inactiveTime);
+        print(inactiveTime.Days);
     }
 
     public void CalculatePopulation (Building newBuilding)
