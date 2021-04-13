@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class City : MonoBehaviour
 {
-    // Fill with material per second data, population, building and progress
-
     public float Activation { get; set; }
     public int Materials { get; set; }
     public float powerR = 0;
@@ -14,12 +12,9 @@ public class City : MonoBehaviour
     public List<GameObject> buildingsInGame = new List<GameObject>(); // Gameobject for Addbuilding in board (the model is needed)
     public Dictionary<string, GameObject> availableBuildigs = new Dictionary<string, GameObject>();
 
-    private const int MIN_MATERIALS = 1;
-    private const float SECONDS = 60;
     private const int DAILY_STEPS = 3000;
     private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
     //public?
-    public int materialsPerSecond = 0;
     private int population;
     private int questionaryDone = 0;
     private int libraryAccess = 0;
@@ -29,19 +24,14 @@ public class City : MonoBehaviour
     private float esencias = 0;
     private TimeSpan inactiveTime;
 
-
-
     void Start()
     {
-        //StartCoroutine(CalculateMaterialsPerSecond());
-        //CalculateActivation();
     }
 
     public void InitializeCity(string lastAccess)
     {
         if (lastAccess != "")
             CheckInactiveTime(lastAccess);
-        StartCoroutine(CalculateMaterialsPerSecond());
         CalculateActivation(); //Also call to calclulatepowerR
     }
 
@@ -52,8 +42,8 @@ public class City : MonoBehaviour
         // changa to local variable
         inactiveTime = now.Subtract(lA);
         
-        materialsPerSecond +=(BaseMaterials() + MIN_MATERIALS * CalculatePowerRFactor()) 
-            * Convert.ToInt32(inactiveTime.TotalSeconds / SECONDS);
+        //materialsPerSecond +=(BaseMaterials() + MIN_MATERIALS * CalculatePowerRFactor()) 
+        //    * Convert.ToInt32(inactiveTime.TotalSeconds / SECONDS);
         ApplyPenalization(inactiveTime.Days);
         print(inactiveTime.Days);
     }
@@ -109,17 +99,6 @@ public class City : MonoBehaviour
     }
     #endregion
 
-    IEnumerator CalculateMaterialsPerSecond()
-    {
-        while(true)
-        {
-            materialsPerSecond += MIN_MATERIALS * CalculatePowerRFactor();
-            Materials = BaseMaterials() + materialsPerSecond;
-
-            yield return new WaitForSeconds(SECONDS);
-        }
-        
-    }
     private void CheckAvailableBuildings()
     {
         foreach (var b in buildingsInGame)
