@@ -39,9 +39,7 @@ public class Board : MonoBehaviour
             Building buildingScript = createdBuilding.GetComponent<Building>();
             buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
 
-
-        }
-        
+        } 
     }
 
     public bool CheckForBuildingAtPosition(Vector3 position)
@@ -76,25 +74,21 @@ public class Board : MonoBehaviour
         }
     }
 
-    public string SaveBoardStateToString()
+    public void SaveBoardStateInList(out List<SavedBuilding> savedBuildings)
     {
-        string jsonData="";
+        savedBuildings = new List<SavedBuilding>();
+
         for (int x = 0; x < buildings.GetLength(0); x++)
         {
             for (int z = 0; z < buildings.GetLength(1); z++)
             {
                 if (buildings[x, z] != null)
                 {
-                    Debug.Log("row: " + x + " column: " + z + " Grid: " + buildings[x, z]);
-                    //format the json data here
-                    jsonData += "row : " + x + ",\n";
-                    jsonData += "col : " + z + ",\n";
-                    jsonData += "buildingName : " + buildings[x,z].buildingName + "\n";
+                    SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].tag, buildings[x, z].materials);
+                    savedBuildings.Add(sB);
                 }
             }
         }
-        print(jsonData);
-        return jsonData;
 
     }
 }

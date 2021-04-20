@@ -20,7 +20,7 @@ public class Building : MonoBehaviour
     public int row;
     public int col;
 
-    private int materials = 0;
+    public int materials = 0;
     private int materialsPerSecond = 0;
     private const int MIN_MATERIALS = 2;
     private const float SECONDS = 1;

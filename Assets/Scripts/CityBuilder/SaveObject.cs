@@ -11,23 +11,14 @@ public sealed class SaveObject
     public int materials;
     public float powerR;
     public string date;
-    public string boardMatrix;
+    public List<SavedBuilding> boardState;
 
     private SaveObject()
     {
         materials = 0;
         powerR = 0;
         date = "";
-        boardMatrix = "";
+        boardState = new List<SavedBuilding>();
     }
-
-
-    //public SaveObject(int materials, float powerR)
-    //{
-    //    this.materials = materials;
-    //    this.powerR = powerR;
-    //    date = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
-    //    Debug.Log("Guardando fecha hoy: " + date);
-    //}
   
 }
