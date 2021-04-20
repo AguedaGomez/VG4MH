@@ -65,9 +65,9 @@ public class BuildingController : MonoBehaviour
     }
     public void EnableBuilder(string buildingName)
     {
-       if(city.availableBuildigs.ContainsKey(buildingName))
+        if (city.availableBuildings.ContainsKey(buildingName))
         {
-            selectedBuilding = city.availableBuildigs[buildingName];
+            selectedBuilding = city.availableBuildings[buildingName];
         }
     }
 }

@@ -668,7 +668,7 @@ GameObject:
   - component: {fileID: 3880589040982107087}
   m_Layer: 0
   m_Name: houseA
-  m_TagString: Untagged
+  m_TagString: houseA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -706,8 +706,9 @@ MonoBehaviour:
   materialsButton: {fileID: 1500243736}
   id: 0
   cost: 50
-  buildingName: HouseA
+  buildingName: houseA
   nLocals: 2
   activationRequired: 25
   row: 0
   col: 0
+  materials: 0

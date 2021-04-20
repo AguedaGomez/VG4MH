@@ -42,7 +42,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     private void ObjectToSaveData()
     {
-        //SaveObject.Instance.materials = city.materialsPerSecond;
+        SaveObject.Instance.materials = city.Materials;
         SaveObject.Instance.powerR = city.powerR;
         SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
         board.SaveBoardStateInList(out SaveObject.Instance.boardState);
@@ -50,9 +50,11 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     private void SaveDataToObject(SaveObject loadedSaveObject)
     {
-        //city.materialsPerSecond = loadedSaveObject.materials;
+        city.Materials = loadedSaveObject.materials;
         city.powerRLastCheckPoint = loadedSaveObject.powerR;
         city.InitializeCity(loadedSaveObject.date);
-
+        board.InitializeBoard(loadedSaveObject.boardState);
     }
+
+
 }

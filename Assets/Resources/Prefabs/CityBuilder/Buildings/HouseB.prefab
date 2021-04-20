@@ -142,8 +142,8 @@ GameObject:
   - component: {fileID: 2463680966565179427}
   - component: {fileID: 8238546706997967795}
   m_Layer: 0
-  m_Name: houseB
-  m_TagString: Untagged
+  m_Name: HouseB
+  m_TagString: houseB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   activationRequired: 50
   row: 0
   col: 0
+  materials: 0
 --- !u!1 &2465861399715775541
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,21 +12,18 @@ public class Board : MonoBehaviour
     private float cellSize = 4f;
     private float boardHeight, boardWidth;
     private int numCells;
-    [SerializeField]
     private Building[,] buildings;
+    
+    private string buildingsPath = "Prefabs/CityBuilder/Buildings";
 
     void Start()
     {
-        boardWidth = transform.localScale.x;
-        boardHeight = transform.localScale.z;
 
-        numCells = (int)(boardWidth / cellSize); //celdas cuadradas
-        buildings = new Building[numCells, numCells];
 
         // static buildings initial configuration
-        AddBuilding(staticBuildingA, new Vector3(9, 0, 13));
-        AddBuilding(staticBuildingB, new Vector3(16, 0, 20));
-        AddBuilding(staticBuildingA, new Vector3(17, 0, 14));
+        //AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(8, 0, 10)));
+        //AddBuilding(staticBuildingB, CalculateGridPosition(new Vector3(16, 0, 11)));
+        //AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(12, 0, 15)));
 
     }
 
@@ -37,6 +34,7 @@ public class Board : MonoBehaviour
         {
             GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
             Building buildingScript = createdBuilding.GetComponent<Building>();
+            createdBuilding.transform.name = buildingScript.buildingName;
             buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
 
         } 
@@ -54,6 +52,10 @@ public class Board : MonoBehaviour
         int zCell = CalculateRowColumn(position.z);
 
         return new Vector3(xCell*cellSize, yCell, zCell*cellSize);
+    }
+    private Vector3 CalculatePosition(Vector3 gridPosition)
+    {
+        return new Vector3(gridPosition.x * cellSize, .5f, gridPosition.z * cellSize);
     }
 
     private int CalculateRowColumn(float cordPosition)
@@ -84,10 +86,42 @@ public class Board : MonoBehaviour
             {
                 if (buildings[x, z] != null)
                 {
-                    SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].tag, buildings[x, z].materials);
+                    SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName, buildings[x, z].materials);
                     savedBuildings.Add(sB);
                 }
             }
+        }
+
+    }
+
+    public void InitializeBoard(List<SavedBuilding> savedBoardState)
+    {
+        boardWidth = transform.localScale.x;
+        boardHeight = transform.localScale.z;
+
+        numCells = (int)(boardWidth / cellSize); //celdas cuadradas
+        buildings = new Building[numCells, numCells];
+
+        if (savedBoardState.Count != 0)
+        {
+            foreach (SavedBuilding b in savedBoardState)
+            {
+                string path = buildingsPath + "/" + b.buildingName;
+                GameObject prefabToInstantiate = Resources.Load<GameObject>(path);
+                Vector3 position = new Vector3(b.row, 0f, b.col);
+                //GameObject savedBuilding = Instantiate(prefabToInstantiate, position, Quaternion.identity);
+                //Building buildingScript = savedBuilding.GetComponent<Building>();
+                AddBuilding(prefabToInstantiate, CalculatePosition(position));
+                //buildingScript.materials = b.currentMaterials;
+            }
+        }
+        else
+        {
+
+            // static buildings initial configuration
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(8, 0, 10)));
+            AddBuilding(staticBuildingB, CalculateGridPosition(new Vector3(16, 0, 11)));
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(12, 0, 15)));
         }
 
     }

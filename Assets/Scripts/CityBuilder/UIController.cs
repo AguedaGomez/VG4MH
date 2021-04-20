@@ -62,7 +62,7 @@ public class UIController : MonoBehaviour
     }
     private void CheckBuildingButtonsAvailability()
     {
-        foreach (var b in city.availableBuildigs)
+        foreach (var b in city.availableBuildings)
         {
             buildingButtonsDictionary[b.Key].interactable = true;
         }

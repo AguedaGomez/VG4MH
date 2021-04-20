@@ -6,16 +6,16 @@ using UnityEngine;
 [Serializable]
 public class SavedBuilding
 {
-    public int col;
     public int row;
-    public string tag;
+    public int col;
+    public string buildingName;
     public int currentMaterials;
 
-    public SavedBuilding(int row, int col, string tag, int currentMaterials)
+    public SavedBuilding(int row, int col, string buildingName, int currentMaterials)
     {
         this.row = row;
         this.col = col;
-        this.tag = tag;
+        this.buildingName = buildingName;
         this.currentMaterials = currentMaterials;
     }
 }
