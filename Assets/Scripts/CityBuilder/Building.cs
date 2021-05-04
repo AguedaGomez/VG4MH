@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,7 +20,8 @@ public class Building : MonoBehaviour
 
     public int materialsPerSecond = 0;
     private const int MIN_MATERIALS = 2;
-    private float timeOfGeneration = 1;
+    private const int SECONDS = 120;
+    private float timeOfGeneration = SECONDS;
     private const string cityTag = "city";
     private const string INDICATOR_BEGINNING = "materiales: ";
     private GameObject city;
@@ -29,17 +31,37 @@ public class Building : MonoBehaviour
     {
         city = GameObject.FindGameObjectWithTag(cityTag);
         cityScript = city.GetComponent<City>();
+        timeOfGeneration = SECONDS;
         //StartCoroutine(CalculateMaterialsPerSecond());
     }
     public void InitializedAsDefault()
     {
         materialsPerSecond = 0;
-        timeOfGeneration = 1;
+        timeOfGeneration = SECONDS;
         StartCoroutine(CalculateMaterialsPerSecond());
     }
-    public void SetCurrenMaterial(int materials)
-    { //mirar aqui el tiempo que ha pasado?
-        materialsPerSecond = materials;
+    public void SetCurrentMaterials(int materials, double inactiveTime) //when there are a saved game
+    {   if (inactiveTime >= timeOfGeneration)
+        {
+            var d = Convert.ToInt32(Math.Round(inactiveTime / timeOfGeneration));
+            materialsPerSecond = ( d * MIN_MATERIALS + materials);
+            if (materialsPerSecond >= maxMaterials)
+                materialsPerSecond = maxMaterials;
+            StartCoroutine(CalculateMaterialsPerSecond());
+
+        }
+            
+        else
+        {
+            materialsPerSecond = materials;
+            indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
+            StartCoroutine(WaitingTimeToGenerateMaterials(Convert.ToInt32(timeOfGeneration - Math.Round(inactiveTime))));
+        }
+    }
+
+    IEnumerator WaitingTimeToGenerateMaterials(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
         StartCoroutine(CalculateMaterialsPerSecond());
     }
     IEnumerator CalculateMaterialsPerSecond()
@@ -53,7 +75,7 @@ public class Building : MonoBehaviour
             }
             else
             {
-                
+
                 materialsButton.interactable = true;
                 indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
                 yield break;

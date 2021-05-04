@@ -22,7 +22,7 @@ public class City : MonoBehaviour
     private int currentSteps = 0;
     private bool fullActivation = false;
     private float esencias = 0;
-    private TimeSpan inactiveTime;
+    public TimeSpan inactiveTime;
 
     void Start()
     {
@@ -41,7 +41,7 @@ public class City : MonoBehaviour
         DateTime now = DateTime.Now;
         // changa to local variable
         inactiveTime = now.Subtract(lA);
-        
+        //Debug.Log("Inactive time in seconds: " + inactiveTime.TotalSeconds);
         //materialsPerSecond +=(BaseMaterials() + MIN_MATERIALS * CalculatePowerRFactor()) 
         //    * Convert.ToInt32(inactiveTime.TotalSeconds / SECONDS);
         ApplyPenalization(inactiveTime.Days);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -49,24 +50,9 @@ public class Board : MonoBehaviour
             GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
-            buildingScript.SetCurrenMaterial(currentMaterials);
+            buildingScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
             buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
 
-        }
-    }
-    //ELIMINAR
-    private void PrintBuildings()
-    {
-        for (int x = 0; x < numCells; x++)
-        {
-            for (int z = 0; z < numCells; z++)
-            {
-                Debug.Log("TEST:" + x + "," + z);
-                if (buildings[x, z] == null)
-                    Debug.Log("NO HAY NADA");
-                else
-                    Debug.Log(buildings[x, z].buildingName);
-            }
         }
     }
 
@@ -137,11 +123,8 @@ public class Board : MonoBehaviour
                 GameObject prefabToInstantiate = Resources.Load<GameObject>(path);
                 prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
-                //GameObject savedBuilding = Instantiate(prefabToInstantiate, position, Quaternion.identity);
-                //Building buildingScript = savedBuilding.GetComponent<Building>();
                 Debug.Log("current material al cargar: " + b.currentMaterials);
                 AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials);
-                //buildingScript.materials = b.currentMaterials;
             }
         }
         else

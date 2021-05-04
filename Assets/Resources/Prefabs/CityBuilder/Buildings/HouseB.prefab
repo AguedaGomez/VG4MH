@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicatorText: {fileID: 3595998650976363098}
   materialsButton: {fileID: 5806719028763196681}
+  maxMaterials: 40
   id: 0
   cost: 100
   buildingName: HouseB
@@ -191,7 +192,7 @@ MonoBehaviour:
   activationRequired: 50
   row: 0
   col: 0
-  materials: 0
+  materialsPerSecond: 0
 --- !u!1 &2465861399715775541
 GameObject:
   m_ObjectHideFlags: 0
