@@ -7,19 +7,25 @@ public class SaveAndLoadDataManager : MonoBehaviour
 {
     public Board board;
     public City city;
-    void OnApplicationPause(bool pauseStatus)
-    {
-        if (pauseStatus) // Save
-        {
-            print("save");
-            //SaveAndLoadData.SaveinFile("state-game", );
-        }
-        else // Load
-        {
-            print("load");
-            
-        }
-    }
+
+    //void OnApplicationPause(bool pauseStatus)
+    //{
+    //    if (pauseStatus) // Save
+    //    {
+    //        Debug.Log("TEST: en pausa, guardando el juego");
+    //        ObjectToSaveData();
+    //        SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
+    //    }
+    //    else // Load
+    //    {
+    //        Debug.Log("TEST: load, cargando el juego");
+    //        if (SaveAndLoadData.LoadFromFile("state-game.json", out var content))
+    //            SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
+    //        else
+    //            SaveDataToObject(SaveObject.Instance);
+
+    //    }
+    //}
 
     private void OnApplicationFocus(bool focus)
     {

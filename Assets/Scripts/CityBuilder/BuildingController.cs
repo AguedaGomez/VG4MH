@@ -46,7 +46,6 @@ public class BuildingController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            print("ray");
             Vector3 gridPosition = board.CalculateGridPosition(hit.point);
             if (board.CheckForBuildingAtPosition(gridPosition))
             {

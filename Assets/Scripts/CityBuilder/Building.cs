@@ -7,10 +7,7 @@ public class Building : MonoBehaviour
 {
     public Text indicatorText;
     public Button materialsButton;
-    public const int MAX_MATERIALS = 40;
-    
-    //public delegate void MaterialLimitEventHandler(int materials);
-    //public event MaterialLimitEventHandler FullOfMaterials;
+    public int maxMaterials = 40;
 
     public int id;
     public int cost;
@@ -20,10 +17,9 @@ public class Building : MonoBehaviour
     public int row;
     public int col;
 
-    public int materials = 0;
-    private int materialsPerSecond = 0;
+    public int materialsPerSecond = 0;
     private const int MIN_MATERIALS = 2;
-    private const float SECONDS = 1;
+    private float timeOfGeneration = 1;
     private const string cityTag = "city";
     private const string INDICATOR_BEGINNING = "materiales: ";
     private GameObject city;
@@ -33,35 +29,46 @@ public class Building : MonoBehaviour
     {
         city = GameObject.FindGameObjectWithTag(cityTag);
         cityScript = city.GetComponent<City>();
+        //StartCoroutine(CalculateMaterialsPerSecond());
+    }
+    public void InitializedAsDefault()
+    {
+        materialsPerSecond = 0;
+        timeOfGeneration = 1;
+        StartCoroutine(CalculateMaterialsPerSecond());
+    }
+    public void SetCurrenMaterial(int materials)
+    { //mirar aqui el tiempo que ha pasado?
+        materialsPerSecond = materials;
         StartCoroutine(CalculateMaterialsPerSecond());
     }
     IEnumerator CalculateMaterialsPerSecond()
     {
         while (true)
         {
-            if (materials < MAX_MATERIALS)
+            if (materialsPerSecond < maxMaterials)
             {
                 materialsPerSecond += MIN_MATERIALS; //* CalculatePowerRFactor();
-                materials = materialsPerSecond;
+                //collectedMaterials = materialsPerSecond;
             }
             else
             {
                 
                 materialsButton.interactable = true;
+                indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
                 yield break;
             }
-                
-            indicatorText.text = INDICATOR_BEGINNING + materials + "/" + MAX_MATERIALS;
-            yield return new WaitForSeconds(SECONDS);
+            //Debug.Log("en building script: " + collectedMaterials);  
+            indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
+            yield return new WaitForSeconds(timeOfGeneration);
         }
 
     }
 
     public void PickMaterials()
     {
-        cityScript.Materials += materials;
+        cityScript.Materials += materialsPerSecond;
         materialsPerSecond = 0;
-        materials = 0;
         materialsButton.interactable = false;
         StartCoroutine(CalculateMaterialsPerSecond());
     }

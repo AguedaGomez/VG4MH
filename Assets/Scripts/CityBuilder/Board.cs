@@ -16,28 +16,58 @@ public class Board : MonoBehaviour
     
     private string buildingsPath = "Prefabs/CityBuilder/Buildings";
 
-    void Start()
+    void Awake()
     {
+        boardWidth = transform.localScale.x;
+        boardHeight = transform.localScale.z;
 
+        numCells = (int)(boardWidth / cellSize);
 
-        // static buildings initial configuration
-        //AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(8, 0, 10)));
-        //AddBuilding(staticBuildingB, CalculateGridPosition(new Vector3(16, 0, 11)));
-        //AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(12, 0, 15)));
-
+        buildings = new Building[numCells, numCells];
+        Debug.Log("TEST: en AWAKE board");
     }
 
     public void AddBuilding(GameObject building, Vector3 position)
     {
-
+        Debug.Log("TEST: Añadiendo un edificio");
         if (CheckForBuildingAtPosition(position))
         {
             GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
+            buildingScript.InitializedAsDefault();
+            buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
+            
+        } 
+    }
+
+    public void AddBuilding(GameObject building, Vector3 position, int currentMaterials)
+    {
+        Debug.Log("TEST: Actualizando un edificio");
+        if (CheckForBuildingAtPosition(position))
+        {
+            GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
+            Building buildingScript = createdBuilding.GetComponent<Building>();
+            createdBuilding.transform.name = buildingScript.buildingName;
+            buildingScript.SetCurrenMaterial(currentMaterials);
             buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
 
-        } 
+        }
+    }
+    //ELIMINAR
+    private void PrintBuildings()
+    {
+        for (int x = 0; x < numCells; x++)
+        {
+            for (int z = 0; z < numCells; z++)
+            {
+                Debug.Log("TEST:" + x + "," + z);
+                if (buildings[x, z] == null)
+                    Debug.Log("NO HAY NADA");
+                else
+                    Debug.Log(buildings[x, z].buildingName);
+            }
+        }
     }
 
     public bool CheckForBuildingAtPosition(Vector3 position)
@@ -86,7 +116,8 @@ public class Board : MonoBehaviour
             {
                 if (buildings[x, z] != null)
                 {
-                    SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName, buildings[x, z].materials);
+                    Debug.Log("collected material: " + buildings[x, z].materialsPerSecond);
+                    SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName, buildings[x, z].materialsPerSecond);
                     savedBuildings.Add(sB);
                 }
             }
@@ -96,28 +127,25 @@ public class Board : MonoBehaviour
 
     public void InitializeBoard(List<SavedBuilding> savedBoardState)
     {
-        boardWidth = transform.localScale.x;
-        boardHeight = transform.localScale.z;
-
-        numCells = (int)(boardWidth / cellSize); //celdas cuadradas
-        buildings = new Building[numCells, numCells];
-
+        Debug.Log("TEST: Inicializando el board");
+   
         if (savedBoardState.Count != 0)
         {
             foreach (SavedBuilding b in savedBoardState)
             {
                 string path = buildingsPath + "/" + b.buildingName;
                 GameObject prefabToInstantiate = Resources.Load<GameObject>(path);
+                prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
                 //GameObject savedBuilding = Instantiate(prefabToInstantiate, position, Quaternion.identity);
                 //Building buildingScript = savedBuilding.GetComponent<Building>();
-                AddBuilding(prefabToInstantiate, CalculatePosition(position));
+                Debug.Log("current material al cargar: " + b.currentMaterials);
+                AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials);
                 //buildingScript.materials = b.currentMaterials;
             }
         }
         else
         {
-
             // static buildings initial configuration
             AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(8, 0, 10)));
             AddBuilding(staticBuildingB, CalculateGridPosition(new Vector3(16, 0, 11)));

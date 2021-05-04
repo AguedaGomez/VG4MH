@@ -45,7 +45,6 @@ public class City : MonoBehaviour
         //materialsPerSecond +=(BaseMaterials() + MIN_MATERIALS * CalculatePowerRFactor()) 
         //    * Convert.ToInt32(inactiveTime.TotalSeconds / SECONDS);
         ApplyPenalization(inactiveTime.Days);
-        print(inactiveTime.Days);
     }
 
     public void CalculatePopulation (Building newBuilding)
