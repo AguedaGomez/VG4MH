@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Building : MonoBehaviour
 {
     public Text indicatorText;
-    public Button materialsButton;
     public int maxMaterials = 40;
+    public Button materialsButton;
 
     public int id;
     public int cost;
@@ -20,8 +20,8 @@ public class Building : MonoBehaviour
 
     public int materialsPerSecond = 0;
     private const int MIN_MATERIALS = 2;
-    private const int SECONDS = 120;
-    private float timeOfGeneration = SECONDS;
+    private const int SECONDS = 216;
+    private int timeOfGeneration = SECONDS;
     private const string cityTag = "city";
     private const string INDICATOR_BEGINNING = "materiales: ";
     private GameObject city;
@@ -37,8 +37,10 @@ public class Building : MonoBehaviour
     public void InitializedAsDefault()
     {
         materialsPerSecond = 0;
+        indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
         timeOfGeneration = SECONDS;
-        StartCoroutine(CalculateMaterialsPerSecond());
+        int r = UnityEngine.Random.Range(0, 8);
+        StartCoroutine(WaitingTimeToGenerateMaterials(r));
     }
     public void SetCurrentMaterials(int materials, double inactiveTime) //when there are a saved game
     {   if (inactiveTime >= timeOfGeneration)
@@ -47,8 +49,8 @@ public class Building : MonoBehaviour
             materialsPerSecond = ( d * MIN_MATERIALS + materials);
             if (materialsPerSecond >= maxMaterials)
                 materialsPerSecond = maxMaterials;
+            materialsButton.interactable = true;
             StartCoroutine(CalculateMaterialsPerSecond());
-
         }
             
         else
@@ -57,26 +59,26 @@ public class Building : MonoBehaviour
             indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
             StartCoroutine(WaitingTimeToGenerateMaterials(Convert.ToInt32(timeOfGeneration - Math.Round(inactiveTime))));
         }
+        
     }
 
     IEnumerator WaitingTimeToGenerateMaterials(int seconds)
     {
         yield return new WaitForSeconds(seconds);
+        materialsButton.interactable = true;
         StartCoroutine(CalculateMaterialsPerSecond());
     }
     IEnumerator CalculateMaterialsPerSecond()
     {
+        
         while (true)
         {
             if (materialsPerSecond < maxMaterials)
             {
                 materialsPerSecond += MIN_MATERIALS; //* CalculatePowerRFactor();
-                //collectedMaterials = materialsPerSecond;
             }
             else
             {
-
-                materialsButton.interactable = true;
                 indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
                 yield break;
             }
@@ -92,6 +94,8 @@ public class Building : MonoBehaviour
         cityScript.Materials += materialsPerSecond;
         materialsPerSecond = 0;
         materialsButton.interactable = false;
-        StartCoroutine(CalculateMaterialsPerSecond());
+        indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
+
+        StartCoroutine(WaitingTimeToGenerateMaterials(timeOfGeneration));
     }
 }

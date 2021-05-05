@@ -56,6 +56,7 @@ public class UIController : MonoBehaviour
         materials.text = "Materiales: " + city.Materials;
     }
 
+
     private void ShowPowerR()
     {
         powerRButtonImg.color = new Color(city.powerR / 100f, 0.525f, 0.645f, 1);

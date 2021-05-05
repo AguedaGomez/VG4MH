@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicatorText: {fileID: 3595998650976363098}
-  materialsButton: {fileID: 5806719028763196681}
   maxMaterials: 40
+  materialsButton: {fileID: 5806719028763196681}
   id: 0
   cost: 100
   buildingName: HouseB
