@@ -20,7 +20,7 @@ public class Building : MonoBehaviour
 
     public int materialsPerSecond = 0;
     private const int MIN_MATERIALS = 2;
-    private const int SECONDS = 216;
+    private const int SECONDS = 20;
     private int timeOfGeneration = SECONDS;
     private const string cityTag = "city";
     private const string INDICATOR_BEGINNING = "materiales: ";
@@ -46,6 +46,8 @@ public class Building : MonoBehaviour
     {   if (inactiveTime >= timeOfGeneration)
         {
             var d = Convert.ToInt32(Math.Round(inactiveTime / timeOfGeneration));
+            Debug.Log("tiempo inactivo: " + inactiveTime);
+            Debug.Log("tiempo inactivo entre tiempo de generación: " + d);
             materialsPerSecond = ( d * MIN_MATERIALS + materials);
             if (materialsPerSecond >= maxMaterials)
                 materialsPerSecond = maxMaterials;
@@ -55,9 +57,18 @@ public class Building : MonoBehaviour
             
         else
         {
+            Debug.Log("en setcurrentmaterials el tiempo inactivo es menos que el tiempo de generación");
             materialsPerSecond = materials;
+            Debug.Log("materialsPerSecond " + materialsPerSecond);
             indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
+
+            if (materialsPerSecond > 0)
+            {
+                materialsButton.interactable = true;
+                Debug.Log("Tiempo que ha pasado: " + Convert.ToInt32(timeOfGeneration - Math.Round(inactiveTime)));
+            }
             StartCoroutine(WaitingTimeToGenerateMaterials(Convert.ToInt32(timeOfGeneration - Math.Round(inactiveTime))));
+
         }
         
     }

@@ -37,11 +37,15 @@ public class City : MonoBehaviour
 
     private void CheckInactiveTime(string lastAccess)
     {
+        Debug.Log("City lastAccess: " + lastAccess);
         DateTime lA = DateTime.Parse(lastAccess);
-        DateTime now = DateTime.Now;
+        Debug.Log("al pasar a datetime " + lA);
+        string nowS = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        DateTime now = DateTime.Parse(nowS);
+        Debug.Log("ahora es " + now);
         // changa to local variable
         inactiveTime = now.Subtract(lA);
-        //Debug.Log("Inactive time in seconds: " + inactiveTime.TotalSeconds);
+        Debug.Log("City>CheckInactiveTime Inactive time in seconds: " + inactiveTime.TotalSeconds);
         //materialsPerSecond +=(BaseMaterials() + MIN_MATERIALS * CalculatePowerRFactor()) 
         //    * Convert.ToInt32(inactiveTime.TotalSeconds / SECONDS);
         ApplyPenalization(inactiveTime.Days);

@@ -44,12 +44,13 @@ public class Board : MonoBehaviour
 
     public void AddBuilding(GameObject building, Vector3 position, int currentMaterials)
     {
-        Debug.Log("TEST: Actualizando un edificio");
+        //Debug.Log("TEST: Actualizando un edificio");
         if (CheckForBuildingAtPosition(position))
         {
             GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
+            Debug.Log("AddBuilding Totalseconds: " + Math.Floor(city.inactiveTime.TotalSeconds));
             buildingScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
             buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
 
