@@ -16,7 +16,6 @@ public class LocalsMessages : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("WaitForFirstTime", Random.Range(minConflictSec, maxConflictSec));
     }
 
     public void GenerateGeneralMessage()
@@ -25,21 +24,8 @@ public class LocalsMessages : MonoBehaviour
         ShowGeneralMessage(generalMessages[randIndex]);
     }
 
-    IEnumerator WaitForFirstTime(int seconds)
+    public void ShowConflictExclamation()
     {
-        yield return new WaitForSeconds(seconds);
-        
-        StartCoroutine(GenerateConflict());
-    }
-
-    IEnumerator GenerateConflict()
-    {
-        while (true)
-        {
-            if (!conflictExclamation.IsActive())
-                conflictExclamation.gameObject.SetActive(true);
-            yield return new WaitForSeconds(Random.Range(minConflictSec, maxConflictSec));
-        }
-
+        conflictExclamation.gameObject.SetActive(true);
     }
 }

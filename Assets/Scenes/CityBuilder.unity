@@ -753,7 +753,6 @@ GameObject:
   - component: {fileID: 135195592}
   - component: {fileID: 135195591}
   - component: {fileID: 135195590}
-  - component: {fileID: 135195593}
   m_Layer: 5
   m_Name: Message
   m_TagString: Untagged
@@ -841,19 +840,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &135195593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135195588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b76a43f9be0df44abeb4870c5aade2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conflictExclamation: {fileID: 714799815}
 --- !u!1001 &141409710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1000,6 +986,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165978574}
   m_CullTransparentMesh: 0
+--- !u!1 &171268479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171268481}
+  - component: {fileID: 171268480}
+  m_Layer: 0
+  m_Name: Population
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &171268480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171268479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f8b5d2d7024b04f925d1ae362e0bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showPopUpConflict: {fileID: 395442927}
+--- !u!4 &171268481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171268479}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 921.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1649768318}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &173060517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUp: {fileID: 395442923}
+  pjImage: {fileID: 1609960712}
+  pjName: {fileID: 1663217201}
 --- !u!1001 &404423566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6296,6 +6329,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051521939}
   m_CullTransparentMesh: 0
+--- !u!1 &1052362987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1052362989}
+  - component: {fileID: 1052362988}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1052362988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052362987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9777fa4e307a4744b929d2a44b7bd76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCard: {fileID: 11400000, guid: c44b0ffbf80c3d94bbd7ce283eb5bcd2, type: 2}
+--- !u!4 &1052362989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052362987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.232361, y: 1.8330045, z: 9.802294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1063170987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6794,7 +6871,7 @@ MonoBehaviour:
   activationSlider: {fileID: 580966774}
   materials: {fileID: 740714146}
   powerRButton: {fileID: 1448257270}
-  localsMessages: {fileID: 135195593}
+  localsMessages: {fileID: 1649768319}
   city: {fileID: 1538201032}
   stepsInputField: {fileID: 1462394773}
   buildingButtons:
@@ -9838,8 +9915,10 @@ GameObject:
   - component: {fileID: 1649768317}
   - component: {fileID: 1649768316}
   - component: {fileID: 1649768315}
+  - component: {fileID: 1649768319}
+  - component: {fileID: 1649768320}
   m_Layer: 0
-  m_Name: Local
+  m_Name: Earl
   m_TagString: local
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9912,14 +9991,41 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649768314}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.71, y: 0.5, z: 13.75}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -526.29, y: -921, z: 13.75}
   m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children:
   - {fileID: 135195589}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 171268481}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1649768319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649768314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b76a43f9be0df44abeb4870c5aade2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conflictExclamation: {fileID: 714799815}
+--- !u!114 &1649768320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649768314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaaf26cbb2349054ca9750dfbbed91ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localName: Earl Emory
+  localImage: {fileID: 21300000, guid: 32319b7d8a982154fa3fccb1750270f3, type: 3}
 --- !u!1 &1660397358
 GameObject:
   m_ObjectHideFlags: 0
@@ -11295,7 +11401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   city: {fileID: 1538201032}
-  localsMessages: {fileID: 135195593}
+  localsMessages: {fileID: 0}
   board: {fileID: 1945131900}
 --- !u!114 &1945131900
 MonoBehaviour:
