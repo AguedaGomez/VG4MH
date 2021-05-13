@@ -10,6 +10,7 @@ public class SavedBuilding
     public int col;
     public string buildingName;
     public int currentMaterials;
+    public string id;
 
     public SavedBuilding(int row, int col, string buildingName, int currentMaterials)
     {
@@ -17,5 +18,6 @@ public class SavedBuilding
         this.col = col;
         this.buildingName = buildingName;
         this.currentMaterials = currentMaterials;
+        id = row +"" + col + "";
     }
 }

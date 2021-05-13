@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SingleCardRewardManager : MonoBehaviour
 {
     private const int DECREMENT = -10;
@@ -23,9 +24,13 @@ public class SingleCardRewardManager : MonoBehaviour
 
         int valueModifier = OptionIsCorrect(directionChosen) ? INCREMENT : DECREMENT;
         Card nextCard = directionChosen == Choice.Direction.RIGHT ? currentCard.nextCardIfRight : currentCard.nextCardIfLeft; // change if more directions are added
-        
+
         rewardManager.UpdateResource(currentResource, valueModifier);
-        cardManager.UpdateCurrentCard(nextCard);
+
+        if (nextCard.characterName != currentCard.characterName)
+            cardManager.LoadScene();
+        else
+            cardManager.UpdateCurrentCard(nextCard);
        
     }
 

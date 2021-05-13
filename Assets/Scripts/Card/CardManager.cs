@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CardManager : MonoBehaviour
 {
@@ -53,5 +54,11 @@ public class CardManager : MonoBehaviour
             CreateCard();
         }
         // Qué pasa en el caso múltiple
+    }
+
+    public void LoadScene()
+    {
+        GameManager.Instance.LoadGame();
+        //SceneManager.LoadScene("CityBuilder");
     }
 }

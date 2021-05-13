@@ -16,6 +16,7 @@ public class Board : MonoBehaviour
     private Building[,] buildings;
     
     private string buildingsPath = "Prefabs/CityBuilder/Buildings";
+    private List<SavedBuilding> auxSavedBuildings;
 
     void Awake()
     {
@@ -25,20 +26,36 @@ public class Board : MonoBehaviour
         numCells = (int)(boardWidth / cellSize);
 
         buildings = new Building[numCells, numCells];
-        Debug.Log("TEST: en AWAKE board");
+        //Debug.Log("TEST: en AWAKE board");
+
+        
+    }
+
+    void Start()
+    {
+        //Debug.Log("TEST: Start board");
+        auxSavedBuildings = new List<SavedBuilding>();
+        InitializeBoard(SaveObject.Instance.boardState);
     }
 
     public void AddBuilding(GameObject building, Vector3 position)
     {
-        Debug.Log("TEST: Añadiendo un edificio");
+       // Debug.Log("TEST: Añadiendo un edificio");
         if (CheckForBuildingAtPosition(position))
         {
             GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
+            Debug.Log("nombre del edificio " + buildingScript.buildingName);
             buildingScript.InitializedAsDefault();
-            buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
-            
+            int x = CalculateRowColumn(position.x);
+            int z = CalculateRowColumn(position.z);
+            Debug.Log("x: " + x + "z: " + z);
+            buildingScript.id = x + "" + z + "";
+            Debug.Log("Id: " + buildingScript.id);
+            buildings[x, z] = buildingScript;
+            SaveBoardStateInList(x,z);
+
         } 
     }
 
@@ -50,9 +67,15 @@ public class Board : MonoBehaviour
             GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
-            Debug.Log("AddBuilding Totalseconds: " + Math.Floor(city.inactiveTime.TotalSeconds));
+            //Debug.Log("AddBuilding Totalseconds: " + Math.Floor(city.inactiveTime.TotalSeconds));
+            int x = CalculateRowColumn(position.x);
+            int z = CalculateRowColumn(position.z);
+            Debug.Log("x: " + x + "z: " + z);
+            buildingScript.id = x + "" + z + "";
+            buildings[x, z] = buildingScript;
             buildingScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
-            buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] = buildingScript;
+
+
 
         }
     }
@@ -93,28 +116,31 @@ public class Board : MonoBehaviour
         }
     }
 
-    public void SaveBoardStateInList(out List<SavedBuilding> savedBuildings)
+    public void SaveBoardStateInList(int x, int z)
     {
-        savedBuildings = new List<SavedBuilding>();
+        SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName, buildings[x, z].materialsPerSecond);
+        Debug.Log("materialesPerSecond en la matriz " + buildings[x,z].materialsPerSecond +"materialesPerSecond en sB: " + sB.currentMaterials);
+        SaveObject.Instance.boardState.Add(sB);
 
-        for (int x = 0; x < buildings.GetLength(0); x++)
-        {
-            for (int z = 0; z < buildings.GetLength(1); z++)
-            {
-                if (buildings[x, z] != null)
-                {
-                    Debug.Log("collected material: " + buildings[x, z].materialsPerSecond);
-                    SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName, buildings[x, z].materialsPerSecond);
-                    savedBuildings.Add(sB);
-                }
-            }
-        }
+        //for (int x = 0; x < buildings.GetLength(0); x++)
+        //{
+        //    for (int z = 0; z < buildings.GetLength(1); z++)
+        //    {
+        //        if (buildings[x, z] != null)
+        //        {
+        //            //Debug.Log("collected material: " + buildings[x, z].materialsPerSecond);
+        //            SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName, buildings[x, z].materialsPerSecond);
+        //            SaveObject.Instance.boardState.Add(sB);
+        //        }
+        //    }
+        //}
+
 
     }
 
     public void InitializeBoard(List<SavedBuilding> savedBoardState)
     {
-        Debug.Log("TEST: Inicializando el board");
+        //Debug.Log("2. TEST: Inicializando el board");
    
         if (savedBoardState.Count != 0)
         {
@@ -127,6 +153,7 @@ public class Board : MonoBehaviour
                 Debug.Log("current material al cargar: " + b.currentMaterials);
                 AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials);
             }
+            
         }
         else
         {

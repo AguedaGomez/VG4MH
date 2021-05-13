@@ -34,36 +34,52 @@ public class SaveAndLoadDataManager : MonoBehaviour
     {
         if (focus)
         {
-            if (SaveAndLoadData.LoadFromFile("state-game.json", out var content))
-                SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
-            else
-                SaveDataToObject(SaveObject.Instance);
-            print("app abierta");
+            LoadGame();
         }
         else
         {
-            ObjectToSaveData();
-            SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
-            print("app cerrada");
+            SaveGame();
         }
 
     }
 #endif
+
+    public void LoadGame()
+    {
+        if (SaveAndLoadData.LoadFromFile("state-game.json", out var content))
+        {
+            
+            SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
+            Debug.Log("en Load game cuando se traduce el json: " + SaveObject.Instance.boardState.Count);
+        }
+            
+        else
+            SaveDataToObject(SaveObject.Instance);
+        print("app abierta");
+    }
+
+    public void SaveGame()
+    {
+        ObjectToSaveData();
+        SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
+        SaveObject.Instance.boardState.Clear();
+        print("app cerrada");
+    }
+
     private void ObjectToSaveData()
     {
-        SaveObject.Instance.materials = city.Materials;
-        SaveObject.Instance.powerR = city.powerR;
+        
         SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-        Debug.Log("GUARDANDO Fecha guardada: " + SaveObject.Instance.date);
-        board.SaveBoardStateInList(out SaveObject.Instance.boardState);
+        //Debug.Log("GUARDANDO Fecha guardada: " + SaveObject.Instance.date);
+        Debug.Log("Items que guarda el tablero: " + SaveObject.Instance.boardState.Count);
     }
 
     private void SaveDataToObject(SaveObject loadedSaveObject)
     {
-        city.Materials = loadedSaveObject.materials;
-        city.powerRLastCheckPoint = loadedSaveObject.powerR;
-        city.InitializeCity(loadedSaveObject.date);
-        board.InitializeBoard(loadedSaveObject.boardState);
+        SaveObject.Instance.materials = loadedSaveObject.materials;
+        SaveObject.Instance.date = loadedSaveObject.date;
+        SaveObject.Instance.boardState = loadedSaveObject.boardState;
+        Debug.Log("1. Cargando datos, boardState.Count " + SaveObject.Instance.boardState.Count);
     }
 
 

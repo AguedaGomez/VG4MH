@@ -26,28 +26,36 @@ public class City : MonoBehaviour
 
     void Start()
     {
+        Materials = SaveObject.Instance.materials;
+        InitializeCity(); //esto creo que no funcionará
     }
 
-    public void InitializeCity(string lastAccess)
+    //public void InitializeCity(string lastAccess)
+    //{
+    //    if (lastAccess != "")
+    //        CheckInactiveTime(lastAccess);
+    //    CalculateActivation(); //Also call to calclulatepowerR
+    //}
+
+    public void InitializeCity()
     {
-        if (lastAccess != "")
-            CheckInactiveTime(lastAccess);
+        //Debug.Log("En initializeCity");
+        if (SaveObject.Instance.date != "")
+            CheckInactiveTime(SaveObject.Instance.date);
         CalculateActivation(); //Also call to calclulatepowerR
     }
 
     private void CheckInactiveTime(string lastAccess)
     {
-        Debug.Log("City lastAccess: " + lastAccess);
+        //Debug.Log("City lastAccess: " + lastAccess);
         DateTime lA = DateTime.Parse(lastAccess);
-        Debug.Log("al pasar a datetime " + lA);
+        //Debug.Log("al pasar a datetime " + lA);
         string nowS = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         DateTime now = DateTime.Parse(nowS);
-        Debug.Log("ahora es " + now);
+        //Debug.Log("ahora es " + now);
         // changa to local variable
         inactiveTime = now.Subtract(lA);
-        Debug.Log("City>CheckInactiveTime Inactive time in seconds: " + inactiveTime.TotalSeconds);
-        //materialsPerSecond +=(BaseMaterials() + MIN_MATERIALS * CalculatePowerRFactor()) 
-        //    * Convert.ToInt32(inactiveTime.TotalSeconds / SECONDS);
+        //Debug.Log("City>CheckInactiveTime Inactive time in seconds: " + inactiveTime.TotalSeconds);
         ApplyPenalization(inactiveTime.Days);
     }
 
@@ -141,6 +149,7 @@ public class City : MonoBehaviour
     public void DecreaseMaterials(int buildingPrice)
     {
         Materials -= buildingPrice;
+        SaveObject.Instance.materials = Materials;
     }
 
     private int CalculatePowerRFactor()

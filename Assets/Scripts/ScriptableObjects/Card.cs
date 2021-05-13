@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Card : ScriptableObject
 {
     public string characterName;
-    public string dialog;
+    [TextArea(10, 14)] public string dialog;
 
     public enum Resource
     {

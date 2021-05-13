@@ -21,7 +21,7 @@ public class RewardManager : MonoBehaviour
             Mathf.Sign(valueModifier) == -1 && PlayerData.resources[resource] > MINCUANTITY)
             {
                 PlayerData.resources[resource] += valueModifier;
-                print(PlayerData.resources[resource]);
+                //print(PlayerData.resources[resource]);
             }
         }
 

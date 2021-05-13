@@ -23,6 +23,7 @@ public class ShowPopUpConflict : MonoBehaviour
 
     public void YesButton()
     {
+        GameManager.Instance.SaveGame();
         SceneManager.LoadScene("DecisionMakingGame");
     }
 }
