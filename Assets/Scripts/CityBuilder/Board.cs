@@ -33,7 +33,7 @@ public class Board : MonoBehaviour
     void Start()
     {
         //Debug.Log("TEST: Start board");
-        InitializeBoard(SaveObject.Instance.boardState);
+        InitializeBoard();
     }
 
     public void AddBuilding(GameObject building, Vector3 position)
@@ -73,8 +73,9 @@ public class Board : MonoBehaviour
             buildings[x, z] = buildingScript;
             buildingScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
 
-
-
+        } else
+        {
+            Debug.Log("intentando añadir un edificio ya creado");
         }
     }
 
@@ -120,26 +121,13 @@ public class Board : MonoBehaviour
         Debug.Log("materialesPerSecond en la matriz " + buildings[x,z].materialsPerSecond +"materialesPerSecond en sB: " + sB.currentMaterials);
         SaveObject.Instance.boardState.Add(sB);
 
-        //for (int x = 0; x < buildings.GetLength(0); x++)
-        //{
-        //    for (int z = 0; z < buildings.GetLength(1); z++)
-        //    {
-        //        if (buildings[x, z] != null)
-        //        {
-        //            //Debug.Log("collected material: " + buildings[x, z].materialsPerSecond);
-        //            SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName, buildings[x, z].materialsPerSecond);
-        //            SaveObject.Instance.boardState.Add(sB);
-        //        }
-        //    }
-        //}
-
-
     }
 
-    public void InitializeBoard(List<SavedBuilding> savedBoardState)
+    public void InitializeBoard()
     {
         //Debug.Log("2. TEST: Inicializando el board");
-   
+        var savedBoardState = SaveObject.Instance.boardState;
+
         if (savedBoardState.Count != 0)
         {
             foreach (SavedBuilding b in savedBoardState)

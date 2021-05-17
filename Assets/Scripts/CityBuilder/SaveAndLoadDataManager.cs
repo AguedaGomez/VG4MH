@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class SaveAndLoadDataManager : MonoBehaviour
@@ -70,6 +71,8 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     private void SaveDataToObject(SaveObject loadedSaveObject)
     {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         SaveObject.Instance.materials = loadedSaveObject.materials;
         SaveObject.Instance.date = loadedSaveObject.date;
         Debug.Log("1. guardando fecha en objeto " + SaveObject.Instance.date);

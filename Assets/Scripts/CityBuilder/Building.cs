@@ -106,7 +106,7 @@ public class Building : MonoBehaviour
     public void UpdateMaterialsInSaveObject()
     {
         SaveObject.Instance.boardState.Find(n => n.id == id).currentMaterials = materialsPerSecond;
-        Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.boardState.Find(n => n.buildingName == buildingName).currentMaterials);
+        //Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.boardState.Find(n => n.buildingName == buildingName).currentMaterials);
     }
 
     public void PickMaterials()
