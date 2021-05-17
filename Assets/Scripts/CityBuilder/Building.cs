@@ -48,7 +48,7 @@ public class Building : MonoBehaviour
         {
             var d = Convert.ToInt32(Math.Round(inactiveTime / timeOfGeneration));
             //Debug.Log("tiempo inactivo: " + inactiveTime);
-            Debug.Log("tiempo inactivo entre tiempo de generación: " + d);
+            //Debug.Log("tiempo inactivo entre tiempo de generación: " + d);
             materialsPerSecond = ( d * MIN_MATERIALS + materials);
             if (materialsPerSecond >= maxMaterials)
                 materialsPerSecond = maxMaterials;
@@ -58,9 +58,9 @@ public class Building : MonoBehaviour
             
         else
         {
-            Debug.Log("el tiempo inactivo es menos que el tiempo de generación");
+            //Debug.Log("el tiempo inactivo es menos que el tiempo de generación");
             materialsPerSecond = materials;
-            Debug.Log("materialsPerSecond " + materialsPerSecond);
+            //Debug.Log("materialsPerSecond " + materialsPerSecond);
             indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
 
             if (materialsPerSecond > 0)
@@ -92,6 +92,7 @@ public class Building : MonoBehaviour
             else
             {
                 indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
+                UpdateMaterialsInSaveObject();
                 yield break;
             }
             //Debug.Log("en building script: " + collectedMaterials);  
@@ -105,7 +106,7 @@ public class Building : MonoBehaviour
     public void UpdateMaterialsInSaveObject()
     {
         SaveObject.Instance.boardState.Find(n => n.id == id).currentMaterials = materialsPerSecond;
-        //Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.boardState.Find(n => n.buildingName == buildingName).currentMaterials);
+        Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.boardState.Find(n => n.buildingName == buildingName).currentMaterials);
     }
 
     public void PickMaterials()

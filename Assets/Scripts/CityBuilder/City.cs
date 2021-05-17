@@ -40,7 +40,7 @@ public class City : MonoBehaviour
     public void InitializeCity()
     {
         Debug.Log("En initializeCity");
-        Debug.Log("fecha guardada: " + SaveObject.Instance.date);
+        //Debug.Log("fecha guardada: " + SaveObject.Instance.date);
         if (SaveObject.Instance.date != "")
             CheckInactiveTime(SaveObject.Instance.date);
         CalculateActivation(); //Also call to calclulatepowerR
@@ -48,17 +48,10 @@ public class City : MonoBehaviour
 
     private void CheckInactiveTime(string lastAccess)
     {
-        Debug.Log("City lastAccess: " + lastAccess);
-        Debug.Log("Tryparse " + DateTime.TryParse(lastAccess, out DateTime r) + r);
-        //DateTime lA = DateTime.Parse(lastAccess);
+        //Debug.Log("City lastAccess: " + lastAccess);
+        //Debug.Log("Tryparse " + DateTime.TryParse(lastAccess, out DateTime r) + r);
         DateTime.TryParse(lastAccess, out DateTime lA);
         inactiveTime = DateTime.Now.Subtract(lA);
-        //Debug.Log("al pasar a datetime " + lA);
-        //string nowS = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-        //DateTime now = DateTime.Parse(nowS);
-        //Debug.Log("ahora es " + now);
-        //// changa to local variable
-        //inactiveTime = now.Subtract(lA);
         Debug.Log("City>CheckInactiveTime Inactive time in seconds: " + inactiveTime.TotalSeconds);
         ApplyPenalization(inactiveTime.Days);
     }
