@@ -20,7 +20,7 @@ public class Building : MonoBehaviour
 
     public int materialsPerSecond = 0;
     private const int MIN_MATERIALS = 2;
-    private const int SECONDS = 20;
+    private const int SECONDS = 60;
     private int timeOfGeneration = SECONDS;
     private const string cityTag = "city";
     private const string INDICATOR_BEGINNING = "materiales: ";
@@ -48,7 +48,7 @@ public class Building : MonoBehaviour
         {
             var d = Convert.ToInt32(Math.Round(inactiveTime / timeOfGeneration));
             //Debug.Log("tiempo inactivo: " + inactiveTime);
-            //Debug.Log("tiempo inactivo entre tiempo de generación: " + d);
+            Debug.Log("tiempo inactivo entre tiempo de generación: " + d);
             materialsPerSecond = ( d * MIN_MATERIALS + materials);
             if (materialsPerSecond >= maxMaterials)
                 materialsPerSecond = maxMaterials;
@@ -105,7 +105,7 @@ public class Building : MonoBehaviour
     public void UpdateMaterialsInSaveObject()
     {
         SaveObject.Instance.boardState.Find(n => n.id == id).currentMaterials = materialsPerSecond;
-        Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.boardState.Find(n => n.buildingName == buildingName).currentMaterials);
+        //Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.boardState.Find(n => n.buildingName == buildingName).currentMaterials);
     }
 
     public void PickMaterials()
@@ -113,6 +113,7 @@ public class Building : MonoBehaviour
         cityScript.Materials += materialsPerSecond;
         SaveObject.Instance.materials = cityScript.Materials;
         materialsPerSecond = 0;
+        UpdateMaterialsInSaveObject();
         materialsButton.interactable = false;
         indicatorText.text = INDICATOR_BEGINNING + materialsPerSecond + "/" + maxMaterials;
 

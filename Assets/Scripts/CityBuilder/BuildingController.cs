@@ -6,7 +6,6 @@ using UnityEngine;
 public class BuildingController : MonoBehaviour
 {
     public City city; //mirar cambiar city de aqui
-    public LocalsMessages localsMessages;
     public Board board;
     private GameObject selectedBuilding;
     // Start is called before the first frame update
@@ -29,15 +28,15 @@ public class BuildingController : MonoBehaviour
 
     private void CheckInteractionWithLocal()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // change for mobile
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.collider.tag == "local")
-            {
-                localsMessages.GenerateGeneralMessage();
-            }
-        }
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // change for mobile
+        //RaycastHit hit;
+        //if (Physics.Raycast(ray, out hit))
+        //{
+        //    if (hit.collider.tag == "local")
+        //    {
+        //        hit.collider.gameObject.GetComponent<LocalsMessages>().GenerateGeneralMessage();
+        //    }
+        //}
     }
 
     void InteractWithBoard()

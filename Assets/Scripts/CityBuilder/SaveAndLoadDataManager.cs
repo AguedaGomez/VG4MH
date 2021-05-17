@@ -14,18 +14,11 @@ public class SaveAndLoadDataManager : MonoBehaviour
     {
         if (pauseStatus) // Save
         {
-            Debug.Log("TEST: en pausa, guardando el juego");
-            ObjectToSaveData();
-            SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
+            SaveGame();
         }
         else // Load
         {
-            Debug.Log("TEST: load, cargando el juego");
-            if (SaveAndLoadData.LoadFromFile("state-game.json", out var content))
-                SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
-            else
-                SaveDataToObject(SaveObject.Instance);
-
+            LoadGame();
         }
     }
 #elif UNITY_EDITOR && UNITY_ANDROID
@@ -50,7 +43,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
         {
             
             SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
-            Debug.Log("en Load game cuando se traduce el json: " + SaveObject.Instance.boardState.Count);
+            //Debug.Log("en Load game cuando se traduce el json: " + SaveObject.Instance.boardState.Count);
         }
             
         else
@@ -68,18 +61,20 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     private void ObjectToSaveData()
     {
-        
-        SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-        //Debug.Log("GUARDANDO Fecha guardada: " + SaveObject.Instance.date);
-        Debug.Log("Items que guarda el tablero: " + SaveObject.Instance.boardState.Count);
+
+        //SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        SaveObject.Instance.date = DateTime.Now.ToString();
+        Debug.Log("GUARDANDO Fecha guardada: " + SaveObject.Instance.date);
+        //Debug.Log("Items que guarda el tablero: " + SaveObject.Instance.boardState.Count);
     }
 
     private void SaveDataToObject(SaveObject loadedSaveObject)
     {
         SaveObject.Instance.materials = loadedSaveObject.materials;
         SaveObject.Instance.date = loadedSaveObject.date;
+        Debug.Log("1. guardando fecha en objeto " + SaveObject.Instance.date);
         SaveObject.Instance.boardState = loadedSaveObject.boardState;
-        Debug.Log("1. Cargando datos, boardState.Count " + SaveObject.Instance.boardState.Count);
+        
     }
 
 

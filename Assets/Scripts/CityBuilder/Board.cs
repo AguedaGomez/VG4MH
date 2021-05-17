@@ -16,7 +16,6 @@ public class Board : MonoBehaviour
     private Building[,] buildings;
     
     private string buildingsPath = "Prefabs/CityBuilder/Buildings";
-    private List<SavedBuilding> auxSavedBuildings;
 
     void Awake()
     {
@@ -34,7 +33,6 @@ public class Board : MonoBehaviour
     void Start()
     {
         //Debug.Log("TEST: Start board");
-        auxSavedBuildings = new List<SavedBuilding>();
         InitializeBoard(SaveObject.Instance.boardState);
     }
 
@@ -46,7 +44,7 @@ public class Board : MonoBehaviour
             GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
-            Debug.Log("nombre del edificio " + buildingScript.buildingName);
+            //Debug.Log("nombre del edificio " + buildingScript.buildingName);
             buildingScript.InitializedAsDefault();
             int x = CalculateRowColumn(position.x);
             int z = CalculateRowColumn(position.z);
@@ -67,10 +65,10 @@ public class Board : MonoBehaviour
             GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
-            //Debug.Log("AddBuilding Totalseconds: " + Math.Floor(city.inactiveTime.TotalSeconds));
+            //Debug.Log("ActualizandoBuilding Totalseconds: " + Math.Floor(city.inactiveTime.TotalSeconds));
             int x = CalculateRowColumn(position.x);
             int z = CalculateRowColumn(position.z);
-            Debug.Log("x: " + x + "z: " + z);
+            //Debug.Log("x: " + x + "z: " + z);
             buildingScript.id = x + "" + z + "";
             buildings[x, z] = buildingScript;
             buildingScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
@@ -150,7 +148,7 @@ public class Board : MonoBehaviour
                 GameObject prefabToInstantiate = Resources.Load<GameObject>(path);
                 prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
-                Debug.Log("current material al cargar: " + b.currentMaterials);
+               //Debug.Log("current material al cargar: " + b.currentMaterials);
                 AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials);
             }
             
