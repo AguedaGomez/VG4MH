@@ -47,7 +47,6 @@ public class CardBehaviour : MonoBehaviour
 
                     //Check if card is touched
                     touchedCollider = Physics2D.OverlapPoint(startPos);
-                   // print("transform name " + transform.name + "qué collider estoy tocando " + collider.name);
                     touchingCard = touchedCollider.name == transform.name ? true : false;
                     break;
 

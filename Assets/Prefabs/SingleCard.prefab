@@ -34,10 +34,10 @@ RectTransform:
   m_Father: {fileID: 939377187640449899}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.027, y: -0.094}
-  m_SizeDelta: {x: 4.635536, y: 4.8113136}
+  m_AnchorMin: {x: 0.3616803, y: 0.35654646}
+  m_AnchorMax: {x: 0.51600003, y: 0.64000005}
+  m_AnchoredPosition: {x: -0.063731, y: 0.03673792}
+  m_SizeDelta: {x: 0.12746334, y: 0.069126606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4493660337564981975
 MeshRenderer:
@@ -116,7 +116,8 @@ MonoBehaviour:
   m_text: Right option
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 094e5b10630a32b45b8bf155a02adc75, type: 2}
-  m_sharedMaterial: {fileID: 0}
+  m_sharedMaterial: {fileID: -3966815081706910007, guid: 094e5b10630a32b45b8bf155a02adc75,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.2, y: 0.1, z: 0.2, w: 0}
+  m_margin: {x: 0.2, y: 0.1, z: 0.0013971329, w: 0}
   m_textInfo:
     textComponent: {fileID: 113285536275073067}
     characterCount: 12
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4493660337564981975}
   m_subTextObjects:
   - {fileID: 0}
@@ -489,10 +490,10 @@ RectTransform:
   m_Father: {fileID: 939377187640449899}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.027, y: -0.094}
-  m_SizeDelta: {x: 4.635536, y: 4.8113136}
+  m_AnchorMin: {x: 0.5, y: 0.3421834}
+  m_AnchorMax: {x: 0.6294451, y: 0.64000005}
+  m_AnchoredPosition: {x: 0.12152004, y: 0.05095792}
+  m_SizeDelta: {x: 0.24304438, y: 0.040687084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7207812573170860238
 MeshRenderer:
@@ -571,7 +572,8 @@ MonoBehaviour:
   m_text: Left option
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 094e5b10630a32b45b8bf155a02adc75, type: 2}
-  m_sharedMaterial: {fileID: 0}
+  m_sharedMaterial: {fileID: -3966815081706910007, guid: 094e5b10630a32b45b8bf155a02adc75,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -634,7 +636,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.2, y: 0.1, z: 0.2, w: 0}
+  m_margin: {x: 0.029770374, y: 0.12837192, z: 0.058141947, w: 0.05674219}
   m_textInfo:
     textComponent: {fileID: 7006428687660545275}
     characterCount: 11
@@ -648,7 +650,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 7207812573170860238}
   m_subTextObjects:
   - {fileID: 0}
