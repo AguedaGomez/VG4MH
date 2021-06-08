@@ -2,70 +2,54 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.UI;
 
-public class MultipleChoiceDisplay : CardDisplay, IDisplay
+public class MultipleChoiceDisplay : MonoBehaviour
 {
-    public TextMeshPro generalText;
-    public enum ChoicePosition
+    //public GameObject MultipleChoicePanel;
+    public CardManager cardManager;
+    public List<Button> buttonOptionsList;
+
+    private Dictionary<Button, Card> linkedCardWithButton = new Dictionary<Button, Card>();
+    private Button lastButtonSelected;
+    public void DisplayOptions()
     {
-        TOP,
-        MIDDLE_TOP,
-        MIDDLE_BOTTOM,
-        BOTTOM
-    }
-    public ChoicePosition currentChoice; // cambiar esto
+        var currentCard = (Multiple)GameManager.Instance.currentCard;
+        //first time that multiple options appear
+        if (lastButtonSelected == null) {
 
-    private Choice myChoice;
-    private SortingGroup sortingGroup;
-
-    protected override void Start()
-    {
-        base.Start();
-        sortingGroup = GetComponent<SortingGroup>();
-    }
-    public override void ShowOption(Choice.Direction direction)
-    {
-        sortingGroup.sortingOrder = 1;
-        base.ShowOption(direction);
-        sortingGroup.sortingOrder = 0;
-
-    }
-    public override void DisplayCard()
-    {
-        // preparing camera for initial movement of card
-        Camera.main.orthographic = false;
-        startedInitialMovement = true;
-
-        GetChoice(currentChoice);
-
-        // preparing card data
-        generalText.text = myChoice.text;
-        rightOptionText.text = myChoice.rightText;
-        leftOptionText.text = myChoice.leftText;
-        image.sprite = myChoice.image;
-    }
-
-    private void GetChoice(ChoicePosition currentChoice)
-    {
-        switch (currentChoice)
+            for (int i = 0; i < buttonOptionsList.Count; i++)
+            {
+                buttonOptionsList[i].interactable = true;
+                buttonOptionsList[i].GetComponentInChildren<Text>().text = TextToShowFormatter(currentCard.options[i].dialog);
+                linkedCardWithButton.Add(buttonOptionsList[i], currentCard.options[i]);
+            }
+        } else
         {
-            case ChoicePosition.TOP:
-                myChoice = ((Multiple)currentCard).choice1;
-                break;
-            case ChoicePosition.MIDDLE_TOP:
-                myChoice = ((Multiple)currentCard).choice2;
-                break;
-            case ChoicePosition.MIDDLE_BOTTOM:
-                myChoice = ((Multiple)currentCard).choice3;
-                break;
-            case ChoicePosition.BOTTOM:
-                myChoice = ((Multiple)currentCard).choice4;
-                break;
-            default:
-                myChoice = null;
-                break;
+            if (currentCard.type == Card.CardType.MULTIPLE)
+            {
+                lastButtonSelected.interactable = false;
+                lastButtonSelected.GetComponentInChildren<Text>().text = cardManager.lastOptionChosen;
+                //linkedCardWithButton.Remove(lastButtonSelected);
+                if (linkedCardWithButton.Count == 0)
+                {
+                    lastButtonSelected = null;
+                    cardManager.UpdateCurrentCard(((Multiple)GameManager.Instance.currentCard).nextCard);
+                }
+            }
         }
-        return;
+
     }
+
+    private string TextToShowFormatter(string textToFormat)
+    {
+        return textToFormat.Length < 30 ? textToFormat : textToFormat.Substring(0, 30) + "...";
+    }
+
+    public void OpenCard(Button sender)
+    {
+        lastButtonSelected = sender;
+        cardManager.UpdateCurrentCard(linkedCardWithButton[sender]);
+    }
+
 }

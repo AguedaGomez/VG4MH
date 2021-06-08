@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: Dialog1
+  m_Name: SigleEarl
   m_EditorClassIdentifier: 
   characterName: Earl
-  dialog: "\xA1Hola! Me llamo Earl. Soy el padre de la familia Emory. Estamos en
-    una situaci\xF3n peliaguda. Creemos que deber\xEDamos trasladarnos y dejar este
-    lugar pero nos da miedo tomar una mala decisi\xF3n. \xBFNos ayudas a ver qu\xE9
-    es lo mejor?"
-  reward: 4
+  dialog: "Genial! Me has ayudado mucho. Te gustar\xEDa hacer este ejercicio otra
+    vez?"
+  reward: 0
   type: 0
   image: {fileID: 21300000, guid: 32319b7d8a982154fa3fccb1750270f3, type: 3}
-  rightText: Claro
-  leftText: No me apetece ahora mismo
+  rightText: "S\xED"
+  leftText: No
   correctDirection: 0
   nextCardIfRight: {fileID: 11400000, guid: 7b7c7ecd3f3794e48b59550b583d5bfd, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 7b7c7ecd3f3794e48b59550b583d5bfd, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: cab1aaf4641904b40847d8e2da9efc74, type: 2}

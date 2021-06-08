@@ -15,7 +15,7 @@ public class CardBehaviour : MonoBehaviour
     private bool touchingCard;
     private float rotationAngle;
     private float minLong = 2.0f;
-    private Choice.Direction currentDirection;
+    private Card.Direction currentDirection;
     private CardDisplay cardDisplay;
     private SingleCardRewardManager singleCardRewardManager;
     private Collider2D touchedCollider;
@@ -26,7 +26,7 @@ public class CardBehaviour : MonoBehaviour
     {
         initialPos = transform.position;
         directionChosen = false;
-        currentDirection = Choice.Direction.NONE;
+        currentDirection = Card.Direction.NONE;
         cardDisplay = GetComponent<CardDisplay>();
         singleCardRewardManager = GetComponent<SingleCardRewardManager>();
     }
@@ -63,12 +63,12 @@ public class CardBehaviour : MonoBehaviour
                         direction = currentTouchWorld - startPos;
                         if (Mathf.Sign(direction.x) == 1) // show right option
                         {
-                            currentDirection = Choice.Direction.RIGHT;
+                            currentDirection = Card.Direction.RIGHT;
 
                         }
                         else if (Mathf.Sign(direction.x) == -1) // show left option
                         {
-                            currentDirection = Choice.Direction.LEFT;
+                            currentDirection = Card.Direction.LEFT;
                         }
                         
                         cardDisplay.ShowOption(currentDirection);
@@ -95,7 +95,7 @@ public class CardBehaviour : MonoBehaviour
                 }
                 else
                 {
-                    currentDirection = Choice.Direction.NONE;
+                    currentDirection = Card.Direction.NONE;
                     cardDisplay.ShowOption(currentDirection);
                 }
                 directionChosen = false;

@@ -17,13 +17,15 @@ public class SingleCardRewardManager : MonoBehaviour
         cardManager = transform.parent.GetComponent<CardManager>();
     }
 
-    public void CheckOptionChosen(Choice.Direction directionChosen)
+    public void CheckOptionChosen(Card.Direction directionChosen)
     {
         GetCurrentCard();
         Card.Resource currentResource = currentCard.reward;
 
         int valueModifier = OptionIsCorrect(directionChosen) ? INCREMENT : DECREMENT;
-        Card nextCard = directionChosen == Choice.Direction.RIGHT ? currentCard.nextCardIfRight : currentCard.nextCardIfLeft; // change if more directions are added
+        Card nextCard = directionChosen == Card.Direction.RIGHT ? currentCard.nextCardIfRight : currentCard.nextCardIfLeft;
+        
+        SaveOptionChosen(directionChosen); //action for multipleOptions
 
         rewardManager.UpdateResource(currentResource, valueModifier);
 
@@ -39,9 +41,14 @@ public class SingleCardRewardManager : MonoBehaviour
         currentCard = (Single)GameManager.Instance.currentCard;
     }
 
-    private bool OptionIsCorrect(Choice.Direction directionChosen)
+    private bool OptionIsCorrect(Card.Direction directionChosen)
     {
-        return currentCard.choice.correctDirection == directionChosen;
+        return currentCard.correctDirection == directionChosen;
       
+    }
+
+    private void SaveOptionChosen(Card.Direction directionChosen)
+    {
+        cardManager.lastOptionChosen = directionChosen == Card.Direction.RIGHT ? currentCard.rightText : currentCard.leftText;
     }
 }

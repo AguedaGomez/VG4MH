@@ -12,9 +12,9 @@ public class SingleChoiceDisplay : CardDisplay, IDisplay
         startedInitialMovement = true;
 
         // preparing card data
-        rightOptionText.text = ((Single)currentCard).choice.rightText;
-        leftOptionText.text = ((Single)currentCard).choice.leftText;
-        image.sprite = ((Single)currentCard).choice.image;
+        rightOptionText.text = ((Single)currentCard).rightText;
+        leftOptionText.text = ((Single)currentCard).leftText;
+        image.sprite = ((Single)currentCard).image;
     }
 
 

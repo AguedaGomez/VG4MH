@@ -9,14 +9,16 @@ using UnityEngine.SceneManagement;
 public class CardManager : MonoBehaviour
 {
 
-    public GameObject singleCardPrefab;
-    public GameObject multipleCardPrefab;
+    public GameObject cardPrefab;
+    public GameObject multipleChoicePanel;
 
     public TextMeshProUGUI dialogText;
     public TextMeshProUGUI characterNameText;
 
     private GameObject cardGameObject;
-    private CardDisplay cardDisplay;
+    public MultipleChoiceDisplay multipleChoiceDisplay;
+
+    public string lastOptionChosen;
 
     // Start is called before the first frame update
     void Start()
@@ -36,24 +38,27 @@ public class CardManager : MonoBehaviour
     {
         if (GameManager.Instance.currentCard.type == Card.CardType.SINGLE)
         {
-            cardGameObject = Instantiate(singleCardPrefab, transform);
+            multipleChoicePanel.SetActive(false);
+            cardGameObject = Instantiate(cardPrefab, transform);
         }
 
-        else if (GameManager.Instance.currentCard.type == Card.CardType.MULTIPLE)
-            cardGameObject = Instantiate(multipleCardPrefab, transform);
-
+        else if (GameManager.Instance.currentCard.type == Card.CardType.MULTIPLE || GameManager.Instance.currentCard.type == Card.CardType.MULTIPLE_ONE)
+        {
+            multipleChoicePanel.SetActive(true);
+            multipleChoiceDisplay.DisplayOptions();
+       
+        }
+            
     }
 
     public void UpdateCurrentCard(Card nextCard)
     {
-        if (GameManager.Instance.currentCard.type == Card.CardType.SINGLE)
-        {
-            GameManager.Instance.currentCard = nextCard;
-            Destroy(cardGameObject);
-            CommonDisplay();
-            CreateCard();
-        }
-        // Qué pasa en el caso múltiple
+
+        GameManager.Instance.currentCard = nextCard;
+        Destroy(cardGameObject);
+        CommonDisplay();
+        CreateCard();
+
     }
 
     public void LoadScene()

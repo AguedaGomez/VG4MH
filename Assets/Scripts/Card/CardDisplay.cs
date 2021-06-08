@@ -27,20 +27,20 @@ public class CardDisplay : MonoBehaviour
     {
     }
 
-    public virtual void ShowOption(Choice.Direction direction)
+    public virtual void ShowOption(Card.Direction direction)
     {
         
         switch (direction)
         {
-            case Choice.Direction.RIGHT:
+            case Card.Direction.RIGHT:
                 rightOptionText.gameObject.SetActive(true);
                 leftOptionText.gameObject.SetActive(false);
                 break;
-            case Choice.Direction.LEFT:
+            case Card.Direction.LEFT:
                 rightOptionText.gameObject.SetActive(false);
                 leftOptionText.gameObject.SetActive(true);
                 break;
-            case Choice.Direction.NONE:
+            case Card.Direction.NONE:
                 rightOptionText.gameObject.SetActive(false);
                 leftOptionText.gameObject.SetActive(false);
                 break;
