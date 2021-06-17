@@ -7,5 +7,6 @@ using UnityEngine;
 public class Multiple : Card
 {
     public List<Card> options;
-    public Card nextCard; //when all options are answered
+    public Card nextCardIfAnyAnswerIsWrong;
+    public Card nextCardIfAllAnswersAreCorrect; 
 }

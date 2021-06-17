@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Single 1
   m_EditorClassIdentifier: 
   characterName: Earl
-  dialog: Es muy duro irse a un sitio nuevo.
+  dialog: "Es m\xE1s dif\xEDcil irse a un sitio nuevo"
   reward: 0
   type: 0
   image: {fileID: 21300000, guid: 32319b7d8a982154fa3fccb1750270f3, type: 3}

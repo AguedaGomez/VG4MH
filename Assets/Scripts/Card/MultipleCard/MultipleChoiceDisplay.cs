@@ -6,12 +6,20 @@ using UnityEngine.UI;
 
 public class MultipleChoiceDisplay : MonoBehaviour
 {
-    //public GameObject MultipleChoicePanel;
+    private const string RIGHT_OPTION_NAME = "Right Chosen Option";
+    private const string LEFT_OPTION_NAME = "Left Chosen Option";
+
     public CardManager cardManager;
     public List<Button> buttonOptionsList;
+    public Button continueButton;
+
+    private Text chosenOptionText;
 
     private Dictionary<Button, Card> linkedCardWithButton = new Dictionary<Button, Card>();
     private Button lastButtonSelected;
+
+    private int countAnswers = 0;
+    private List<bool> checkOptionList = new List<bool>(); //save false or true depending on the if the chosen options is correct or not
     public void DisplayOptions()
     {
         var currentCard = (Multiple)GameManager.Instance.currentCard;
@@ -29,12 +37,24 @@ public class MultipleChoiceDisplay : MonoBehaviour
             if (currentCard.type == Card.CardType.MULTIPLE)
             {
                 lastButtonSelected.interactable = false;
-                lastButtonSelected.GetComponentInChildren<Text>().text = cardManager.lastOptionChosen;
-                //linkedCardWithButton.Remove(lastButtonSelected);
-                if (linkedCardWithButton.Count == 0)
+                countAnswers++;
+
+                if (cardManager.chosenDirection == Card.Direction.RIGHT)
+                    chosenOptionText = lastButtonSelected.transform.Find(RIGHT_OPTION_NAME).GetComponent<Text>();
+                else if (cardManager.chosenDirection == Card.Direction.LEFT)
+                    chosenOptionText = lastButtonSelected.transform.Find(LEFT_OPTION_NAME).GetComponent<Text>();
+
+                WriteOptionText(chosenOptionText);
+                ShowChosenOption(chosenOptionText, true);
+                ChangeTextColor(lastButtonSelected.GetComponentInChildren<Text>(), new Color(0.5f,0.5f,0.5f));
+
+                checkOptionList.Add(cardManager.islastOptionCorrect);
+
+                if (linkedCardWithButton.Count == countAnswers)
                 {
-                    lastButtonSelected = null;
-                    cardManager.UpdateCurrentCard(((Multiple)GameManager.Instance.currentCard).nextCard);
+                    continueButton.gameObject.SetActive(true);
+                    cardManager.ShowCharacterName(false);
+                    
                 }
             }
         }
@@ -44,6 +64,40 @@ public class MultipleChoiceDisplay : MonoBehaviour
     private string TextToShowFormatter(string textToFormat)
     {
         return textToFormat.Length < 30 ? textToFormat : textToFormat.Substring(0, 30) + "...";
+    }
+
+    private void ShowChosenOption(Text textToShow, bool show)
+    {
+        textToShow.gameObject.SetActive(show); 
+    }
+
+    private void WriteOptionText(Text textToShow)
+    {
+        textToShow.text = cardManager.lastOptionChosen;
+    }
+
+    private void ChangeTextColor(Text textToChange, Color color)
+    {
+        textToChange.color = color;
+    }
+    private void ResetVariables()
+    {
+        lastButtonSelected = null;
+        countAnswers = 0;
+        linkedCardWithButton.Clear();
+        checkOptionList.Clear();
+        continueButton.gameObject.SetActive(false);
+
+    }
+
+    public void ChangeToNextCard()
+    {
+        if (checkOptionList.Contains(false))
+            cardManager.UpdateCurrentCard(((Multiple)GameManager.Instance.currentCard).nextCardIfAnyAnswerIsWrong);
+        else
+            cardManager.UpdateCurrentCard(((Multiple)GameManager.Instance.currentCard).nextCardIfAllAnswersAreCorrect);
+
+        ResetVariables();
     }
 
     public void OpenCard(Button sender)

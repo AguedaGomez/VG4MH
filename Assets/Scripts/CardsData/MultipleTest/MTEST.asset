@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: MTEST
   m_EditorClassIdentifier: 
   characterName: Earl
-  dialog: "\xBFCu\xE1les crees que son beneficios de irnos a un sitio nuevo? \n<size=50><i>Toca
-    cada una de las opciones para explorarlas en detalle</i></size>"
+  dialog: "\xBFCu\xE1les crees que son los beneficios y costes de irnos a un sitio
+    nuevo? \n<size=50><i>Comenta toda las opciones. Toca cada una de las opciones
+    para explorarlas en detalle</i></size>"
   reward: 0
   type: 1
   options:
@@ -22,4 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 22cff250bfaf727449927fee7ba8cac2, type: 2}
   - {fileID: 11400000, guid: 55838537748c48845bc70d7eb159739f, type: 2}
   - {fileID: 11400000, guid: 343ada4e516d1234bad6652a77d8ec09, type: 2}
-  nextCard: {fileID: 11400000, guid: a9aa9d1c798baca4eb4730f42239b303, type: 2}
+  nextCardIfAnyAnswerIsWrong: {fileID: 11400000, guid: fefa2005b9b186e44a0f5a5d9db83aef,
+    type: 2}
+  nextCardIfAllAnswersAreCorrect: {fileID: 11400000, guid: a9aa9d1c798baca4eb4730f42239b303,
+    type: 2}

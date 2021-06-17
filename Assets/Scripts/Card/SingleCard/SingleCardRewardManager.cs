@@ -49,6 +49,8 @@ public class SingleCardRewardManager : MonoBehaviour
 
     private void SaveOptionChosen(Card.Direction directionChosen)
     {
+        cardManager.chosenDirection = directionChosen;
         cardManager.lastOptionChosen = directionChosen == Card.Direction.RIGHT ? currentCard.rightText : currentCard.leftText;
+        cardManager.islastOptionCorrect = OptionIsCorrect(directionChosen);
     }
 }
