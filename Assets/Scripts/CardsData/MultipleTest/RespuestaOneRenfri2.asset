@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: S2
+  m_Name: RespuestaOneRenfri2
   m_EditorClassIdentifier: 
   characterName: Renfri
-  dialog: En un sitio nuevo no conocemos a nadie
+  dialog: "De acuerdo, me has ayudado. \xA1Nos vemos!"
   reward: 0
   type: 0
   image: {fileID: 21300000, guid: e86e1919046b0354d99f005cb4c4c556, type: 3}
-  rightText: Este es el BENEFICIO
-  leftText: "\xBFQu\xE9 otras opciones habr\xEDa?"
+  rightText: Hasta luego
+  leftText: "Adi\xF3s"
   correctDirection: 3
-  nextCardIfRight: {fileID: 11400000, guid: cbd3716c5f6f9c14aa7a1a58fdb99ed8, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: cbd3716c5f6f9c14aa7a1a58fdb99ed8, type: 2}
+  nextCardIfRight: {fileID: 0}
+  nextCardIfLeft: {fileID: 0}

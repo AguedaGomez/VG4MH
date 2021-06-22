@@ -57,6 +57,34 @@ public class MultipleChoiceDisplay : MonoBehaviour
                     
                 }
             }
+            else if (currentCard.type == Card.CardType.MULTIPLE_ONE)
+            {
+                checkOptionList.Add(cardManager.islastOptionCorrect);
+                if (cardManager.chosenDirection == Card.Direction.RIGHT)
+                {
+                    foreach (Button button in buttonOptionsList)
+                    {
+                        button.interactable = false;
+                        ChangeTextColor(button.GetComponentInChildren<Text>(), new Color(0.5f, 0.5f, 0.5f));
+                        if (button != lastButtonSelected)
+                        {
+                            var colors = button.colors;
+                            colors.disabledColor = new Color(1,1,1,0.2f);
+                        }
+                        else
+                        {
+                            chosenOptionText = lastButtonSelected.transform.Find(RIGHT_OPTION_NAME).GetComponent<Text>();
+                            WriteOptionText(chosenOptionText);
+                            ShowChosenOption(chosenOptionText, true);
+                            ChangeTextColor(lastButtonSelected.GetComponentInChildren<Text>(), new Color(0.5f, 0.5f, 0.5f));
+                            continueButton.gameObject.SetActive(true);
+                            cardManager.ShowCharacterName(false);
+
+                        }
+                    }
+                }
+                
+            }
         }
 
     }

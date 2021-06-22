@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793c2232e06267243b435d1b3b909bfa, type: 3}
   m_Name: MultipleoNE
   m_EditorClassIdentifier: 
-  characterName: Earl
-  dialog: "Estos son todos mis pensamientos al respecto. \xBFPodr\xEDas decirme si
-    alguno no es un pensamiento flexible?"
+  characterName: Renfri
+  dialog: "Entre todo esto que pienso sobre irnos a un sitio nuevo. \xBFPodr\xEDas
+    decirme si alguno es un beneficio? <size=50><i>Elige s\xF3lo una opci\xF3n</i></size>"
   reward: 0
   type: 2
   options:
@@ -22,4 +22,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3ee018656e5ec93448d8bf6acd3d3a08, type: 2}
   - {fileID: 11400000, guid: 8875281cc71dc6646b0a1a6ea1a68bd6, type: 2}
   - {fileID: 11400000, guid: f674511c7587514499537eac61d4524d, type: 2}
-  nextCard: {fileID: 0}
+  nextCardIfAnyAnswerIsWrong: {fileID: 0}
+  nextCardIfAllAnswersAreCorrect: {fileID: 11400000, guid: b05684f30d28d004da9305b47c5e871e,
+    type: 2}

@@ -26,8 +26,9 @@ public class SingleCardRewardManager : MonoBehaviour
         Card nextCard = directionChosen == Card.Direction.RIGHT ? currentCard.nextCardIfRight : currentCard.nextCardIfLeft;
         
         SaveOptionChosen(directionChosen); //action for multipleOptions
-
-        rewardManager.UpdateResource(currentResource, valueModifier);
+        
+        if (directionChosen!=Card.Direction.NONE)
+            rewardManager.UpdateResource(currentResource, valueModifier);
 
         if (nextCard.characterName != currentCard.characterName)
             cardManager.LoadScene();
