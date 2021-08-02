@@ -13,7 +13,7 @@ public class City : MonoBehaviour
     public Dictionary<string, GameObject> availableBuildings = new Dictionary<string, GameObject>();
 
     private const int DAILY_STEPS = 3000;
-    private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
+    private const float SOLVED_CONFLICT_VALUE = 10f; // calculate depending on cards number
     //public?
     private int population;
     private int questionaryDone = 0;

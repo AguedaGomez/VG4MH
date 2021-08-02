@@ -22,4 +22,4 @@ MonoBehaviour:
   leftText: No
   correctDirection: 0
   nextCardIfRight: {fileID: 11400000, guid: 7b7c7ecd3f3794e48b59550b583d5bfd, type: 2}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfLeft: {fileID: 11400000, guid: cbd3716c5f6f9c14aa7a1a58fdb99ed8, type: 2}

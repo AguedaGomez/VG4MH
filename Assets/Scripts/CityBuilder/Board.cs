@@ -8,6 +8,7 @@ public class Board : MonoBehaviour
     // TODO: configuracion inicial
     public GameObject staticBuildingA;
     public GameObject staticBuildingB;
+    public GameObject library;
     public City city; //Eliminar city de aquí?
 
     private float cellSize = 4f;
@@ -71,7 +72,8 @@ public class Board : MonoBehaviour
             //Debug.Log("x: " + x + "z: " + z);
             buildingScript.id = x + "" + z + "";
             buildings[x, z] = buildingScript;
-            buildingScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
+            if (buildingScript.name != "Library")
+                buildingScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
 
         } else
         {
@@ -147,6 +149,7 @@ public class Board : MonoBehaviour
             AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(8, 0, 10)));
             AddBuilding(staticBuildingB, CalculateGridPosition(new Vector3(16, 0, 11)));
             AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(12, 0, 15)));
+            //AddBuilding(library, CalculateGridPosition(new Vector3(20, 0, 20)));
         }
 
     }

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: RespuestaOneRenfri
+  m_Name: RespuestaOne2Renfri
   m_EditorClassIdentifier: 
   characterName: Renfri
-  dialog: "\xA1Ahora lo veo! Ese es el beneficio. \xBFQuieres repasarlo otra vez?"
+  dialog: "\xBFEse es el beneficio? \xBFLo revisamos otra vez?"
   reward: 0
   type: 0
   image: {fileID: 21300000, guid: e86e1919046b0354d99f005cb4c4c556, type: 3}

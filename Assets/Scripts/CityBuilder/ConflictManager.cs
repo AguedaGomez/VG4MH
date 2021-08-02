@@ -13,6 +13,7 @@ public class ConflictManager : MonoBehaviour
 
     private void LaunchConflict()
     {
+        print("launch conflict");
         Card currentConflict = GameManager.Instance.currentCard;
         GameObject pj = transform.Find(currentConflict.characterName).gameObject;
         

@@ -20,5 +20,5 @@ MonoBehaviour:
   rightText: Hasta luego
   leftText: "Adi\xF3s"
   correctDirection: 3
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: cad58d3bd8679c847aabcb404996e1c3, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: cad58d3bd8679c847aabcb404996e1c3, type: 2}

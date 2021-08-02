@@ -31,7 +31,10 @@ public class SingleCardRewardManager : MonoBehaviour
             rewardManager.UpdateResource(currentResource, valueModifier);
 
         if (nextCard.characterName != currentCard.characterName)
+        {
+            GameManager.Instance.currentCard = nextCard;
             cardManager.LoadScene();
+        }
         else
             cardManager.UpdateCurrentCard(nextCard);
        
