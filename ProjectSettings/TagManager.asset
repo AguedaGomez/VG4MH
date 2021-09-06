@@ -19,8 +19,8 @@ TagManager:
   - 
   - BaseItemCollider
   - GroundCollider
-  - 
-  - 
+  - Post-Processing
+  - Vegetation
   - 
   - 
   - 
