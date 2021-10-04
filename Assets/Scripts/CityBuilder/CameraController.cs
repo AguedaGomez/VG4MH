@@ -6,8 +6,8 @@ public class CameraController : MonoBehaviour
 {
     Vector3 initialTouch;
     Vector3 offset;
-    float zoomOutMin = 6;
-    float zoomOutMax = 15;
+    [SerializeField]float zoomOutMin = 6;
+    [SerializeField] float zoomOutMax = 15;
 
     // Start is called before the first frame update
     void Start()
