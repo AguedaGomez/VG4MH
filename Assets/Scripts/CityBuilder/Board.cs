@@ -11,8 +11,8 @@ public class Board : MonoBehaviour
     public City city; //Eliminar city de aquí?
 
     private float cellSize = 4f;
-    private float boardHeight, boardWidth;
     private int numCells;
+    private float boardHeight, boardWidth;
     private Building[,] buildings;
     
     private string buildingsPath = "Prefabs/CityBuilder/Buildings";
@@ -26,8 +26,7 @@ public class Board : MonoBehaviour
 
         buildings = new Building[numCells, numCells];
         //Debug.Log("TEST: en AWAKE board");
-
-        
+  
     }
 
     void Start()
