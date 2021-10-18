@@ -11,12 +11,15 @@ public class Building : MonoBehaviour
     public Button materialsButton;
 
     public string id;
-    public int cost;
+    public int cost; // materials needed to built it
     public string buildingName;
-    public int nLocals;
-    public int activationRequired;
-    public int row;
-    public int col;
+    public int nLocals; // number of new inhabitants that attracks
+    public int activationRequired; // minimun of activation to built it
+    public int row; // row (z) in the board where it was built
+    public int col; // col (x) in the board where it was built
+    public int cellsInRow; // all the cells that it occupies in z
+    public int cellsInCol; // all the cells that it occupies in x
+    public int powerRIncrease; // percentage of powerR that increases when built
 
     public int materialsPerSecond = 0;
     private const int MIN_MATERIALS = 2;
