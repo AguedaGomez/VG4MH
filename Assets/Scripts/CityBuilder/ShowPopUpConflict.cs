@@ -18,6 +18,7 @@ public class ShowPopUpConflict : MonoBehaviour
     public void ShowPopUp()
     {
         //mirar qué conflicto debería mostrarse
+        Debug.Log("en showpopup");
         popUp.SetActive(true); //thistransform
     }
 

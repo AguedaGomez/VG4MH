@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BuildingController : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class BuildingController : MonoBehaviour
 
                 if (buildingScript.cost <= city.Materials)
                 {
-                    board.AddBuilding(selectedBuilding, gridPosition);
+                    board.AddBuilding(selectedBuilding, gridPosition, -1);
 
                     city.CalculatePopulation(buildingScript);
                     city.DecreaseMaterials(buildingScript.cost);
@@ -68,4 +69,10 @@ public class BuildingController : MonoBehaviour
             selectedBuilding = city.availableBuildings[buildingName];
         }
     }
+
+    public void ChangeScene(string nameScene)
+    {
+        SceneManager.LoadScene(nameScene);
+    }
+
 }

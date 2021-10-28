@@ -19,42 +19,47 @@ public class Board : MonoBehaviour
 
     void Awake()
     {
+        // creates grid
+
         boardWidth = transform.localScale.x;
         boardHeight = transform.localScale.z;
 
         numCells = (int)(boardWidth / cellSize);
 
         buildings = new Building[numCells, numCells];
-        //Debug.Log("TEST: en AWAKE board");
   
     }
 
     void Start()
     {
-        //Debug.Log("TEST: Start board");
         InitializeBoard();
     }
 
-    public void AddBuilding(GameObject building, Vector3 position)
-    {
-       // Debug.Log("TEST: Añadiendo un edificio");
-        if (CheckForBuildingAtPosition(position))
-        {
-            GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
-            Building buildingScript = createdBuilding.GetComponent<Building>();
-            createdBuilding.transform.name = buildingScript.buildingName;
-            //Debug.Log("nombre del edificio " + buildingScript.buildingName);
-            buildingScript.InitializedAsDefault();
-            int x = CalculateRowColumn(position.x);
-            int z = CalculateRowColumn(position.z);
-            Debug.Log("x: " + x + "z: " + z);
-            buildingScript.id = x + "" + z + "";
-            Debug.Log("Id: " + buildingScript.id);
-            buildings[x, z] = buildingScript;
-            SaveBoardStateInList(x,z);
+    //public void AddBuilding(GameObject building, Vector3 position)
+    //{
+    //   // Debug.Log("TEST: Añadiendo un edificio");
+    //    if (CheckForBuildingAtPosition(position))
+    //    {
+    //        GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
+    //        Building buildingScript = createdBuilding.GetComponent<Building>();
+    //        createdBuilding.transform.name = buildingScript.buildingName;
 
-        } 
-    }
+    //        if (buildingScript.type == Building.Type.MATERIALGENERATORBUILDING)
+    //        {
+    //            MaterialGeneratorBuilding mGBScript = createdBuilding.GetComponent<MaterialGeneratorBuilding>();
+    //            mGBScript.InitializedAsDefault();
+    //        }
+
+    //        int x = CalculateRowColumn(position.x);
+    //        int z = CalculateRowColumn(position.z);
+
+    //        buildingScript.id = x + "" + z + "";
+
+    //        buildings[x, z] = buildingScript;
+    //        SaveBoardStateInList(x,z);
+
+    //    } 
+    //}
 
     public void AddBuilding(GameObject building, Vector3 position, int currentMaterials)
     {
@@ -64,18 +69,35 @@ public class Board : MonoBehaviour
             GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
-            //Debug.Log("ActualizandoBuilding Totalseconds: " + Math.Floor(city.inactiveTime.TotalSeconds));
+
             int x = CalculateRowColumn(position.x);
             int z = CalculateRowColumn(position.z);
-            //Debug.Log("x: " + x + "z: " + z);
-            buildingScript.id = x + "" + z + "";
-            buildings[x, z] = buildingScript;
-            buildingScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
 
-        } else
-        {
-            Debug.Log("intentando añadir un edificio ya creado");
-        }
+            buildingScript.id = x + "" + z + "";
+
+            if (buildingScript.type == Building.Type.MATERIALGENERATORBUILDING)
+            {
+                MaterialGeneratorBuilding mGBScript = createdBuilding.GetComponent<MaterialGeneratorBuilding>();
+                buildings[x, z] = mGBScript;
+
+                if (currentMaterials < 0)
+                {
+                    mGBScript.InitializedAsDefault();
+                    SaveBoardStateInList(x, z);
+                }
+                    
+                else
+                    mGBScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
+            } else
+            {
+                buildings[x, z] = buildingScript;
+                
+                if (currentMaterials < 0)
+                    SaveBoardStateInList(x, z);
+            }
+
+            
+        } 
     }
 
     public bool CheckForBuildingAtPosition(Vector3 position)
@@ -116,8 +138,11 @@ public class Board : MonoBehaviour
 
     public void SaveBoardStateInList(int x, int z)
     {
-        SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName, buildings[x, z].materialsPerSecond);
-        Debug.Log("materialesPerSecond en la matriz " + buildings[x,z].materialsPerSecond +"materialesPerSecond en sB: " + sB.currentMaterials);
+        SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName);
+        Debug.Log("guardando objeto con id: " + sB.id);
+        if (buildings[x, z].type == Building.Type.MATERIALGENERATORBUILDING)
+            sB.currentMaterials = buildings[x, z].materialsPerSecond;
+
         SaveObject.Instance.boardState.Add(sB);
 
     }
@@ -135,17 +160,16 @@ public class Board : MonoBehaviour
                 GameObject prefabToInstantiate = Resources.Load<GameObject>(path);
                 prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
-               //Debug.Log("current material al cargar: " + b.currentMaterials);
+                Debug.Log("currentMaterials de building añadidos: " + b.currentMaterials);
                 AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials);
             }
             
         }
         else
         {
-            // static buildings initial configuration
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(8, 0, 10)));
-            AddBuilding(staticBuildingB, CalculateGridPosition(new Vector3(16, 0, 11)));
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(12, 0, 15)));
+            // static buildings initial configuration. First time the game starts
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(8, 0, 10)), -1);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(12, 0, 15)), -1);
         }
 
     }

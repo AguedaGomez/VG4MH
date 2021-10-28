@@ -12,12 +12,12 @@ public class SavedBuilding
     public int currentMaterials;
     public string id;
 
-    public SavedBuilding(int row, int col, string buildingName, int currentMaterials)
+    public SavedBuilding(int row, int col, string buildingName) // TODO eliminar currentMaterials
     {
         this.row = row;
         this.col = col;
         this.buildingName = buildingName;
-        this.currentMaterials = currentMaterials;
+        this.currentMaterials = -1; // it will change if the building generates materiales
         id = row +"" + col + "";
     }
 }
