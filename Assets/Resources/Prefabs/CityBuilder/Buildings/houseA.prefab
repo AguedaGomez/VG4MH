@@ -218,8 +218,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PickMaterials
+      - m_Target: {fileID: 617395722021302805}
+        m_MethodName: PickUpMaterials
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -317,6 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5299611036719548202}
   - component: {fileID: 5882240771510288998}
+  - component: {fileID: 617395722021302805}
   m_Layer: 0
   m_Name: houseA
   m_TagString: houseA
@@ -367,6 +368,18 @@ MonoBehaviour:
   indicatorText: {fileID: 1548169567}
   maxMaterials: 40
   materialsButton: {fileID: 1500243736}
+--- !u!114 &617395722021302805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5305152718561655634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad521a67b5f8ac7489af9ceb46c68f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7313757339234320987
 PrefabInstance:
   m_ObjectHideFlags: 0

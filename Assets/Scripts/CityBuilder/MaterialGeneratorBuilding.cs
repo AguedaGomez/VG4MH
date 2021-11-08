@@ -20,7 +20,8 @@ public class MaterialGeneratorBuilding : Building
     private City cityScript;
     void Start()
     {
-        
+        city = GameObject.FindGameObjectWithTag(cityTag);
+        cityScript = city.GetComponent<City>();
     }
 
     public void InitializedAsDefault()
@@ -94,8 +95,9 @@ public class MaterialGeneratorBuilding : Building
 
     public void UpdateMaterialsInSaveObject()
     {
+        Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.boardState.Find(n => n.buildingName == buildingName).currentMaterials);
+
         SaveObject.Instance.boardState.Find(n => n.id == id).currentMaterials = materialsPerSecond;
-        //Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.boardState.Find(n => n.buildingName == buildingName).currentMaterials);
     }
 
     public void PickMaterials()

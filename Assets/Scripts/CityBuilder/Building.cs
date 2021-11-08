@@ -25,7 +25,8 @@ public class Building : MonoBehaviour
 
     public enum Type
     {
-        MATERIALGENERATORBUILDING
+        MATERIALGENERATORBUILDING,
+        NONE
     }
     public Type type; // if the building generates materials
 

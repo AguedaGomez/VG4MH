@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BuildingController : MonoBehaviour
 {
@@ -70,9 +69,5 @@ public class BuildingController : MonoBehaviour
         }
     }
 
-    public void ChangeScene(string nameScene)
-    {
-        SceneManager.LoadScene(nameScene);
-    }
 
 }

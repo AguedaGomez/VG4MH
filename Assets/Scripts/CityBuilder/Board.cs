@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Board : MonoBehaviour
 {
     // TODO: configuracion inicial
     public GameObject staticBuildingA;
-    public GameObject staticBuildingB;
+    public GameObject library;
     public City city; //Eliminar city de aquí?
 
     private float cellSize = 4f;
@@ -66,7 +67,9 @@ public class Board : MonoBehaviour
         //Debug.Log("TEST: Actualizando un edificio");
         if (CheckForBuildingAtPosition(position))
         {
-            GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
+            Transform buildingTransform = building.GetComponent<Transform>();
+            Quaternion buildingRotation = buildingTransform.rotation;
+            GameObject createdBuilding = Instantiate(building, position, buildingRotation); //Quaternion.identity
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
 
@@ -82,8 +85,8 @@ public class Board : MonoBehaviour
 
                 if (currentMaterials < 0)
                 {
-                    mGBScript.InitializedAsDefault();
                     SaveBoardStateInList(x, z);
+                    mGBScript.InitializedAsDefault();
                 }
                     
                 else
@@ -94,9 +97,7 @@ public class Board : MonoBehaviour
                 
                 if (currentMaterials < 0)
                     SaveBoardStateInList(x, z);
-            }
-
-            
+            }   
         } 
     }
 
@@ -142,6 +143,8 @@ public class Board : MonoBehaviour
         Debug.Log("guardando objeto con id: " + sB.id);
         if (buildings[x, z].type == Building.Type.MATERIALGENERATORBUILDING)
             sB.currentMaterials = buildings[x, z].materialsPerSecond;
+        else
+            sB.currentMaterials = 0;
 
         SaveObject.Instance.boardState.Add(sB);
 
@@ -168,8 +171,9 @@ public class Board : MonoBehaviour
         else
         {
             // static buildings initial configuration. First time the game starts
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(8, 0, 10)), -1);
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(12, 0, 15)), -1);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(0, 29), 0, UnityEngine.Random.Range(0, 29))), -1);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(0, 29), 0, UnityEngine.Random.Range(0, 29))), -1);
+            AddBuilding(library, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(0, 29), 0, UnityEngine.Random.Range(0, 29))), -1);
         }
 
     }

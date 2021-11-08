@@ -603,20 +603,20 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 8734657886036341878}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PickMaterials
-        m_Mode: 1
+      - m_Target: {fileID: 3296588070346240322}
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Library_Interior
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!1 &8464561809356661064
@@ -630,6 +630,7 @@ GameObject:
   - component: {fileID: 9093887718369983474}
   - component: {fileID: 4065032045279333507}
   - component: {fileID: 1739362848993386187}
+  - component: {fileID: 3296588070346240322}
   m_Layer: 0
   m_Name: Library
   m_TagString: Untagged
@@ -644,7 +645,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8464561809356661064}
-  m_LocalRotation: {x: 0.00000018265966, y: -0.7071069, z: -0.7071067, w: -0.00000018626449}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 4.66, y: 0.47, z: 16.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -655,7 +656,7 @@ Transform:
   - {fileID: 8380773946067024473}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -179.99998}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!205 &4065032045279333507
 LODGroup:
   m_ObjectHideFlags: 0
@@ -699,12 +700,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8ad6ab25819f4b98b6b62bd2e54f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicatorText: {fileID: 0}
-  maxMaterials: 0
-  materialsButton: {fileID: 0}
   id: 
   cost: 0
-  buildingName: 
+  buildingName: library
   nLocals: 0
   activationRequired: 0
   row: 0
@@ -713,3 +711,16 @@ MonoBehaviour:
   cellsInCol: 0
   powerRIncrease: 0
   materialsPerSecond: 0
+  type: 1
+--- !u!114 &3296588070346240322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464561809356661064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad521a67b5f8ac7489af9ceb46c68f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
