@@ -10390,7 +10390,7 @@ MonoBehaviour:
   powerRLastCheckPoint: 0
   buildingsInGame:
   - {fileID: 5305152718561655634, guid: 50305df1d5f0c2049b605c767d629740, type: 3}
-  - {fileID: 2465792924998298007, guid: 5baed79b51f087c41a697140eeac0f4d, type: 3}
+  - {fileID: 8464561809356661064, guid: a8f7d884d53be82468a6bd5e102e2ed6, type: 3}
 --- !u!4 &1538201033
 Transform:
   m_ObjectHideFlags: 0
@@ -28488,8 +28488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticBuildingA: {fileID: 5305152718561655634, guid: 50305df1d5f0c2049b605c767d629740,
     type: 3}
-  staticBuildingB: {fileID: 5305152718561655634, guid: 42b074101a3b2124fa97f749fd786112,
-    type: 3}
+  library: {fileID: 0}
   city: {fileID: 1538201032}
 --- !u!1001 &1945903361
 PrefabInstance:
