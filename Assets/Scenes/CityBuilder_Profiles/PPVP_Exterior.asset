@@ -65,12 +65,12 @@ MonoBehaviour:
     value: {x: 68.10191, y: 95}
   minLuminance:
     overrideState: 1
-    value: 0.9
+    value: -0.18
   maxLuminance:
     overrideState: 1
     value: 2.3
   keyValue:
-    overrideState: 1
+    overrideState: 0
     value: 1.05
   eyeAdaptation:
     overrideState: 0

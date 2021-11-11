@@ -8,7 +8,13 @@ public class BuildingController : MonoBehaviour
     public City city; //mirar cambiar city de aqui
     public Board board;
     private GameObject selectedBuilding;
+    [SerializeField] private GameObject GridUI;
     // Start is called before the first frame update
+
+    private void OnEnable()
+    {
+        //GridUI.SetActive(false);
+    }
     void Start()
     {
         
@@ -66,6 +72,7 @@ public class BuildingController : MonoBehaviour
         if (city.availableBuildings.ContainsKey(buildingName))
         {
             selectedBuilding = city.availableBuildings[buildingName];
+            GridUI.SetActive(true);
         }
     }
 
