@@ -15,6 +15,9 @@ public class Board : MonoBehaviour
     private int numCells;
     private float boardHeight, boardWidth;
     private Building[,] buildings;
+
+    private bool[,] boardStatus;
+    private bool availableCell = true;
     
     private string buildingsPath = "Prefabs/CityBuilder/Buildings";
 
@@ -28,6 +31,8 @@ public class Board : MonoBehaviour
         numCells = (int)(boardWidth / cellSize);
 
         buildings = new Building[numCells, numCells];
+
+        boardStatus = new bool[numCells, numCells];
   
     }
 
@@ -36,40 +41,15 @@ public class Board : MonoBehaviour
         InitializeBoard();
     }
 
-    //public void AddBuilding(GameObject building, Vector3 position)
-    //{
-    //   // Debug.Log("TEST: Añadiendo un edificio");
-    //    if (CheckForBuildingAtPosition(position))
-    //    {
-    //        GameObject createdBuilding = Instantiate(building, position, Quaternion.identity);
-    //        Building buildingScript = createdBuilding.GetComponent<Building>();
-    //        createdBuilding.transform.name = buildingScript.buildingName;
-
-    //        if (buildingScript.type == Building.Type.MATERIALGENERATORBUILDING)
-    //        {
-    //            MaterialGeneratorBuilding mGBScript = createdBuilding.GetComponent<MaterialGeneratorBuilding>();
-    //            mGBScript.InitializedAsDefault();
-    //        }
-
-    //        int x = CalculateRowColumn(position.x);
-    //        int z = CalculateRowColumn(position.z);
-
-    //        buildingScript.id = x + "" + z + "";
-
-    //        buildings[x, z] = buildingScript;
-    //        SaveBoardStateInList(x,z);
-
-    //    } 
-    //}
-
     public void AddBuilding(GameObject building, Vector3 position, int currentMaterials)
     {
         //Debug.Log("TEST: Actualizando un edificio");
         if (CheckForBuildingAtPosition(position))
         {
+
             Transform buildingTransform = building.GetComponent<Transform>();
             Quaternion buildingRotation = buildingTransform.rotation;
-            GameObject createdBuilding = Instantiate(building, position, buildingRotation); //Quaternion.identity
+            GameObject createdBuilding = Instantiate(building, position, buildingRotation);
             Building buildingScript = createdBuilding.GetComponent<Building>();
             createdBuilding.transform.name = buildingScript.buildingName;
 
@@ -77,6 +57,14 @@ public class Board : MonoBehaviour
             int z = CalculateRowColumn(position.z);
 
             buildingScript.id = x + "" + z + "";
+
+            if(CheckAvailableSpace(x, z, buildingScript))
+            {
+                //BoardView.InstantiateBuilding(editMode, blue)
+                //Prefab a parte  ghost script
+                //In BoardView call to adrian method in prefab
+                //else BoardView.InstantiateBuilding(editMode, red)
+            }
 
             if (buildingScript.type == Building.Type.MATERIALGENERATORBUILDING)
             {
@@ -104,6 +92,19 @@ public class Board : MonoBehaviour
     public bool CheckForBuildingAtPosition(Vector3 position)
     {
         return buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] == null;
+    }
+
+    private bool CheckAvailableSpace(int x, int z, Building currentBuilding)
+    {
+        for (int r = 0; r < currentBuilding.cellsInRow; r++)
+        {
+            for (int c = 0; c < currentBuilding.cellsInCol; c++)
+            {
+                if (boardStatus[r, c] != availableCell)
+                    return false;
+            }
+        }
+        return true;
     }
 
     public Vector3 CalculateGridPosition(Vector3 position)
