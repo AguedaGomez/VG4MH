@@ -15,6 +15,7 @@ public class Board : MonoBehaviour
     private int numCells;
     private float boardHeight, boardWidth;
     private Building[,] buildings;
+    private BoardView boardView;
 
     private bool[,] boardStatus;
     private bool availableCell = true;
@@ -33,6 +34,8 @@ public class Board : MonoBehaviour
         buildings = new Building[numCells, numCells];
 
         boardStatus = new bool[numCells, numCells];
+
+        boardView = this.GetComponent<BoardView>();
   
     }
 
@@ -41,9 +44,29 @@ public class Board : MonoBehaviour
         InitializeBoard();
     }
 
+    public void AddBuildingInEditMode(GameObject building, Vector3 position)
+    {
+        bool availability = CheckSpaceAtPosition(building, position);
+        ChangeBuildingColor(availability);
+        GameObject currentBuilding = boardView.SetUpBuildingEditMode(building, availability, position);
+    }
+
+    public bool CheckSpaceAtPosition(GameObject building, Vector3 position)
+    {
+        int x = CalculateRowColumn(position.x);
+        int z = CalculateRowColumn(position.z);
+        Building buildingScript = building.GetComponent<Building>();
+        bool availability = CheckForBuildingAtPosition(position) || CheckAvailableSpace(x, z, buildingScript);
+        ChangeBuildingColor(availability);
+        return availability;
+    }
+
+    private void ChangeBuildingColor(bool availability)
+    {
+        boardView.ColorDependingAvailability(availability);
+    }
     public void AddBuilding(GameObject building, Vector3 position, int currentMaterials)
     {
-        //Debug.Log("TEST: Actualizando un edificio");
         if (CheckForBuildingAtPosition(position))
         {
 

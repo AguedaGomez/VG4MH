@@ -9,6 +9,8 @@ TagManager:
   - local
   - houseA
   - houseB
+  - ghost
+  - board
   layers:
   - Default
   - TransparentFX

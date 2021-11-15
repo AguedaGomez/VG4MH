@@ -38,12 +38,13 @@ public class CameraController : MonoBehaviour
     [SerializeField] bool debug = true;
 
     public CityBuilderResources.Status Status { get => status; set => status = value; }
+    public bool moveCamera = false;
 
     #endregion
 
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (Input.touchCount > 0)
         {
@@ -53,7 +54,8 @@ public class CameraController : MonoBehaviour
             }
             else
             {
-                switch (Status) 
+
+                switch (Status)
                 {
                     case (CityBuilderResources.Status.Game):
                         InGameModeMovement();
@@ -62,9 +64,10 @@ public class CameraController : MonoBehaviour
                     case (CityBuilderResources.Status.Build):
                         InBuildModeMovement();
                         break;
-                   
-                    default:break;
+
+                    default: break;
                 }
+                
             }
         }
 

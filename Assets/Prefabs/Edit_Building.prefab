@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8035013543185129483}
   - component: {fileID: 7032052500951363375}
   m_Layer: 0
-  m_Name: SM_Base_Building_LODS_Group
-  m_TagString: Untagged
+  m_Name: Edit_Building
+  m_TagString: ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7990516859548343515}
-  - {fileID: 9001486140886751959}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,10 +47,13 @@ MonoBehaviour:
   ghostMaterial: {fileID: 2100000, guid: 5541a69503c771d47a7caf18bbf98232, type: 2}
   colorClear: {r: 0.36862746, g: 0.75686276, b: 0.77254903, a: 1}
   colorOccupied: {r: 1, g: 0, b: 0, a: 1}
-  buildingMeshFilter: {fileID: 5002886867427286335}
+  buildingSize: {x: 1, y: 1}
+  buildingMeshFilter: {fileID: 5195711238187931780, guid: 50305df1d5f0c2049b605c767d629740,
+    type: 3}
   cellsMeshFilter: {fileID: 5376303142924647374}
   occupied: 0
   cellThickness: 0.1
+  refreshSize: 0
 --- !u!1 &7481998223841051423
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,12 +79,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7481998223841051423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.08}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: -0.020000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8035013543185129483}
-  m_RootOrder: 1
+  m_Father: {fileID: 7990516859548343515}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5376303142924647374
 MeshFilter:
@@ -142,9 +144,10 @@ GameObject:
   - component: {fileID: 7990516859548343515}
   - component: {fileID: 5002886867427286335}
   - component: {fileID: 8384117145568520719}
+  - component: {fileID: 1551910433}
   m_Layer: 0
   m_Name: SM_Base_Building_LOD0
-  m_TagString: Untagged
+  m_TagString: ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +162,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 9001486140886751959}
   m_Father: {fileID: 8035013543185129483}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
@@ -210,3 +214,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1551910433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8489548624715206711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.315891, y: 2.7734625, z: 2.0154696}
+  m_Center: {x: 0.00000011920935, y: -0.0000003002279, z: 1.0092472}

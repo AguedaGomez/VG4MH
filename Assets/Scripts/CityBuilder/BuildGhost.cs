@@ -10,9 +10,9 @@ public class BuildGhost : MonoBehaviour
     [SerializeField] Color colorOccupied = Color.red;
     
     Mesh buildingMesh;
-    [SerializeField] Vector2Int buildingSize = new Vector2Int(2,2);
+    [SerializeField] public Vector2Int buildingSize = new Vector2Int(2,2);
 
-    [SerializeField] MeshFilter buildingMeshFilter;
+    [SerializeField] public MeshFilter buildingMeshFilter;
     [SerializeField] MeshFilter cellsMeshFilter;
     [SerializeField] bool occupied = false;
     [SerializeField] float cellThickness = .1f;
@@ -29,25 +29,30 @@ public class BuildGhost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (occupied)
-        {
-            ghostMaterial.SetColor("_Color", colorOccupied);
-        }
-        else 
-        {
-            ghostMaterial.SetColor("_Color", colorClear);
-        }
-        if (refreshSize) 
-        {
-            ConstructCell(buildingSize);
-            refreshSize = !refreshSize; 
-        }
+        //if (occupied)
+        //{
+        //    ghostMaterial.SetColor("_Color", colorOccupied);
+        //}
+        //else 
+        //{
+        //    ghostMaterial.SetColor("_Color", colorClear);
+        //}
+        //if (refreshSize) 
+        //{
+        //    ConstructCell(buildingSize);
+        //    refreshSize = !refreshSize; 
+        //}
+    }
+
+    public void SetColor(bool available)
+    {
+        ghostMaterial.SetColor("_Color", available ? colorClear : colorOccupied); 
     }
 
     public void SetBuilding(Building building) 
     {
         //buildingMesh = building.
-        buildingSize = new Vector2Int(building.col, building.row);
+        buildingSize = new Vector2Int(building.cellsInRow, building.cellsInCol);
 
     }
 

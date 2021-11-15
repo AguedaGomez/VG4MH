@@ -24,18 +24,18 @@ public class SaveAndLoadDataManager : MonoBehaviour
     }
 #elif UNITY_EDITOR && UNITY_ANDROID
 
-    private void OnApplicationFocus(bool focus)
-    {
-        if (focus)
-        {
-            LoadGame();
-        }
-        else
-        {
-            SaveGame();
-        }
+    //private void OnApplicationFocus(bool focus)
+    //{
+    //    if (focus)
+    //    {
+    //        LoadGame();
+    //    }
+    //    else
+    //    {
+    //        SaveGame();
+    //    }
 
-    }
+    //}
 #endif
 
     public void LoadGame()
