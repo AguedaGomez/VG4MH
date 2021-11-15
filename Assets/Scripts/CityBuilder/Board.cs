@@ -57,17 +57,17 @@ public class Board : MonoBehaviour
         int z = CalculateRowColumn(position.z);
         Building buildingScript = building.GetComponent<Building>();
         bool availability = CheckForBuildingAtPosition(position) || CheckAvailableSpace(x, z, buildingScript);
-        ChangeBuildingColor(availability);
+        //ChangeBuildingColor(availability);
         return availability;
     }
 
-    private void ChangeBuildingColor(bool availability)
+    public void ChangeBuildingColor(bool availability)
     {
         boardView.ColorDependingAvailability(availability);
     }
     public void AddBuilding(GameObject building, Vector3 position, int currentMaterials)
     {
-        if (CheckForBuildingAtPosition(position))
+        if (CheckSpaceAtPosition(building, position))
         {
 
             Transform buildingTransform = building.GetComponent<Transform>();
@@ -80,14 +80,6 @@ public class Board : MonoBehaviour
             int z = CalculateRowColumn(position.z);
 
             buildingScript.id = x + "" + z + "";
-
-            if(CheckAvailableSpace(x, z, buildingScript))
-            {
-                //BoardView.InstantiateBuilding(editMode, blue)
-                //Prefab a parte  ghost script
-                //In BoardView call to adrian method in prefab
-                //else BoardView.InstantiateBuilding(editMode, red)
-            }
 
             if (buildingScript.type == Building.Type.MATERIALGENERATORBUILDING)
             {
@@ -109,7 +101,12 @@ public class Board : MonoBehaviour
                 if (currentMaterials < 0)
                     SaveBoardStateInList(x, z);
             }   
-        } 
+        }
+        else
+        {
+            //mostrar mensaje de que no se puede construir ahi
+        }
+
     }
 
     public bool CheckForBuildingAtPosition(Vector3 position)

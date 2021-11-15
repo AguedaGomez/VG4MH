@@ -3909,6 +3909,7 @@ MonoBehaviour:
   deadZone: 0.1
   status: 0
   debug: 1
+  moveCamera: 0
 --- !u!1 &516898390
 GameObject:
   m_ObjectHideFlags: 0
@@ -9316,9 +9317,9 @@ GameObject:
   - component: {fileID: 1431390054}
   - component: {fileID: 1431390053}
   - component: {fileID: 1431390052}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GridUI
-  m_TagString: Untagged
+  m_TagString: board
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9392,7 +9393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431390051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58, y: 0.6, z: 58}
+  m_LocalPosition: {x: 58, y: 0.7, z: 58}
   m_LocalScale: {x: 12, y: 1, z: 12}
   m_Children: []
   m_Father: {fileID: 0}
@@ -28458,9 +28459,10 @@ GameObject:
   - component: {fileID: 1945131895}
   - component: {fileID: 1945131899}
   - component: {fileID: 1945131900}
+  - component: {fileID: 1945131901}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: board
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -28553,6 +28555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   city: {fileID: 1538201032}
   board: {fileID: 1945131900}
+  cameraController: {fileID: 513711715}
   GridUI: {fileID: 1431390051}
 --- !u!114 &1945131900
 MonoBehaviour:
@@ -28568,8 +28571,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticBuildingA: {fileID: 5305152718561655634, guid: 50305df1d5f0c2049b605c767d629740,
     type: 3}
-  library: {fileID: 0}
+  library: {fileID: 8464561809356661064, guid: a8f7d884d53be82468a6bd5e102e2ed6, type: 3}
   city: {fileID: 1538201032}
+--- !u!114 &1945131901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945131894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d75017a382b1744a2be0ec4efa3399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editBuilding: {fileID: 7262558609466260145, guid: ae2c55ae7c49c20459c7daf7e76a7092,
+    type: 3}
 --- !u!1001 &1945903361
 PrefabInstance:
   m_ObjectHideFlags: 0
