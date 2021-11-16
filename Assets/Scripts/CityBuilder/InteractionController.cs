@@ -65,6 +65,7 @@ public class InteractionController : MonoBehaviour
                             Vector3 gridPosition = board.CalculateGridPosition(hit.point);
                             currentCollider.gameObject.transform.position = gridPosition;
                             currentColliderPosition = currentCollider.gameObject.transform.position;
+                            CheckInBoard();
                         }
                     }
 
@@ -72,7 +73,6 @@ public class InteractionController : MonoBehaviour
                 case TouchPhase.Ended:
                     if (CheckInteractionWith(GHOST_TAG))
                         CheckInBoard();
-                    //currentCollider = null;
                     break;
                 default:
                     break;
@@ -159,11 +159,10 @@ public class InteractionController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 100.0f)) {
             Vector3 gridPosition = board.CalculateGridPosition(hit.point);
-            currentCollider.gameObject.transform.position = gridPosition;
             
             board.AddBuildingInEditMode(selectedBuilding, board.CalculateGridPosition(hit.point));
 
-            currentColliderPosition = currentCollider.gameObject.transform.position;
+            currentColliderPosition = gridPosition;
         }
             
     }

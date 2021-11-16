@@ -17,8 +17,8 @@ public class Board : MonoBehaviour
     private Building[,] buildings;
     private BoardView boardView;
 
-    private bool[,] boardStatus;
-    private bool availableCell = true;
+    private bool[,] boardOccupationStatus;
+    private bool occupiedCell = true;
     
     private string buildingsPath = "Prefabs/CityBuilder/Buildings";
 
@@ -33,7 +33,7 @@ public class Board : MonoBehaviour
 
         buildings = new Building[numCells, numCells];
 
-        boardStatus = new bool[numCells, numCells];
+        boardOccupationStatus = new bool[numCells, numCells];
 
         boardView = this.GetComponent<BoardView>();
   
@@ -56,7 +56,7 @@ public class Board : MonoBehaviour
         int x = CalculateRowColumn(position.x);
         int z = CalculateRowColumn(position.z);
         Building buildingScript = building.GetComponent<Building>();
-        return CheckForBuildingAtPosition(position) || CheckAvailableSpace(x, z, buildingScript);
+        return CheckAvailableSpace(x, z, buildingScript) || CheckForBuildingAtPosition(position);
        
     }
 
@@ -119,11 +119,11 @@ public class Board : MonoBehaviour
 
     private bool CheckAvailableSpace(int x, int z, Building currentBuilding)
     {
-        for (int r = x; r < currentBuilding.cellsInX; r++)
+        for (int r = 0; r < currentBuilding.cellsInX; r++)
         {
-            for (int c = z; c < currentBuilding.cellsInZ; c++)
+            for (int c = 0; c < currentBuilding.cellsInZ; c++)
             {
-                if (boardStatus[r, c] != availableCell)
+                if (boardOccupationStatus[r + x, c + z] == occupiedCell) // there isn't available space
                     return false;
             }
         }
@@ -179,11 +179,11 @@ public class Board : MonoBehaviour
     {
         int cellsInZ = buildings[x, z].cellsInZ;
         int cellsInX = buildings[x, z].cellsInX;
-        for (int r = x; r < cellsInX; r++)
+        for (int r = 0; r < cellsInX; r++)
         {
-            for (int c = z; c < cellsInZ; c++)
+            for (int c = 0; c < cellsInZ; c++)
             {
-                boardStatus[r, c] = true;
+                boardOccupationStatus[r + x, c + z] = true;
             }
         }
     }

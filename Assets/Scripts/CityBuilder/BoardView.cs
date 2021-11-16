@@ -19,7 +19,6 @@ public class BoardView : MonoBehaviour
         GameObject lod0 = FindGameObjectInChildWithTag(lodsGroup, "LOD0");
 
         MeshFilter currentMesh = lod0.GetComponent<MeshFilter>();
-        //MeshFilter currentMesh = building.transform.Find("SM_Base_Building_4_LODS_Group").Find("SM_Base_Building_4_LOD0").GetComponent<MeshFilter>(); //change to shared mesh
         buildGhost.ChangeMesh(currentMesh);
 
         Building buildingScript = building.GetComponent<Building>();
