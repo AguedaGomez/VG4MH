@@ -56,9 +56,8 @@ public class Board : MonoBehaviour
         int x = CalculateRowColumn(position.x);
         int z = CalculateRowColumn(position.z);
         Building buildingScript = building.GetComponent<Building>();
-        bool availability = CheckForBuildingAtPosition(position) || CheckAvailableSpace(x, z, buildingScript);
-        //ChangeBuildingColor(availability);
-        return availability;
+        return CheckForBuildingAtPosition(position) || CheckAvailableSpace(x, z, buildingScript);
+       
     }
 
     public void ChangeBuildingColor(bool availability)
@@ -93,7 +92,11 @@ public class Board : MonoBehaviour
                 }
                     
                 else
+                {
+                    SaveBoardStatus(x, z); //esto es asi?
                     mGBScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
+                }
+                    
             } else
             {
                 buildings[x, z] = buildingScript;
@@ -116,9 +119,9 @@ public class Board : MonoBehaviour
 
     private bool CheckAvailableSpace(int x, int z, Building currentBuilding)
     {
-        for (int r = 0; r < currentBuilding.cellsInRow; r++)
+        for (int r = x; r < currentBuilding.cellsInX; r++)
         {
-            for (int c = 0; c < currentBuilding.cellsInCol; c++)
+            for (int c = z; c < currentBuilding.cellsInZ; c++)
             {
                 if (boardStatus[r, c] != availableCell)
                     return false;
@@ -167,14 +170,28 @@ public class Board : MonoBehaviour
         else
             sB.currentMaterials = 0;
 
-        SaveObject.Instance.boardState.Add(sB);
+        SaveBoardStatus(x, z);
+        SaveObject.Instance.buildingsInBoard.Add(sB);
 
+    }
+
+    private void SaveBoardStatus(int x, int z)
+    {
+        int cellsInZ = buildings[x, z].cellsInZ;
+        int cellsInX = buildings[x, z].cellsInX;
+        for (int r = x; r < cellsInX; r++)
+        {
+            for (int c = z; c < cellsInZ; c++)
+            {
+                boardStatus[r, c] = true;
+            }
+        }
     }
 
     public void InitializeBoard()
     {
         //Debug.Log("2. TEST: Inicializando el board");
-        var savedBoardState = SaveObject.Instance.boardState;
+        var savedBoardState = SaveObject.Instance.buildingsInBoard;
 
         if (savedBoardState.Count != 0)
         {
@@ -184,7 +201,7 @@ public class Board : MonoBehaviour
                 GameObject prefabToInstantiate = Resources.Load<GameObject>(path);
                 prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
-                Debug.Log("currentMaterials de building añadidos: " + b.currentMaterials);
+                //Debug.Log("currentMaterials de building añadidos: " + b.currentMaterials);
                 AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials);
             }
             

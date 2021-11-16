@@ -112,7 +112,7 @@ public class City : MonoBehaviour
         foreach (var b in buildingsInGame)
         {
             Building building = b.GetComponent<Building>();
-            if (building.activationRequired <= Activation)
+            if (building.activationRequired <= Activation && building.activationRequired > 0)
             {
                 if (availableBuildings.ContainsKey(building.buildingName) == false)
                 {

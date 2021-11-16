@@ -47,9 +47,8 @@ MonoBehaviour:
   ghostMaterial: {fileID: 2100000, guid: 5541a69503c771d47a7caf18bbf98232, type: 2}
   colorClear: {r: 0.36862746, g: 0.75686276, b: 0.77254903, a: 1}
   colorOccupied: {r: 1, g: 0, b: 0, a: 1}
-  buildingSize: {x: 1, y: 1}
-  buildingMeshFilter: {fileID: 5195711238187931780, guid: 50305df1d5f0c2049b605c767d629740,
-    type: 3}
+  buildingSize: {x: 2, y: 2}
+  buildingMeshFilter: {fileID: 5002886867427286335}
   cellsMeshFilter: {fileID: 5376303142924647374}
   occupied: 0
   cellThickness: 0.1
@@ -174,7 +173,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8489548624715206711}
-  m_Mesh: {fileID: -8653100148737181142, guid: 321fb72f25fc49e428dd3f37739a3894, type: 3}
+  m_Mesh: {fileID: -853547117296931356, guid: 7b61a176b1a1de94ca0f7f9c1b994b25, type: 3}
 --- !u!23 &8384117145568520719
 MeshRenderer:
   m_ObjectHideFlags: 0

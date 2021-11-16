@@ -56,7 +56,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
     {
         ObjectToSaveData();
         SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
-        SaveObject.Instance.boardState.Clear();
+        SaveObject.Instance.buildingsInBoard.Clear();
         print("app cerrada");
     }
 
@@ -76,7 +76,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
         SaveObject.Instance.materials = loadedSaveObject.materials;
         SaveObject.Instance.date = loadedSaveObject.date;
         Debug.Log("1. guardando fecha en objeto " + SaveObject.Instance.date);
-        SaveObject.Instance.boardState = loadedSaveObject.boardState;
+        SaveObject.Instance.buildingsInBoard = loadedSaveObject.buildingsInBoard;
         
     }
 

@@ -17,8 +17,8 @@ public class Building : MonoBehaviour
     public int activationRequired; // minimun of activation to built it
     public int row; // row (z) in the board where it was built
     public int col; // col (x) in the board where it was built
-    public int cellsInRow; // all the cells that it occupies in z
-    public int cellsInCol; // all the cells that it occupies in x
+    public int cellsInZ; // all the cells that it occupies in z
+    public int cellsInX; // all the cells that it occupies in x
     public int powerRIncrease; // percentage of powerR that increases when built
 
     public int materialsPerSecond = 0;

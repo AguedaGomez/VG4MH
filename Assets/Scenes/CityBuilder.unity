@@ -5053,7 +5053,7 @@ GameObject:
   - component: {fileID: 663573393}
   - component: {fileID: 663573392}
   m_Layer: 5
-  m_Name: library
+  m_Name: house4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5130,7 +5130,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: HouseB
+          m_StringArgument: house4
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &663573393
@@ -10471,6 +10471,7 @@ MonoBehaviour:
   buildingsInGame:
   - {fileID: 5305152718561655634, guid: 50305df1d5f0c2049b605c767d629740, type: 3}
   - {fileID: 8464561809356661064, guid: a8f7d884d53be82468a6bd5e102e2ed6, type: 3}
+  - {fileID: 8252000503648061253, guid: d266436b9df8b2044af9f94c1ff06ce1, type: 3}
 --- !u!4 &1538201033
 Transform:
   m_ObjectHideFlags: 0

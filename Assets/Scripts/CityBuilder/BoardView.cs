@@ -15,14 +15,19 @@ public class BoardView : MonoBehaviour
 
     public GameObject SetUpBuildingEditMode(GameObject building, bool spaceAvailable, Vector3 position)
     {
-        MeshFilter currentMesh = building.transform.Find("SM_Base_Building_LODS_Group").Find("SM_Base_Building_LOD0").GetComponent<MeshFilter>();
-        buildGhost.buildingMeshFilter = currentMesh;
+        GameObject lodsGroup = FindGameObjectInChildWithTag(building, "LOD_group");
+        GameObject lod0 = FindGameObjectInChildWithTag(lodsGroup, "LOD0");
+
+        MeshFilter currentMesh = lod0.GetComponent<MeshFilter>();
+        //MeshFilter currentMesh = building.transform.Find("SM_Base_Building_4_LODS_Group").Find("SM_Base_Building_4_LOD0").GetComponent<MeshFilter>(); //change to shared mesh
+        buildGhost.ChangeMesh(currentMesh);
 
         Building buildingScript = building.GetComponent<Building>();
         buildGhost.SetBuilding(buildingScript);
 
-        Transform buildingTransform = building.GetComponent<Transform>();
-        Quaternion buildingRotation = buildingTransform.rotation;
+        //Transform buildingTransform = building.GetComponent<Transform>();
+        Transform buildGhostTransform = buildGhost.GetComponent<Transform>();
+        Quaternion buildingRotation = buildGhostTransform.rotation;
 
         //buildGhost.SetColor(spaceAvailable);
         ColorDependingAvailability(spaceAvailable);
@@ -34,5 +39,21 @@ public class BoardView : MonoBehaviour
     public void ColorDependingAvailability(bool spaceAvailable)
     {
         buildGhost.SetColor(spaceAvailable);
+    }
+
+    private GameObject FindGameObjectInChildWithTag(GameObject parent, string tag)
+    {
+        Transform t = parent.transform;
+
+        for (int i = 0; i < t.childCount; i++)
+        {
+            if (t.GetChild(i).gameObject.tag == tag)
+            {
+                return t.GetChild(i).gameObject;
+            }
+
+        }
+
+        return null;
     }
 }

@@ -12,7 +12,7 @@ public class BuildGhost : MonoBehaviour
     Mesh buildingMesh;
     [SerializeField] public Vector2Int buildingSize = new Vector2Int(2,2);
 
-    [SerializeField] public MeshFilter buildingMeshFilter;
+    [SerializeField] MeshFilter buildingMeshFilter; //meshfilter?
     [SerializeField] MeshFilter cellsMeshFilter;
     [SerializeField] bool occupied = false;
     [SerializeField] float cellThickness = .1f;
@@ -24,6 +24,7 @@ public class BuildGhost : MonoBehaviour
     private void OnEnable()
     {
         ConstructCell(buildingSize);
+       
     }
 
     // Update is called once per frame
@@ -52,10 +53,14 @@ public class BuildGhost : MonoBehaviour
     public void SetBuilding(Building building) 
     {
         //buildingMesh = building.
-        buildingSize = new Vector2Int(building.cellsInRow, building.cellsInCol);
+        buildingSize = new Vector2Int(building.cellsInX, building.cellsInZ);
 
     }
 
+    public void ChangeMesh(MeshFilter currentMesh)
+    {
+        buildingMeshFilter.sharedMesh = currentMesh.sharedMesh;
+    }
     private int CalculateDisplacement(int d) 
     {
         return (2 * d) + (2 * (d - 1));
