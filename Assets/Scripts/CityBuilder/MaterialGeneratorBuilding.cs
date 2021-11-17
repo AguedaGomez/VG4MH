@@ -95,7 +95,7 @@ public class MaterialGeneratorBuilding : Building
 
     public void UpdateMaterialsInSaveObject()
     {
-        Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.buildingsInBoard.Find(n => n.buildingName == buildingName).currentMaterials);
+        //Debug.Log("Actualizando materiales del objeto " + id + " " + SaveObject.Instance.buildingsInBoard.Find(n => n.buildingName == buildingName).currentMaterials);
 
         SaveObject.Instance.buildingsInBoard.Find(n => n.id == id).currentMaterials = materialsPerSecond;
     }

@@ -36,7 +36,7 @@ public class InteractionController : MonoBehaviour
                 case TouchPhase.Began:
                     if (CheckInteractionWith(BOARD_TAG))
                     {
-                        Debug.Log("interactua con camara");
+                        //Debug.Log("interactua con camara");
                         cameraController.moveCamera = true;
                         cameraController.Status = CityBuilderResources.Status.Game;
                     }
@@ -44,12 +44,12 @@ public class InteractionController : MonoBehaviour
                     {
                         if (CheckDoubleTap())
                         {
-                            Debug.Log("doble tap");
+                            //Debug.Log("doble tap");
                             AddBuilding();
                         }
                         else
                         {
-                            Debug.Log("interactua con ghost");
+                            //Debug.Log("interactua con ghost");
                             cameraController.Status = CityBuilderResources.Status.Build;
                         }
 
@@ -71,8 +71,8 @@ public class InteractionController : MonoBehaviour
 
                     break;
                 case TouchPhase.Ended:
-                    if (CheckInteractionWith(GHOST_TAG))
-                        CheckInBoard();
+                    //if (CheckInteractionWith(GHOST_TAG))
+                    //    CheckInBoard();
                     break;
                 default:
                     break;
@@ -107,6 +107,7 @@ public class InteractionController : MonoBehaviour
 
     void CheckInBoard()
     {
+        Debug.Log("check in board");
         bool availability = board.CheckSpaceAtPosition(selectedBuilding, currentColliderPosition);
         board.ChangeBuildingColor(availability);
     }

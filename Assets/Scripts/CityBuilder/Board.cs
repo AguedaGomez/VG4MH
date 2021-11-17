@@ -56,7 +56,10 @@ public class Board : MonoBehaviour
         int x = CalculateRowColumn(position.x);
         int z = CalculateRowColumn(position.z);
         Building buildingScript = building.GetComponent<Building>();
-        return CheckAvailableSpace(x, z, buildingScript) || CheckForBuildingAtPosition(position);
+
+        //bool availableSpace = CheckAvailableSpace(x, z, buildingScript);
+        //bool buildingAtPosition = CheckForBuildingAtPosition(position);
+        return CheckAvailableSpace(x, z, buildingScript) && CheckForBuildingAtPosition(position);
        
     }
 
@@ -119,11 +122,11 @@ public class Board : MonoBehaviour
 
     private bool CheckAvailableSpace(int x, int z, Building currentBuilding)
     {
-        for (int r = 0; r < currentBuilding.cellsInX; r++)
+        for (int r = 0; r < currentBuilding.cellsInZ; r++)
         {
-            for (int c = 0; c < currentBuilding.cellsInZ; c++)
+            for (int c = 0; c < currentBuilding.cellsInX; c++)
             {
-                if (boardOccupationStatus[r + x, c + z] == occupiedCell) // there isn't available space
+                if (boardOccupationStatus[x + c, z - r] == occupiedCell) // there isn't available space
                     return false;
             }
         }
@@ -164,7 +167,7 @@ public class Board : MonoBehaviour
     public void SaveBoardStateInList(int x, int z)
     {
         SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName);
-        Debug.Log("guardando objeto con id: " + sB.id);
+        //Debug.Log("guardando objeto con id: " + sB.id);
         if (buildings[x, z].type == Building.Type.MATERIALGENERATORBUILDING)
             sB.currentMaterials = buildings[x, z].materialsPerSecond;
         else
@@ -209,11 +212,12 @@ public class Board : MonoBehaviour
         else
         {
             // static buildings initial configuration. First time the game starts
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(0, 29), 0, UnityEngine.Random.Range(0, 29))), -1);
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(0, 29), 0, UnityEngine.Random.Range(0, 29))), -1);
-            AddBuilding(library, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(0, 29), 0, UnityEngine.Random.Range(0, 29))), -1);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
+            AddBuilding(library, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
         }
 
     }
+
 }
  

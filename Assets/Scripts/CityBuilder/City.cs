@@ -39,7 +39,7 @@ public class City : MonoBehaviour
 
     public void InitializeCity()
     {
-        Debug.Log("En initializeCity");
+        //Debug.Log("En initializeCity");
         //Debug.Log("fecha guardada: " + SaveObject.Instance.date);
         if (SaveObject.Instance.date != "")
             CheckInactiveTime(SaveObject.Instance.date);

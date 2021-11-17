@@ -707,8 +707,8 @@ MonoBehaviour:
   activationRequired: 0
   row: 0
   col: 0
-  cellsInRow: 0
-  cellsInCol: 0
+  cellsInZ: 1
+  cellsInX: 2
   powerRIncrease: 0
   materialsPerSecond: 0
   type: 1
