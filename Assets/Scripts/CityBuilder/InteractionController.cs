@@ -17,6 +17,7 @@ public class InteractionController : MonoBehaviour
     private Collider currentCollider;
     private Vector3 currentColliderPosition;
     private GameObject selectedBuilding;
+    private Building selectedBuildingScript;
 
     private void OnEnable()
     {
@@ -62,10 +63,14 @@ public class InteractionController : MonoBehaviour
                         RaycastHit hit;
                         if (Physics.Raycast(ray, out hit))
                         {
-                            Vector3 gridPosition = board.CalculateGridPosition(hit.point);
-                            currentCollider.gameObject.transform.position = gridPosition;
-                            currentColliderPosition = currentCollider.gameObject.transform.position;
-                            CheckInBoard();
+                            Vector3 gridPosition = board.CalculateGridPosition(hit.point); 
+                            if (!board.CheckBoardLimits(gridPosition, selectedBuildingScript))
+                            {
+                                currentCollider.gameObject.transform.position = gridPosition;
+                                currentColliderPosition = currentCollider.gameObject.transform.position;
+                                CheckInBoard();
+                            }
+                            
                         }
                     }
 
@@ -107,7 +112,7 @@ public class InteractionController : MonoBehaviour
 
     void CheckInBoard()
     {
-        Debug.Log("check in board");
+        //Debug.Log("check in board");
         bool availability = board.CheckSpaceAtPosition(selectedBuilding, currentColliderPosition);
         board.ChangeBuildingColor(availability);
     }
@@ -149,6 +154,7 @@ public class InteractionController : MonoBehaviour
         if (city.availableBuildings.ContainsKey(buildingName))
         {
             selectedBuilding = city.availableBuildings[buildingName];
+            selectedBuildingScript = selectedBuilding.GetComponent<Building>();
             AddBuildingInEditMode();
             GridUI.SetActive(true);
         }

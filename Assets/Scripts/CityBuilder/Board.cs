@@ -11,6 +11,11 @@ public class Board : MonoBehaviour
     public GameObject library;
     public City city; //Eliminar city de aquí?
 
+    private const int UP_LIMIT = 29;
+    private const int LEFT_LIMIT = 0;
+    private const int DOWN_LIMIT = -1;
+    private const int RIGHT_LIMIT = 30;
+
     private float cellSize = 4f;
     private int numCells;
     private float boardHeight, boardWidth;
@@ -131,6 +136,15 @@ public class Board : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public bool CheckBoardLimits(Vector3 gridPosition, Building buildingScript)
+    {
+        int x = CalculateRowColumn(gridPosition.x);
+        int z = CalculateRowColumn(gridPosition.z);
+        if (x < LEFT_LIMIT ||  z > UP_LIMIT || x + buildingScript.cellsInX > RIGHT_LIMIT || z - buildingScript.cellsInZ < DOWN_LIMIT) //out of the limits
+            return true;
+        return false;
     }
 
     public Vector3 CalculateGridPosition(Vector3 position)
