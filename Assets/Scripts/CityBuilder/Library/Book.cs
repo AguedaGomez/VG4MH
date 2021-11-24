@@ -21,10 +21,10 @@ public class Book : MonoBehaviour
     {
         
     }
-    public void NextPage() 
+    public void NextPage(bool hasText = true)
     {
         page.TurnPage();
-        text.pageToDisplay++;
+        if(hasText) text.pageToDisplay++;
     }
     public void BackPage() 
     {

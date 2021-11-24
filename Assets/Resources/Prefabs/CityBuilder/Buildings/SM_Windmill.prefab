@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8980434152002782859}
   - component: {fileID: 3894378951381249114}
   - component: {fileID: 2130465095303125607}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 8174211197446881920}
   - component: {fileID: 6697904472983207009}
   - component: {fileID: 7636350084667488618}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Blades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8347953776935140284}
-  m_Layer: 0
+  - component: {fileID: 8147078917640886534}
+  m_Layer: 12
   m_Name: SM_Windmill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,3 +208,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+--- !u!114 &8147078917640886534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8688062807329546502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 8, z: 3}
+  m_Center: {x: 0, y: 3, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff

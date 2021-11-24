@@ -13,7 +13,7 @@ public class MakingGraph_Manager : MonoBehaviour
     public List<Vector2> reinforcementPoints;
     public List<Vector2> endurancePoints;
 
-    //GraphAnimator animator;
+    GraphAnimator animator;
 
     public int boxSize = 50;
 
@@ -52,8 +52,8 @@ public class MakingGraph_Manager : MonoBehaviour
         AjusteDeGráfica();
 
         //Se activa el animador
-        //animator = GetComponent<GraphAnimator>();
-        //animator.enabled = true;
+        animator = GetComponent<GraphAnimator>();
+        animator.enabled = true;
     }
 
     public void AjusteDeGráfica()
