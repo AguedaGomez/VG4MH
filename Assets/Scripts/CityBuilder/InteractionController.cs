@@ -14,8 +14,8 @@ public class InteractionController : MonoBehaviour
     public CameraController cameraController;
     [SerializeField] private GameObject GridUI;
 
-    private Collider currentCollider;
-    private Vector3 currentColliderPosition;
+    private GameObject currentBuilding;
+    private Vector3 currentBuildingPosition;
     private GameObject selectedBuilding;
     private Building selectedBuildingScript;
 
@@ -38,11 +38,11 @@ public class InteractionController : MonoBehaviour
                     if (CheckInteractionWith(BOARD_TAG))
                     {
                         //Debug.Log("interactua con camara");
-                        cameraController.moveCamera = true;
                         cameraController.Status = CityBuilderResources.Status.Game;
                     }
                     else if (CheckInteractionWith(GHOST_TAG))
                     {
+                        
                         if (CheckDoubleTap())
                         {
                             //Debug.Log("doble tap");
@@ -57,7 +57,7 @@ public class InteractionController : MonoBehaviour
                     }
                     break;
                 case TouchPhase.Moved:
-                    if (currentCollider.tag == GHOST_TAG)
+                    if (currentBuilding.tag == GHOST_TAG)
                     {
                         Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
                         RaycastHit hit;
@@ -66,8 +66,8 @@ public class InteractionController : MonoBehaviour
                             Vector3 gridPosition = board.CalculateGridPosition(hit.point); 
                             if (!board.CheckBoardLimits(gridPosition, selectedBuildingScript))
                             {
-                                currentCollider.gameObject.transform.position = gridPosition;
-                                currentColliderPosition = currentCollider.gameObject.transform.position;
+                                currentBuilding.transform.parent.position = gridPosition;
+                                currentBuildingPosition = currentBuilding.transform.parent.position;
                                 CheckInBoard();
                             }
                             
@@ -102,9 +102,11 @@ public class InteractionController : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // change for mobile
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit))
         {
-            currentCollider = hit.collider;
+            currentBuilding = hit.collider.gameObject;
+            Debug.Log("Interactuando con: " + currentBuilding.tag);
             return (hit.collider.tag == tag);
         }
         return false;
@@ -113,12 +115,12 @@ public class InteractionController : MonoBehaviour
     void CheckInBoard()
     {
         //Debug.Log("check in board");
-        bool availability = board.CheckSpaceAtPosition(selectedBuilding, currentColliderPosition);
+        bool availability = board.CheckSpaceAtPosition(selectedBuilding, currentBuildingPosition);
         board.ChangeBuildingColor(availability);
     }
     void InteractWithBoard()
     {
-        if (board.CheckSpaceAtPosition(selectedBuilding, currentColliderPosition))
+        if (board.CheckSpaceAtPosition(selectedBuilding, currentBuildingPosition))
         {
             Building buildingScript = selectedBuilding.GetComponent<Building>();
             city.CalculatePopulation(buildingScript);
@@ -151,8 +153,10 @@ public class InteractionController : MonoBehaviour
     }
     public void EnableBuilder(string buildingName)
     {
+        Debug.Log("enable building");
         if (city.availableBuildings.ContainsKey(buildingName))
         {
+            Debug.Log("construir");
             selectedBuilding = city.availableBuildings[buildingName];
             selectedBuildingScript = selectedBuilding.GetComponent<Building>();
             AddBuildingInEditMode();
@@ -169,15 +173,15 @@ public class InteractionController : MonoBehaviour
             
             board.AddBuildingInEditMode(selectedBuilding, board.CalculateGridPosition(hit.point));
 
-            currentColliderPosition = gridPosition;
+            currentBuildingPosition = gridPosition;
         }
             
     }
 
     private void AddBuilding()
     {
-        board.AddBuilding(selectedBuilding, currentColliderPosition, -1);
-        Destroy(currentCollider.gameObject);
+        board.AddBuilding(selectedBuilding, currentBuildingPosition, -1);
+        Destroy(currentBuilding.transform.parent.gameObject);
         GridUI.SetActive(false);
         cameraController.Status = CityBuilderResources.Status.Game;
     }

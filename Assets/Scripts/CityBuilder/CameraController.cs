@@ -39,6 +39,7 @@ public class CameraController : MonoBehaviour
 
     public CityBuilderResources.Status Status { get => status; set => status = value; }
     public bool moveCamera = false;
+    public bool zoom = false;
 
     #endregion
 
@@ -46,6 +47,29 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        //if (moveCamera)
+        //{
+        //    if (Input.touchCount > 0)
+        //    {
+        //        CalculateZoom();
+        //    }
+        //    else
+        //    {
+        //        switch (Status)
+        //        {
+        //            case (CityBuilderResources.Status.Game):
+        //                InGameModeMovement();
+        //                break;
+
+        //            case (CityBuilderResources.Status.Build):
+        //                InBuildModeMovement();
+        //                break;
+
+        //            default: break;
+        //        }
+        //    }
+        //    KeepCameraInBounds();
+        //}
         if (Input.touchCount > 0)
         {
             if (Input.touchCount == 2)
@@ -67,7 +91,7 @@ public class CameraController : MonoBehaviour
 
                     default: break;
                 }
-                
+
             }
         }
 
@@ -99,7 +123,6 @@ public class CameraController : MonoBehaviour
         switch (Input.GetTouch(0).phase)
         {
             case TouchPhase.Began:
-
                 initialTouch = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
                 offset = initialTouch - transform.position;
                 break;

@@ -708,7 +708,7 @@ MonoBehaviour:
   row: 0
   col: 0
   cellsInZ: 1
-  cellsInX: 2
+  cellsInX: 1
   powerRIncrease: 0
   materialsPerSecond: 0
   type: 1

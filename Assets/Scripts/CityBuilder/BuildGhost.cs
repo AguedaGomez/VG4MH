@@ -9,8 +9,9 @@ public class BuildGhost : MonoBehaviour
     [SerializeField] Color colorClear = Color.cyan;
     [SerializeField] Color colorOccupied = Color.red;
     
-    Mesh buildingMesh;
+    
     [SerializeField] public Vector2Int buildingSize = new Vector2Int(2,2);
+    [SerializeField] BoxCollider buildingCellBoxCollider;
 
     [SerializeField] MeshFilter buildingMeshFilter; //meshfilter?
     [SerializeField] MeshFilter cellsMeshFilter;
@@ -60,6 +61,13 @@ public class BuildGhost : MonoBehaviour
     public void ChangeMesh(MeshFilter currentMesh)
     {
         buildingMeshFilter.sharedMesh = currentMesh.sharedMesh;
+        ScaleCollider();
+        //buildingMeshFilter.transform.position = new Vector3(buildingMeshFilter.transform.position.x,
+        //    buildingMeshFilter.transform.position.y + buildingMeshFilter.sharedMesh.bounds.size.y / 2, buildingMeshFilter.transform.position.z);
+        //Bounds bounds = buildingMeshFilter.GetComponent<Renderer>().bounds;
+        //Debug.Log("bound in y: " + bounds.size.y);
+        //buildingCellBoxCollider.size = new Vector3(buildingCellBoxCollider.size.x, bounds.size.y, buildingCellBoxCollider.size.z);
+        
     }
     private int CalculateDisplacement(int d) 
     {
@@ -101,5 +109,16 @@ public class BuildGhost : MonoBehaviour
         mesh.RecalculateNormals();
         //cellsMeshFilter.sharedMesh.Clear();
         cellsMeshFilter.mesh = mesh;
+        ScaleCollider();
+        //buildingCellBoxCollider.center = new Vector3(buildingCellBoxCollider.center.x, buildingCellBoxCollider.center.y + buildingMeshFilter.sharedMesh.bounds.size.y / 2,
+           // buildingCellBoxCollider.center.z);
+        
+        
     }
+
+    private void ScaleCollider()
+    {
+        buildingCellBoxCollider.size = new Vector3(buildingCellBoxCollider.size.x, buildingMeshFilter.sharedMesh.bounds.size.y, buildingCellBoxCollider.size.z);
+    }
+
 }

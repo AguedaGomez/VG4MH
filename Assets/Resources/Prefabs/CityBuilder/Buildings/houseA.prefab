@@ -50,7 +50,7 @@ MonoBehaviour:
   cost: 0
   buildingName: houseA
   nLocals: 2
-  activationRequired: 25
+  activationRequired: 10
   row: 0
   col: 0
   cellsInZ: 1
