@@ -29,7 +29,7 @@ public class MakingGraphBySegments : MonoBehaviour
     public int actualPage = -1; //Si está en el valor -1 es porque está en la última página (página que resulta del resto)
 
     //Componente que anima la gráfica
-    //GraphAnimator animator;
+    GraphAnimator animator;
 
 
     void Start()
@@ -100,8 +100,8 @@ public class MakingGraphBySegments : MonoBehaviour
         }
 
         //Se activa el animador
-        //animator = GetComponent<GraphAnimator>();
-        //animator.enabled = true;
+        animator = GetComponent<GraphAnimator>();
+        animator.enabled = true;
     }
 
     public void moveToPreviousPage()
@@ -259,7 +259,7 @@ public class MakingGraphBySegments : MonoBehaviour
 
     void actualizarTextoDeInterfaz(int actualNumber, int totalNumber)
     {
-        textToShow.text = actualNumber.ToString() + "/" + totalNumber.ToString();
+        //textToShow.text = actualNumber.ToString() + "/" + totalNumber.ToString();
     }
 
     private void creacionDeListaDeVectores()
