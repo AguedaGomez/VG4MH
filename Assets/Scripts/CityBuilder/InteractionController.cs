@@ -154,7 +154,7 @@ public class InteractionController : MonoBehaviour
     public void EnableBuilder(string buildingName)
     {
         Debug.Log("enable building");
-        if (city.availableBuildings.ContainsKey(buildingName))
+        if (city.availableBuildings.ContainsKey(buildingName) && !selectedBuilding)
         {
             Debug.Log("construir");
             selectedBuilding = city.availableBuildings[buildingName];
@@ -183,6 +183,7 @@ public class InteractionController : MonoBehaviour
         board.AddBuilding(selectedBuilding, currentBuildingPosition, -1);
         Destroy(currentBuilding.transform.parent.gameObject);
         GridUI.SetActive(false);
+        selectedBuilding = null;
         cameraController.Status = CityBuilderResources.Status.Game;
     }
 
