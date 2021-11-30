@@ -131,7 +131,7 @@ public class Board : MonoBehaviour
         {
             for (int c = 0; c < currentBuilding.cellsInX; c++)
             {
-                if (boardOccupationStatus[x + c, z - r] == occupiedCell) // there isn't available space
+                if (boardOccupationStatus[x + r, z - c] == occupiedCell) // there isn't available space
                     return false;
             }
         }
@@ -200,7 +200,7 @@ public class Board : MonoBehaviour
         {
             for (int c = 0; c < cellsInZ; c++)
             {
-                boardOccupationStatus[r + x, c + z] = true;
+                boardOccupationStatus[x + r, z - c] = true;
             }
         }
     }
