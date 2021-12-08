@@ -16,10 +16,10 @@ public class ConflictManager : MonoBehaviour
         Card currentConflict = GameManager.Instance.currentCard;
         GameObject pj = transform.Find(currentConflict.characterName).gameObject;
         
-        Local local = pj.GetComponent<Local>();
+        Local local = pj.GetComponentInChildren<Local>();
         showPopUpConflict.FillPopUp(local.localImage, local.localName);
         
-        LocalsMessages messageScript = pj.GetComponent<LocalsMessages>();
+        LocalsMessages messageScript = pj.GetComponentInChildren<LocalsMessages>();
         messageScript.ShowConflictExclamation();
         
     }

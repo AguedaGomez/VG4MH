@@ -15,8 +15,12 @@ public class CameraController : MonoBehaviour
     [Header("General Settings", order = 0)]
     [Space(order = 1)]
 
-    [SerializeField]Vector2 panLimit;
-    [SerializeField]Vector2 panCenter;
+    [SerializeField]Vector2 panLimitZoomOut;
+    [SerializeField]Vector2 panCenterZoomOut;
+    [SerializeField]Vector2 panLimitZoomIn;
+    [SerializeField]Vector2 panCenterZoomIn;
+
+    [SerializeField]LayerMask groundLayer;
     [Space(order = 2)]
     [SerializeField]float zoomIn = 6;
     [SerializeField] float zoomOut = 15;
@@ -40,6 +44,8 @@ public class CameraController : MonoBehaviour
     public CityBuilderResources.Status Status { get => status; set => status = value; }
     public bool moveCamera = false;
     public bool zoom = false;
+
+    private int layerID = 1 << 9;
 
     #endregion
 
@@ -104,18 +110,68 @@ public class CameraController : MonoBehaviour
         if (debug) 
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(new Vector3(panCenter.x, transform.position.y, panCenter.y), new Vector3(panLimit.x * 2, 0, panLimit.y * 2));
+            Gizmos.DrawWireCube(new Vector3(panCenterZoomOut.x, 1, panCenterZoomOut.y), new Vector3(panLimitZoomOut.x * 2, 0, panLimitZoomOut.y * 2));
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireCube(new Vector3(panCenterZoomIn.x, 1, panCenterZoomIn.y), new Vector3(panLimitZoomIn.x * 2, 0, panLimitZoomIn.y * 2));
+
+            var T = Mathf.InverseLerp(zoomOut, zoomIn, Camera.main.orthographicSize);
+
+            Vector2 interpolatedPanLimit = Vector2.zero;
+            interpolatedPanLimit.x = Mathf.Lerp(panLimitZoomOut.x, panLimitZoomIn.x, T);
+            interpolatedPanLimit.y = Mathf.Lerp(panLimitZoomOut.y, panLimitZoomIn.y, T);
+
+            Vector2 interpolatedPanCenter = Vector2.zero;
+            interpolatedPanCenter.x = Mathf.Lerp(panCenterZoomOut.x, panCenterZoomIn.x, T);
+            interpolatedPanCenter.y = Mathf.Lerp(panCenterZoomOut.y, panCenterZoomIn.y, T);
+
+            Gizmos.color = Color.gray;
+            Gizmos.DrawWireCube(new Vector3(interpolatedPanCenter.x, 1, interpolatedPanCenter.y), new Vector3(interpolatedPanLimit.x * 2, 0, interpolatedPanLimit.y * 2));
+
+            RaycastHit hitInfo;
+
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, Mathf.Infinity, layerID))
+            {
+                var point = hitInfo.point;
+                point.y = 1;
+
+                Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * hitInfo.distance, Color.yellow);
+                Gizmos.color = Color.red;
+                Gizmos.DrawSphere(point, .1f);
+            }
+
         }
     }
 
     private void KeepCameraInBounds()
     {
-        var pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, -panLimit.x + panCenter.x, panLimit.x + panCenter.x);
-        
-        pos.z = Mathf.Clamp(pos.z, -panLimit.y + panCenter.y, panLimit.y + panCenter.y);
+        var posInicial = Vector3.zero;
+        Vector3 posFinal = posInicial;
+        RaycastHit hitInfo;
 
-        transform.position = pos;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, Mathf.Infinity, layerID))
+        {
+            var T = Mathf.InverseLerp(zoomOut, zoomIn, Camera.main.orthographicSize);
+
+            Vector2 interpolatedPanLimit = Vector2.zero;
+            interpolatedPanLimit.x = Mathf.Lerp(panLimitZoomOut.x, panLimitZoomIn.x, T);
+            interpolatedPanLimit.y = Mathf.Lerp(panLimitZoomOut.y, panLimitZoomIn.y, T);
+            
+            Vector2 interpolatedPanCenter = Vector2.zero;
+            interpolatedPanCenter.x = Mathf.Lerp(panCenterZoomOut.x, panCenterZoomIn.x, T);
+            interpolatedPanCenter.y = Mathf.Lerp(panCenterZoomOut.y, panCenterZoomIn.y, T);
+
+            posInicial = hitInfo.point;
+            posFinal.x = Mathf.Clamp(hitInfo.point.x, -interpolatedPanLimit.x + interpolatedPanCenter.x, interpolatedPanLimit.x + interpolatedPanCenter.x);
+            posFinal.z = Mathf.Clamp(hitInfo.point.z, -interpolatedPanLimit.y + interpolatedPanCenter.y, interpolatedPanLimit.y + interpolatedPanCenter.y);
+        }
+        else 
+        {
+            Debug.Log("Not ground Detected");
+        }
+        var offset = posFinal - posInicial;
+        offset = new Vector3(offset.x, 0, offset.z);
+
+        transform.position += offset;
     }
 
     private void InGameModeMovement()

@@ -393,7 +393,11 @@ GameObject:
   - component: {fileID: 8777284845710204415}
   - component: {fileID: 5538379788291733501}
   - component: {fileID: 1843831157327549774}
+<<<<<<< Updated upstream
   - component: {fileID: 5824127223668316100}
+=======
+  - component: {fileID: 7641150926710376007}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: house4
   m_TagString: Untagged
@@ -456,13 +460,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad521a67b5f8ac7489af9ceb46c68f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
 --- !u!65 &5824127223668316100
 BoxCollider:
+=======
+--- !u!114 &7641150926710376007
+MonoBehaviour:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8252000503648061253}
+<<<<<<< Updated upstream
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -470,6 +480,18 @@ BoxCollider:
   m_Size: {x: 4.823552, y: 4.5438266, z: 3.4052749}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3721684306904423515
+=======
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4.76, y: 4.42, z: 3.5}
+  m_Center: {x: -0.23, y: -0.86, z: 1.7}
+  m_Area: 0
+  m_AffectedAgents: ffffffff
+--- !u!1001 &7503167744681571534
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2

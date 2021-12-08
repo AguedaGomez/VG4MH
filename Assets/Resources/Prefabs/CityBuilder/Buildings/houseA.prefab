@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5299611036719548202}
   - component: {fileID: 5882240771510288998}
   - component: {fileID: 617395722021302805}
-  m_Layer: 0
+  - component: {fileID: 1870884094708923503}
+  m_Layer: 12
   m_Name: houseA
   m_TagString: houseA
   m_Icon: {fileID: 0}
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5305152718561655634}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 9.6, y: 0, z: 10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -33,7 +34,7 @@ Transform:
   - {fileID: 380167743}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &5882240771510288998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +74,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad521a67b5f8ac7489af9ceb46c68f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1870884094708923503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5305152718561655634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3.2, y: 2.1, z: 2.7}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &7313757339234320987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,8 +154,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7072819390341474345, guid: 321fb72f25fc49e428dd3f37739a3894,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -7072819390341474345, guid: 321fb72f25fc49e428dd3f37739a3894,
+        type: 3}
       propertyPath: m_TagString
       value: LOD0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3098514076651195088, guid: 321fb72f25fc49e428dd3f37739a3894,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 321fb72f25fc49e428dd3f37739a3894,
         type: 3}
@@ -147,8 +174,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 321fb72f25fc49e428dd3f37739a3894,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 321fb72f25fc49e428dd3f37739a3894,
+        type: 3}
       propertyPath: m_TagString
       value: LOD_group
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193891667219390044, guid: 321fb72f25fc49e428dd3f37739a3894,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276452077039997636, guid: 321fb72f25fc49e428dd3f37739a3894,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 321fb72f25fc49e428dd3f37739a3894, type: 3}
@@ -165,15 +207,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5299611036719548202}
     m_Modifications:
+    - target: {fileID: 7556468291704159655, guid: b5fa7df78b82bc64e8eb281917a4f816,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7556468291756862434, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 617395722021302805}
+    - target: {fileID: 7556468291756862444, guid: b5fa7df78b82bc64e8eb281917a4f816,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7556468292608109252, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
       propertyPath: m_Name
       value: Building canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556468292608109252, guid: b5fa7df78b82bc64e8eb281917a4f816,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7556468292608109253, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
