@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 public class Board : MonoBehaviour
@@ -26,6 +27,7 @@ public class Board : MonoBehaviour
     private bool occupiedCell = true;
     
     private string buildingsPath = "Prefabs/CityBuilder/Buildings";
+    [SerializeField] private NavMeshSurface navMesh;
 
     void Awake()
     {
@@ -111,7 +113,9 @@ public class Board : MonoBehaviour
                 
                 if (currentMaterials < 0)
                     SaveBoardStateInList(x, z);
-            }   
+            }
+
+            navMesh.BuildNavMesh();
         }
         else
         {
