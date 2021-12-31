@@ -14,7 +14,24 @@ public class SingleChoiceDisplay : CardDisplay, IDisplay
         // preparing card data
         rightOptionText.text = ((Single)currentCard).choice.rightText;
         leftOptionText.text = ((Single)currentCard).choice.leftText;
-        image.sprite = ((Single)currentCard).choice.image;
+        model = ((Single)currentCard).choice.model; //modelo 3D prefab personaje
+        sceneModel = ((Single)currentCard).choice.sceneModel; //modelo en la escena
+
+        //componentes de modelo escena
+        MeshFilter meshFilterScene = sceneModel.GetComponent<MeshFilter>();
+        MeshRenderer meshRendererScene = sceneModel.GetComponent<MeshRenderer>();
+
+        //componentes del prefab personaje
+        MeshFilter meshFilterModel = model.GetComponent<MeshFilter>();
+        MeshRenderer meshRendererModel = model.GetComponent<MeshRenderer>();
+
+        Debug.Log("a");
+        meshFilterScene.mesh = meshFilterModel.sharedMesh;
+        meshRendererScene.material = meshRendererModel.sharedMaterial;
+
+
+
+
     }
 
 
