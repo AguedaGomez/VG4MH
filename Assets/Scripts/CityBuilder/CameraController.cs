@@ -19,11 +19,13 @@ public class CameraController : MonoBehaviour
     [SerializeField]Vector2 panCenterZoomOut;
     [SerializeField]Vector2 panLimitZoomIn;
     [SerializeField]Vector2 panCenterZoomIn;
-
-    [SerializeField]LayerMask groundLayer;
     [Space(order = 2)]
-    [SerializeField]float zoomIn = 6;
+    [SerializeField] int groundLayer = 9;
+
+    [Space(order = 3)]
+    [SerializeField] float zoomIn = 6;
     [SerializeField] float zoomOut = 15;
+    [SerializeField] float zoomOffset = 10;
 
     [Header("Joystick Settings", order = 0) ]
     [Space(order = 1)]
@@ -41,41 +43,18 @@ public class CameraController : MonoBehaviour
     [Space(10, order = 3)]
     [SerializeField] bool debug = true;
 
+    private int LayerID { get => 1 << groundLayer; }
+
     public CityBuilderResources.Status Status { get => status; set => status = value; }
     public bool moveCamera = false;
-    public bool zoom = false;
-
-    private int layerID = 1 << 9;
 
     #endregion
+    private void Start()
+    {
+    }
 
-
-    // Update is called once per frame
     void LateUpdate()
     {
-        //if (moveCamera)
-        //{
-        //    if (Input.touchCount > 0)
-        //    {
-        //        CalculateZoom();
-        //    }
-        //    else
-        //    {
-        //        switch (Status)
-        //        {
-        //            case (CityBuilderResources.Status.Game):
-        //                InGameModeMovement();
-        //                break;
-
-        //            case (CityBuilderResources.Status.Build):
-        //                InBuildModeMovement();
-        //                break;
-
-        //            default: break;
-        //        }
-        //    }
-        //    KeepCameraInBounds();
-        //}
         if (Input.touchCount > 0)
         {
             if (Input.touchCount == 2)
@@ -84,7 +63,6 @@ public class CameraController : MonoBehaviour
             }
             else
             {
-
                 switch (Status)
                 {
                     case (CityBuilderResources.Status.Game):
@@ -129,7 +107,7 @@ public class CameraController : MonoBehaviour
 
             RaycastHit hitInfo;
 
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, Mathf.Infinity, layerID))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, Mathf.Infinity, LayerID))
             {
                 var point = hitInfo.point;
                 point.y = 1;
@@ -148,7 +126,7 @@ public class CameraController : MonoBehaviour
         Vector3 posFinal = posInicial;
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, Mathf.Infinity, layerID))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, Mathf.Infinity, LayerID))
         {
             var T = Mathf.InverseLerp(zoomOut, zoomIn, Camera.main.orthographicSize);
 
@@ -239,7 +217,20 @@ public class CameraController : MonoBehaviour
         }
     }
     private void CalculateZoom()
-    {
+    {  
+        var T = Mathf.InverseLerp(zoomOut, zoomIn, Camera.main.orthographicSize);
+        Vector3 cameraOffsetZoomIn = Camera.main.transform.forward * zoomOffset;
+
+
+        Vector3 zoomInPosition = transform.position + cameraOffsetZoomIn;
+        Vector3 zoomOutPosition = transform.position;
+
+        Vector3 zoomPosition = Vector3.Lerp(zoomOutPosition, zoomInPosition, T);
+
+        Debug.Log(zoomPosition);
+
+        Camera.main.transform.position = zoomPosition;
+
         Touch touchZero = Input.GetTouch(0);
         Touch touchOne = Input.GetTouch(1);
 

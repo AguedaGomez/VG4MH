@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MI_Horizon_Palette_Inst
+      name: Color_Palette
     second: {fileID: 2100000, guid: 180c3239263690446aa31d7c98287345, type: 2}
   materials:
     materialImportMode: 1
@@ -36,12 +36,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages:
     - 0.25
-    - 0.125
-    - 0.0625
     - 0.01
     globalScale: 1
     meshCompression: 0

@@ -191,7 +191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navAgent: {fileID: 7618498520556004890}
-  mobilityRange: 10
   minWaitTime: 1
   maxWaitTime: 4
   wanderRadius: 2.16
