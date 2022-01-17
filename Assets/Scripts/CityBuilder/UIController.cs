@@ -36,10 +36,10 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        ShowActivation();
-        ShowMaterials();
-        ShowPowerR();
-        CheckBuildingButtonsAvailability();
+        //ShowActivation();
+        //ShowMaterials();
+        //ShowPowerR();
+        //CheckBuildingButtonsAvailability();
     }
 
     private void CreateDictionaryButtons()
@@ -67,11 +67,6 @@ public class UIController : MonoBehaviour
         {
             buildingButtonsDictionary[b.Key].interactable = true;
         }
-    }
-
-    public void ShowAndHideMenu(GameObject menu)
-    {
-        menu.SetActive(!menu.activeSelf);
     }
 
     public void ChangeToogleLibraryState (Toggle toggle)

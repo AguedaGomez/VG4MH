@@ -106,7 +106,7 @@ public class InteractionController : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             currentBuilding = hit.collider.gameObject;
-            Debug.Log("Interactuando con: " + currentBuilding.tag);
+            Debug.Log("Interactuando con: " + currentBuilding.name);
             return (hit.collider.tag == tag);
         }
         return false;

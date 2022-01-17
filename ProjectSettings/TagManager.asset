@@ -12,6 +12,7 @@ TagManager:
   - board
   - LOD_group
   - LOD0
+  - ui
   layers:
   - Default
   - TransparentFX

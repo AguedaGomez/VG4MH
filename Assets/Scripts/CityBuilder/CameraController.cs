@@ -53,29 +53,6 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        //if (moveCamera)
-        //{
-        //    if (Input.touchCount > 0)
-        //    {
-        //        CalculateZoom();
-        //    }
-        //    else
-        //    {
-        //        switch (Status)
-        //        {
-        //            case (CityBuilderResources.Status.Game):
-        //                InGameModeMovement();
-        //                break;
-
-        //            case (CityBuilderResources.Status.Build):
-        //                InBuildModeMovement();
-        //                break;
-
-        //            default: break;
-        //        }
-        //    }
-        //    KeepCameraInBounds();
-        //}
         if (Input.touchCount > 0)
         {
             if (Input.touchCount == 2)
@@ -176,19 +153,22 @@ public class CameraController : MonoBehaviour
 
     private void InGameModeMovement()
     {
-        switch (Input.GetTouch(0).phase)
+        if (!GameManager.Instance.interactingWithUI)
         {
-            case TouchPhase.Began:
-                initialTouch = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-                offset = initialTouch - transform.position;
-                break;
-            case TouchPhase.Moved:
-                transform.position = new Vector3(initialTouch.x - offset.x, transform.position.y, initialTouch.z - offset.z);
-                offset = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) - transform.position;
+            switch (Input.GetTouch(0).phase)
+            {
+                case TouchPhase.Began:
+                    initialTouch = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+                    offset = initialTouch - transform.position;
+                    break;
+                case TouchPhase.Moved:
+                    transform.position = new Vector3(initialTouch.x - offset.x, transform.position.y, initialTouch.z - offset.z);
+                    offset = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) - transform.position;
 
-                break;
-            default:
-                break;
+                    break;
+                default:
+                    break;
+            }
         }
     }
     private void InBuildModeMovement()

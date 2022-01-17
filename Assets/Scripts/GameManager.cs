@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public Card currentCard;
 
+    public bool interactingWithUI = false;
+
     private GameObject city;
     private SaveAndLoadDataManager saveAndLoadDataManager;
 
