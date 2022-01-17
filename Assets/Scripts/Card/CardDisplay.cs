@@ -8,7 +8,8 @@ public class CardDisplay : MonoBehaviour
 {
     public TextMeshPro rightOptionText;
     public TextMeshPro leftOptionText;
-    public SpriteRenderer image;
+    public GameObject model; //Prefab del personaje
+    public GameObject sceneModel; //el gameObject que hay en la escena para colocar la malla
     public bool startedInitialMovement = false;
 
     public Card currentCard;
@@ -19,12 +20,13 @@ public class CardDisplay : MonoBehaviour
 
     protected virtual void Start()
     {
-        currentCard = GameManager.Instance.currentCard;
+        currentCard = GameManager.Instance.currentCard;  
         DisplayCard();
     }
 
     public virtual void DisplayCard()
     {
+        
     }
 
     public virtual void ShowOption(Choice.Direction direction)

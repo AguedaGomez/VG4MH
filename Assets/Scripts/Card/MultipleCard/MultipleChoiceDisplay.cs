@@ -43,7 +43,7 @@ public class MultipleChoiceDisplay : CardDisplay, IDisplay
         generalText.text = myChoice.text;
         rightOptionText.text = myChoice.rightText;
         leftOptionText.text = myChoice.leftText;
-        image.sprite = myChoice.image;
+        model = myChoice.model;
     }
 
     private void GetChoice(ChoicePosition currentChoice)

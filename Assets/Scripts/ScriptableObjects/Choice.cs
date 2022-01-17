@@ -13,7 +13,8 @@ public class Choice : ScriptableObject
         NONE
     }
 
-    public Sprite image;
+    public GameObject model; //game object en lugar de sprite
+    public GameObject sceneModel;
     public string text; // for multiple card only
     public string rightText;
     public string leftText;

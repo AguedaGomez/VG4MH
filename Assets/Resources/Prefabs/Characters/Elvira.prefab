@@ -1,17 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6824012259903500223
+--- !u!1001 &6852488794706107501
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3324555104852418114, guid: de56bb37dfcb9f54a8bd687057c672cc,
-        type: 3}
-      propertyPath: m_Name
-      value: Elvira
-      objectReference: {fileID: 0}
     - target: {fileID: 7358302312231035128, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_Mesh
@@ -31,22 +26,22 @@ PrefabInstance:
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.46
+      value: -40.490917
       objectReference: {fileID: 0}
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.70000005
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.8
+      value: 15.593876
       objectReference: {fileID: 0}
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.600429
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
@@ -56,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.79967815
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
@@ -71,22 +66,12 @@ PrefabInstance:
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -106.199005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7802163750768163597, guid: de56bb37dfcb9f54a8bd687057c672cc,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7802163750768163597, guid: de56bb37dfcb9f54a8bd687057c672cc,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ShowPopUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de56bb37dfcb9f54a8bd687057c672cc, type: 3}

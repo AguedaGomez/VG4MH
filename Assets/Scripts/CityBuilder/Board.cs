@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using Random = UnityEngine.Random;
 
 public class Board : MonoBehaviour
 {
@@ -28,6 +26,7 @@ public class Board : MonoBehaviour
     
     private string buildingsPath = "Prefabs/CityBuilder/Buildings";
     [SerializeField] private NavMeshSurface navMesh;
+    [SerializeField] private CitizensGenerator citizensGenerator;
 
     void Awake()
     {
@@ -116,6 +115,8 @@ public class Board : MonoBehaviour
             }
 
             navMesh.BuildNavMesh();
+            citizensGenerator.AddCitizens(buildingScript);
+            
         }
         else
         {
@@ -235,6 +236,18 @@ public class Board : MonoBehaviour
             AddBuilding(library, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
         }
 
+    }
+
+    public static Vector3 GetRandomPoint() 
+    {
+        NavMeshTriangulation navMeshData = NavMesh.CalculateTriangulation();
+
+        int t = Random.Range(0, navMeshData.indices.Length - 3);
+
+        Vector3 point = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[t]], navMeshData.vertices[navMeshData.indices[t + 1]], Random.value);
+        point = Vector3.Lerp(point, navMeshData.vertices[navMeshData.indices[t + 2]], Random.value);
+
+        return point;
     }
 
 }

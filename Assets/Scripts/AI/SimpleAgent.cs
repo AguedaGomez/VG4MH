@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class SimpleAgent : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent navAgent;
-    [SerializeField] private float mobilityRange = 10;
+    //[SerializeField] private float mobilityRange = 10;
 
     [SerializeField] private float minWaitTime = 1;
     [SerializeField] private float maxWaitTime = 4;
