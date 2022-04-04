@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29608e4086b63044d8ea9a2a5426d17a, type: 3}
   m_Name: Choice1
   m_EditorClassIdentifier: 
-  model: {fileID: 919132149155446097, guid: 32ed0ead28875964a8d0c8835459300b, type: 3}
+  model: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4, type: 3}
   sceneModel: {fileID: 2011298900641622233, guid: e5bc2a40e55c7af45b742e96676cf963,
     type: 3}
   text: 

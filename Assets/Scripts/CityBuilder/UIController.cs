@@ -23,8 +23,8 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        localsMessages.ShowGeneralMessage += LocalsMessages_ShowGeneralMessage;
-        powerRButtonImg = powerRButton.GetComponent<Image>();
+        //localsMessages.ShowGeneralMessage += LocalsMessages_ShowGeneralMessage;
+        //powerRButtonImg = powerRButton.GetComponent<Image>();
         CreateDictionaryButtons();
     }
 
@@ -44,7 +44,7 @@ public class UIController : MonoBehaviour
 
     private void CreateDictionaryButtons()
     {
-        buildingButtonsDictionary = buildingButtons.ToDictionary(b=>b.name, b=>b) ;
+       // buildingButtonsDictionary = buildingButtons.ToDictionary(b=>b.name, b=>b) ;
         
     }
     private void ShowActivation()

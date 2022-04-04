@@ -2,14 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class InteractionController : MonoBehaviour
 {
     private const string GHOST_TAG = "ghost";
     private const string BOARD_TAG = "board";
+    private const string BUILDING_MENU_NAME = "BuildingMenu";
 
     public City city; //mirar cambiar city de aqui
     public Board board;
+    
+    public GraphicRaycaster canvasGraphicRaycaster;
+    public EventSystem eventSystem;
     
     public CameraController cameraController;
     [SerializeField] private GameObject GridUI;
@@ -35,9 +41,12 @@ public class InteractionController : MonoBehaviour
             switch (Input.GetTouch(0).phase)
             {
                 case TouchPhase.Began:
+                    
+                    if (CheckInterationWithUI())
+                        GameManager.Instance.interactingWithUI = true;
                     if (CheckInteractionWith(BOARD_TAG))
                     {
-                        //Debug.Log("interactua con camara");
+
                         cameraController.Status = CityBuilderResources.Status.Game;
                     }
                     else if (CheckInteractionWith(GHOST_TAG))
@@ -76,6 +85,8 @@ public class InteractionController : MonoBehaviour
 
                     break;
                 case TouchPhase.Ended:
+                    if (!CheckInterationWithUI())
+                        GameManager.Instance.interactingWithUI = false;
                     //if (CheckInteractionWith(GHOST_TAG))
                     //    CheckInBoard();
                     break;
@@ -106,10 +117,25 @@ public class InteractionController : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             currentBuilding = hit.collider.gameObject;
-            Debug.Log("Interactuando con: " + currentBuilding.name);
+            //Debug.Log("Interactuando con: " + currentBuilding.name);
             return (hit.collider.tag == tag);
         }
         return false;
+    }
+
+    private bool CheckInterationWithUI()
+    {
+        PointerEventData pointerEventData = new PointerEventData(eventSystem);
+        pointerEventData.position = Input.mousePosition;
+        List<RaycastResult> results = new List<RaycastResult>();
+        canvasGraphicRaycaster.Raycast(pointerEventData, results);
+        foreach (var result in results)
+        {
+            if (result.gameObject.name == BUILDING_MENU_NAME)
+                return true;
+        }
+        return false;
+
     }
 
     void CheckInBoard()
