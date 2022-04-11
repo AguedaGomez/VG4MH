@@ -17,6 +17,7 @@ public class TransparencyCaptureToFile:MonoBehaviour
         //After Unity4,you have to do this function after WaitForEndOfFrame in Coroutine
         //Or you will get the error:"ReadPixels was called to read pixels from system frame buffer, while not inside drawing frame"
         zzTransparencyCapture.captureScreenshot(Application.dataPath + "/" + localFolder + "/" + name + ".png");
+        Debug.Log("imagen guardada");
     }
 
     public void Update()

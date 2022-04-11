@@ -9,8 +9,8 @@ public class City : MonoBehaviour
     public int Materials { get; set; }
     public float powerR = 0;
     public float powerRLastCheckPoint = 0;
-    public List<GameObject> buildingsInGame = new List<GameObject>(); // Gameobject for Addbuilding in board (the model is needed)
-    public Dictionary<string, GameObject> availableBuildings = new Dictionary<string, GameObject>();
+    public List<GameObject> buildingsInGame = new List<GameObject>(); // Gameobject for Addbuilding in board (the model is needed) all building prefabs existing in the game
+    public Dictionary<string, GameObject> availableBuildings = new Dictionary<string, GameObject>(); // only those available (depending on the activation)
 
     private const int DAILY_STEPS = 3000;
     private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number

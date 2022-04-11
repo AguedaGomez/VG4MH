@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controla el comportamiento del menú inferior
+/// cuándo aparecen y desaparecen
+/// </summary>
 public class DownHudController : MonoBehaviour
 {
     private GameObject activeSubmenu;
