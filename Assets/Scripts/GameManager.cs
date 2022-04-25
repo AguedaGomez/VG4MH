@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public Card currentCard;
 
+    public Construction buildingInConstruction; //datos del edificio que se quiere construir
+
     public bool interactingWithUI = false;
 
     public List<Construction> buildingsInGame = new List<Construction>();

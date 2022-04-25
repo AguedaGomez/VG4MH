@@ -7,8 +7,8 @@ public class BuildingMenuController : MonoBehaviour
 {
     public GameObject bGridElement; // Prefab que se va a instanciar en la lista
     public GameObject GridWithBuildings; // Referencia al padre donde bajo el que se va a crear
-    
-    public InteractionController interactionController; // Referencia al script asignado a Ground para poder añadir el onclick construir (Enable builder)
+
+    public CanvasController canvasController; //Controlador de vista y referencia a Interaction Controller
     // Datos disponibles sobre los edificios, prefab también dentro del scriptable object? coger desde game manager
     // Método que recorra lista y posicione todos los elementos
     void Start()
@@ -28,8 +28,15 @@ public class BuildingMenuController : MonoBehaviour
             gridElementTransform.Find("Mat Number").GetComponent<Text>().text = "" + construction.maximunMaterials;
             gridElementTransform.Find("Build").transform.Find("Text").GetComponent<Text>().text = "" + construction.cost;
             gridElementTransform.Find("GridNumber").GetComponent<Text>().text = "" + construction.cellsInX + "x" + construction.cellsInZ;
-            gridElementTransform.Find("Build").GetComponent<Button>().onClick.AddListener(()=>interactionController.EnableBuilder(construction.id));
+            gridElementTransform.Find("Build").GetComponent<Button>().onClick.AddListener(() => canvasController.SaveBuildingToConstruct(construction));
+            
             //Rellenar los datos en el prefab con los scriptable objects?
         }
+    }
+
+    public void HideMenu()
+    {
+        gameObject.SetActive(false);
+        //llamar a hidemenu tb del padre
     }
 }

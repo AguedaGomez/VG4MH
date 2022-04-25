@@ -177,10 +177,15 @@ public class InteractionController : MonoBehaviour
         //}
 
     }
+
+    public void SaveBuildingToConstruct(Construction construction)
+    {
+        GameManager.Instance.buildingInConstruction = construction;
+    }
     public void EnableBuilder(string id)
     {
         Debug.Log("enable building");
-        if (city.availableBuildings.ContainsKey(id) && !selectedBuilding)
+        if (city.availableBuildings.ContainsKey(id) && !GameManager.Instance.buildingInConstruction) //cambiar selectedBuilding por buildingInContruction en GameManager
         {
             Debug.Log("construir");
             selectedBuilding = city.availableBuildings[id];

@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class DownHudController : MonoBehaviour
 {
-    private GameObject activeSubmenu;
+    public GameObject activeSubmenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +33,11 @@ public class DownHudController : MonoBehaviour
             panel.SetActive(false);
         }
         else
+        {
             panel.SetActive(true);
-        
+        }
+
+
 
         //GameManager.Instance.interactingWithUI = menu.activeSelf; //comprobar si esto funciona despues de modificar el on value changed d building menu
     }
@@ -46,7 +49,7 @@ public class DownHudController : MonoBehaviour
             menu.SetActive(false);
             activeSubmenu = null;
         }
-            
+
         else
         {
             if (activeSubmenu != null && activeSubmenu != menu)
@@ -64,6 +67,5 @@ public class DownHudController : MonoBehaviour
 
         }
     }
-
 
 }
