@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: 1
   cost: 0
-  buildingName: houseA
+  buildingName: smallHouse
   nLocals: 2
   activationRequired: 10
   row: 0

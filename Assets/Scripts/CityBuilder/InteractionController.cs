@@ -177,13 +177,13 @@ public class InteractionController : MonoBehaviour
         //}
 
     }
-    public void EnableBuilder(string buildingName)
+    public void EnableBuilder(string id)
     {
         Debug.Log("enable building");
-        if (city.availableBuildings.ContainsKey(buildingName) && !selectedBuilding)
+        if (city.availableBuildings.ContainsKey(id) && !selectedBuilding)
         {
             Debug.Log("construir");
-            selectedBuilding = city.availableBuildings[buildingName];
+            selectedBuilding = city.availableBuildings[id];
             selectedBuildingScript = selectedBuilding.GetComponent<Building>();
             AddBuildingInEditMode();
             GridUI.SetActive(true);

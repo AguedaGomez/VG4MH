@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public bool interactingWithUI = false;
 
+    public List<Construction> buildingsInGame = new List<Construction>();
+
     private GameObject city;
     private SaveAndLoadDataManager saveAndLoadDataManager;
 

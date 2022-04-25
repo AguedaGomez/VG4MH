@@ -114,9 +114,10 @@ public class City : MonoBehaviour
             Building building = b.GetComponent<Building>();
             if (building.activationRequired <= Activation && building.activationRequired > 0)
             {
-                if (availableBuildings.ContainsKey(building.buildingName) == false)
+                if (availableBuildings.ContainsKey(building.id) == false)
                 {
-                    availableBuildings.Add(building.buildingName, b);
+                    
+                    availableBuildings.Add(building.id, b);
                 }       
             }  
         }

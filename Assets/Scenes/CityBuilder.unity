@@ -466,6 +466,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a737747b39c3c446828dc5cc5d63185, type: 3}
+--- !u!1 &48987223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c6664c424a6cea54080565c7f5314b51,
+    type: 3}
+  m_PrefabInstance: {fileID: 998763124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &48987224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48987223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 0
+  m_AffectedAgents: ffffffff
+--- !u!114 &48987225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48987223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a8ad6ab25819f4b98b6b62bd2e54f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  cost: 0
+  buildingName: 
+  nLocals: 0
+  activationRequired: 0
+  row: 0
+  col: 0
+  cellsInZ: 0
+  cellsInX: 0
+  powerRIncrease: 0
+  materialsPerSecond: 0
+  type: 1
 --- !u!1 &57154942
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,6 +5145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Fountain_LODS_Group
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6664c424a6cea54080565c7f5314b51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6664c424a6cea54080565c7f5314b51, type: 3}
 --- !u!224 &1007300532 stripped
@@ -5620,6 +5671,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCard: {fileID: 11400000, guid: 283abea4f75f894409bfcefa8daa50e7, type: 2}
   interactingWithUI: 0
+  buildingsInGame:
+  - {fileID: 11400000, guid: 7e11e5325de81564c883bc97e07467d0, type: 2}
+  - {fileID: 11400000, guid: 1a35bb2d1587edc488f93f60935f788b, type: 2}
 --- !u!4 &1052362989
 Transform:
   m_ObjectHideFlags: 0
@@ -26031,6 +26085,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74609a17ec3eb644aac875fd4ba1e66f, type: 3}
+--- !u!1 &1999965034 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5744534862421888533, guid: ae520fd963568f24690fa789298bf758,
+    type: 3}
+  m_PrefabInstance: {fileID: 1175329255937729757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1999965036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999965034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4faefc3efd91840499766cb33b608343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bGridElement: {fileID: 3046384543691835362, guid: 3319237f6dfd24745a63002b6b001eda,
+    type: 3}
+  GridWithBuildings: {fileID: 2112223284}
+  interactionController: {fileID: 1945131899}
 --- !u!1001 &2002557510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26578,6 +26654,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0a737747b39c3c446828dc5cc5d63185,
     type: 3}
   m_PrefabInstance: {fileID: 1475996466}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2112223284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5744534862907123820, guid: ae520fd963568f24690fa789298bf758,
+    type: 3}
+  m_PrefabInstance: {fileID: 1175329255937729757}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2129726693
 PrefabInstance:

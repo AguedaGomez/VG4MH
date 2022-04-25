@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
-  m_Name: smallHouse
+  m_Name: fountain
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 55c6b74c37c4ceb4da7f596d1426c617, type: 3}
-  prefab: {fileID: 5305152718561655634, guid: 50305df1d5f0c2049b605c767d629740, type: 3}
-  id: 1
-  cost: 20
-  buildingName: Casa 2 pers.
-  nLocals: 2
+  image: {fileID: 21300000, guid: 966b5c06dcc6f2642bc663435b480b40, type: 3}
+  prefab: {fileID: 0}
+  id: 
+  cost: 0
+  buildingName: Plaza
+  nLocals: 0
   activationRequired: 0
-  cellsInZ: 1
-  cellsInX: 1
-  powerRIncrease: 20
-  materialsPerSecond: 2
-  maximunMaterials: 10
+  cellsInZ: 0
+  cellsInX: 0
+  powerRIncrease: 0
+  materialsPerSecond: 0
+  maximunMaterials: 0
   type: 0
