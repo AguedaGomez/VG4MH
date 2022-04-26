@@ -150,7 +150,7 @@ public class InteractionController : MonoBehaviour
         {
             Building buildingScript = selectedBuilding.GetComponent<Building>();
             city.CalculatePopulation(buildingScript);
-            city.DecreaseMaterials(buildingScript.cost);
+            //city.DecreaseMaterials(buildingScript.cost);
         }
         selectedBuilding = null;
 
@@ -181,15 +181,18 @@ public class InteractionController : MonoBehaviour
     public void SaveBuildingToConstruct(Construction construction)
     {
         GameManager.Instance.buildingInConstruction = construction;
+        selectedBuilding = GameManager.Instance.buildingInConstruction.prefab;
     }
-    public void EnableBuilder(string id)
+    public void EnableBuilder()
     {
+        string id = GameManager.Instance.buildingInConstruction.id;
         Debug.Log("enable building");
-        if (city.availableBuildings.ContainsKey(id) && !GameManager.Instance.buildingInConstruction) //cambiar selectedBuilding por buildingInContruction en GameManager
+        if (city.availableBuildings.ContainsKey(id)) //&& !GameManager.Instance.buildingInConstruction) //cambiar selectedBuilding por buildingInContruction en GameManager
         {
             Debug.Log("construir");
-            selectedBuilding = city.availableBuildings[id];
-            selectedBuildingScript = selectedBuilding.GetComponent<Building>();
+            GameManager.Instance.buildingInConstruction = city.availableBuildings[id];
+            //selectedBuilding = city.availableBuildings[id];
+            selectedBuildingScript = GameManager.Instance.buildingInConstruction.prefab.GetComponent<Building>();
             AddBuildingInEditMode();
             GridUI.SetActive(true);
         }
@@ -202,7 +205,7 @@ public class InteractionController : MonoBehaviour
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 100.0f)) {
             Vector3 gridPosition = board.CalculateGridPosition(hit.point);
             
-            board.AddBuildingInEditMode(selectedBuilding, board.CalculateGridPosition(hit.point));
+            board.AddBuildingInEditMode(GameManager.Instance.buildingInConstruction.prefab, board.CalculateGridPosition(hit.point));
 
             currentBuildingPosition = gridPosition;
         }
@@ -211,10 +214,10 @@ public class InteractionController : MonoBehaviour
 
     private void AddBuilding()
     {
-        board.AddBuilding(selectedBuilding, currentBuildingPosition, -1);
+        board.AddBuilding(GameManager.Instance.buildingInConstruction.prefab, currentBuildingPosition, -1);
         Destroy(currentBuilding.transform.parent.gameObject);
         GridUI.SetActive(false);
-        selectedBuilding = null;
+        GameManager.Instance.buildingInConstruction = null;
         cameraController.Status = CityBuilderResources.Status.Game;
     }
 

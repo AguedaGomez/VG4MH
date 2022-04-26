@@ -24,7 +24,7 @@ public class Board : MonoBehaviour
     private bool[,] boardOccupationStatus;
     private bool occupiedCell = true;
     
-    private string buildingsPath = "Prefabs/CityBuilder/Buildings";
+    private string buildingsPath = "Prefabs/CityBuilder/Buildings"; //es necesario?
     [SerializeField] private NavMeshSurface navMesh;
     [SerializeField] private CitizensGenerator citizensGenerator;
 
@@ -89,7 +89,7 @@ public class Board : MonoBehaviour
 
             buildingScript.id = x + "" + z + "";
 
-            if (buildingScript.type == Building.Type.MATERIALGENERATORBUILDING)
+            if (buildingScript.type == Construction.Type.MATERIALGENERATORBUILDING)
             {
                 MaterialGeneratorBuilding mGBScript = createdBuilding.GetComponent<MaterialGeneratorBuilding>();
                 buildings[x, z] = mGBScript;
@@ -170,7 +170,7 @@ public class Board : MonoBehaviour
         return Mathf.RoundToInt(cordPosition / cellSize); // number of cell
     }
 
-    private void OnDrawGizmos()
+   /* private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         for (float x = 0; x < boardHeight; x += cellSize)
@@ -181,13 +181,13 @@ public class Board : MonoBehaviour
                 Gizmos.DrawSphere(point, 0.1f);
             }
         }
-    }
+    }*/
 
     public void SaveBoardStateInList(int x, int z)
     {
         SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName);
         //Debug.Log("guardando objeto con id: " + sB.id);
-        if (buildings[x, z].type == Building.Type.MATERIALGENERATORBUILDING)
+        if (buildings[x, z].type == Construction.Type.MATERIALGENERATORBUILDING)
             sB.currentMaterials = buildings[x, z].materialsPerSecond;
         else
             sB.currentMaterials = 0;
