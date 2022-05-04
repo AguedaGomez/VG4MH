@@ -506,15 +506,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  cost: 0
   buildingName: 
   nLocals: 0
-  activationRequired: 0
   row: 0
   col: 0
   cellsInZ: 0
   cellsInX: 0
-  powerRIncrease: 0
   materialsPerSecond: 0
   type: 1
 --- !u!1001 &64879268
@@ -26747,6 +26744,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1146041102}
     m_Modifications:
+    - target: {fileID: 1175329255601523560, guid: ae520fd963568f24690fa789298bf758,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1175329255601523561, guid: ae520fd963568f24690fa789298bf758,
         type: 3}
       propertyPath: m_Pivot.x
