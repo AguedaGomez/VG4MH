@@ -11,8 +11,11 @@ public class UI_Grid_Renderer : Graphic
 
     float width;
     float height;
-    float cellWidth;
-    float cellHeight;
+    public float cellWidth;
+    public float cellHeight;
+
+    [SerializeField] float xOffset;
+    [SerializeField] float yOffset;
 
     protected override void OnPopulateMesh(VertexHelper vh)
     {
@@ -57,9 +60,7 @@ public class UI_Grid_Renderer : Graphic
         vertex.position = new Vector3(xPos + cellWidth, yPos);
         vh.AddVert(vertex);
 
-        //vh.AddTriangle(0, 1, 2);
-        //vh.AddTriangle(2, 3, 0);
-
+        
         float widthSqr = thickness * thickness;
         float distanceSqr = widthSqr / 2f;
         float distance = Mathf.Sqrt(distanceSqr);
@@ -93,8 +94,17 @@ public class UI_Grid_Renderer : Graphic
         //Bottom edge
         vh.AddTriangle(offset + 3, offset + 0, offset + 4);
         vh.AddTriangle(offset + 4, offset + 7, offset + 3);
-
-
     }
 
+    public float getCellWidth()
+    {
+        float result = width / (float)gridSize.x;
+        return result;
+    }
+
+    public float getCellHeight()
+    {
+        float result = height / (float)gridSize.y;
+        return result;
+    }
 }

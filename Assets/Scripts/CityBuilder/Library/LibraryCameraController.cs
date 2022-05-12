@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class LibraryCameraController : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class LibraryCameraController : MonoBehaviour
 
     private Animation turnPageAnimation;
 
+    [SerializeField] List<Transform> realCameraPositions;
+    [SerializeField] List<Camera> auxCameras;
+    [SerializeField] GameObject bookObject;
+    [SerializeField] GameObject notepadObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +37,18 @@ public class LibraryCameraController : MonoBehaviour
             var canvas = book.GetComponentInChildren<Canvas>();
             if (canvas != null) canvas.worldCamera = camera;
         }
+
+
+
+        //Se recalcula el Field Of View de las cámaras para que se ajuste bien lo que se muestra en pantalla
+        float notebookCameraAspectRatio = auxCameras[0].aspect;
+        int notebookCameraFov = (int)(-103.5714 * notebookCameraAspectRatio + 154.5357f);
+        realCameraPositions[0].GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = notebookCameraFov;
+
+        float bookCameraAspectRatio = auxCameras[1].aspect;
+        int bookCameraFov = (int)(206.93f - 363.333f * bookCameraAspectRatio + 266.66667f * (Mathf.Pow(bookCameraAspectRatio, 2)));
+        realCameraPositions[1].GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = bookCameraFov;
+        
     }
 
 
