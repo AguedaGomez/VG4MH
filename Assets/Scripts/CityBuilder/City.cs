@@ -10,7 +10,7 @@ public class City : MonoBehaviour
     public float powerR = 0;
     public float powerRLastCheckPoint = 0;
     public List<GameObject> buildingsInGame = new List<GameObject>(); // Gameobject for Addbuilding in board (the model is needed) all building prefabs existing in the game
-    public Dictionary<string, GameObject> availableBuildings = new Dictionary<string, GameObject>(); // only those available (depending on the activation)
+    public Dictionary<string, Construction> availableBuildings = new Dictionary<string, Construction>(); // only those available (depending on the activation) change to construct type?
 
     private const int DAILY_STEPS = 3000;
     private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
@@ -58,7 +58,7 @@ public class City : MonoBehaviour
 
     public void CalculatePopulation (Building newBuilding)
     {
-        population += newBuilding.nLocals;
+        //population += newBuilding.nLocals;
     }
 
     #region Activation
@@ -109,14 +109,25 @@ public class City : MonoBehaviour
 
     private void CheckAvailableBuildings()
     {
-        foreach (var b in buildingsInGame)
+        foreach (var b in GameManager.Instance.buildingsInGame)
         {
-            Building building = b.GetComponent<Building>();
-            if (building.activationRequired <= Activation && building.activationRequired > 0)
+            GameObject bPrefab = b.prefab;
+            Building buildingScript = bPrefab.GetComponent<Building>();
+
+            //needed accesible data in buildingScript
+            buildingScript.id = b.id;
+            buildingScript.buildingName = b.buildingName;
+            buildingScript.cellsInX = b.cellsInX;
+            buildingScript.cellsInZ = b.cellsInZ;
+            buildingScript.type = b.type;
+            buildingScript.nLocals = b.nLocals;
+
+            if (b.activationRequired <= Activation && b.activationRequired >= 0)
             {
-                if (availableBuildings.ContainsKey(building.buildingName) == false)
+                if (availableBuildings.ContainsKey(buildingScript.id) == false)
                 {
-                    availableBuildings.Add(building.buildingName, b);
+                    
+                    availableBuildings.Add(buildingScript.id, b);
                 }       
             }  
         }

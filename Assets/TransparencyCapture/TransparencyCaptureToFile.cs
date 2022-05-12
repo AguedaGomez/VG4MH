@@ -22,7 +22,11 @@ public class TransparencyCaptureToFile:MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Pulsando espacio");
             StartCoroutine(capture());
+        }
+            
     }
 }
