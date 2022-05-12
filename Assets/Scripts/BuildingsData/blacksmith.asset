@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
   m_Name: blacksmith
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 5f86136261ebc514aa32ae23b0cfc02b, type: 3}
-  silhouette: {fileID: 21300000, guid: 5f97628c5a67b3a4aaee9d2e3656c2ea, type: 3}
+  image: {fileID: 21300000, guid: 96fbe72a4ff38154e936e4e668c5a0a4, type: 3}
+  silhouette: {fileID: 21300000, guid: 5e98cc07750050d43846fc32f1a76453, type: 3}
   prefab: {fileID: 1929065748608516357, guid: bbfec19558530654ca04f76842ef4515, type: 3}
   id: 3
   cost: 100

@@ -25,6 +25,7 @@ public class BGridElementController : MonoBehaviour
 
         transform.Find("Name").GetComponent<Text>().text = construction.buildingName;
         transform.Find("Image").GetComponent<Image>().sprite = construction.image;
+        transform.Find("Image").GetComponent<Image>().SetNativeSize();
         transform.Find("Mat Number").GetComponent<Text>().text = "" + construction.maximunMaterials;
         
         Transform buildButtonTransform = transform.Find("Build");
@@ -44,6 +45,7 @@ public class BGridElementController : MonoBehaviour
 
         transform.Find("Name").GetComponent<Text>().text = "??????";
         transform.Find("Image").GetComponent<Image>().sprite = construction.silhouette;
+        transform.Find("Image").GetComponent<Image>().SetNativeSize();
         transform.Find("Mat Number").GetComponent<Text>().text = "??";
 
         Transform buildButtonTransform = transform.Find("Build");

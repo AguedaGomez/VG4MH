@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
   m_Name: tavern
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: beebf2e16f9c6e3489d41253ed1d0298, type: 3}
-  silhouette: {fileID: 21300000, guid: 625fd223789c9714689f6672d954f6cf, type: 3}
+  image: {fileID: 21300000, guid: 00e7b64271676d34681b1983588eed9e, type: 3}
+  silhouette: {fileID: 21300000, guid: 63119d0ca5532584bbcb7f9adf02cb83, type: 3}
   prefab: {fileID: 3159729830286734271, guid: e8b0d7ee4c6538e4983e44d4e9e98334, type: 3}
-  id: 
+  id: 14
   cost: 0
   buildingName: Taberna
   nLocals: 0
@@ -25,4 +25,4 @@ MonoBehaviour:
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0
-  type: 0
+  type: 1

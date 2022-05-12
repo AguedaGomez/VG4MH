@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
   m_Name: cropB
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 19880915e370c124cb3e99528bac3b85, type: 3}
-  silhouette: {fileID: 21300000, guid: ce761942b3c1d8e438b189449373978d, type: 3}
+  image: {fileID: 21300000, guid: a166462d6593df343aadfede55d02d21, type: 3}
+  silhouette: {fileID: 21300000, guid: 399952183a0501e43abb3bbe12e8c350, type: 3}
   prefab: {fileID: 7038552632299767393, guid: 97b3cb98fcad279479f463786cf5dc02, type: 3}
-  id: 
+  id: 6
   cost: 0
-  buildingName: 
+  buildingName: Cultivo
   nLocals: 0
-  activationRequired: 0
+  activationRequired: 50
   cellsInZ: 0
   cellsInX: 0
   powerRIncrease: 0

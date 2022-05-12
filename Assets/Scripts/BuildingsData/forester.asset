@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
   m_Name: forester
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 7e0b3857d8958564893fcf3e62588dfc, type: 3}
-  silhouette: {fileID: 21300000, guid: 1a10ef2fbc592ef4da4fb9a586225f1b, type: 3}
+  image: {fileID: 21300000, guid: 67d670678c7c0d14ca0f6bbbbbf4a746, type: 3}
+  silhouette: {fileID: 21300000, guid: 0d08e02ca4227a241af0de4d6385cc79, type: 3}
   prefab: {fileID: 6889200796470135822, guid: b350fe457660de44a8e43c84fdfba8d9, type: 3}
-  id: 
+  id: 7
   cost: 0
   buildingName: Casa forestal
   nLocals: 0
@@ -25,4 +25,4 @@ MonoBehaviour:
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0
-  type: 0
+  type: 1

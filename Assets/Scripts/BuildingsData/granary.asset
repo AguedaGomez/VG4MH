@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
   m_Name: granary
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 245b643d802cb0b4c94e0ead7fb699e4, type: 3}
-  silhouette: {fileID: 21300000, guid: 5b62313e80e7d854b9d3ab65334a54a8, type: 3}
+  image: {fileID: 21300000, guid: 51b083787d054e44d9828558bba6e080, type: 3}
+  silhouette: {fileID: 21300000, guid: fd986c2ccd9302047a4ec5f7baa8fc2b, type: 3}
   prefab: {fileID: 2206300734052722678, guid: e8624b9c7008c1441969df3bb32034b2, type: 3}
-  id: 
+  id: 9
   cost: 0
   buildingName: Granero
   nLocals: 0
@@ -25,4 +25,4 @@ MonoBehaviour:
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0
-  type: 0
+  type: 1

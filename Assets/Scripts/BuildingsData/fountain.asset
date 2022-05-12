@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
   m_Name: fountain
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 966b5c06dcc6f2642bc663435b480b40, type: 3}
-  silhouette: {fileID: 21300000, guid: f8cd870e28de6ff4ebefdec0d0f0a752, type: 3}
+  image: {fileID: 21300000, guid: 48481d92aa1e293488e2c050dfeec7ac, type: 3}
+  silhouette: {fileID: 21300000, guid: 58313e8d6b97f294292e2d0c8931cf6c, type: 3}
   prefab: {fileID: 2969668293588128673, guid: e77752760cfc62c41b56461fe466d10b, type: 3}
-  id: 
+  id: 8
   cost: 0
   buildingName: Plaza
   nLocals: 0
@@ -25,4 +25,4 @@ MonoBehaviour:
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0
-  type: 0
+  type: 1
