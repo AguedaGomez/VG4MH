@@ -28,7 +28,7 @@ public class UI_LineRenderer : Graphic
 
 
         //En caso de que sólo haya un punto en la lista se deberá de dibujar también pero de distinta forma
-        if (points.Count < 2)
+        if (points.Count < 2 && points.Count != 0)
         {
             Vector2 point = points[0];
 
