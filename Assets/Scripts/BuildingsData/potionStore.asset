@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: potionStore
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 73bf039b3b47d784c81429e515d9c7ec, type: 3}
+  silhouette: {fileID: 21300000, guid: 409521cd458f1f044bf0ef4143be84f4, type: 3}
   prefab: {fileID: 7224124414346300926, guid: 5a62fb2a0d7047045a1f7a1bde842781, type: 3}
   id: 
   cost: 0

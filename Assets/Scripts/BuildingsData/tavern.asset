@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: tavern
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: beebf2e16f9c6e3489d41253ed1d0298, type: 3}
-  prefab: {fileID: 0}
+  silhouette: {fileID: 21300000, guid: 625fd223789c9714689f6672d954f6cf, type: 3}
+  prefab: {fileID: 3159729830286734271, guid: e8b0d7ee4c6538e4983e44d4e9e98334, type: 3}
   id: 
   cost: 0
   buildingName: Taberna

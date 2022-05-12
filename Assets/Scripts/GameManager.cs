@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
 
     public bool interactingWithUI = false;
 
-    public List<Construction> buildingsInGame = new List<Construction>();
+    public List<Construction> buildingsInGameList = new List<Construction>();
+    public Dictionary<string, Construction> buildingsInGame= new Dictionary<string, Construction>();
 
     private GameObject city;
     private SaveAndLoadDataManager saveAndLoadDataManager;
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            CreateDictionaryBuildingsInGame();
+
         }
         else
         {
@@ -61,6 +64,15 @@ public class GameManager : MonoBehaviour
         while (!asyncLoad.isDone)
         {
             yield return null;
+        }
+    }
+
+    private void CreateDictionaryBuildingsInGame()
+    {
+        Debug.Log("Creando diccionario de edificios en el juego");
+        foreach (Construction construction in buildingsInGameList)
+        {
+            buildingsInGame.Add(construction.id, construction);
         }
     }
 

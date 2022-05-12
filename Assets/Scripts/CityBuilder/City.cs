@@ -9,8 +9,8 @@ public class City : MonoBehaviour
     public int Materials { get; set; }
     public float powerR = 0;
     public float powerRLastCheckPoint = 0;
-    public List<GameObject> buildingsInGame = new List<GameObject>(); // Gameobject for Addbuilding in board (the model is needed) all building prefabs existing in the game
-    public Dictionary<string, Construction> availableBuildings = new Dictionary<string, Construction>(); // only those available (depending on the activation) change to construct type?
+    public List<string> availableBuildingsId = new List<string>(); // only those available (depending on the activation)
+    public CanvasController canvasController;
 
     private const int DAILY_STEPS = 3000;
     private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
@@ -109,26 +109,13 @@ public class City : MonoBehaviour
 
     private void CheckAvailableBuildings()
     {
-        foreach (var b in GameManager.Instance.buildingsInGame)
+        Debug.Log("CheckAvailableBuilding");
+        foreach (var b in GameManager.Instance.buildingsInGameList)
         {
-            GameObject bPrefab = b.prefab;
-            Building buildingScript = bPrefab.GetComponent<Building>();
-
-            //needed accesible data in buildingScript
-            buildingScript.id = b.id;
-            buildingScript.buildingName = b.buildingName;
-            buildingScript.cellsInX = b.cellsInX;
-            buildingScript.cellsInZ = b.cellsInZ;
-            buildingScript.type = b.type;
-            buildingScript.nLocals = b.nLocals;
 
             if (b.activationRequired <= Activation && b.activationRequired >= 0)
             {
-                if (availableBuildings.ContainsKey(buildingScript.id) == false)
-                {
-                    
-                    availableBuildings.Add(buildingScript.id, b);
-                }       
+                canvasController.UnlockBuilding(b.id);
             }  
         }
         

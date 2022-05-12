@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: forester
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 7e0b3857d8958564893fcf3e62588dfc, type: 3}
-  prefab: {fileID: 0}
+  silhouette: {fileID: 21300000, guid: 1a10ef2fbc592ef4da4fb9a586225f1b, type: 3}
+  prefab: {fileID: 6889200796470135822, guid: b350fe457660de44a8e43c84fdfba8d9, type: 3}
   id: 
   cost: 0
   buildingName: Casa forestal

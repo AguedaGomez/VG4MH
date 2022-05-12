@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6795604400809221373}
   m_Layer: 12
   m_Name: SM_Crops_B_LOD0
-  m_TagString: Untagged
+  m_TagString: LOD0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 8149964453534819051}
   m_Layer: 12
   m_Name: SM_Crops_B_LODS_Group
-  m_TagString: Untagged
+  m_TagString: LOD_group
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 7702887090927574235}
   - component: {fileID: 6859519642974168544}
   m_Layer: 12
-  m_Name: SM_Crop_B
+  m_Name: PB_Crop_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

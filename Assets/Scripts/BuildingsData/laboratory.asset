@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: laboratory
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: c9812a761ecba644989cb44051b19809, type: 3}
-  prefab: {fileID: 919132149155446097, guid: 56266a42f0c53e045b8faf414b71b809, type: 3}
+  silhouette: {fileID: 21300000, guid: 80ed59044b7ce5f479094db2980294ac, type: 3}
+  prefab: {fileID: 4962213173863401293, guid: 9677425291b63424f89bcf4618dbae0f, type: 3}
   id: 
   cost: 0
   buildingName: Laboratorio
