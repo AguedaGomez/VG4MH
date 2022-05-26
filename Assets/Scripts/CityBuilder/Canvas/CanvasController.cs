@@ -9,6 +9,7 @@ public class CanvasController : MonoBehaviour
     public GameObject confirmationMessage;
 
     public InteractionController interactionController;
+    public BuildingMenuController buildingMenuController;
 
     private DownHudController downHudController;
 
@@ -18,6 +19,7 @@ public class CanvasController : MonoBehaviour
     {
         Debug.Log("Start canvascontroller");
         downHudController = downHUD.GetComponent<DownHudController>();
+        buildingMenuController.CreateBuildingGrid();
     }
 
     public void ShowConfirmationMessage()
@@ -37,6 +39,11 @@ public class CanvasController : MonoBehaviour
     {
         confirmationMessage.SetActive(false);
         interactionController.EnableBuilder(); //No es necesario buscar si están en la lista ni pasar el id porque está todo el SO accesible en GAmeManager
+    }
+
+    public void UnlockBuilding(string id)
+    {
+        buildingMenuController.UnlockGridElement(id);
     }
 
 

@@ -48,15 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  cost: 0
   buildingName: houseB
   nLocals: 0
-  activationRequired: 0
   row: 0
   col: 0
   cellsInZ: 0
   cellsInX: 0
-  powerRIncrease: 0
   materialsPerSecond: 0
   type: 0
   indicatorText: {fileID: 0}
@@ -102,7 +99,7 @@ GameObject:
   - component: {fileID: 6255093832834717072}
   m_Layer: 0
   m_Name: SM_Base_Building_4_LODS_Group
-  m_TagString: Untagged
+  m_TagString: LOD_group
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +156,7 @@ GameObject:
   - component: {fileID: 6255093832981763252}
   m_Layer: 0
   m_Name: SM_Base_Building_4_LOD0
-  m_TagString: Untagged
+  m_TagString: LOD0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

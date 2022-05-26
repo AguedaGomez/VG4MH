@@ -32,33 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8570334909313818255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8788807595871042201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 
-  cost: 0
-  buildingName: potionstore
-  nLocals: 0
-  activationRequired: 0
-  row: 0
-  col: 0
-  cellsInZ: 0
-  cellsInX: 0
-  powerRIncrease: 0
-  materialsPerSecond: 0
-  type: 0
-  indicatorText: {fileID: 0}
-  maxMaterials: 40
-  materialsButton: {fileID: 0}
 --- !u!114 &6269330279987426061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +60,30 @@ MonoBehaviour:
   m_Center: {x: 0, y: -0.27, z: 1.82}
   m_Area: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &8570334909313818255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8788807595871042201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  buildingName: potionstore
+  nLocals: 0
+  row: 0
+  col: 0
+  cellsInZ: 0
+  cellsInX: 0
+  materialsPerSecond: 0
+  type: 0
+  indicatorText: {fileID: 0}
+  maxMaterials: 40
+  materialsButton: {fileID: 0}
 --- !u!1001 &4137655832671470399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,6 +295,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_PotionStore_LODS_Group
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0db14aeaa9ae35a44b75d23fd4611948,
+        type: 3}
+      propertyPath: m_TagString
+      value: LOD_group
+      objectReference: {fileID: 0}
+    - target: {fileID: 998078742406877224, guid: 0db14aeaa9ae35a44b75d23fd4611948,
+        type: 3}
+      propertyPath: m_TagString
+      value: LOD0
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 0db14aeaa9ae35a44b75d23fd4611948,
         type: 3}

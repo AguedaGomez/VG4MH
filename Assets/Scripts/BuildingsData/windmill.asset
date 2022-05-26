@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
   m_Name: windmill
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 620fa986723186c4ebb598778799c66b, type: 3}
-  prefab: {fileID: 7906998924151839276, guid: 7d491b47fb10ea049be99ccab5a62f92, type: 3}
-  id: 
+  image: {fileID: 21300000, guid: 34653c8f6fc6ae9408825b92b8e009d6, type: 3}
+  silhouette: {fileID: 21300000, guid: e4117ab3e7d3cf34cb02d6e77d80a819, type: 3}
+  prefab: {fileID: 6542561628278900347, guid: 7d491b47fb10ea049be99ccab5a62f92, type: 3}
+  id: 16
   cost: 0
   buildingName: Molino
   nLocals: 0
@@ -24,4 +25,4 @@ MonoBehaviour:
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0
-  type: 0
+  type: 1

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
   m_Name: noticeBoard
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: e82010d0bba5db642b4c96712daa73ee, type: 3}
-  prefab: {fileID: 0}
-  id: 
+  image: {fileID: 21300000, guid: cc99eb0cedd221849b70cdff94828512, type: 3}
+  silhouette: {fileID: 21300000, guid: 8c6b72e16328b084d9812fec5074a99d, type: 3}
+  prefab: {fileID: 8652423548927499805, guid: f2ec97b26e6f9394fabcb8afc762ac6f, type: 3}
+  id: 12
   cost: 0
   buildingName: "Tabl\xF3n de anuncios"
   nLocals: 0
@@ -24,4 +25,4 @@ MonoBehaviour:
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0
-  type: 0
+  type: 1

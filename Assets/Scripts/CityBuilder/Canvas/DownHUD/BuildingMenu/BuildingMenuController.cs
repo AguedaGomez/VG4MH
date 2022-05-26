@@ -11,26 +11,30 @@ public class BuildingMenuController : MonoBehaviour
     public CanvasController canvasController; //Controlador de vista y referencia a Interaction Controller
     // Datos disponibles sobre los edificios, prefab también dentro del scriptable object? coger desde game manager
     // Método que recorra lista y posicione todos los elementos
+    private Dictionary<string, BGridElementController> gridElementsDic = new Dictionary<string, BGridElementController>();
     void Start()
     {
-        CreateBuildingGrid();
+        //CreateBuildingGrid();
     }
 
     public void CreateBuildingGrid()
     {
-        foreach (var construction in GameManager.Instance.buildingsInGame)
+        Debug.Log("en CreateBuildingGrid");
+        foreach (var construction in GameManager.Instance.buildingsInGameList)
         {
             GameObject gridElement = Instantiate(bGridElement, GridWithBuildings.transform);
+
+            //En cada script controlador del elemento de la grid, se incorpora el id de la construcción correspondiente
+            //Por defecto, no se puede contruir nada hasta, todos deben estar bloqueados
+            BGridElementController bGridElementController = gridElement.GetComponent<BGridElementController>();
+            bGridElementController.myId = construction.id;
+            bGridElementController.Lock();
+
             Transform gridElementTransform = gridElement.transform;
-            gridElementTransform.Find("Name").GetComponent<Text>().text = construction.buildingName;
-            gridElementTransform.Find("Image").GetComponent<Image>().sprite = construction.image;
-            //gridElementTransform.Find("Image").GetComponent<Image>().SetNativeSize();
-            gridElementTransform.Find("Mat Number").GetComponent<Text>().text = "" + construction.maximunMaterials;
-            gridElementTransform.Find("Build").transform.Find("Text").GetComponent<Text>().text = "" + construction.cost;
-            gridElementTransform.Find("GridNumber").GetComponent<Text>().text = "" + construction.cellsInX + "x" + construction.cellsInZ;
             gridElementTransform.Find("Build").GetComponent<Button>().onClick.AddListener(() => canvasController.SaveBuildingToConstruct(construction));
-            
-            //Rellenar los datos en el prefab con los scriptable objects?
+
+            //Para acceder al elemento de la lista que corresponde con una construcción concreta
+            gridElementsDic.Add(construction.id, bGridElementController);
         }
     }
 
@@ -38,5 +42,18 @@ public class BuildingMenuController : MonoBehaviour
     {
         gameObject.SetActive(false);
         //llamar a hidemenu tb del padre
+    }
+
+    public void UnlockGridElement(string id)
+    {
+        gridElementsDic[id].UnLock();
+    }
+
+    public void LockAllGridElements()
+    {
+        for (int i = 0; i < gridElementsDic.Count; i++)
+        {
+            gridElementsDic[i + ""].Lock();
+        }
     }
 }

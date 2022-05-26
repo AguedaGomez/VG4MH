@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18abf022f18159448b4c8004194bd7c7, type: 3}
   m_Name: castle
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 1ae18cba6a4e77446b7d902a2990bb7f, type: 3}
-  prefab: {fileID: 919132149155446097, guid: 02e5aad22800b474da2a7e03fc604ded, type: 3}
+  image: {fileID: 21300000, guid: 5593596b4e1f7ce4d90662d5c3c15dac, type: 3}
+  silhouette: {fileID: 21300000, guid: 31357279e1ed7874f863ce0a5f76ea46, type: 3}
+  prefab: {fileID: 650800268668684004, guid: 9e0b0490424ac784fbafa943af682cc3, type: 3}
   id: 4
   cost: 500
   buildingName: Castillo

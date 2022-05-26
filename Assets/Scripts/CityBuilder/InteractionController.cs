@@ -185,17 +185,10 @@ public class InteractionController : MonoBehaviour
     }
     public void EnableBuilder()
     {
-        string id = GameManager.Instance.buildingInConstruction.id;
-        Debug.Log("enable building");
-        if (city.availableBuildings.ContainsKey(id)) //&& !GameManager.Instance.buildingInConstruction) //cambiar selectedBuilding por buildingInContruction en GameManager
-        {
-            Debug.Log("construir");
-            GameManager.Instance.buildingInConstruction = city.availableBuildings[id];
-            //selectedBuilding = city.availableBuildings[id];
-            selectedBuildingScript = GameManager.Instance.buildingInConstruction.prefab.GetComponent<Building>();
-            AddBuildingInEditMode();
-            GridUI.SetActive(true);
-        }
+        selectedBuildingScript = GameManager.Instance.buildingInConstruction.prefab.GetComponent<Building>();
+        AddBuildingInEditMode();
+        GridUI.SetActive(true);
+
     }
 
     private void AddBuildingInEditMode()
@@ -205,7 +198,7 @@ public class InteractionController : MonoBehaviour
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 100.0f)) {
             Vector3 gridPosition = board.CalculateGridPosition(hit.point);
             
-            board.AddBuildingInEditMode(GameManager.Instance.buildingInConstruction.prefab, board.CalculateGridPosition(hit.point));
+            board.AddBuildingInEditMode(selectedBuilding, board.CalculateGridPosition(hit.point));
 
             currentBuildingPosition = gridPosition;
         }

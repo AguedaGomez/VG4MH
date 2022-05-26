@@ -61,13 +61,13 @@ public class UIController : MonoBehaviour
     {
         powerRButtonImg.color = new Color(city.powerR / 100f, 0.525f, 0.645f, 1);
     }
-    private void CheckBuildingButtonsAvailability()
-    {
-        foreach (var b in city.availableBuildings)
-        {
-            buildingButtonsDictionary[b.Key].interactable = true;
-        }
-    }
+    //private void CheckBuildingButtonsAvailability()
+    //{
+    //    foreach (var b in city.availableBuildings)
+    //    {
+    //        buildingButtonsDictionary[b.Key].interactable = true;
+    //    }
+    //}
 
     public void ChangeToogleLibraryState (Toggle toggle)
     {

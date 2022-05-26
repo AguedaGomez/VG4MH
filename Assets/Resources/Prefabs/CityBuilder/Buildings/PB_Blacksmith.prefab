@@ -48,15 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  cost: 0
   buildingName: blacksmith
   nLocals: 0
-  activationRequired: 0
   row: 0
   col: 0
   cellsInZ: 0
   cellsInX: 0
-  powerRIncrease: 0
   materialsPerSecond: 0
   type: 0
   indicatorText: {fileID: 5805947795622368036}
@@ -321,10 +318,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.998
       objectReference: {fileID: 0}
+    - target: {fileID: -7686634905859098316, guid: 0090e910ad962b540b64537858c34628,
+        type: 3}
+      propertyPath: m_TagString
+      value: LOD0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0090e910ad962b540b64537858c34628,
         type: 3}
       propertyPath: m_Name
       value: SM_Blacksmith_LODS_Group
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0090e910ad962b540b64537858c34628,
+        type: 3}
+      propertyPath: m_TagString
+      value: LOD_group
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 0090e910ad962b540b64537858c34628,
         type: 3}
