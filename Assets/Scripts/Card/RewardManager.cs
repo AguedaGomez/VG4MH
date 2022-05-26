@@ -7,11 +7,6 @@ public class RewardManager : MonoBehaviour
     private const int MAXCUANTITY = 100;
     private const int MINCUANTITY = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
    public void UpdateResource(Card.Resource resource, int valueModifier)
     {

@@ -6,17 +6,16 @@ using UnityEngine.Rendering;
 
 public class CardDisplay : MonoBehaviour
 {
-    public TextMeshPro rightOptionText;
-    public TextMeshPro leftOptionText;
+    public TextMeshProUGUI rightOptionText;
+    public TextMeshProUGUI leftOptionText;
     public GameObject model; //Prefab del personaje
     public GameObject sceneModel; //el gameObject que hay en la escena para colocar la malla
     public bool startedInitialMovement = false;
+    bool changingColor = false;
 
     public Card currentCard;
     private float rotationSpeed = 150f;
 
-
-    //fov perspective 53.2
 
     protected virtual void Start()
     {
@@ -29,22 +28,22 @@ public class CardDisplay : MonoBehaviour
         
     }
 
-    public virtual void ShowOption(Choice.Direction direction)
+    public virtual void ShowOption(Single.Direction direction)
     {
         
         switch (direction)
         {
-            case Choice.Direction.RIGHT:
-                rightOptionText.gameObject.SetActive(true);
-                leftOptionText.gameObject.SetActive(false);
+            case Single.Direction.RIGHT:
+                StartCoroutine(chosingRightOption(0.5f));
+
                 break;
-            case Choice.Direction.LEFT:
-                rightOptionText.gameObject.SetActive(false);
-                leftOptionText.gameObject.SetActive(true);
+            case Single.Direction.LEFT:
+                StartCoroutine(chosingLeftOption(0.5f));
+
                 break;
-            case Choice.Direction.NONE:
-                rightOptionText.gameObject.SetActive(false);
-                leftOptionText.gameObject.SetActive(false);
+            case Single.Direction.NONE:
+                StartCoroutine(chosingNoneOption(0.5f));
+
                 break;
             default:
                 break;
@@ -65,6 +64,104 @@ public class CardDisplay : MonoBehaviour
                 startedInitialMovement = false;
             }
         }
+    }
+
+    public IEnumerator chosingRightOption(float duration)
+    {
+        if (changingColor)
+        {
+            yield break;
+        }
+
+        rightOptionText.fontStyle = FontStyles.Bold;
+        leftOptionText.fontStyle = FontStyles.Normal;
+
+        float timer = 0;
+        Color rightTextColor = rightOptionText.color;
+        Color leftTextColor = leftOptionText.color;
+
+        Color activatedTextColor = Color.green;
+        Color desactivatedTextColor = Color.red;
+        desactivatedTextColor.a = 0.25f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+
+            float actualTime = timer / duration;
+
+            rightOptionText.color = Color.Lerp(rightTextColor, activatedTextColor, actualTime);
+            leftOptionText.color = Color.Lerp(leftTextColor, desactivatedTextColor, actualTime);
+
+            yield return null;
+        }
+
+        changingColor = false;
+    }
+
+    public IEnumerator chosingLeftOption(float duration)
+    {
+        if(changingColor)
+        {
+            yield break;
+        }
+
+        leftOptionText.fontStyle = FontStyles.Bold;
+        rightOptionText.fontStyle = FontStyles.Normal;
+
+        float timer = 0;
+        Color rightTextColor = rightOptionText.color;
+        Color leftTextColor = leftOptionText.color;
+
+        Color activatedTextColor = Color.green;
+        Color desactivatedTextColor = Color.red;
+        desactivatedTextColor.a = 0.25f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+
+            float actualTime = timer / duration;
+
+            leftOptionText.color = Color.Lerp(leftTextColor, activatedTextColor, actualTime);
+            rightOptionText.color = Color.Lerp(rightTextColor, desactivatedTextColor, actualTime);
+
+            yield return null;
+        }
+
+        changingColor = false;
+    }
+
+
+    public IEnumerator chosingNoneOption(float duration)
+    {
+        if (changingColor)
+        {
+            yield break;
+        }
+
+        rightOptionText.fontStyle = FontStyles.Normal;
+        leftOptionText.fontStyle = FontStyles.Normal;
+
+        float timer = 0;
+        Color rightTextColor = rightOptionText.color;
+        Color leftTextColor = leftOptionText.color;
+
+        Color activatedTextColor = Color.white;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+
+            float actualTime = timer / duration;
+
+            rightOptionText.color = Color.Lerp(rightTextColor, activatedTextColor, actualTime);
+            leftOptionText.color = Color.Lerp(leftTextColor, activatedTextColor, actualTime);
+
+            yield return null;
+        }
+
+        changingColor = false;
     }
 }
 
