@@ -20,8 +20,8 @@ MonoBehaviour:
   buildingName: Cultivo
   nLocals: 0
   activationRequired: 50
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 1
+  cellsInX: 1
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0

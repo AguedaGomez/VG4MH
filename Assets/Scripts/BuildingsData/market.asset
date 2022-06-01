@@ -20,8 +20,8 @@ MonoBehaviour:
   buildingName: Mercado
   nLocals: 0
   activationRequired: 0
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 3
+  cellsInX: 3
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0

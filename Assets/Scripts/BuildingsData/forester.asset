@@ -19,7 +19,7 @@ MonoBehaviour:
   cost: 0
   buildingName: Casa forestal
   nLocals: 0
-  activationRequired: 0
+  activationRequired: 80
   cellsInZ: 0
   cellsInX: 0
   powerRIncrease: 0

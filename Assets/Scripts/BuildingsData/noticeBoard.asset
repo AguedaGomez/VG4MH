@@ -20,8 +20,8 @@ MonoBehaviour:
   buildingName: "Tabl\xF3n de anuncios"
   nLocals: 0
   activationRequired: 0
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 1
+  cellsInX: 1
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0

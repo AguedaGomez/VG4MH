@@ -19,7 +19,7 @@ MonoBehaviour:
   cost: 0
   buildingName: Taberna
   nLocals: 0
-  activationRequired: 0
+  activationRequired: 60
   cellsInZ: 0
   cellsInX: 0
   powerRIncrease: 0

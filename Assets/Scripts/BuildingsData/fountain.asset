@@ -20,8 +20,8 @@ MonoBehaviour:
   buildingName: Plaza
   nLocals: 0
   activationRequired: 0
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 4
+  cellsInX: 4
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0
