@@ -14,8 +14,8 @@ public class CardBehaviour : MonoBehaviour
     private bool directionChosen;
     private bool touchingCard;
     private float rotationAngle;
-    private float minLong = 2.0f;
-    private Choice.Direction currentDirection;
+    private float minLong = 1.25f;
+    private Single.Direction currentDirection;
     private CardDisplay cardDisplay;
     private SingleCardRewardManager singleCardRewardManager;
     private Collider2D touchedCollider;
@@ -26,7 +26,7 @@ public class CardBehaviour : MonoBehaviour
     {
         initialPos = transform.position;
         directionChosen = false;
-        currentDirection = Choice.Direction.NONE;
+        currentDirection = Single.Direction.NONE;
         cardDisplay = GetComponent<CardDisplay>();
         singleCardRewardManager = GetComponent<SingleCardRewardManager>();
     }
@@ -43,11 +43,17 @@ public class CardBehaviour : MonoBehaviour
             {
                 case TouchPhase.Began:
                     startPos = Camera.main.ScreenToWorldPoint(touchPosition);
+                    
+                    //Check if something is touched
+                    if (Physics2D.OverlapPoint(startPos) == null)
+                        break;
+
                     offsetVector = transform.position - startPos;
 
-                    //Check if card is touched
+                    //Check if the card is touched
                     touchedCollider = Physics2D.OverlapPoint(startPos);
                     touchingCard = touchedCollider.name == transform.name ? true : false;
+
                     break;
 
                 case TouchPhase.Moved:
@@ -63,24 +69,26 @@ public class CardBehaviour : MonoBehaviour
                         direction = currentTouchWorld - startPos;
                         if (Mathf.Sign(direction.x) == 1) // show right option
                         {
-                            currentDirection = Choice.Direction.RIGHT;
-
+                            currentDirection = Single.Direction.RIGHT;
                         }
                         else if (Mathf.Sign(direction.x) == -1) // show left option
                         {
-                            currentDirection = Choice.Direction.LEFT;
+                            currentDirection = Single.Direction.LEFT;
                         }
-                        
+
                         cardDisplay.ShowOption(currentDirection);
                     }
 
                     break;
 
                 case TouchPhase.Ended:
-                    transform.position = initialPos;
-                    transform.rotation = Quaternion.identity;
+                    if(touchingCard)
+                    {
+                        transform.position = initialPos;
+                        transform.rotation = Quaternion.identity;
 
-                    directionChosen = true;
+                        directionChosen = true;
+                    }
                     break;
 
                 default:
@@ -95,11 +103,12 @@ public class CardBehaviour : MonoBehaviour
                 }
                 else
                 {
-                    currentDirection = Choice.Direction.NONE;
+                    currentDirection = Single.Direction.NONE;
                     cardDisplay.ShowOption(currentDirection);
                 }
                 directionChosen = false;
             }
+            Debug.Log(currentDirection);
         }
     }
 

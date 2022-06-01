@@ -6,7 +6,15 @@ using UnityEngine;
 
 public class Single : Card
 {
-    public Choice choice;
+    public Sprite image;
+
+    public GameObject model; //game object en lugar de sprite
+    public GameObject sceneModel;
+    public string rightText;
+    public string leftText;
+
+    public Direction correctDirection;
+
     public Card nextCardIfRight;
     public Card nextCardIfLeft;
 }

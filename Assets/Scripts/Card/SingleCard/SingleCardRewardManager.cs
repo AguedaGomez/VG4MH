@@ -11,24 +11,32 @@ public class SingleCardRewardManager : MonoBehaviour
     private RewardManager rewardManager;
     private CardManager cardManager;
 
+
     void Start()
     {
-        rewardManager = transform.parent.GetComponent<RewardManager>();
-        cardManager = transform.parent.GetComponent<CardManager>();
+        rewardManager = (RewardManager)FindObjectOfType(typeof(RewardManager));
+        cardManager = (CardManager)FindObjectOfType(typeof(CardManager));
     }
 
-    public void CheckOptionChosen(Choice.Direction directionChosen)
+    public void CheckOptionChosen(Single.Direction directionChosen)
     {
         GetCurrentCard();
         Card.Resource currentResource = currentCard.reward;
 
         int valueModifier = OptionIsCorrect(directionChosen) ? INCREMENT : DECREMENT;
-        Card nextCard = directionChosen == Choice.Direction.RIGHT ? currentCard.nextCardIfRight : currentCard.nextCardIfLeft; // change if more directions are added
+        Card nextCard = directionChosen == Single.Direction.RIGHT ? currentCard.nextCardIfRight : currentCard.nextCardIfLeft; // change if more directions are added
 
-        rewardManager.UpdateResource(currentResource, valueModifier);
+        //rewardManager.UpdateResource(currentResource, valueModifier);
+        SaveOptionChosen(directionChosen); //action for multipleOptions
+
+        if (directionChosen != Card.Direction.NONE)
+            rewardManager.UpdateResource(currentResource, valueModifier);
 
         if (nextCard.characterName != currentCard.characterName)
+        {
+            GameManager.Instance.currentCard = nextCard;
             cardManager.LoadScene();
+        }
         else
             cardManager.UpdateCurrentCard(nextCard);
        
@@ -39,9 +47,16 @@ public class SingleCardRewardManager : MonoBehaviour
         currentCard = (Single)GameManager.Instance.currentCard;
     }
 
-    private bool OptionIsCorrect(Choice.Direction directionChosen)
+    private bool OptionIsCorrect(Single.Direction directionChosen)
     {
-        return currentCard.choice.correctDirection == directionChosen;
+        return currentCard.correctDirection == directionChosen;
       
+    }
+
+    private void SaveOptionChosen(Card.Direction directionChosen)
+    {
+        cardManager.chosenDirection = directionChosen;
+        cardManager.lastOptionChosen = directionChosen == Card.Direction.RIGHT ? currentCard.rightText : currentCard.leftText;
+        cardManager.islastOptionCorrect = OptionIsCorrect(directionChosen);
     }
 }
