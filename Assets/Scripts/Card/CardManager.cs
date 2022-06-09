@@ -8,11 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class CardManager : MonoBehaviour
 {
-
     public GameObject singleCardPrefab;
     public GameObject multipleChoicePanel;
-
-    //public GameObject multipleCardPrefab;
 
     public TextMeshProUGUI dialogText;
     public TextMeshProUGUI characterNameText;
@@ -25,7 +22,6 @@ public class CardManager : MonoBehaviour
     public string lastOptionChosen;
     public bool islastOptionCorrect;
     public Card.Direction chosenDirection;
-
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +47,6 @@ public class CardManager : MonoBehaviour
 
         else if (GameManager.Instance.currentCard.type == Card.CardType.MULTIPLE)
         {
-            //cardGameObject = Instantiate(multipleCardPrefab, parentOfCards);
             multipleChoicePanel.SetActive(true);
             multipleChoiceDisplay.DisplayOptions();
         }
