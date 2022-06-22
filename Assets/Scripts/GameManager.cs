@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool interactingWithUI = false;
 
     public List<Construction> buildingsInGameList = new List<Construction>();
+    public List<ActivityNotification> goalsToReach = new List<ActivityNotification>();
     public Dictionary<string, Construction> buildingsInGame= new Dictionary<string, Construction>();
 
     private GameObject city;
@@ -28,7 +29,6 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             CreateDictionaryBuildingsInGame();
-
         }
         else
         {
@@ -76,4 +76,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    internal void resetActivityNotifications()
+    {
+        foreach (ActivityNotification noti in goalsToReach)
+        {
+            noti.hasBeenShown = false;
+        }
+    }
 }

@@ -12,7 +12,11 @@ public sealed class SaveObject
     public float powerR;
     public string date;
     public List<SavedBuilding> buildingsInBoard;
-    
+    public bool activityRunning;
+
+    public bool dailyActivityCompleted;
+    public int dailyCompletedSteps;
+    public int actualSessionSteps;
 
     private SaveObject()
     {
@@ -20,6 +24,9 @@ public sealed class SaveObject
         powerR = 0;
         date = "";
         buildingsInBoard = new List<SavedBuilding>();
+        activityRunning = false;
+        dailyActivityCompleted = false;
+        dailyCompletedSteps = 0;
+        actualSessionSteps = 0;
     }
-  
 }

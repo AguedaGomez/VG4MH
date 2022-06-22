@@ -72,7 +72,6 @@ public class MaterialGeneratorBuilding : Building
     }
     IEnumerator CalculateMaterialsPerSecond()
     {
-
         while (true)
         {
             if (materialsPerSecond < maxMaterials)
