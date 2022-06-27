@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7360bcd1eae3524da574b14c27809cb, type: 3}
+  m_Name: startActivity_Notification
+  m_EditorClassIdentifier: 
+  imageNotification: {fileID: 21300000, guid: eee36c6c486af5e46ad43454338cefe3, type: 3}
+  textNotification: "Estas realizando la \"actividad\". No cierres la aplicaci\xF3n
+    del todo mientras est\xE1s haciendo ejercicio. Puedes bloquear el m\xF3vil si
+    quieres."

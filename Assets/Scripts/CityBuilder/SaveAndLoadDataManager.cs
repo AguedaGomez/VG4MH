@@ -15,6 +15,11 @@ public class SaveAndLoadDataManager : MonoBehaviour
     {
         if (pauseStatus) // Save
         {
+            if (SaveObject.Instance.activityRunning)
+            {
+                ActivityService activityService = FindObjectOfType<ActivityService>();
+                activityService.SyncData();
+            }
             SaveGame();
         }
         else // Load
@@ -42,7 +47,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
     {
         if (SaveAndLoadData.LoadFromFile("state-game.json", out var content))
         {
-            
+            //Comprobar si ha pasado un día para activar la posibilidad de volver 
             SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
             //Debug.Log("en Load game cuando se traduce el json: " + SaveObject.Instance.boardState.Count);
         }
@@ -56,6 +61,8 @@ public class SaveAndLoadDataManager : MonoBehaviour
     {
         ObjectToSaveData();
         SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
+        //Debug.Log("Pasos que se van a guardar: " + SaveObject.Instance.dailyCompletedSteps);
+
         SaveObject.Instance.buildingsInBoard.Clear();
         print("app cerrada");
     }
@@ -71,14 +78,16 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     private void SaveDataToObject(SaveObject loadedSaveObject)
     {
-
         SceneManager.LoadScene("CityBuilder");
         SaveObject.Instance.materials = loadedSaveObject.materials;
         SaveObject.Instance.date = loadedSaveObject.date;
         Debug.Log("1. guardando fecha en objeto " + SaveObject.Instance.date);
         SaveObject.Instance.buildingsInBoard = loadedSaveObject.buildingsInBoard;
-        
+        SaveObject.Instance.powerR = loadedSaveObject.powerR;
+        SaveObject.Instance.activityRunning = loadedSaveObject.activityRunning;
+        SaveObject.Instance.dailyActivityCompleted = loadedSaveObject.dailyActivityCompleted;
+        SaveObject.Instance.dailyCompletedSteps = loadedSaveObject.dailyCompletedSteps;
+        SaveObject.Instance.actualSessionSteps = loadedSaveObject.actualSessionSteps;
+        //Debug.Log("Pasos que se van a cargar: " + SaveObject.Instance.dailyCompletedSteps);
     }
-
-
 }

@@ -44,6 +44,7 @@ public class City : MonoBehaviour
         if (SaveObject.Instance.date != "")
             CheckInactiveTime(SaveObject.Instance.date);
         CalculateActivation(); //Also call to calclulatepowerR
+        //Actualizar los materiales de los edificios
     }
 
     private void CheckInactiveTime(string lastAccess)
@@ -52,8 +53,28 @@ public class City : MonoBehaviour
         //Debug.Log("Tryparse " + DateTime.TryParse(lastAccess, out DateTime r) + r);
         DateTime.TryParse(lastAccess, out DateTime lA);
         inactiveTime = DateTime.Now.Subtract(lA);
-        Debug.Log("City>CheckInactiveTime Inactive time in seconds: " + inactiveTime.TotalSeconds);
-        ApplyPenalization(inactiveTime.Days);
+        /*Debug.Log("City>CheckInactiveTime Inactive time in seconds: " + inactiveTime.TotalSeconds);
+        ApplyPenalization(inactiveTime.Days);*/
+
+        //Nueva versión, sin sustituir lo de arriba
+        DateTime today = DateTime.Now.Date;
+
+        if(lA.Date != today.Date)
+        {
+            //Día diferente
+            //Se permite al usuario volver a hacer actividad
+            SaveObject.Instance.dailyActivityCompleted = false;
+            SaveObject.Instance.actualSessionSteps = 0;
+            SaveObject.Instance.dailyCompletedSteps = 0;
+            GameManager.Instance.resetActivityNotifications();
+            //LanzarCuestionarioAlUsuario()
+            
+            if(inactiveTime.Days > 1)
+            {
+                //Aplicar penalización por no haber iniciado la aplicación
+                ApplyPenalization(inactiveTime.Days);
+            }
+        }
     }
 
     public void CalculatePopulation (Building newBuilding)

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Earl
   dialog: "Prueba texto m\xFAltiple"
-  reward: 0
+  reward: 2
   type: 1
   options:
   - {fileID: 11400000, guid: 582b508bfc65ca54b9d84947dab505ec, type: 2}

@@ -10,12 +10,13 @@ public class SingleCardRewardManager : MonoBehaviour
     private Single currentCard;
     private RewardManager rewardManager;
     private CardManager cardManager;
-
+    private TOP_Hud_Controller hudManager;
 
     void Start()
     {
         rewardManager = (RewardManager)FindObjectOfType(typeof(RewardManager));
         cardManager = (CardManager)FindObjectOfType(typeof(CardManager));
+        hudManager = (TOP_Hud_Controller)FindObjectOfType(typeof(TOP_Hud_Controller));
     }
 
     public void CheckOptionChosen(Single.Direction directionChosen)
@@ -26,11 +27,13 @@ public class SingleCardRewardManager : MonoBehaviour
         int valueModifier = OptionIsCorrect(directionChosen) ? INCREMENT : DECREMENT;
         Card nextCard = directionChosen == Single.Direction.RIGHT ? currentCard.nextCardIfRight : currentCard.nextCardIfLeft; // change if more directions are added
 
-        //rewardManager.UpdateResource(currentResource, valueModifier);
         SaveOptionChosen(directionChosen); //action for multipleOptions
-
+        
         if (directionChosen != Card.Direction.NONE)
             rewardManager.UpdateResource(currentResource, valueModifier);
+
+        //Realizar Animación según el reward que varie
+        hudManager.Start_VisualResourceStatChange(currentResource, valueModifier);
 
         if (nextCard.characterName != currentCard.characterName)
         {

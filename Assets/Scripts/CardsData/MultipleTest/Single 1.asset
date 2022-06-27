@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Earl
   dialog: "Es m\xE1s dif\xEDcil irse a un sitio nuevo"
-  reward: 0
+  reward: 1
   type: 0
   image: {fileID: 21300000, guid: 32319b7d8a982154fa3fccb1750270f3, type: 3}
   model: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4, type: 3}
