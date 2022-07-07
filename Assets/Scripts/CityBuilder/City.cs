@@ -8,9 +8,12 @@ public class City : MonoBehaviour
     public float Activation { get; set; }
     public int Materials { get; set; }
     public float powerR = 0;
+    public float activationValue = 0;
     public float powerRLastCheckPoint = 0;
     public List<string> availableBuildingsId = new List<string>(); // only those available (depending on the activation)
     public CanvasController canvasController;
+    public GameObject dailyQuestionsPanel_Prefab;
+    public GameObject dailyQuestion_ConfirmationPanel;
 
     private const int DAILY_STEPS = 3000;
     private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
@@ -18,7 +21,6 @@ public class City : MonoBehaviour
     private int population;
     private int questionaryDone = 0;
     private int libraryAccess = 0;
-    private int activationValue = 0;
     private int currentSteps = 0;
     private bool fullActivation = false;
     private float esencias = 0;
@@ -27,6 +29,9 @@ public class City : MonoBehaviour
     void Start()
     {
         Materials = SaveObject.Instance.materials;
+        powerR = SaveObject.Instance.powerR;
+        activationValue = SaveObject.Instance.activationValue;
+
         InitializeCity(); //esto creo que no funcionará
     }
 
@@ -44,7 +49,15 @@ public class City : MonoBehaviour
         if (SaveObject.Instance.date != "")
             CheckInactiveTime(SaveObject.Instance.date);
         CalculateActivation(); //Also call to calclulatepowerR
-        //Actualizar los materiales de los edificios
+                               //Actualizar los materiales de los edificios
+        UpdateTopHUD();
+
+        LanzarCuestionarioAlUsuario();
+    }
+
+    private void UpdateTopHUD()
+    {
+        canvasController.updateSlidersValue(activationValue, powerR);
     }
 
     private void CheckInactiveTime(string lastAccess)
@@ -64,10 +77,11 @@ public class City : MonoBehaviour
             //Día diferente
             //Se permite al usuario volver a hacer actividad
             SaveObject.Instance.dailyActivityCompleted = false;
+            SaveObject.Instance.dailyQuestions_Done = false;
             SaveObject.Instance.actualSessionSteps = 0;
             SaveObject.Instance.dailyCompletedSteps = 0;
             GameManager.Instance.resetActivityNotifications();
-            //LanzarCuestionarioAlUsuario()
+
             
             if(inactiveTime.Days > 1)
             {
@@ -75,6 +89,26 @@ public class City : MonoBehaviour
                 ApplyPenalization(inactiveTime.Days);
             }
         }
+
+    }
+
+    private void LanzarCuestionarioAlUsuario()
+    {
+        if(SaveObject.Instance.dailyQuestions_Done == false)
+        {
+            dailyQuestion_ConfirmationPanel.SetActive(true);
+        }
+    }
+
+    public void dailyQuestionsConfirmation_Yes()
+    {
+        Instantiate(dailyQuestionsPanel_Prefab, canvasController.transform);
+        Destroy(dailyQuestion_ConfirmationPanel);
+    }
+
+    public void dailyQuestionsConfirmation_No()
+    {
+        Destroy(dailyQuestion_ConfirmationPanel);
     }
 
     public void CalculatePopulation (Building newBuilding)
@@ -113,7 +147,7 @@ public class City : MonoBehaviour
     }
     public void CalculatePhysicalActivity()
     {
-        activationValue = 100 * currentSteps / DAILY_STEPS;
+        //activationValue = 100 * currentSteps / DAILY_STEPS;
         print("activación por los pasos dados: " + currentSteps);
         CalculateActivation();
     }
@@ -149,7 +183,7 @@ public class City : MonoBehaviour
 
     public void CalculatePowerR()
     {
-        powerR = powerRLastCheckPoint + esencias * (1 + Activation / 100); // taking to account penalization
+        //powerR = powerRLastCheckPoint + esencias * (1 + Activation / 100); // taking to account penalization
     }
 
     private void ApplyPenalization(int inactiveDays)
@@ -162,6 +196,7 @@ public class City : MonoBehaviour
         esencias += SOLVED_CONFLICT_VALUE;
         CalculatePowerR();
     }
+
     public void DecreaseMaterials(int buildingPrice)
     {
         Materials -= buildingPrice;
@@ -185,4 +220,10 @@ public class City : MonoBehaviour
             return 0;
     }
 
+    public void increaseActivationValue(float addition)
+    {
+        activationValue += addition;
+        SaveObject.Instance.activationValue = activationValue;
+        UpdateTopHUD();
+    }
 }

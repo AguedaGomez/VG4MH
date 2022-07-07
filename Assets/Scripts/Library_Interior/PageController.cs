@@ -12,30 +12,28 @@ public class PageController : MonoBehaviour
 
     List<bool> previousButtonStates;
 
-    // Start is called before the first frame update
-    void Start()
+    
+    public void TurnPHQ_Page()
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    public void TurnPage()
-    {
-        book.HideUI(false);
+        book.Hide_UI(false);
         turnPageAnimation.Play();
     }
-
     public void HideUI()
     {
-        book.HideUI(false);
+        book.Hide_UI(false);
     }
     public void UnhideUI()
     {
-        book.HideUI(true);
+        book.Hide_UI(true);
     }
+
+    public void TurnGAD_Page()
+    {
+        book.Hide_UI(false);
+        turnPageAnimation.Play();
+    }
+
+    public void turnPageAnimationStart() { turnPageAnimation.Play(); }
 
     public void activateButtonsInteractivity()
     {

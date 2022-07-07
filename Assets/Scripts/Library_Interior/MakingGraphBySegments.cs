@@ -13,7 +13,7 @@ public class MakingGraphBySegments : MonoBehaviour
     public List<UI_LineRenderer> lines; //Reinforcement is in position 0, Endurance is in position 1
 
     //Listas donde se van a guardar todos los puntos de la línea de la gráfica, en la línea en sí solo se almacenarán los puntos "activos" en ese momento
-    public List<Vector2> reinforcementPoints;
+    public List<Vector2> firstListOfPoints;
     public List<Vector2> endurancePoints;
     [SerializeField] GameObject indexText_Prefab;
 
@@ -29,6 +29,9 @@ public class MakingGraphBySegments : MonoBehaviour
     bool endingGraphAvailable = false;
     public int actualPage = -1; //Si está en el valor -1 es porque está en la última página (página que resulta del resto)
 
+    public string idLine_1;
+    public string idLine_2;
+
     //Componente que anima la gráfica
     GraphAnimator animator;
 
@@ -39,8 +42,8 @@ public class MakingGraphBySegments : MonoBehaviour
         creacionDeListaDeVectores();
 
         //Se determina cuantos segmentos de valores van a haber y si va a haber página parcial
-        numeroDeSegmentos = reinforcementPoints.Count / grid.gridSize.x;
-        resto = reinforcementPoints.Count % grid.gridSize.x;
+        numeroDeSegmentos = firstListOfPoints.Count / grid.gridSize.x;
+        resto = firstListOfPoints.Count % grid.gridSize.x;
 
         if(resto != 0)
         {
@@ -59,7 +62,7 @@ public class MakingGraphBySegments : MonoBehaviour
             for(int i = 0; i < resto; i++)
             {
                 //Se cogen los valores correspondientes a la última página
-                Vector2 reinforcementPoint = new Vector2(i, reinforcementPoints[(reinforcementPoints.Count - resto) + i].y);
+                Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[(firstListOfPoints.Count - resto) + i].y);
                 Vector2 endurancePoint = new Vector2(i, endurancePoints[(endurancePoints.Count - resto) + i].y);
 
                 //Se añaden los valores al componente UI_LineRenderer
@@ -79,7 +82,7 @@ public class MakingGraphBySegments : MonoBehaviour
             {
                 int index = i + (7 * (numeroDeSegmentos - 1));
 
-                Vector2 reinforcementPoint = new Vector2(i, reinforcementPoints[index].y);
+                Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[index].y);
                 Vector2 endurancePoint = new Vector2(i, endurancePoints[index].y);
 
                 lines[0].points.Add(reinforcementPoint);
@@ -185,7 +188,7 @@ public class MakingGraphBySegments : MonoBehaviour
             }
 
             //Se coge el valor indicado del vector completo de puntos y se agrega a la LineRenderer
-            Vector2 reinforcementPoint = new Vector2(i, reinforcementPoints[index].y);
+            Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[index].y);
             Vector2 endurancePoint = new Vector2(i, endurancePoints[index].y);
 
             lines[0].points.Add(reinforcementPoint);
@@ -250,7 +253,7 @@ public class MakingGraphBySegments : MonoBehaviour
                 }
 
                 //Se coge el valor indicado del vector completo de puntos y se agrega a la LineRenderer
-                Vector2 reinforcementPoint = new Vector2(i, reinforcementPoints[index].y);
+                Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[index].y);
                 Vector2 endurancePoint = new Vector2(i, endurancePoints[index].y);
 
                 lines[0].points.Add(reinforcementPoint);
@@ -267,7 +270,7 @@ public class MakingGraphBySegments : MonoBehaviour
             for (int i = 0; i < resto; i++)
             {
                 //Se coge el valor indicado del vector completo de puntos y se agrega a la LineRenderer
-                Vector2 reinforcementPoint = new Vector2(i, reinforcementPoints[(reinforcementPoints.Count - resto) + i].y);
+                Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[(firstListOfPoints.Count - resto) + i].y);
                 Vector2 endurancePoint = new Vector2(i, endurancePoints[(endurancePoints.Count - resto) + i].y);
 
                 lines[0].points.Add(reinforcementPoint);
@@ -314,70 +317,98 @@ public class MakingGraphBySegments : MonoBehaviour
     private void creacionDeListaDeVectores()
     {
         //Rellenando la primera lista
-        reinforcementPoints = new List<Vector2>();
+        firstListOfPoints = SaveObject.Instance.getSpecifiedQuestionnaires(idLine_1);
 
-        reinforcementPoints.Add(new Vector2(0,(float) 5 / 4));
-        reinforcementPoints.Add(new Vector2(1, (float)5 / 4));
-        reinforcementPoints.Add(new Vector2(2, (float)4 / 4));
-        reinforcementPoints.Add(new Vector2(3, (float)6 / 4));
-        reinforcementPoints.Add(new Vector2(4, (float)4 / 4));
-        reinforcementPoints.Add(new Vector2(5, (float)3 / 4));
-        reinforcementPoints.Add(new Vector2(6, (float)2 / 4));
-        reinforcementPoints.Add(new Vector2(7, (float)6 / 4));
-        reinforcementPoints.Add(new Vector2(8, (float)1 / 4));
-        reinforcementPoints.Add(new Vector2(9, (float)7 / 4));
-        reinforcementPoints.Add(new Vector2(10, (float)1 / 4));
-        reinforcementPoints.Add(new Vector2(11, (float)2 / 4));
-        reinforcementPoints.Add(new Vector2(12, (float)6 / 4));
-        reinforcementPoints.Add(new Vector2(13, (float)3 / 4));
-        reinforcementPoints.Add(new Vector2(14, (float)8 / 4));
-        reinforcementPoints.Add(new Vector2(15, (float)1 / 4));
-        reinforcementPoints.Add(new Vector2(16, (float)3 / 4));
-        reinforcementPoints.Add(new Vector2(17, (float)6 / 4));
-        reinforcementPoints.Add(new Vector2(18, (float)2 / 4));
-        reinforcementPoints.Add(new Vector2(19, (float)3 / 4));
-        reinforcementPoints.Add(new Vector2(21, (float)3 / 4));
-        reinforcementPoints.Add(new Vector2(22, (float)8 / 4));
-        reinforcementPoints.Add(new Vector2(23, (float)8 / 4));
-        reinforcementPoints.Add(new Vector2(24, (float)7 / 4));
-        reinforcementPoints.Add(new Vector2(25, (float)3 / 4));
-        reinforcementPoints.Add(new Vector2(26, (float)1 / 4));
-        reinforcementPoints.Add(new Vector2(27, (float)8 / 4));
-        reinforcementPoints.Add(new Vector2(28, (float)5 / 4));
-        //reinforcementPoints.Add(new Vector2(29, 6));
+        endurancePoints = SaveObject.Instance.getSpecifiedQuestionnaires(idLine_2);
 
-        //Rellenando la segunda lista
-        endurancePoints = new List<Vector2>();
+        if(firstListOfPoints.Count == 0)
+        {
+            Debug.Log("Primera lista vacia");
+            Vector2 newVector = new Vector2(0, 0);
+            firstListOfPoints.Add(newVector);
+        }
+        if(endurancePoints.Count == 0)
+        {
+            Debug.Log("Segunda lista vacia");
+            Vector2 newVector = new Vector2(0, 0);
+            endurancePoints.Add(newVector);
+        }
+        //Coger los datos del save object
+        //Guardarlos en la lista de puntos
+        //Cambiar la lista de puntos por un diccionario
+        //o por un objeto que tenga el value correspondiente y la fecha a mostrar
 
-        endurancePoints.Add(new Vector2(0, 0));
-        endurancePoints.Add(new Vector2(1, (float)3 / 4));
-        endurancePoints.Add(new Vector2(2, (float)2 / 4));
-        endurancePoints.Add(new Vector2(3, (float)3 / 4));
-        endurancePoints.Add(new Vector2(4, (float)2 / 4));
-        endurancePoints.Add(new Vector2(5, (float)3 / 4));
-        endurancePoints.Add(new Vector2(6, (float)1 / 4));
-        endurancePoints.Add(new Vector2(7, (float)1 / 4));
-        endurancePoints.Add(new Vector2(8, (float)2 / 4));
-        endurancePoints.Add(new Vector2(9, (float)6 / 4));
-        endurancePoints.Add(new Vector2(10, (float)3 / 4));
-        endurancePoints.Add(new Vector2(11, (float)5 / 4));
-        endurancePoints.Add(new Vector2(12, (float)2 / 4));
-        endurancePoints.Add(new Vector2(13, (float)3 / 4));
-        endurancePoints.Add(new Vector2(14, (float)1 / 4));
-        endurancePoints.Add(new Vector2(15, (float)3 / 4));
-        endurancePoints.Add(new Vector2(16, (float)4 / 4));
-        endurancePoints.Add(new Vector2(17, (float)6 / 4));
-        endurancePoints.Add(new Vector2(18, (float)5 / 4));
-        endurancePoints.Add(new Vector2(19, (float)5 / 4));
-        endurancePoints.Add(new Vector2(20, (float)2 / 4));
-        endurancePoints.Add(new Vector2(21, (float)6 / 4));
-        endurancePoints.Add(new Vector2(22, (float)1 / 4));
-        endurancePoints.Add(new Vector2(23, (float)5 / 4));
-        endurancePoints.Add(new Vector2(24, (float)6 / 4));
-        endurancePoints.Add(new Vector2(25, (float)2 / 4));
-        endurancePoints.Add(new Vector2(26, (float)4 / 4));
-        endurancePoints.Add(new Vector2(27, (float)8 / 4));
-        endurancePoints.Add(new Vector2(28, (float)9 / 4));
-        //endurancePoints.Add(new Vector2(29, 3));
+    }
+
+    private void getSpecifiedQuestionnaires(string idQuest)
+    {
+
     }
 }
+
+//Rellenando la primera lista
+/*reinforcementPoints = new List<Vector2>();
+
+reinforcementPoints.Add(new Vector2(0,(float) 5 / 4));
+reinforcementPoints.Add(new Vector2(1, (float)5 / 4));
+reinforcementPoints.Add(new Vector2(2, (float)4 / 4));
+reinforcementPoints.Add(new Vector2(3, (float)6 / 4));
+reinforcementPoints.Add(new Vector2(4, (float)4 / 4));
+reinforcementPoints.Add(new Vector2(5, (float)3 / 4));
+reinforcementPoints.Add(new Vector2(6, (float)2 / 4));
+reinforcementPoints.Add(new Vector2(7, (float)6 / 4));
+reinforcementPoints.Add(new Vector2(8, (float)1 / 4));
+reinforcementPoints.Add(new Vector2(9, (float)7 / 4));
+reinforcementPoints.Add(new Vector2(10, (float)1 / 4));
+reinforcementPoints.Add(new Vector2(11, (float)2 / 4));
+reinforcementPoints.Add(new Vector2(12, (float)6 / 4));
+reinforcementPoints.Add(new Vector2(13, (float)3 / 4));
+reinforcementPoints.Add(new Vector2(14, (float)8 / 4));
+reinforcementPoints.Add(new Vector2(15, (float)1 / 4));
+reinforcementPoints.Add(new Vector2(16, (float)3 / 4));
+reinforcementPoints.Add(new Vector2(17, (float)6 / 4));
+reinforcementPoints.Add(new Vector2(18, (float)2 / 4));
+reinforcementPoints.Add(new Vector2(19, (float)3 / 4));
+reinforcementPoints.Add(new Vector2(21, (float)3 / 4));
+reinforcementPoints.Add(new Vector2(22, (float)8 / 4));
+reinforcementPoints.Add(new Vector2(23, (float)8 / 4));
+reinforcementPoints.Add(new Vector2(24, (float)7 / 4));
+reinforcementPoints.Add(new Vector2(25, (float)3 / 4));
+reinforcementPoints.Add(new Vector2(26, (float)1 / 4));
+reinforcementPoints.Add(new Vector2(27, (float)8 / 4));
+reinforcementPoints.Add(new Vector2(28, (float)5 / 4));
+//reinforcementPoints.Add(new Vector2(29, 6));
+
+//Rellenando la segunda lista
+endurancePoints = new List<Vector2>();
+
+endurancePoints.Add(new Vector2(0, 0));
+endurancePoints.Add(new Vector2(1, (float)3 / 4));
+endurancePoints.Add(new Vector2(2, (float)2 / 4));
+endurancePoints.Add(new Vector2(3, (float)3 / 4));
+endurancePoints.Add(new Vector2(4, (float)2 / 4));
+endurancePoints.Add(new Vector2(5, (float)3 / 4));
+endurancePoints.Add(new Vector2(6, (float)1 / 4));
+endurancePoints.Add(new Vector2(7, (float)1 / 4));
+endurancePoints.Add(new Vector2(8, (float)2 / 4));
+endurancePoints.Add(new Vector2(9, (float)6 / 4));
+endurancePoints.Add(new Vector2(10, (float)3 / 4));
+endurancePoints.Add(new Vector2(11, (float)5 / 4));
+endurancePoints.Add(new Vector2(12, (float)2 / 4));
+endurancePoints.Add(new Vector2(13, (float)3 / 4));
+endurancePoints.Add(new Vector2(14, (float)1 / 4));
+endurancePoints.Add(new Vector2(15, (float)3 / 4));
+endurancePoints.Add(new Vector2(16, (float)4 / 4));
+endurancePoints.Add(new Vector2(17, (float)6 / 4));
+endurancePoints.Add(new Vector2(18, (float)5 / 4));
+endurancePoints.Add(new Vector2(19, (float)5 / 4));
+endurancePoints.Add(new Vector2(20, (float)2 / 4));
+endurancePoints.Add(new Vector2(21, (float)6 / 4));
+endurancePoints.Add(new Vector2(22, (float)1 / 4));
+endurancePoints.Add(new Vector2(23, (float)5 / 4));
+endurancePoints.Add(new Vector2(24, (float)6 / 4));
+endurancePoints.Add(new Vector2(25, (float)2 / 4));
+endurancePoints.Add(new Vector2(26, (float)4 / 4));
+endurancePoints.Add(new Vector2(27, (float)8 / 4));
+endurancePoints.Add(new Vector2(28, (float)9 / 4));
+//endurancePoints.Add(new Vector2(29, 3));*/

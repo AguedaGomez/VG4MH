@@ -12,6 +12,7 @@ public class CanvasController : MonoBehaviour
     public BuildingMenuController buildingMenuController;
 
     private DownHudController downHudController;
+    private TOP_Hud_Controller topHudController;
 
     
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class CanvasController : MonoBehaviour
         Debug.Log("Start canvascontroller");
         downHudController = downHUD.GetComponent<DownHudController>();
         buildingMenuController.CreateBuildingGrid();
+        topHudController = topHUD.GetComponent<TOP_Hud_Controller>();
     }
 
     public void ShowConfirmationMessage()
@@ -46,7 +48,17 @@ public class CanvasController : MonoBehaviour
         buildingMenuController.UnlockGridElement(id);
     }
 
-
+    public void updateSlidersValue(float newActivationValue = -1, float newPowerR_Value = -1)
+    {
+        if (newActivationValue > 0)
+        {
+            topHudController.updateActivationSliderValue(newActivationValue);
+        }
+        if (newPowerR_Value > 0)
+        {
+            topHudController.updatePowerR_SliderValue(newPowerR_Value);
+        }
+    }
 }
 
 

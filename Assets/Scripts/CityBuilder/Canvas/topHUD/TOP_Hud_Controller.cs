@@ -17,7 +17,7 @@ public class TOP_Hud_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InitializeSliders();
+        //InitializeSliders();
     }
 
     private void InitializeSliders()
@@ -32,6 +32,16 @@ public class TOP_Hud_Controller : MonoBehaviour
         activation_Slider.GetComponent<Image>().fillAmount = percentage_Activation;
     }
 
+    public void updateActivationSliderValue(float newValue)
+    {
+        StartActValueUpdate(true, newValue);
+    }
+
+    public void updatePowerR_SliderValue(float newValue)
+    {
+        StartPowerRValueUpdate(true, newValue);
+    }
+
     public void Start_VisualResourceStatChange(Card.Resource resource, int valueModifier)
     {
         if(valueModifier != 0)
@@ -40,16 +50,16 @@ public class TOP_Hud_Controller : MonoBehaviour
             {
                 case Card.Resource.ACTIVATION:
                     //StartPowerRValueUpdate(valueModifier > 0, actShining);
-                    StartActValueUpdate(valueModifier > 0);
+                    //StartActValueUpdate(valueModifier > 0);
                     break;
                 case Card.Resource.FLEXIBILITY:
-                    StartPowerRValueUpdate(valueModifier > 0, flexShining);
+                    //StartPowerRValueUpdate(valueModifier > 0, flexShining);
                     break;
                 case Card.Resource.MOTIVATION:
-                    StartPowerRValueUpdate(valueModifier > 0, motShining);
+                    //StartPowerRValueUpdate(valueModifier > 0, motShining);
                     break;
                 case Card.Resource.POSITIVE:
-                    StartPowerRValueUpdate(valueModifier > 0, posShining);
+                    //StartPowerRValueUpdate(valueModifier > 0, posShining);
                     break;
                 case Card.Resource.NONE:
                     break;
@@ -57,31 +67,30 @@ public class TOP_Hud_Controller : MonoBehaviour
         }
     }
 
-    public void StartPowerRValueUpdate(bool increasing, Animator iconAnimation)
+    public void StartPowerRValueUpdate(bool increasing, float newValue)
     {
         if (increasing)
         {
-            iconAnimation.GetComponent<Image>().color = Color.white;
+            //iconAnimation.GetComponent<Image>().color = Color.white;
             var Shape = power_R_Slider.transform.GetChild(0).GetComponent<ParticleSystem>().shape;
             Shape.rotation = new Vector3(0, 90, 0);
         }
         else
         {
-            iconAnimation.GetComponent<Image>().color = Color.red;
+            //iconAnimation.GetComponent<Image>().color = Color.red;
             var Shape = power_R_Slider.transform.GetChild(0).GetComponent<ParticleSystem>().shape;
             Shape.rotation = new Vector3(0, -90, 0);
         }
 
-
         //Ejecutar la animación correspondiente
-        iconAnimation.SetBool("finishedSliderUpdating", false);
-        iconAnimation.Play("StartShining");
-        StartCoroutine(update_PowerRSliderValue(iconAnimation));
+        //iconAnimation.SetBool("finishedSliderUpdating", false);
+        //iconAnimation.Play("StartShining");
+        StartCoroutine(update_PowerRSliderValue(newValue));
     }
 
-    IEnumerator update_PowerRSliderValue(Animator iconAnimation)
+    IEnumerator update_PowerRSliderValue(float newPowerR)
     {
-        float percentage_Activation = (float)PlayerData.resources[Card.Resource.MOTIVATION] / 100;
+        float percentage_powerR = newPowerR / 100;
         float prev_Percentage = power_R_Slider.GetComponent<Image>().fillAmount;
         RectTransform edgeRect = power_R_Slider.transform.GetChild(0).GetComponent<RectTransform>();
         ParticleSystem barParticles = power_R_Slider.transform.GetChild(0).GetComponent<ParticleSystem>();
@@ -93,7 +102,7 @@ public class TOP_Hud_Controller : MonoBehaviour
         while (elapsedTime <= timeToGo)
         {
             elapsedTime += Time.deltaTime;
-            float newValue = Mathf.Lerp(prev_Percentage, percentage_Activation, (elapsedTime / timeToGo));
+            float newValue = Mathf.Lerp(prev_Percentage, percentage_powerR, (elapsedTime / timeToGo));
             power_R_Slider.GetComponent<Image>().fillAmount = newValue;
             edgeRect.anchorMin = new Vector2(newValue, newValue);
             edgeRect.anchoredPosition = new Vector2(0, 0);
@@ -102,39 +111,30 @@ public class TOP_Hud_Controller : MonoBehaviour
         }
 
         barParticles.Stop();
-        iconAnimation.SetBool("finishedSliderUpdating", true);
-        power_R_Slider.GetComponent<Image>().fillAmount = percentage_Activation;
+        power_R_Slider.GetComponent<Image>().fillAmount = percentage_powerR;
         yield return null;
     }
 
-    public void StartActValueUpdate(bool increasing, Animator iconAnimation = null)
+    public void StartActValueUpdate(bool increasing, float newValue)
     {
-        if(increasing)
+        if (increasing)
         {
-            if(iconAnimation != null)
-                iconAnimation.GetComponent<Image>().color = Color.white;
-
             var Shape = activation_Slider.transform.GetChild(0).GetComponent<ParticleSystem>().shape;
             Shape.rotation = new Vector3(0, 90, 0);
         }
         else
         {
-            if (iconAnimation != null)
-                iconAnimation.GetComponent<Image>().color = Color.red;
-
             var Shape = activation_Slider.transform.GetChild(0).GetComponent<ParticleSystem>().shape;
             Shape.rotation = new Vector3(0, -90, 0);
         }
 
         //Ejecutar la animación correspondiente
-        /*iconAnimation.SetBool("finishedSliderUpdating", false);
-        iconAnimation.Play("StartShining");*/
-        StartCoroutine(update_ActivationSliderValue());
+        StartCoroutine(update_ActivationSliderValue(newValue));
     }
 
-    IEnumerator update_ActivationSliderValue()
+    IEnumerator update_ActivationSliderValue(float newActivationValue)
     {
-        float percentage_Activation = (float)PlayerData.resources[Card.Resource.ACTIVATION] / 100;
+        float percentage_Activation = newActivationValue / 100;
         float prev_Percentage = activation_Slider.GetComponent<Image>().fillAmount;
         RectTransform edgeRect = activation_Slider.transform.GetChild(0).GetComponent<RectTransform>();
         ParticleSystem barParticles = activation_Slider.transform.GetChild(0).GetComponent<ParticleSystem>();

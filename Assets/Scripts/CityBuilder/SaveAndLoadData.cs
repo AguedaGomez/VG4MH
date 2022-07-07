@@ -23,6 +23,7 @@ public static class SaveAndLoadData
             Debug.LogError($"Failed to write to {fullPath} with exception {e}");
             return false;
         }*/
+        Debug.Log(fileContent);
         PlayerPrefs.SetString("save", fileContent);
         return true;
     }
