@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: History Page 3
+  m_EditorClassIdentifier: 
+  pageTitle: Jueves
+  pageContent: "Nueva actividad para trabajar la lectura comprensiva, en esta ocasi\xF3n,
+    lo vamos a hacer a partir de textos cortos y una serie preguntas que nuestros
+    alumnos deber\xE1n responder. Para poder contestarlas el alumno tendr\xE1 que
+    pensar muy bien lo que se le pide ya que no aparece tal como se le pregunta en
+    el texto."
+  viewedByUser: 0
+  storyUnlocked: 0

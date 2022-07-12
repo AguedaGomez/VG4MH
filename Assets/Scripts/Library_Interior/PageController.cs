@@ -33,7 +33,10 @@ public class PageController : MonoBehaviour
         turnPageAnimation.Play();
     }
 
-    public void turnPageAnimationStart() { turnPageAnimation.Play(); }
+    public void turnPageAnimationStart() {
+        turnPageAnimation.Stop();
+        turnPageAnimation.Play();
+    }
 
     public void activateButtonsInteractivity()
     {

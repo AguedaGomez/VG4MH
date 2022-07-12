@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Cuestionario : MonoBehaviour
+[Serializable]
+public class Cuestionario
 {
     public string dateOfQuestionaire;
     //public Dictionary<string, Answer> answers = new Dictionary<string, Answer>();
@@ -11,4 +13,5 @@ public class Cuestionario : MonoBehaviour
     public Answer PHQ_2_Answer;
     public Answer GAD_1_Answer;
     public Answer GAD_2_Answer;
+
 }

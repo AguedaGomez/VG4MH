@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: History Page 2
+  m_EditorClassIdentifier: 
+  pageTitle: Martes
+  pageContent: "Nueva actividad para trabajar una vez m\xE1s la lectura comprensiva
+    de frases y textos cortos. He utilizado una tem\xE1tica que suele gustar mucho
+    a nuestros alumnos: los planetas. Por lo que  seguro que disfrutan descifrando
+    el enigma cu\xE1l es cu\xE1l, asociando cada imagen con su descripci\xF3n."
+  viewedByUser: 0
+  storyUnlocked: 0

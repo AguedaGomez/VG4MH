@@ -60,23 +60,50 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     public void SaveGame()
     {
+        
         ObjectToSaveData();
         SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
-        //Debug.Log("Pasos que se van a guardar: " + SaveObject.Instance.dailyCompletedSteps);
-
         //SaveObject.Instance.buildingsInBoard.Clear();
         print("app cerrada");
     }
+
+    /*void showQuestionnairesDEBUG()
+    {
+        if(SaveObject.Instance.questionnairesDoneByUser != null || SaveObject.Instance.questionnairesDoneByUser.Count != 0)
+        {
+            foreach (Cuestionario quest in SaveObject.Instance.questionnairesDoneByUser)
+            {
+                Debug.Log("Questionario : " + quest.dateOfQuestionaire + " , " + quest.activationValue);
+            }
+        }else
+        {
+            Debug.Log("No existe lista de cuestionarios");
+        }
+        
+    }
+
+    void showBuildings_Debug()
+    {
+        if(SaveObject.Instance.buildingsInBoard != null || SaveObject.Instance.buildingsInBoard.Count != 0)
+        {
+            foreach (SavedBuilding build in SaveObject.Instance.buildingsInBoard)
+            {
+                Debug.Log("Building info: " + build.buildingName + " , " + build.id + " , " + build.currentMaterials);
+            }
+        }else
+        {
+            Debug.Log("No existe lista de edificios");
+        }
+      *  
+    }*/
 
     private void ObjectToSaveData()
     {
 
         //SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         SaveObject.Instance.date = DateTime.Now.ToString();
-        SaveObject.Instance.questionnairesDoneByUser_JSONReadable = SaveObject.Instance.questionnairesDoneByUser.ToArray();
-        SaveObject.Instance.buildingsInBoard_JSONReadable = SaveObject.Instance.buildingsInBoard.ToArray();
-
-        Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard_JSONReadable.Length + " , " + SaveObject.Instance.questionnairesDoneByUser_JSONReadable.Length);
+        
+        Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard.Count + " , " + SaveObject.Instance.questionnairesDoneByUser.Count);
 
         //Debug.Log("Activacion actual: " + SaveObject.Instance.activationValue);
         //Debug.Log("GUARDANDO Fecha guardada: " + SaveObject.Instance.date);
@@ -96,10 +123,10 @@ public class SaveAndLoadDataManager : MonoBehaviour
         SaveObject.Instance.dailyCompletedSteps = loadedSaveObject.dailyCompletedSteps;
         SaveObject.Instance.actualSessionSteps = loadedSaveObject.actualSessionSteps;
         SaveObject.Instance.dailyQuestions_Done = loadedSaveObject.dailyQuestions_Done;
-        SaveObject.Instance.buildingsInBoard = new List<SavedBuilding>(loadedSaveObject.buildingsInBoard_JSONReadable);
-        SaveObject.Instance.questionnairesDoneByUser = new List<Cuestionario>(loadedSaveObject.questionnairesDoneByUser_JSONReadable);
-
         
-        Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard.Count + " , " + SaveObject.Instance.questionnairesDoneByUser.Count);
+        SaveObject.Instance.buildingsInBoard = loadedSaveObject.buildingsInBoard;
+        SaveObject.Instance.questionnairesDoneByUser = loadedSaveObject.questionnairesDoneByUser;
+
+        //Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard.Count + " , " + SaveObject.Instance.questionnairesDoneByUser.Count);
     }
 }
