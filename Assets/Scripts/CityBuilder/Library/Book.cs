@@ -15,6 +15,9 @@ public class Book : MonoBehaviour
     bool showingPHQ_Canvas = true;
 
     [SerializeField] Text postIt_Text;
+    [SerializeField] Text[] postIt_Texts;
+    [SerializeField] Image[] postIt_Images;
+
     [SerializeField] private Animation postItAnimation;
 
     // Start is called before the first frame update
@@ -69,13 +72,28 @@ public class Book : MonoBehaviour
     public void changeGraphic()
     {
         postItAnimation.Play();
+        Color colorChanger;
 
-        if(PHQ_canvas.gameObject.active)
+        if (PHQ_canvas.gameObject.active)
         {
             PHQ_canvas.gameObject.SetActive(false);
             //GAD_canvas.gameObject.SetActive(true);
             showingPHQ_Canvas = false;
             postIt_Text.text = "Mostrando tabla GAD";
+
+
+            postIt_Texts[0].text = "Valor GAD 1";
+            ColorUtility.TryParseHtmlString("#B500FF", out colorChanger);
+            postIt_Images[0].color = colorChanger;
+
+            postIt_Texts[1].text = "Valor GAD 2";
+            ColorUtility.TryParseHtmlString("#6400FF", out colorChanger);
+            postIt_Images[1].color = colorChanger;
+
+            postIt_Texts[2].text = "Valor Activación";
+            ColorUtility.TryParseHtmlString("#08C886", out colorChanger);
+            postIt_Images[2].color = colorChanger;
+
         }
         else
         {
@@ -83,6 +101,21 @@ public class Book : MonoBehaviour
             GAD_canvas.gameObject.SetActive(false);
             showingPHQ_Canvas = true;
             postIt_Text.text = "Mostrando tabla PHQ";
+
+            postIt_Texts[0].text = "Valor PHQ 1";
+            ColorUtility.TryParseHtmlString("#FF0000", out colorChanger);
+
+            postIt_Images[0].color = colorChanger;
+
+            postIt_Texts[1].text = "Valor PHQ 2";
+            ColorUtility.TryParseHtmlString("#FF007F", out colorChanger);
+
+            postIt_Images[1].color = colorChanger;
+
+            postIt_Texts[2].text = "Valor Activación";
+            ColorUtility.TryParseHtmlString("#08C886", out colorChanger);
+
+            postIt_Images[2].color = colorChanger;
         }
     }
 }

@@ -9,7 +9,7 @@ public class InteractionController : MonoBehaviour
 {
     private const string GHOST_TAG = "ghost";
     private const string BOARD_TAG = "board";
-    private const string BUILDING_MENU_NAME = "BuildingMenu";
+    private const string USERINTERFACE_TAG = "ui";
 
     public City city; //mirar cambiar city de aqui
     public Board board;
@@ -131,7 +131,7 @@ public class InteractionController : MonoBehaviour
         canvasGraphicRaycaster.Raycast(pointerEventData, results);
         foreach (var result in results)
         {
-            if (result.gameObject.name == BUILDING_MENU_NAME)
+            if (result.gameObject.tag == USERINTERFACE_TAG)
                 return true;
         }
         return false;
