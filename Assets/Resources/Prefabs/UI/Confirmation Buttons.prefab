@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 9085442512018331290}
   m_Layer: 5
   m_Name: Confirmation Buttons
-  m_TagString: Untagged
+  m_TagString: ui
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

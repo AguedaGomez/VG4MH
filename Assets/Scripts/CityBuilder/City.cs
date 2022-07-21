@@ -81,7 +81,7 @@ public class City : MonoBehaviour
             SaveObject.Instance.actualSessionSteps = 0;
             SaveObject.Instance.dailyCompletedSteps = 0;
             GameManager.Instance.resetActivityNotifications();
-
+            increaseActivationValue(-100);
             
             if(inactiveTime.Days > 1)
             {
@@ -223,6 +223,11 @@ public class City : MonoBehaviour
     public void increaseActivationValue(float addition)
     {
         activationValue += addition;
+
+        if(activationValue < 0)
+        {
+            activationValue = 0;
+        }
         SaveObject.Instance.activationValue = activationValue;
         UpdateTopHUD();
     }

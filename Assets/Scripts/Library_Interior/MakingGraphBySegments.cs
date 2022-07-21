@@ -11,10 +11,13 @@ public class MakingGraphBySegments : MonoBehaviour
     public UI_Grid_Renderer grid;
     public TMP_Text textToShow;
     public List<UI_LineRenderer> lines; //Reinforcement is in position 0, Endurance is in position 1
+    private List<string> questionnairesDate_Information;
+    private List<Text> x_Texts;
 
     //Listas donde se van a guardar todos los puntos de la línea de la gráfica, en la línea en sí solo se almacenarán los puntos "activos" en ese momento
     public List<Vector2> firstListOfPoints;
     public List<Vector2> endurancePoints;
+    public List<Vector2> activationValues;
     [SerializeField] GameObject indexText_Prefab;
 
     public Button nextPage_Button;
@@ -44,6 +47,7 @@ public class MakingGraphBySegments : MonoBehaviour
         //Se determina cuantos segmentos de valores van a haber y si va a haber página parcial
         numeroDeSegmentos = firstListOfPoints.Count / grid.gridSize.x;
         resto = firstListOfPoints.Count % grid.gridSize.x;
+        x_Texts = new List<Text>();
 
         if(resto != 0)
         {
@@ -56,18 +60,30 @@ public class MakingGraphBySegments : MonoBehaviour
 
     private void DibujarTablaForFirstTime()
     {
+
+        Vector2 gridSize = grid.GetComponent<RectTransform>().rect.size;
+        double xSpaceBetweenNumbers = (double)(gridSize.x / grid.gridSize.x);
+        double ySpaceBetweenNumbers = (double)(gridSize.y / grid.gridSize.y);
+        CrearNumeracionTabla(xSpaceBetweenNumbers, ySpaceBetweenNumbers);
+        cleanHorizontalNumbers_Texts();
+
         //Si hay página parcial entonces...
-        if(endingGraphAvailable)
+        if (endingGraphAvailable)
         {
             for(int i = 0; i < resto; i++)
             {
                 //Se cogen los valores correspondientes a la última página
                 Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[(firstListOfPoints.Count - resto) + i].y);
                 Vector2 endurancePoint = new Vector2(i, endurancePoints[(endurancePoints.Count - resto) + i].y);
+                Vector2 activationPoint = new Vector2(i, activationValues[(activationValues.Count - resto) + i].y);
+
+                Text changingText = x_Texts[i];
+                changingText.text = questionnairesDate_Information[(endurancePoints.Count - resto) + i];
 
                 //Se añaden los valores al componente UI_LineRenderer
                 lines[0].points.Add(reinforcementPoint);
                 lines[1].points.Add(endurancePoint);
+                lines[2].points.Add(activationPoint);
 
                 actualPage = -1;
 
@@ -84,9 +100,14 @@ public class MakingGraphBySegments : MonoBehaviour
 
                 Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[index].y);
                 Vector2 endurancePoint = new Vector2(i, endurancePoints[index].y);
+                Vector2 activationPoint = new Vector2(i, activationValues[index].y);
+
+                Text changingText = x_Texts[index];
+                changingText.text = questionnairesDate_Information[index];
 
                 lines[0].points.Add(reinforcementPoint);
                 lines[1].points.Add(endurancePoint);
+                lines[2].points.Add(activationPoint);
 
                 //En este caso no va a haber página parcial en toda la traza por lo que la página final será la misma a número de segmentos haya
                 actualPage = numeroDeSegmentos;
@@ -94,10 +115,7 @@ public class MakingGraphBySegments : MonoBehaviour
             }
         }
 
-        Vector2 gridSize = grid.GetComponent<RectTransform>().rect.size;
-        double xSpaceBetweenNumbers = (double)(gridSize.x / grid.gridSize.x);
-        double ySpaceBetweenNumbers = (double)(gridSize.y / grid.gridSize.y);
-        CrearNumeracionTabla(xSpaceBetweenNumbers, ySpaceBetweenNumbers);
+        
 
         //Al ser la última página el botón de siguiente página estará oculto
         nextPage_Button.interactable = false;
@@ -131,10 +149,11 @@ public class MakingGraphBySegments : MonoBehaviour
                         Vector2 initialPosition = new Vector2(0, 0);
                         GameObject initialText = Instantiate(indexText_Prefab, transform);
                         initialText.name = "NewText_" + i + "_" + j;
-                        initialText.GetComponent<Text>().text = i.ToString() + " , " + j.ToString();
+                        initialText.GetComponent<Text>().text = "-";
                         initialText.transform.parent = transform;
                         initialText.transform.localScale = new Vector3(4, 4, 4);
                         initialText.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0);
+                        x_Texts.Add(initialText.GetComponent<Text>());
                         continue;
                     }
 
@@ -150,8 +169,9 @@ public class MakingGraphBySegments : MonoBehaviour
                     GameObject newText = Instantiate(indexText_Prefab, transform);
                     newText.name = "NewText_" + i + "_" + j;
                     newText.transform.localScale = new Vector3(4, 4, 4);
-                    newText.GetComponent<Text>().text = i.ToString();
+                    newText.GetComponent<Text>().text = "-";
                     newText.GetComponent<RectTransform>().anchoredPosition = new Vector3(i * (float)cellHeight, 0);
+                    x_Texts.Add(newText.GetComponent<Text>());
                 }
             }
         }
@@ -159,7 +179,9 @@ public class MakingGraphBySegments : MonoBehaviour
 
     public void moveToPreviousPage()
     {
-        if(actualPage == -1)
+        cleanHorizontalNumbers_Texts();
+
+        if (actualPage == -1)
         {
             actualPage = numeroDeSegmentos; //En caso de haber página parcial la anterior página será igual al número de segmentos
         }
@@ -190,9 +212,14 @@ public class MakingGraphBySegments : MonoBehaviour
             //Se coge el valor indicado del vector completo de puntos y se agrega a la LineRenderer
             Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[index].y);
             Vector2 endurancePoint = new Vector2(i, endurancePoints[index].y);
+            Vector2 activationPoint = new Vector2(i, activationValues[index].y);
 
             lines[0].points.Add(reinforcementPoint);
             lines[1].points.Add(endurancePoint);
+            lines[2].points.Add(activationPoint);
+
+            Text changingText = x_Texts[index];
+            changingText.text = questionnairesDate_Information[index];
 
             //Si es la primera página el usuario no podrá seguir dando hacia atrás
             if (actualPage == 1)
@@ -225,6 +252,7 @@ public class MakingGraphBySegments : MonoBehaviour
     {
         //Suma una página a la página actual y comprueba si está en la última página
         actualPage++;
+        cleanHorizontalNumbers_Texts();
 
         if(actualPage > numeroDeSegmentos)
         {
@@ -255,12 +283,17 @@ public class MakingGraphBySegments : MonoBehaviour
                 //Se coge el valor indicado del vector completo de puntos y se agrega a la LineRenderer
                 Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[index].y);
                 Vector2 endurancePoint = new Vector2(i, endurancePoints[index].y);
+                Vector2 activationPoint = new Vector2(i, activationValues[index].y);
 
                 lines[0].points.Add(reinforcementPoint);
                 lines[1].points.Add(endurancePoint);
+                lines[2].points.Add(activationPoint);
+
+                Text changingText = x_Texts[index];
+                changingText.text = questionnairesDate_Information[index];
 
                 //Si es la última página se anulara el botón de pasar página
-                if(actualPage == numeroDeSegmentos && !endingGraphAvailable)
+                if (actualPage == numeroDeSegmentos && !endingGraphAvailable)
                 {
                     nextPage_Button.interactable = false;
                 }
@@ -272,9 +305,14 @@ public class MakingGraphBySegments : MonoBehaviour
                 //Se coge el valor indicado del vector completo de puntos y se agrega a la LineRenderer
                 Vector2 reinforcementPoint = new Vector2(i, firstListOfPoints[(firstListOfPoints.Count - resto) + i].y);
                 Vector2 endurancePoint = new Vector2(i, endurancePoints[(endurancePoints.Count - resto) + i].y);
+                Vector3 activationPoint = new Vector2(i, activationValues[(activationValues.Count - resto) + i].y);
 
                 lines[0].points.Add(reinforcementPoint);
                 lines[1].points.Add(endurancePoint);
+                lines[2].points.Add(activationPoint);
+
+                Text changingText = x_Texts[i];
+                changingText.text = questionnairesDate_Information[i];
 
                 //Es sí o sí la última página asi que...
                 nextPage_Button.interactable = false;
@@ -309,6 +347,14 @@ public class MakingGraphBySegments : MonoBehaviour
         }
     }
 
+    void cleanHorizontalNumbers_Texts()
+    {
+        foreach(Text txt in x_Texts)
+        {
+            txt.text = "-";
+        }
+    }
+
     void actualizarTextoDeInterfaz(int actualNumber, int totalNumber)
     {
         textToShow.text = actualNumber.ToString() + "/" + totalNumber.ToString();
@@ -318,8 +364,9 @@ public class MakingGraphBySegments : MonoBehaviour
     {
         //Rellenando la primera lista
         firstListOfPoints = SaveObject.Instance.getSpecifiedQuestionnaires(idLine_1);
-
         endurancePoints = SaveObject.Instance.getSpecifiedQuestionnaires(idLine_2);
+        activationValues = SaveObject.Instance.getActivationValues();
+        questionnairesDate_Information = SaveObject.Instance.getSpecifiedQuestionnaire_Date();
 
         if(firstListOfPoints.Count == 0)
         {
@@ -332,6 +379,11 @@ public class MakingGraphBySegments : MonoBehaviour
             Debug.Log("Segunda lista vacia");
             Vector2 newVector = new Vector2(0, 0);
             endurancePoints.Add(newVector);
+        }
+        if(questionnairesDate_Information.Count == 0)
+        {
+            Vector2 newVector = new Vector2(0, 0);
+            activationValues.Add(newVector);
         }
         //Coger los datos del save object
         //Guardarlos en la lista de puntos

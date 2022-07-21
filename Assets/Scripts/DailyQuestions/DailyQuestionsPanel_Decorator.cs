@@ -48,7 +48,8 @@ public class DailyQuestionsPanel_Decorator : MonoBehaviour
     private void CreateQuestionaire()
     {
         Cuestionario newQuestionaire = new Cuestionario();
-        newQuestionaire.dateOfQuestionaire = DateTime.Now.ToString();
+        //newQuestionaire.dateOfQuestionaire = DateTime.Now.ToString("d \nMMMM");
+        newQuestionaire.dateOfQuestionaire = DateTime.Now.ToString("dd/MM");
 
         foreach (QuestionDecorator qDScript in questionsInGame )
         {

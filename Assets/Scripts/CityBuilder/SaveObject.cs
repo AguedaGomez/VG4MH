@@ -19,8 +19,7 @@ public sealed class SaveObject
     public bool dailyActivityCompleted;
     public int dailyCompletedSteps;
     public int actualSessionSteps;
-    public SavedBuilding[] buildingsInBoard_JSONReadable;
-    public Cuestionario[] questionnairesDoneByUser_JSONReadable;
+    
 
     private SaveObject()
     {
@@ -104,5 +103,32 @@ public sealed class SaveObject
         }*/
 
         return newListToReturn;
+    }
+
+    public List<string> getSpecifiedQuestionnaire_Date()
+    {
+        List<string> newListToReturn = new List<string>();
+
+        foreach (Cuestionario newQuestionnaire in questionnairesDoneByUser)
+        {
+            string currentAnsw = newQuestionnaire.dateOfQuestionaire.ToString();
+            newListToReturn.Add(currentAnsw);
+        }
+
+        return newListToReturn;
+    }
+
+    public List<Vector2> getActivationValues()
+    {
+        List<Vector2> listToReturn = new List<Vector2>();
+
+        int i = 0;
+        foreach(Cuestionario quest in questionnairesDoneByUser)
+        {
+            Vector2 newValue = new Vector2(i, (quest.activationValue * 4) / 100);
+            listToReturn.Add(newValue);
+        }
+
+        return listToReturn;
     }
 }
