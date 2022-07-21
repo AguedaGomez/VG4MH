@@ -198,7 +198,7 @@ public class InteractionController : MonoBehaviour
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 100.0f)) {
             Vector3 gridPosition = board.CalculateGridPosition(hit.point);
             
-            board.AddBuildingInEditMode(selectedBuilding, board.CalculateGridPosition(hit.point));
+            board.AddBuildingInEditMode(selectedBuilding, gridPosition);
 
             currentBuildingPosition = gridPosition;
         }

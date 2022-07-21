@@ -16,7 +16,7 @@ public class MaterialGeneratorBuilding : Building
     private int timeOfGeneration = SECONDS;
     private const string cityTag = "city";
     private const string INDICATOR_BEGINNING = "";
-    private GameObject city;
+    private GameObject city; //canvas controller?
     private City cityScript;
     void Start()
     {

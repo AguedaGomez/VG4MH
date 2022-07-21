@@ -51,8 +51,8 @@ MonoBehaviour:
   nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 2
+  cellsInX: 2
   materialsPerSecond: 0
   type: 0
   indicatorText: {fileID: 0}

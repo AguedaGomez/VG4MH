@@ -12,7 +12,7 @@ public sealed class SaveObject
     public float powerR;
     public float activationValue;
     public string date;
-    public List<SavedBuilding> buildingsInBoard;
+    public List<SavedBuilding> buildingsInBoard; //id al construir e id de datos
     public List<Cuestionario> questionnairesDoneByUser;
     public bool activityRunning;
     public bool dailyQuestions_Done;

@@ -6389,6 +6389,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6735c39ea6e775642ab1a318ab076c79, type: 2}
   - {fileID: 11400000, guid: 5521ec693a6eb7c4cad851457f985c21, type: 2}
   - {fileID: 11400000, guid: b37f3abf7cac23a44a3dcd6104b7284b, type: 2}
+  - {fileID: 11400000, guid: 5d0779a5e5078fd4282212fa997ff714, type: 2}
   goalsToReach:
   - {fileID: 11400000, guid: 4316ee1b2715dd54d9a24b6f3233aa99, type: 2}
   - {fileID: 11400000, guid: 0e53e665706f94b4d99945915dd2be09, type: 2}

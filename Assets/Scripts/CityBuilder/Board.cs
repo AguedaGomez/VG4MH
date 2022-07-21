@@ -5,9 +5,6 @@ using Random = UnityEngine.Random;
 
 public class Board : MonoBehaviour
 {
-    // TODO: configuracion inicial
-    public GameObject staticBuildingA;
-    public GameObject library;
     public City city; //Eliminar city de aquí?
 
     private const int UP_LIMIT = 29;
@@ -15,16 +12,19 @@ public class Board : MonoBehaviour
     private const int DOWN_LIMIT = -1;
     private const int RIGHT_LIMIT = 30;
 
+    private const string SMALL_HOUSE = "1"; //smallHouse
+    private const string LIBRARY = "17"; //library
+
     private float cellSize = 4f;
     private int numCells;
     private float boardHeight, boardWidth;
-    private Building[,] buildings;
+    private Building[,] buildings; //OJO SE NECESITAN ACCESIBLES LOS SCRIPTS DE CADA UNO DE LOS EDIFICIOS CONSTRUIDOS
     private BoardView boardView;
 
     private bool[,] boardOccupationStatus;
     private bool occupiedCell = true;
     
-    private string buildingsPath = "Prefabs/CityBuilder/Buildings"; //es necesario?
+   // private string buildingsPath = "Prefabs/CityBuilder/Buildings"; //es necesario?
     [SerializeField] private NavMeshSurface navMesh;
     [SerializeField] private CitizensGenerator citizensGenerator;
 
@@ -50,22 +50,19 @@ public class Board : MonoBehaviour
         InitializeBoard();
     }
 
-    public void AddBuildingInEditMode(GameObject building, Vector3 position)
+    public void AddBuildingInEditMode(Vector3 position)
     {
-        bool availability = CheckSpaceAtPosition(building, position);
+        bool availability = CheckSpaceAtPosition(position);
         ChangeBuildingColor(availability);
-        GameObject currentBuilding = boardView.SetUpBuildingEditMode(building, availability, position);
+        GameObject currentBuilding = boardView.SetUpBuildingEditMode(building, availability, position); //PARA QUÉ CURRENTBUILDING
     }
 
-    public bool CheckSpaceAtPosition(GameObject building, Vector3 position)
+    public bool CheckSpaceAtPosition(Vector3 position)
     {
         int x = CalculateRowColumn(position.x);
         int z = CalculateRowColumn(position.z);
-        Building buildingScript = building.GetComponent<Building>();
 
-        //bool availableSpace = CheckAvailableSpace(x, z, buildingScript);
-        //bool buildingAtPosition = CheckForBuildingAtPosition(position);
-        return CheckAvailableSpace(x, z, buildingScript) && CheckForBuildingAtPosition(position);
+        return CheckAvailableSpace(x, z) && CheckForBuildingAtPosition(position);
        
     }
 
@@ -73,28 +70,28 @@ public class Board : MonoBehaviour
     {
         boardView.ColorDependingAvailability(availability);
     }
-    public void AddBuilding(GameObject building, Vector3 position, int currentMaterials)
+    public void AddBuilding(Vector3 position, int currentMaterials) // materiales con los que se guardó?
     {
-        if (CheckSpaceAtPosition(building, position))
+        if (CheckSpaceAtPosition(position))
         {
 
-            Transform buildingTransform = building.GetComponent<Transform>();
+            Transform buildingTransform = GameManager.Instance.buildingInConstruction.prefab.GetComponent<Transform>();
             Quaternion buildingRotation = buildingTransform.rotation;
-            GameObject createdBuilding = Instantiate(building, position, buildingRotation);
+            GameObject createdBuilding = Instantiate(GameManager.Instance.buildingInConstruction.prefab, position, buildingRotation);
             Building buildingScript = createdBuilding.GetComponent<Building>();
-            createdBuilding.transform.name = buildingScript.buildingName;
+            createdBuilding.transform.name = GameManager.Instance.buildingInConstruction.buildingName;
 
             int x = CalculateRowColumn(position.x);
             int z = CalculateRowColumn(position.z);
 
             buildingScript.id = x + "" + z + "";
 
-            if (buildingScript.type == Construction.Type.MATERIALGENERATORBUILDING)
+            if (GameManager.Instance.buildingInConstruction.type == Construction.Type.MATERIALGENERATORBUILDING)
             {
                 MaterialGeneratorBuilding mGBScript = createdBuilding.GetComponent<MaterialGeneratorBuilding>();
                 buildings[x, z] = mGBScript;
 
-                if (currentMaterials < 0)
+                if (currentMaterials < 0) //¿qué es currentMaterials?
                 {
                     SaveBoardStateInList(x, z);
                     mGBScript.InitializedAsDefault();
@@ -130,11 +127,11 @@ public class Board : MonoBehaviour
         return buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] == null;
     }
 
-    private bool CheckAvailableSpace(int x, int z, Building currentBuilding)
+    private bool CheckAvailableSpace(int x, int z) //BORRAR CURRENTBUILDING DE PARÁMETROS
     {
-        for (int r = 0; r < currentBuilding.cellsInZ; r++)
+        for (int r = 0; r < GameManager.Instance.buildingInConstruction.cellsInZ; r++)
         {
-            for (int c = 0; c < currentBuilding.cellsInX; c++)
+            for (int c = 0; c < GameManager.Instance.buildingInConstruction.cellsInZ; c++)
             {
                 if (boardOccupationStatus[x + r, z - c] == occupiedCell) // there isn't available space
                     return false;
@@ -143,11 +140,16 @@ public class Board : MonoBehaviour
         return true;
     }
 
-    public bool CheckBoardLimits(Vector3 gridPosition, Building buildingScript)
+    public bool CheckBoardLimits(Vector3 gridPosition)
     {
         int x = CalculateRowColumn(gridPosition.x);
         int z = CalculateRowColumn(gridPosition.z);
-        if (x < LEFT_LIMIT ||  z > UP_LIMIT || x + buildingScript.cellsInX > RIGHT_LIMIT || z - buildingScript.cellsInZ < DOWN_LIMIT) //out of the limits
+        int cellsInX = GameManager.Instance.buildingInConstruction.cellsInX;
+        int cellsInZ = GameManager.Instance.buildingInConstruction.cellsInZ;
+        //if (x < LEFT_LIMIT ||  z > UP_LIMIT || x + buildingScript.cellsInX > RIGHT_LIMIT || z - buildingScript.cellsInZ < DOWN_LIMIT) //out of the limits
+        //    return true;
+        //return false;
+        if (x < LEFT_LIMIT || z > UP_LIMIT || x + cellsInX > RIGHT_LIMIT || z - cellsInZ < DOWN_LIMIT) //out of the limits
             return true;
         return false;
     }
@@ -170,25 +172,13 @@ public class Board : MonoBehaviour
         return Mathf.RoundToInt(cordPosition / cellSize); // number of cell
     }
 
-   /* private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.white;
-        for (float x = 0; x < boardHeight; x += cellSize)
-        {
-            for (float z = 0; z < boardWidth; z += cellSize)
-            {
-                var point = CalculateGridPosition(new Vector3(x, 0.9f, z));
-                Gizmos.DrawSphere(point, 0.1f);
-            }
-        }
-    }*/
-
     public void SaveBoardStateInList(int x, int z)
     {
-        SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName);
-        //Debug.Log("guardando objeto con id: " + sB.id);
-        if (buildings[x, z].type == Construction.Type.MATERIALGENERATORBUILDING)
-            sB.currentMaterials = buildings[x, z].materialsPerSecond;
+        SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].builtId); //en buildings se garda solo el id
+        Construction currentConstruction = GameManager.Instance.buildingsInGame[buildings[x, z].id];
+        var type = currentConstruction.type;
+        if (type == Construction.Type.MATERIALGENERATORBUILDING)
+            sB.currentMaterials = currentConstruction.materialsPerSecond; // OJO materialsPerSecond del script
         else
             sB.currentMaterials = 0;
 
@@ -199,8 +189,8 @@ public class Board : MonoBehaviour
 
     private void SaveBoardStatus(int x, int z)
     {
-        int cellsInZ = buildings[x, z].cellsInZ;
-        int cellsInX = buildings[x, z].cellsInX;
+        int cellsInZ = GameManager.Instance.buildingInConstruction.cellsInZ;
+        int cellsInX = GameManager.Instance.buildingInConstruction.cellsInZ;
         for (int r = 0; r < cellsInX; r++)
         {
             for (int c = 0; c < cellsInZ; c++)
@@ -212,28 +202,28 @@ public class Board : MonoBehaviour
 
     public void InitializeBoard()
     {
-        //Debug.Log("2. TEST: Inicializando el board");
+       // cuando hay partida guardada
         var savedBoardState = SaveObject.Instance.buildingsInBoard;
 
         if (savedBoardState.Count != 0)
         {
             foreach (SavedBuilding b in savedBoardState)
             {
-                string path = buildingsPath + "/" + b.buildingName;
-                GameObject prefabToInstantiate = Resources.Load<GameObject>(path);
+                GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[b.idDic];
+                GameObject prefabToInstantiate = GameManager.Instance.buildingInConstruction.prefab;
                 prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
-                //Debug.Log("currentMaterials de building añadidos: " + b.currentMaterials);
-                AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials);
+                
+                AddBuilding(CalculatePosition(position), b.currentMaterials);
             }
             
         }
         else
         {
             // static buildings initial configuration. First time the game starts
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
-            AddBuilding(library, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
+            //AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
+            //AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
+            //AddBuilding(library, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
         }
 
     }
@@ -248,6 +238,18 @@ public class Board : MonoBehaviour
         point = Vector3.Lerp(point, navMeshData.vertices[navMeshData.indices[t + 2]], Random.value);
 
         return point;
+    }
+
+    private void CreateStaticBuildings() {
+        GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[SMALL_HOUSE];
+        AddBuilding(GenerateRandomBoardPosition(), -1);
+        AddBuilding(GenerateRandomBoardPosition(), -1);
+        GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[LIBRARY];
+    }
+
+    private Vector3 GenerateRandomBoardPosition()
+    {
+        return new Vector3(Random.Range(1, 29), 0, Random.Range(1, 29));
     }
 
 }

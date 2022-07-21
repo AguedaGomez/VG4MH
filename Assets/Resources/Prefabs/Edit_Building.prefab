@@ -48,7 +48,7 @@ MonoBehaviour:
   ghostMaterial: {fileID: 2100000, guid: 5541a69503c771d47a7caf18bbf98232, type: 2}
   colorClear: {r: 0.36862746, g: 0.75686276, b: 0.77254903, a: 1}
   colorOccupied: {r: 1, g: 0, b: 0, a: 1}
-  buildingSize: {x: 0, y: 0}
+  buildingSize: {x: 2, y: 2}
   buildingCellBoxCollider: {fileID: 2941178612685851438}
   buildingMeshFilter: {fileID: 5002886867427286335}
   cellsMeshFilter: {fileID: 5376303142924647374}
