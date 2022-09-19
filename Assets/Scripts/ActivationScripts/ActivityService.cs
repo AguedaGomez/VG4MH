@@ -63,7 +63,6 @@ public class ActivityService : MonoBehaviour
         Debug.Log("Start Service");
         customClass.CallStatic(CustomClassStartServiceMethod);
 
-
         //Se resetean los datos a 0 y se comienza de nuevo
         SyncData();
         StartCoroutine(updateCanvasStepData());
@@ -172,7 +171,8 @@ public class ActivityService : MonoBehaviour
         SaveObject.Instance.actualSessionSteps = 0;
 
         //Debug.Log(activationReward);
-        GameManager.Instance.gameObject.GetComponent<RewardManager>().UpdateResource(Card.Resource.ACTIVATION, activationReward);
+        //GameManager.Instance.gameObject.GetComponent<RewardManager>().UpdateResource(Card.Resource.ACTIVATION, activationReward);
+        FindObjectOfType<City>().increaseActivationValue(activationReward);
         topHud_Controller.Start_VisualResourceStatChange(Card.Resource.ACTIVATION, activationReward);
     }
 }

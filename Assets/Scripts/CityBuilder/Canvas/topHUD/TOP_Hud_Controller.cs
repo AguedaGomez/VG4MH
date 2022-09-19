@@ -10,9 +10,12 @@ public class TOP_Hud_Controller : MonoBehaviour
     [SerializeField] Animator actShining;
     [SerializeField] Animator motShining;
     [SerializeField] Animator flexShining;
+    [SerializeField] Animator materialsShining;
 
     [SerializeField] GameObject power_R_Slider;
     [SerializeField] GameObject activation_Slider;
+    [SerializeField] Text materialsText;
+    bool isMaterialShining = false;
 
     // Start is called before the first frame update
     void Start()
@@ -205,5 +208,49 @@ public class TOP_Hud_Controller : MonoBehaviour
             case Card.Resource.NONE:
                 break;
         }
+    }
+
+    public void updateMaterials_Text(int newMaterialsValue)
+    {
+        materialsText.text = newMaterialsValue.ToString();
+    }
+
+    public void increaseMaterialsOnCanvas(int incremental)
+    {
+        //Creating text object
+        GameObject newText = new GameObject("text", typeof(RectTransform));
+        newText.transform.parent = materialsText.transform;
+        newText.transform.name = "incrementalText";
+        if(!isMaterialShining)
+        {
+            materialsShining.Play("StartShining");
+            materialsShining.SetBool("finishedSliderUpdating", false);
+            StartCoroutine(stopShiningAfterTime(2, materialsShining));
+        }
+        
+        //Setting text configuration
+        var newTextComp = newText.AddComponent<Text>();
+        newTextComp.text = "+" + incremental.ToString();
+        newTextComp.fontSize = 44;
+        newTextComp.alignment = TextAnchor.MiddleLeft;
+        newTextComp.font = materialsText.font;
+
+        //Setting the position on the canvas
+        newText.GetComponent<RectTransform>().localScale = new Vector2(0, 0);
+        newText.GetComponent<RectTransform>().anchorMin = new Vector2(0, 0.5f);
+        newText.GetComponent<RectTransform>().anchorMax = new Vector2(0, 0.5f);
+        newText.GetComponent<RectTransform>().pivot = new Vector2(0, 0.5f);
+        newText.GetComponent<RectTransform>().localPosition = new Vector3(0, -60, 0);
+        newText.AddComponent<incrementMaterialText_Script>();
+    }
+
+    IEnumerator stopShiningAfterTime(float timeToGo, Animator animator)
+    {
+        isMaterialShining = true;
+        yield return new WaitForSeconds(timeToGo);
+        animator.SetBool("finishedSliderUpdating", true);
+        isMaterialShining = false;
+
+        yield return null;
     }
 }

@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: History Page 1
   m_EditorClassIdentifier: 
   pageTitle: Lunes
-  pageContent: "Nueva actividad para trabajar la comprensi\xF3n lectora de frases 
-    y textos cortos . En ella el alumno tendr\xE1 que leer, analizar bien la informaci\xF3n,
-    sin precipitarse y decidir qui\xE9n es la hermana de cada ni\xF1o a partir de
-    las pistas dadas. Por lo que se puede plantear para el alumno  como resoluci\xF3n
-    de un problema o un juego b\xFAsqueda."
-  viewedByUser: 0
+  pageContent:
+  - asdfasd
+  - fcbvbcx
+  - sfdar
+  viewedByUser: 1
   storyUnlocked: 1

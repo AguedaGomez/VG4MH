@@ -58,6 +58,7 @@ public class City : MonoBehaviour
     private void UpdateTopHUD()
     {
         canvasController.updateSlidersValue(activationValue, powerR);
+        updateMaterialsOnCanvas();
     }
 
     private void CheckInactiveTime(string lastAccess)
@@ -78,6 +79,7 @@ public class City : MonoBehaviour
             //Se permite al usuario volver a hacer actividad
             SaveObject.Instance.dailyActivityCompleted = false;
             SaveObject.Instance.dailyQuestions_Done = false;
+            SaveObject.Instance.enterInLibraryToday = false;
             SaveObject.Instance.actualSessionSteps = 0;
             SaveObject.Instance.dailyCompletedSteps = 0;
             GameManager.Instance.resetActivityNotifications();
@@ -220,6 +222,15 @@ public class City : MonoBehaviour
             return 0;
     }
 
+    public void updateMaterialsOnCanvas(int increment = 0)
+    {
+        canvasController.topHUD.GetComponent<TOP_Hud_Controller>().updateMaterials_Text(Materials);
+        if(increment != 0)
+        {
+            canvasController.topHUD.GetComponent<TOP_Hud_Controller>().increaseMaterialsOnCanvas(increment);
+        }
+    }
+
     public void increaseActivationValue(float addition)
     {
         activationValue += addition;
@@ -229,6 +240,7 @@ public class City : MonoBehaviour
             activationValue = 0;
         }
         SaveObject.Instance.activationValue = activationValue;
+
         UpdateTopHUD();
     }
 }

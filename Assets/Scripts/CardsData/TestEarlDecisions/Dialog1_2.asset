@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793c2232e06267243b435d1b3b909bfa, type: 3}
+  m_Name: Dialog1_2
+  m_EditorClassIdentifier: 
+  characterName: Earl Emory
+  dialog: "\xBFCu\xE1les crees que son beneficios de irnos a un sitio nuevo?"
+  reward: 0
+  type: 1
+  options:
+  - {fileID: 11400000, guid: eab127e99309a2845a65ed1a67b42f9b, type: 2}
+  - {fileID: 11400000, guid: fec08b9fe7c511f4883e516b99ff6920, type: 2}
+  - {fileID: 11400000, guid: 5e452d8823729d6409ef9ffeed7c9cda, type: 2}
+  - {fileID: 11400000, guid: 6c4ab4de45d7e9749bd2714b0e4c60ce, type: 2}
+  nextCardIfRight: {fileID: 11400000, guid: fe513068cac3e5b47bdc025f86b8c4aa, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: fe513068cac3e5b47bdc025f86b8c4aa, type: 2}

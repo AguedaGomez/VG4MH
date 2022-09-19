@@ -83,4 +83,30 @@ public class GameManager : MonoBehaviour
             noti.hasBeenShown = false;
         }
     }
+
+    public void checkCurrentCards(List<GameObject> citizensToCheck)
+    {
+        //Check if currentTarget is related to an existing citizen
+        foreach(GameObject citizen in citizensToCheck)
+        {
+            if(citizen.transform.GetChild(0).gameObject.GetComponent<LocalsMessages>().isSpecialCitizen)
+            {
+                //Mirar si es el que nos interesa
+                if (citizen.transform.GetChild(0).gameObject.GetComponent<Local>().localName == currentCard.characterName)
+                {
+                    //Es el que nos interesa, hacer lo que corresponda
+                    citizen.transform.GetChild(0).gameObject.GetComponent<LocalsMessages>().ShowConflictExclamation(true);
+
+                    currentCardLocalizer cardLocalizer = (currentCardLocalizer)FindObjectOfType(typeof(currentCardLocalizer));
+                    cardLocalizer.setNewCitizenToLocate(citizen);
+                    cardLocalizer.changeButtonState(true);
+                }
+            }
+            else
+            {
+                //Significa que es un ciudadano normal y corriente, no tendrá nunca current card
+                continue;
+            }
+        }
+    }
 }

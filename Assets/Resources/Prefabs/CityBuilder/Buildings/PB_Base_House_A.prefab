@@ -48,15 +48,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  cost: 0
-  buildingName: smallHouse
+  buildingName: PB_Base_House_A
+  specialCharacterPrefab: {fileID: 0}
   nLocals: 2
-  activationRequired: 10
   row: 0
   col: 0
   cellsInZ: 1
   cellsInX: 1
-  powerRIncrease: 0
   materialsPerSecond: 0
   type: 0
   indicatorText: {fileID: 1548169567}

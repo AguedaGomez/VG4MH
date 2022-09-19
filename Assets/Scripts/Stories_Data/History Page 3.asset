@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: History Page 3
   m_EditorClassIdentifier: 
   pageTitle: Jueves
-  pageContent: "Nueva actividad para trabajar la lectura comprensiva, en esta ocasi\xF3n,
-    lo vamos a hacer a partir de textos cortos y una serie preguntas que nuestros
-    alumnos deber\xE1n responder. Para poder contestarlas el alumno tendr\xE1 que
-    pensar muy bien lo que se le pide ya que no aparece tal como se le pregunta en
-    el texto."
+  pageContent:
+  - asdfasdfasdfasdfasdf
   viewedByUser: 0
   storyUnlocked: 0

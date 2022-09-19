@@ -207,7 +207,7 @@ public class InteractionController : MonoBehaviour
 
     private void AddBuilding()
     {
-        board.AddBuilding(GameManager.Instance.buildingInConstruction.prefab, currentBuildingPosition, -1);
+        board.AddBuilding(GameManager.Instance.buildingInConstruction.prefab, currentBuildingPosition, -1,true);
         Destroy(currentBuilding.transform.parent.gameObject);
         GridUI.SetActive(false);
         GameManager.Instance.buildingInConstruction = null;

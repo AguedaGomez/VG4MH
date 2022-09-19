@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
   m_Name: Dialog1
   m_EditorClassIdentifier: 
-  characterName: Earl
+  characterName: Earl Emory
   dialog: "\xA1Hola! Me llamo Earl. Soy el padre de la familia Emory. Estamos en
     una situaci\xF3n peliaguda. Creemos que deber\xEDamos trasladarnos y dejar este
     lugar pero nos da miedo tomar una mala decisi\xF3n. \xBFNos ayudas a ver qu\xE9
     es lo mejor?"
   reward: 4
   type: 0
-  choice: {fileID: 11400000, guid: 84bf9bd7b2a12c544ba21c5f32ef21a2, type: 2}
+  image: {fileID: 0}
+  model: {fileID: 0}
+  sceneModel: {fileID: 0}
+  rightText: 
+  leftText: 
+  correctDirection: 0
   nextCardIfRight: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}

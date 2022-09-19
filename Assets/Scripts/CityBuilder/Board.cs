@@ -73,11 +73,11 @@ public class Board : MonoBehaviour
     {
         boardView.ColorDependingAvailability(availability);
     }
-    public void AddBuilding(GameObject building, Vector3 position, int currentMaterials)
+
+    public void AddBuilding(GameObject building, Vector3 position, int currentMaterials, bool newBuilding)
     {
         if (CheckSpaceAtPosition(building, position))
         {
-
             Transform buildingTransform = building.GetComponent<Transform>();
             Quaternion buildingRotation = buildingTransform.rotation;
             GameObject createdBuilding = Instantiate(building, position, buildingRotation);
@@ -115,8 +115,17 @@ public class Board : MonoBehaviour
             }
 
             navMesh.BuildNavMesh();
-            citizensGenerator.AddCitizens(buildingScript);
-            
+
+            //Si es false significa que está cargando desde el SaveObject por lo que no requiere generar ciudadanos
+            if (newBuilding)
+            {
+                citizensGenerator.AddCitizens(buildingScript);
+
+                if (buildingScript.specialCharacterPrefab != null)
+                {
+                    citizensGenerator.AddSpecialCitizen(buildingScript.specialCharacterPrefab);
+                }
+            }
         }
         else
         {
@@ -214,26 +223,35 @@ public class Board : MonoBehaviour
     {
         //Debug.Log("2. TEST: Inicializando el board");
         var savedBoardState = SaveObject.Instance.buildingsInBoard;
+        //Debug.Log("Edificación: " + savedBoardState[0].buildingName + " , " + savedBoardState[0].currentMaterials + " , " + savedBoardState[0].id + " ( " + savedBoardState[0].col + " . " + savedBoardState[0].row);
 
         if (savedBoardState.Count != 0)
         {
+            Camera mainCamera = Camera.main;
+            //Debug.Log("Se ha encontrado la cámara, ahora se setea en el objeto");
+
             foreach (SavedBuilding b in savedBoardState)
             {
                 string path = buildingsPath + "/" + b.buildingName;
+                //Debug.Log("Se ha mirado la dirección del prefab: " + path);
+
                 GameObject prefabToInstantiate = Resources.Load<GameObject>(path);
-                prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+                //Debug.Log("Se ha encontrado " + prefabToInstantiate.name);
+
+
+                prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = mainCamera;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
                 //Debug.Log("currentMaterials de building añadidos: " + b.currentMaterials);
-                AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials);
+                AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials, false);
             }
             
         }
         else
         {
             // static buildings initial configuration. First time the game starts
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
-            AddBuilding(library, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1, true);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1, true);
+            AddBuilding(library, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1, true);
         }
 
     }

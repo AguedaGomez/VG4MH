@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasController : MonoBehaviour
 {
     public GameObject topHUD; //cuando haya que cambiar activacion, poder R y materiales.
     public GameObject downHUD;
     public GameObject confirmationMessage;
+    [SerializeField] GameObject citizenTalkingPanel_Prefab;
 
     public InteractionController interactionController;
     public BuildingMenuController buildingMenuController;
 
     private DownHudController downHudController;
     private TOP_Hud_Controller topHudController;
+    public bool showingConversation = false;
 
     
     // Start is called before the first frame update
@@ -43,6 +46,11 @@ public class CanvasController : MonoBehaviour
         interactionController.EnableBuilder(); //No es necesario buscar si están en la lista ni pasar el id porque está todo el SO accesible en GAmeManager
     }
 
+    public void BuildNegation()
+    {
+        confirmationMessage.SetActive(false);
+    }
+
     public void UnlockBuilding(string id)
     {
         buildingMenuController.UnlockGridElement(id);
@@ -59,6 +67,17 @@ public class CanvasController : MonoBehaviour
             topHudController.updatePowerR_SliderValue(newPowerR_Value);
         }
     }
+
+    public void createCitizenConversation(GameObject citizenToTalk)
+    {
+        if(!showingConversation)
+        {
+            showingConversation = true;
+            GameObject newPanel = Instantiate(citizenTalkingPanel_Prefab, this.transform);
+            newPanel.GetComponent<characterTalkPanel_Manager>().setUpPanel(citizenToTalk);
+        }
+    }
+        
 }
 
 

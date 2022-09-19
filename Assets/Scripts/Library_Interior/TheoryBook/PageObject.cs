@@ -6,7 +6,7 @@ using UnityEngine;
 public class PageObject : ScriptableObject
 {
     public string pageTitle;
-    public string pageContent;
+    public string[] pageContent;
 
     public bool viewedByUser;
     public bool storyUnlocked;

@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: History Page 2
   m_EditorClassIdentifier: 
   pageTitle: Martes
-  pageContent: "Nueva actividad para trabajar una vez m\xE1s la lectura comprensiva
-    de frases y textos cortos. He utilizado una tem\xE1tica que suele gustar mucho
-    a nuestros alumnos: los planetas. Por lo que  seguro que disfrutan descifrando
-    el enigma cu\xE1l es cu\xE1l, asociando cada imagen con su descripci\xF3n."
+  pageContent:
+  - asdfasdfasdfadsfa
   viewedByUser: 0
   storyUnlocked: 0

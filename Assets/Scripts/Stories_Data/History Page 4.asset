@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: History Page 4
   m_EditorClassIdentifier: 
   pageTitle: Sabado
-  pageContent: "Nueva actividad para trabajar una vez m\xE1s la lectura comprensiva
-    de frases y textos corto. Para ello hemos utilizado una tem\xE1tica muy relacionada
-    con la actualidad: las flores de la primavera. Por lo que  seguro que disfrutan
-    descifrando el enigma cu\xE1l es cu\xE1l, asociando cada imagen con su descripci\xF3n."
-  viewedByUser: 0
+  pageContent:
+  - asdfasdfasdf
+  viewedByUser: 1
   storyUnlocked: 1

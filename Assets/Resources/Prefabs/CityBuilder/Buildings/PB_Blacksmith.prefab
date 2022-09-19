@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 
   buildingName: blacksmith
+  specialCharacterPrefab: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4,
+    type: 3}
   nLocals: 0
   row: 0
   col: 0

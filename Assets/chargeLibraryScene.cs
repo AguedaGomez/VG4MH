@@ -8,6 +8,7 @@ public class chargeLibraryScene : MonoBehaviour
     public void cargarEscenaLibreria()
     {
         SceneManager.LoadScene("Library_Interior");
-
     }
+
+
 }

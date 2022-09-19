@@ -8,7 +8,7 @@ public class ConflictManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LaunchConflict();
+        //LaunchConflict();
     }
 
     private void LaunchConflict()
@@ -20,7 +20,7 @@ public class ConflictManager : MonoBehaviour
         showPopUpConflict.FillPopUp(local.localImage, local.localName);
         
         LocalsMessages messageScript = pj.GetComponentInChildren<LocalsMessages>();
-        messageScript.ShowConflictExclamation();
+        messageScript.ShowConflictExclamation(true);
         
     }
 }

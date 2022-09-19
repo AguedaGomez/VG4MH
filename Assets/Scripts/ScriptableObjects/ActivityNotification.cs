@@ -8,4 +8,6 @@ public class ActivityNotification : Notification
 {
     public int stepsToShow;
     public bool hasBeenShown;
+
+    
 }

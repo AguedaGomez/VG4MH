@@ -18,6 +18,7 @@ public class MaterialGeneratorBuilding : Building
     private const string INDICATOR_BEGINNING = "";
     private GameObject city;
     private City cityScript;
+    private Camera camViewport;
     void Start()
     {
         city = GameObject.FindGameObjectWithTag(cityTag);
@@ -101,8 +102,10 @@ public class MaterialGeneratorBuilding : Building
 
     public void PickMaterials()
     {
+        int incremental = materialsPerSecond;
         cityScript.Materials += materialsPerSecond;
         SaveObject.Instance.materials = cityScript.Materials;
+        cityScript.updateMaterialsOnCanvas(incremental);
         materialsPerSecond = 0;
         UpdateMaterialsInSaveObject();
         materialsButton.interactable = false;
@@ -110,4 +113,6 @@ public class MaterialGeneratorBuilding : Building
 
         StartCoroutine(WaitingTimeToGenerateMaterials(timeOfGeneration));
     }
+
+    
 }
