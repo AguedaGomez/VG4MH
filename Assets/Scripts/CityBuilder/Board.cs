@@ -179,18 +179,6 @@ public class Board : MonoBehaviour
         return Mathf.RoundToInt(cordPosition / cellSize); // number of cell
     }
 
-   /* private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.white;
-        for (float x = 0; x < boardHeight; x += cellSize)
-        {
-            for (float z = 0; z < boardWidth; z += cellSize)
-            {
-                var point = CalculateGridPosition(new Vector3(x, 0.9f, z));
-                Gizmos.DrawSphere(point, 0.1f);
-            }
-        }
-    }*/
 
     public void SaveBoardStateInList(int x, int z)
     {
@@ -232,7 +220,7 @@ public class Board : MonoBehaviour
 
             foreach (SavedBuilding b in savedBoardState)
             {
-                string path = buildingsPath + "/" + b.buildingName;
+                string path = buildingsPath + "/" + b.idDic;
                 //Debug.Log("Se ha mirado la dirección del prefab: " + path);
 
                 GameObject prefabToInstantiate = Resources.Load<GameObject>(path);

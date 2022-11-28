@@ -112,7 +112,7 @@ public class ActivityService : MonoBehaviour
             checkIfGoalIsReached();
             saveActualStepsOnSavedata(actualSteps + stepsInThisSession);
 
-            if (activityPanel.gameObject.active)
+            if (activityPanel.isActiveAndEnabled)
             {
                 activityPanel.setInformationOnPanel(actualSteps + stepsInThisSession + SaveObject.Instance.dailyCompletedSteps);
             }

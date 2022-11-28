@@ -12,7 +12,7 @@ public class SavedBuilding
     public int currentMaterials;
     public string id;
 
-    public SavedBuilding(int row, int col, string idDic) // TODO eliminar currentMaterials
+    public SavedBuilding(int row, int col, string idDic)
     {
         this.row = row;
         this.col = col;
