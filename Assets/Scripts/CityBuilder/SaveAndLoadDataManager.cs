@@ -45,6 +45,10 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     public void LoadGame()
     {
+        city = FindObjectOfType<City>();
+        board = FindObjectOfType<Board>();
+
+        Debug.Log("Existe city" + city.gameObject + " , Existe Board: " + board.gameObject);
         if (SaveAndLoadData.LoadFromFile("state-game.json", out var content))
         {
             //Comprobar si ha pasado un día para activar la posibilidad de volver 
@@ -60,7 +64,6 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     public void SaveGame()
     {
-        
         ObjectToSaveData();
         SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
         //SaveObject.Instance.buildingsInBoard.Clear();
@@ -123,10 +126,13 @@ public class SaveAndLoadDataManager : MonoBehaviour
         SaveObject.Instance.dailyCompletedSteps = loadedSaveObject.dailyCompletedSteps;
         SaveObject.Instance.actualSessionSteps = loadedSaveObject.actualSessionSteps;
         SaveObject.Instance.dailyQuestions_Done = loadedSaveObject.dailyQuestions_Done;
-        
+        SaveObject.Instance.enterInLibraryToday = loadedSaveObject.enterInLibraryToday;
         SaveObject.Instance.buildingsInBoard = loadedSaveObject.buildingsInBoard;
         SaveObject.Instance.questionnairesDoneByUser = loadedSaveObject.questionnairesDoneByUser;
+        SaveObject.Instance.charactersInTheCity = loadedSaveObject.charactersInTheCity;
 
         //Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard.Count + " , " + SaveObject.Instance.questionnairesDoneByUser.Count);
     }
+
+    
 }

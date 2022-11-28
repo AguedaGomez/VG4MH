@@ -42,7 +42,6 @@ public class TheoryBookManager : MonoBehaviour
         historyPage_gameObject.SetActive(true);
         historyPage_gameObject.GetComponent<HistoryPage_Decorator>().setUp_HistoryPage(storyToShow);
         mainMenu_gameObject.SetActive(false);
-
     }
 
     public IEnumerator returnToMainMenu()
@@ -53,6 +52,11 @@ public class TheoryBookManager : MonoBehaviour
         historyPage_gameObject.SetActive(false);
         mainMenu_gameObject.SetActive(true);
         reInitializePanel();
+    }
+
+    public void playPageAnimation()
+    {
+        theoryBookPageController.turnPageAnimationStart();
     }
 
     private void reInitializePanel()

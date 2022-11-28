@@ -7,4 +7,5 @@ public class Notification : ScriptableObject
 {
     public Sprite imageNotification;
     public string textNotification;
+
 }

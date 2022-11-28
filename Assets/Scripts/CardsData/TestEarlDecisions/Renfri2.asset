@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: Renfri2
+  m_EditorClassIdentifier: 
+  characterName: Renfri
+  dialog: "\xA1Hola! Soy Renfri. Desde que nos traladamos aqu\xED me siento solo,
+    echo de menos a nuestros amigos. \xBFC\xF3mo podr\xEDa conocer gente por aqu\xED?"
+  reward: 0
+  type: 0
+  image: {fileID: 0}
+  model: {fileID: 0}
+  sceneModel: {fileID: 0}
+  rightText: 
+  leftText: 
+  correctDirection: 0
+  nextCardIfRight: {fileID: 11400000, guid: cf16c5ddb044ffa429dabed985220b27, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 9e69382fd609b29438173ec3141da4da, type: 2}

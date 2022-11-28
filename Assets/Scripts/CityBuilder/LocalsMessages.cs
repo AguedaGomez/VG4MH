@@ -8,6 +8,8 @@ public class LocalsMessages : MonoBehaviour
     public delegate void GeneralMessageEventHandler(string message);
     public event GeneralMessageEventHandler ShowGeneralMessage;
     public Button conflictExclamation;
+    public bool specialCitizenWithConflict;
+    public bool isSpecialCitizen = false;
 
     private RectTransform conflictExclamationRect;
 
@@ -15,6 +17,10 @@ public class LocalsMessages : MonoBehaviour
     private const int maxConflictSec = 60;
     private string[] generalMessages = { "Hola, ¿qué tal?", "¡Qué buen día hace hoy!", "¡Qué bien!, tú por aquí",
     "¿Has visitado ya la biblioteca?", "¿Cómo te va?"};
+    private string[] generalMissionMessages = { "¿Puedes ayudarme?", "Tengo algo que consultarte, ¿Tienes un momento?", 
+    "¿Puedes ayudar a decidirme qué es lo mejor?", "Te necesitamos para ayudar al pueblo, ¿Puedes?"};
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +34,14 @@ public class LocalsMessages : MonoBehaviour
         }
 
         var positionToLook = Camera.main.transform.position;
-        var previousRotation = conflictExclamationRect.eulerAngles;
 
-        conflictExclamationRect.LookAt(positionToLook);
-        conflictExclamationRect.eulerAngles = new Vector3(previousRotation.x, conflictExclamationRect.eulerAngles.y, previousRotation.z);
+        if(conflictExclamation.gameObject.active)
+        {
+            var previousRotation = conflictExclamationRect.eulerAngles;
+
+            conflictExclamationRect.LookAt(positionToLook);
+            conflictExclamationRect.eulerAngles = new Vector3(previousRotation.x, conflictExclamationRect.eulerAngles.y, previousRotation.z);
+        }
     }
     public void GenerateGeneralMessage()
     {
@@ -39,8 +49,29 @@ public class LocalsMessages : MonoBehaviour
         ShowGeneralMessage(generalMessages[randIndex]);
     }
 
-    public void ShowConflictExclamation()
+    public string getRandomMessage()
     {
-        conflictExclamation.gameObject.SetActive(true);
+        int randIndex = Random.Range(0, generalMessages.Length);
+        return generalMessages[randIndex];
+    }
+
+    public string getMissionRandomMessage()
+    {
+        int randIndex = Random.Range(0, generalMissionMessages.Length);
+        return generalMissionMessages[randIndex];
+    }
+
+    public void ShowConflictExclamation(bool newState)
+    {
+        conflictExclamation.gameObject.SetActive(newState);
+        specialCitizenWithConflict = newState;
+    }
+
+    public void citizen_OnClick(GameObject citizenToTalk)
+    {
+        //Crear la notificación de abajo y demás
+        CanvasController mainCanvas = (CanvasController)FindObjectOfType(typeof(CanvasController));
+
+        mainCanvas.createCitizenConversation(citizenToTalk);
     }
 }

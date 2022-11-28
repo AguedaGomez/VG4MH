@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,8 +15,10 @@ public sealed class SaveObject
     public string date;
     public List<SavedBuilding> buildingsInBoard; //id al construir e id de datos
     public List<Cuestionario> questionnairesDoneByUser;
+    public List<CharacterInfo> charactersInTheCity;
     public bool activityRunning;
     public bool dailyQuestions_Done;
+    public bool enterInLibraryToday;
     public bool dailyActivityCompleted;
     public int dailyCompletedSteps;
     public int actualSessionSteps;
@@ -28,7 +31,9 @@ public sealed class SaveObject
         date = "";
         buildingsInBoard = new List<SavedBuilding>();
         questionnairesDoneByUser = new List<Cuestionario>();
+        charactersInTheCity = new List<CharacterInfo>();
         activityRunning = false;
+        enterInLibraryToday = false;
         activationValue = 0;
         dailyActivityCompleted = false;
         dailyQuestions_Done = false;
@@ -130,5 +135,13 @@ public sealed class SaveObject
         }
 
         return listToReturn;
+    }
+
+    public void updateActivationValueOnLastQuestionnaire()
+    {
+        if(dailyQuestions_Done)
+        {
+            questionnairesDoneByUser.Last().activationValue = activationValue;
+        }
     }
 }

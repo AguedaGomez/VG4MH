@@ -35,6 +35,7 @@ public class SingleCardRewardManager : MonoBehaviour
         //Realizar Animación según el reward que varie
         hudManager.Start_VisualResourceStatChange(currentResource, valueModifier);
 
+        //Contemplar caso de que no haya siguiente currentcard en el dialogo
         if (nextCard.characterName != currentCard.characterName)
         {
             GameManager.Instance.currentCard = nextCard;
