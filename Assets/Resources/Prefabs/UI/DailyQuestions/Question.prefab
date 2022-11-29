@@ -184,11 +184,11 @@ RectTransform:
   - {fileID: 7589752353922218015}
   - {fileID: 7589752354240640084}
   m_Father: {fileID: 7589752354980395388}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 117.8}
+  m_AnchoredPosition: {x: 0, y: 105}
   m_SizeDelta: {x: -100, y: 57.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7589752353514406522
@@ -282,11 +282,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7589752354980395388}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.62, y: -110.3}
+  m_AnchoredPosition: {x: 24.62, y: -48}
   m_SizeDelta: {x: 731.9951, y: 149.97964}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7589752353557018348
@@ -409,7 +409,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: "0\nNing\xFAn d\xEDa"
 --- !u!1 &7589752353922218008
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,84 +559,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &7589752354405794146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7589752354405794145}
-  - component: {fileID: 7589752354405794151}
-  - component: {fileID: 7589752354405794144}
-  m_Layer: 5
-  m_Name: QuestionTitle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7589752354405794145
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589752354405794146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7589752354980395388}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.619995, y: -21.680054}
-  m_SizeDelta: {x: 589.32275, y: 62.35453}
-  m_Pivot: {x: 0, y: 1}
---- !u!222 &7589752354405794151
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589752354405794146}
-  m_CullTransparentMesh: 0
---- !u!114 &7589752354405794144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589752354405794146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.48729196, b: 0.11525452, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: d04a634d0bd83d946abab5b542a89a3e, type: 3}
-    m_FontSize: 41
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 44
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 1. Primera pregunta
 --- !u!1 &7589752354718685668
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,7 +728,7 @@ GameObject:
   - component: {fileID: 7589752354980395379}
   - component: {fileID: 4632724112781191107}
   m_Layer: 5
-  m_Name: DiaryQuestion_Prefab
+  m_Name: Question
   m_TagString: ui
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,7 +745,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7589752354405794145}
   - {fileID: 7589752353557018350}
   - {fileID: 7589752353514406523}
   m_Father: {fileID: 0}
@@ -831,8 +752,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 416.3}
-  m_SizeDelta: {x: 1200, y: 417}
+  m_AnchoredPosition: {x: 0, y: 447.4}
+  m_SizeDelta: {x: 1200, y: 354.73364}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7589752354980395378
 CanvasRenderer:
@@ -883,6 +804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2197a8d01f5dcb418affa8cbac9b636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleQuestion_Text: {fileID: 7589752354405794144}
+  titleQuestion_Text: {fileID: 0}
   questionDescription_Text: {fileID: 7589752353557018349}
   questionSlider: {fileID: 7589752353514406522}

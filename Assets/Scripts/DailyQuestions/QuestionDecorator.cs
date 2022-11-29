@@ -5,15 +5,13 @@ using UnityEngine.UI;
 
 public class QuestionDecorator : MonoBehaviour
 {
-    [SerializeField] Text titleQuestion_Text;
     [SerializeField] Text questionDescription_Text;
     [SerializeField] Slider questionSlider;
 
     Answer questionAnswer;
 
-    public void setUpQuestion(string title, string description,string answerId)
+    public void setUpQuestion(string description,string answerId)
     {
-        titleQuestion_Text.text = title;
         questionDescription_Text.text = description;
 
         questionAnswer = new Answer(answerId);

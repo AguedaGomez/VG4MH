@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class DailyQuestionsPanel_Decorator : MonoBehaviour
 {
-    public List<DailyQuestion> dailyQuestions;
+    public List<Questionnaire> dailyQuestionnaire;
     [SerializeField] GameObject questionPrefab;
+    [SerializeField] GameObject questionnairePrefab;
     [SerializeField] Transform viewport;
 
     List<QuestionDecorator> questionsInGame = new List<QuestionDecorator>();
@@ -18,19 +19,20 @@ public class DailyQuestionsPanel_Decorator : MonoBehaviour
 
     void initializeQuestionsPanel()
     {
-        for(int i = 0; i < dailyQuestions.Count; i++)
+        foreach (Questionnaire questionnaire in dailyQuestionnaire)
         {
-            string newTitle;
-            string newDescription;
+            GameObject questionnaireGO = Instantiate(questionnairePrefab, viewport);
+            questionnaireGO.GetComponent<QuestionnaireDecorator>().SetUpQuestionnaire(questionnaire.title, questionnaire.description);
 
-            GameObject newQuestion = Instantiate(questionPrefab, viewport);
+            foreach (Question question in questionnaire.questions)
+            {
+                GameObject questionGO = Instantiate(questionPrefab, viewport);
+                QuestionDecorator questionScript = questionGO.GetComponent<QuestionDecorator>();
+                questionScript.setUpQuestion(question.description, question.id);
+                //questionsInGame.Add(newQuestionScript);
+            }
 
-            newTitle = (i+1) + ". " + dailyQuestions[i].questionTitle;
-            newDescription = dailyQuestions[i].questionDescription;
-
-            QuestionDecorator newQuestionScript = newQuestion.GetComponent<QuestionDecorator>();
-            newQuestionScript.setUpQuestion(newTitle, newDescription, dailyQuestions[i].questionId);
-            questionsInGame.Add(newQuestionScript);
+            
         }
     }
 

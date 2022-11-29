@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11ef76c11e4481143a13f095d2371112, type: 3}
-  m_Name: Dailyquestion3
+  m_Name: phq-1
   m_EditorClassIdentifier: 
-  questionTitle: "Estr\xE9s"
-  questionDescription: "En las \xFAltimas 24 horas, \xBFEn qu\xE9 medida has sentido
-    que las dificultades eran de tal magnitud que no pod\xEDas superarlas?"
-  questionId: GAD_1
+  questionDescription: 
+  questionId: 

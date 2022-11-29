@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11ef76c11e4481143a13f095d2371112, type: 3}
-  m_Name: Dailyquestion2
+  m_Script: {fileID: 11500000, guid: a32322cd1fe453748a769b70714f4850, type: 3}
+  m_Name: gad
   m_EditorClassIdentifier: 
-  questionTitle: "Estado de \xE1nimo"
-  questionDescription: "Se\xF1ala el lugar que refleje mejor tu estado de \xE1nimo
-    en las \xFAltimas 24 horas."
-  questionId: PHQ_2
+  title: 
+  description: 
+  questions: []

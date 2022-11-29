@@ -15,7 +15,7 @@ public class ConfirmationMessageController : MonoBehaviour
         SetUpMessage();
     }
 
-    private void SetUpMessage()
+    public void SetUpMessage()
     {
         textMessage.text = TEXT_MESSAGE;
         //NoButton.onClick.AddListener()

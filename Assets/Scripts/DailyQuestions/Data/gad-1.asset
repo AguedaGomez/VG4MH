@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11ef76c11e4481143a13f095d2371112, type: 3}
-  m_Name: Dailyquestion4
+  m_Name: gad-1
   m_EditorClassIdentifier: 
-  questionTitle: Otra pregunta
-  questionDescription: "Descripci\xF3n de lo que ser\xEDa una cuarta pregunta. \xBFQu\xE9
-    pregunta ser\xE1? Nadie lo sabe"
-  questionId: GAD_2
+  questionDescription: 
+  questionId: 

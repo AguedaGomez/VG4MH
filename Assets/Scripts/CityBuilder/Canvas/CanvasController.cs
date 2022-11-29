@@ -8,6 +8,7 @@ public class CanvasController : MonoBehaviour
     public GameObject topHUD; //cuando haya que cambiar activacion, poder R y materiales.
     public GameObject downHUD;
     public GameObject confirmationMessage;
+    public GameObject confirmationMssgQuestionnaire;
     [SerializeField] GameObject citizenTalkingPanel_Prefab;
 
     public InteractionController interactionController;
@@ -25,6 +26,11 @@ public class CanvasController : MonoBehaviour
         downHudController = downHUD.GetComponent<DownHudController>();
         buildingMenuController.CreateBuildingGrid();
         topHudController = topHUD.GetComponent<TOP_Hud_Controller>();
+    }
+
+    public void ShowQuestionnaireConfirmationMssg()
+    {
+        confirmationMssgQuestionnaire.SetActive(true);
     }
 
     public void ShowConfirmationMessage()

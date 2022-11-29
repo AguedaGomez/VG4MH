@@ -12,8 +12,8 @@ public class City : MonoBehaviour
     public float powerRLastCheckPoint = 0;
     public List<string> availableBuildingsId = new List<string>(); // only those available (depending on the activation)
     public CanvasController canvasController;
-    public GameObject dailyQuestionsPanel_Prefab;
-    public GameObject dailyQuestion_ConfirmationPanel;
+    //public GameObject dailyQuestionsPanel_Prefab;
+    //public GameObject dailyQuestion_ConfirmationPanel;
 
     private const int DAILY_STEPS = 3000;
     private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
@@ -98,20 +98,21 @@ public class City : MonoBehaviour
     {
         if(SaveObject.Instance.dailyQuestions_Done == false)
         {
-            dailyQuestion_ConfirmationPanel.SetActive(true);
+            canvasController.ShowQuestionnaireConfirmationMssg();
+            //dailyQuestion_ConfirmationPanel.SetActive(true);
         }
     }
 
-    public void dailyQuestionsConfirmation_Yes()
-    {
-        Instantiate(dailyQuestionsPanel_Prefab, canvasController.transform);
-        Destroy(dailyQuestion_ConfirmationPanel);
-    }
+    //public void dailyQuestionsConfirmation_Yes()
+    //{
+    //    Instantiate(dailyQuestionsPanel_Prefab, canvasController.transform);
+    //    Destroy(dailyQuestion_ConfirmationPanel);
+    //}
 
-    public void dailyQuestionsConfirmation_No()
-    {
-        Destroy(dailyQuestion_ConfirmationPanel);
-    }
+    //public void dailyQuestionsConfirmation_No()
+    //{
+    //    Destroy(dailyQuestion_ConfirmationPanel);
+    //}
 
     public void CalculatePopulation (Building newBuilding)
     {
