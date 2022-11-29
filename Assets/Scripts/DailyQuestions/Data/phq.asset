@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32322cd1fe453748a769b70714f4850, type: 3}
   m_Name: phq
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  questions: []
+  title: "Estado de \xE1nimo"
+  description: "Durante las \xFAltimas 24 horas, \xBFqu\xE9 tan seguido ha tenido
+    molestias debido a los siguiente problemas?"
+  questions:
+  - {fileID: 11400000, guid: df2c8ece3c2f61942952762e05d3bae0, type: 2}
+  - {fileID: 11400000, guid: 3fb6f07f4a26bbe4f83e7095ae7060ad, type: 2}

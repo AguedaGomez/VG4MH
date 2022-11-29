@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ef76c11e4481143a13f095d2371112, type: 3}
   m_Name: phq-1
   m_EditorClassIdentifier: 
-  questionDescription: 
-  questionId: 
+  description: "1. Poco inter\xE9s o placer en hacer las cosas"
+  id: phq1

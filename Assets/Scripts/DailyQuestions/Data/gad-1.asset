@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ef76c11e4481143a13f095d2371112, type: 3}
   m_Name: gad-1
   m_EditorClassIdentifier: 
-  questionDescription: 
-  questionId: 
+  description: 1. Sentirse nervioso/a, angustiado/a o muy tenso/a
+  id: gad1

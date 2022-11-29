@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32322cd1fe453748a769b70714f4850, type: 3}
   m_Name: gad
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  questions: []
+  title: Ansiedad
+  description: "En las \xFAltimas 24 horas, \xBFcon qu\xE9 frecuencia le han supuesto
+    una molestia los siguientes problemas?"
+  questions:
+  - {fileID: 11400000, guid: 140bf9383934fd94882747aeb8ef4f3f, type: 2}
+  - {fileID: 11400000, guid: 7464318927a72ed4fa656945391e4ec5, type: 2}

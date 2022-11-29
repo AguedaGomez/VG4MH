@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ef76c11e4481143a13f095d2371112, type: 3}
   m_Name: phq-2
   m_EditorClassIdentifier: 
-  questionDescription: 
-  questionId: 
+  description: "2. Se ha sentido deca\xEDdo/a, deprimido/a o sin esperanzas"
+  id: phq2
