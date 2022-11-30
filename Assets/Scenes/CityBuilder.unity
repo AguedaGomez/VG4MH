@@ -3523,12 +3523,32 @@ PrefabInstance:
     - target: {fileID: 1889056741350430465, guid: c3e8b784c155e194487f5c3e578934f6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -822.3125
+      value: -1220.1125
       objectReference: {fileID: 0}
     - target: {fileID: 1889056741350430465, guid: c3e8b784c155e194487f5c3e578934f6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0065307617
+      value: 0.0015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995048077576782299, guid: c3e8b784c155e194487f5c3e578934f6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 812.9154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995048077576782299, guid: c3e8b784c155e194487f5c3e578934f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 36.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217802996257136618, guid: c3e8b784c155e194487f5c3e578934f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -139
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217802996257136618, guid: c3e8b784c155e194487f5c3e578934f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 8217802996430946829, guid: c3e8b784c155e194487f5c3e578934f6,
         type: 3}
@@ -3649,6 +3669,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217802997936108306, guid: c3e8b784c155e194487f5c3e578934f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -137
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217802997936108306, guid: c3e8b784c155e194487f5c3e578934f6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -207
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3e8b784c155e194487f5c3e578934f6, type: 3}

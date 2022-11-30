@@ -6,11 +6,12 @@ using System;
 [Serializable]
 public class Answer
 {
-    public string answerID;
-    public int answerValue = 1;
+    public string id;
+    public int value;
 
     public Answer(string id)
     {
-        answerID = id;
+        this.id = id;
+        value = -1; //No hay contestación
     }
 }

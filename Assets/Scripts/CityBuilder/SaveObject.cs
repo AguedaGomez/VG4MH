@@ -14,7 +14,7 @@ public sealed class SaveObject
     public float activationValue;
     public string date;
     public List<SavedBuilding> buildingsInBoard; //id al construir e id de datos
-    public List<Cuestionario> questionnairesDoneByUser;
+    public List<AnswerFullQuestionnaire> questionnairesDoneByUser;
     public List<CharacterInfo> charactersInTheCity;
     public bool activityRunning;
     public bool dailyQuestions_Done;
@@ -30,7 +30,7 @@ public sealed class SaveObject
         powerR = 0;
         date = "";
         buildingsInBoard = new List<SavedBuilding>();
-        questionnairesDoneByUser = new List<Cuestionario>();
+        questionnairesDoneByUser = new List<AnswerFullQuestionnaire>();
         charactersInTheCity = new List<CharacterInfo>();
         activityRunning = false;
         enterInLibraryToday = false;
@@ -41,38 +41,46 @@ public sealed class SaveObject
         actualSessionSteps = 0;
     }
 
-    public List<Vector2> getSpecifiedQuestionnaires(string typeOfQuestion)
-    { 
-        List<Vector2> newListToReturn = new List<Vector2>();
+    public List<Vector2> GetQuestionnaireValues(string idQuestionnaire)
+    {
+        List<Vector2> scoreListQuestionnaire = new List<Vector2>(); //lista de score de un cuestionario específico
 
-        int i = 0;
-        foreach(Cuestionario newQuestionnaire in questionnairesDoneByUser)
+        for (int i = 0; i < questionnairesDoneByUser.Count; i++)
         {
-            Answer currentAnsw = new Answer("Empty");
-
-            switch (typeOfQuestion)
-            {
-                case "PHQ_1":
-                    currentAnsw = newQuestionnaire.PHQ_1_Answer;
-                    break;
-                case "PHQ_2":
-                    currentAnsw = newQuestionnaire.PHQ_2_Answer;
-                    break;
-                case "GAD_1":
-                    currentAnsw = newQuestionnaire.GAD_1_Answer;
-                    break;
-                case "GAD_2":
-                    currentAnsw = newQuestionnaire.GAD_2_Answer;
-                    break;
-            }
-
-            Vector2 newValue = new Vector2();
-            newValue.x = i;
-            newValue.y = currentAnsw.answerValue;
-            newListToReturn.Add(newValue);
-
-            i++;
+            Vector2 point = new Vector2();
+            point.x = i;
+            point.y = questionnairesDoneByUser[i].score[idQuestionnaire];
+            scoreListQuestionnaire.Add(point);
         }
+        return scoreListQuestionnaire;
+        //int i = 0;
+        //foreach(AnswerFullQuestionnaire newQuestionnaire in questionnairesDoneByUser)
+        //{
+        //    Answer currentAnsw = new Answer("Empty");
+
+        //    switch (typeOfQuestion)
+        //    {
+        //        case "PHQ_1":
+        //            currentAnsw = newQuestionnaire.PHQ_1_Answer;
+        //            break;
+        //        case "PHQ_2":
+        //            currentAnsw = newQuestionnaire.PHQ_2_Answer;
+        //            break;
+        //        case "GAD_1":
+        //            currentAnsw = newQuestionnaire.GAD_1_Answer;
+        //            break;
+        //        case "GAD_2":
+        //            currentAnsw = newQuestionnaire.GAD_2_Answer;
+        //            break;
+        //    }
+
+        //    Vector2 newValue = new Vector2();
+        //    newValue.x = i;
+        //    newValue.y = currentAnsw.answerValue;
+        //    newListToReturn.Add(newValue);
+
+        //    i++;
+        //}
 
 
         /*for (int i = 0; i < savedataLists.questionnairesDoneByUser.Count; i++)
@@ -107,41 +115,40 @@ public sealed class SaveObject
             newListToReturn.Add(newValue);
         }*/
 
-        return newListToReturn;
+        //return newListToReturn;
     }
 
-    public List<string> getSpecifiedQuestionnaire_Date()
+    public List<string> GetQuestionnaireDates()
     {
-        List<string> newListToReturn = new List<string>();
+        List<string> dateList = new List<string>();
 
-        foreach (Cuestionario newQuestionnaire in questionnairesDoneByUser)
+        foreach (AnswerFullQuestionnaire questionnaire in questionnairesDoneByUser)
         {
-            string currentAnsw = newQuestionnaire.dateOfQuestionaire.ToString();
-            newListToReturn.Add(currentAnsw);
+            dateList.Add(questionnaire.date);
         }
 
-        return newListToReturn;
+        return dateList;
     }
 
-    public List<Vector2> getActivationValues()
+    public List<Vector2> GetQuestionnaireActivation()
     {
-        List<Vector2> listToReturn = new List<Vector2>();
+        List<Vector2> activationList = new List<Vector2>();
 
         int i = 0;
-        foreach(Cuestionario quest in questionnairesDoneByUser)
+        foreach (AnswerFullQuestionnaire questionnaire in questionnairesDoneByUser)
         {
-            Vector2 newValue = new Vector2(i, (quest.activationValue * 4) / 100);
-            listToReturn.Add(newValue);
+            Vector2 newValue = new Vector2(i, (questionnaire.activationValue * 4) / 100);
+            activationList.Add(newValue);
         }
 
-        return listToReturn;
+        return activationList;
     }
 
-    public void updateActivationValueOnLastQuestionnaire()
-    {
-        if(dailyQuestions_Done)
-        {
-            questionnairesDoneByUser.Last().activationValue = activationValue;
-        }
-    }
+    //public void updateActivationValueOnLastQuestionnaire()
+    //{
+    //    if(dailyQuestions_Done)
+    //    {
+    //        questionnairesDoneByUser.Last().activationValue = activationValue;
+    //    }
+    //}
 }

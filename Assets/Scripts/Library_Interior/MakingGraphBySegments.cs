@@ -150,7 +150,8 @@ public class MakingGraphBySegments : MonoBehaviour
                         GameObject initialText = Instantiate(indexText_Prefab, transform);
                         initialText.name = "NewText_" + i + "_" + j;
                         initialText.GetComponent<Text>().text = "-";
-                        initialText.transform.parent = transform;
+                        //initialText.transform.parent = transform;
+                        initialText.transform.SetParent(transform);
                         initialText.transform.localScale = new Vector3(4, 4, 4);
                         initialText.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0);
                         x_Texts.Add(initialText.GetComponent<Text>());
@@ -160,7 +161,7 @@ public class MakingGraphBySegments : MonoBehaviour
                     GameObject newText = Instantiate(indexText_Prefab, transform);
                     newText.name = "NewText_" + i + "_" + j;
                     newText.GetComponent<Text>().text = j.ToString();
-                    newText.transform.parent = transform;
+                    newText.transform.SetParent(transform);
                     newText.transform.localScale = new Vector3(4, 4, 4);
                     newText.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, j *(float)cellWidth);
                 }
@@ -363,24 +364,24 @@ public class MakingGraphBySegments : MonoBehaviour
     private void creacionDeListaDeVectores()
     {
         //Rellenando la primera lista
-        firstListOfPoints = SaveObject.Instance.getSpecifiedQuestionnaires(idLine_1);
-        endurancePoints = SaveObject.Instance.getSpecifiedQuestionnaires(idLine_2);
-        activationValues = SaveObject.Instance.getActivationValues();
-        questionnairesDate_Information = SaveObject.Instance.getSpecifiedQuestionnaire_Date();
+        firstListOfPoints = SaveObject.Instance.GetQuestionnaireValues("phq"); //idLine_1 era el parámetro anterior
+        endurancePoints = SaveObject.Instance.GetQuestionnaireValues("gad"); //idLine_2 era el parámetro anterior
+        activationValues = SaveObject.Instance.GetQuestionnaireActivation();
+        questionnairesDate_Information = SaveObject.Instance.GetQuestionnaireDates();
 
-        if(firstListOfPoints.Count == 0)
+        if (firstListOfPoints.Count == 0)
         {
             Debug.Log("Primera lista vacia");
             Vector2 newVector = new Vector2(0, 0);
             firstListOfPoints.Add(newVector);
         }
-        if(endurancePoints.Count == 0)
+        if (endurancePoints.Count == 0)
         {
             Debug.Log("Segunda lista vacia");
             Vector2 newVector = new Vector2(0, 0);
             endurancePoints.Add(newVector);
         }
-        if(questionnairesDate_Information.Count == 0)
+        if (questionnairesDate_Information.Count == 0)
         {
             Vector2 newVector = new Vector2(0, 0);
             activationValues.Add(newVector);

@@ -10,7 +10,8 @@ public class DailyQuestionsPanel_Decorator : MonoBehaviour
     [SerializeField] GameObject questionnairePrefab;
     [SerializeField] Transform viewport;
 
-    List<QuestionDecorator> questionsInGame = new List<QuestionDecorator>();
+    //List<QuestionDecorator> questionsInGame = new List<QuestionDecorator>();
+    List<QuestionnaireDecorator> questionnaires = new List<QuestionnaireDecorator>();
 
     private void Start()
     {
@@ -22,15 +23,20 @@ public class DailyQuestionsPanel_Decorator : MonoBehaviour
         foreach (Questionnaire questionnaire in dailyQuestionnaire)
         {
             GameObject questionnaireGO = Instantiate(questionnairePrefab, viewport);
-            questionnaireGO.GetComponent<QuestionnaireDecorator>().SetUpQuestionnaire(questionnaire.title, questionnaire.description, questionnaire.scaleExplanation);
+            QuestionnaireDecorator questionnaireScript = questionnaireGO.GetComponent<QuestionnaireDecorator>();
+            questionnaireScript.SetId(questionnaire.id);
+            questionnaireScript.SetUpQuestionnaire(questionnaire.title, questionnaire.description, questionnaire.scaleExplanation);
 
             foreach (Question question in questionnaire.questions)
             {
                 GameObject questionGO = Instantiate(questionPrefab, viewport);
                 QuestionDecorator questionScript = questionGO.GetComponent<QuestionDecorator>();
                 questionScript.setUpQuestion(question.description, question.id);
-                //questionsInGame.Add(newQuestionScript);
+
+                Answer answer = questionScript.GetAnswer();
+                questionnaireScript.AddAnswer(answer);
             }
+            questionnaires.Add(questionnaireScript);
 
             
         }
@@ -41,44 +47,21 @@ public class DailyQuestionsPanel_Decorator : MonoBehaviour
         SaveObject.Instance.dailyQuestions_Done = true;
         FindObjectOfType<City>().increaseActivationValue(20);
 
-        CreateQuestionaire();
-        Destroy(this.gameObject);
-        //Se guardarán los datos en algún sitio
-        //No sé aún cómo se traducirán los resultados
+        CreateAnswerFullQuestionnaire();
+        gameObject.SetActive(false);
     }
 
-    private void CreateQuestionaire()
+    private void CreateAnswerFullQuestionnaire()
     {
-        Cuestionario newQuestionaire = new Cuestionario();
-        //newQuestionaire.dateOfQuestionaire = DateTime.Now.ToString("d \nMMMM");
-        newQuestionaire.dateOfQuestionaire = DateTime.Now.ToString("dd/MM");
+        string currentDate = DateTime.Now.ToString("d \nMMMM");
+        AnswerFullQuestionnaire answerFullQuestionnaire = new AnswerFullQuestionnaire(currentDate, FindObjectOfType<City>().activationValue);
 
-        foreach (QuestionDecorator qDScript in questionsInGame )
+        foreach (QuestionnaireDecorator questionnaire in questionnaires)
         {
-            //newQuestionaire.answers.Add(qDScript.GetAnswer().answerID, qDScript.GetAnswer());
-            switch(qDScript.GetAnswer().answerID)
-            {
-                case "PHQ_1":
-                    newQuestionaire.PHQ_1_Answer = qDScript.GetAnswer();
-                    break;
-                case "PHQ_2":
-                    newQuestionaire.PHQ_2_Answer = qDScript.GetAnswer();
-                    break;
-                case "GAD_1":
-                    newQuestionaire.GAD_1_Answer = qDScript.GetAnswer();
-
-                    break;
-                case "GAD_2":
-                    newQuestionaire.GAD_2_Answer = qDScript.GetAnswer();
-
-                    break;
-            }
+            answerFullQuestionnaire.score.Add(questionnaire.GetId(), questionnaire.GetTotalScore());
         }
-        
 
-        newQuestionaire.activationValue = FindObjectOfType<City>().activationValue;
-
-        SaveObject.Instance.questionnairesDoneByUser.Add(newQuestionaire);
+        SaveObject.Instance.questionnairesDoneByUser.Add(answerFullQuestionnaire);
     }
 
     public void exitButton_Pressed()

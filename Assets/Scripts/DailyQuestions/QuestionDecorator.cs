@@ -8,23 +8,23 @@ public class QuestionDecorator : MonoBehaviour
     [SerializeField] Text questionDescription_Text;
     [SerializeField] Slider questionSlider;
 
-    Answer questionAnswer;
+    Answer answer;
 
     public void setUpQuestion(string description,string answerId)
     {
         questionDescription_Text.text = description;
 
-        questionAnswer = new Answer(answerId);
+        answer = new Answer(answerId);
     }
 
     public Answer GetAnswer()
     {
-        return questionAnswer;
+        return answer;
     }
 
     public void SetAnswerValue()
     {
-        questionAnswer.answerValue = (int)questionSlider.value;
+        answer.value = (int)questionSlider.value;
         //Debug.Log("Nuevo valor ID: " + questionAnswer.answerID + " , " + questionAnswer.answerValue);
     }
 }

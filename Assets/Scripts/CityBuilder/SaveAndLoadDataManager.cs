@@ -106,7 +106,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
         //SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         SaveObject.Instance.date = DateTime.Now.ToString();
         
-        Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard.Count + " , " + SaveObject.Instance.questionnairesDoneByUser.Count);
+       // Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard.Count + " , " + SaveObject.Instance.questionnairesDoneByUser.Count);
 
         //Debug.Log("Activacion actual: " + SaveObject.Instance.activationValue);
         //Debug.Log("GUARDANDO Fecha guardada: " + SaveObject.Instance.date);
@@ -128,7 +128,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
         SaveObject.Instance.dailyQuestions_Done = loadedSaveObject.dailyQuestions_Done;
         SaveObject.Instance.enterInLibraryToday = loadedSaveObject.enterInLibraryToday;
         SaveObject.Instance.buildingsInBoard = loadedSaveObject.buildingsInBoard;
-        SaveObject.Instance.questionnairesDoneByUser = loadedSaveObject.questionnairesDoneByUser;
+ //       SaveObject.Instance.questionnairesDoneByUser = loadedSaveObject.questionnairesDoneByUser;
         SaveObject.Instance.charactersInTheCity = loadedSaveObject.charactersInTheCity;
 
         //Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard.Count + " , " + SaveObject.Instance.questionnairesDoneByUser.Count);
