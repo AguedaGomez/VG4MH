@@ -6,6 +6,7 @@ using UnityEngine;
 public class Questionnaire : ScriptableObject
 {
     public string title;
-    public string description;
+    [TextArea(10, 14)] public string description;
+    [TextArea(10, 14)] public string scaleExplanation;
     public List<Question> questions;
 }

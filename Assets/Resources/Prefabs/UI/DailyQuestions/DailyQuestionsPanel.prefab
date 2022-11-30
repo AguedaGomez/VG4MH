@@ -414,13 +414,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e006af721d588cc4c842b9e0cf087d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dailyQuestions:
-  - {fileID: 11400000, guid: c060109370fae2645805d9f2b1021f96, type: 2}
-  - {fileID: 11400000, guid: 8e0bc9ddbc8bbbb4a9c231c2810ddf1a, type: 2}
-  - {fileID: 11400000, guid: 99d738ba5ae90d84d937defb6711cd5a, type: 2}
-  - {fileID: 11400000, guid: d72f94a9e1f17754a9580711798fded2, type: 2}
+  dailyQuestionnaire: []
   questionPrefab: {fileID: 7589752354980395389, guid: be9474a097766ad4e811f41a0f56533f,
     type: 3}
+  questionnairePrefab: {fileID: 0}
   viewport: {fileID: 1889056741350430465}
 --- !u!1 &8217802997514286105
 GameObject:

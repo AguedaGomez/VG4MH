@@ -22,7 +22,7 @@ public class DailyQuestionsPanel_Decorator : MonoBehaviour
         foreach (Questionnaire questionnaire in dailyQuestionnaire)
         {
             GameObject questionnaireGO = Instantiate(questionnairePrefab, viewport);
-            questionnaireGO.GetComponent<QuestionnaireDecorator>().SetUpQuestionnaire(questionnaire.title, questionnaire.description);
+            questionnaireGO.GetComponent<QuestionnaireDecorator>().SetUpQuestionnaire(questionnaire.title, questionnaire.description, questionnaire.scaleExplanation);
 
             foreach (Question question in questionnaire.questions)
             {
