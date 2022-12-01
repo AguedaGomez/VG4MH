@@ -7,4 +7,6 @@ public class EntryObject : ScriptableObject
 {
     public string title;
     public List<Content> content;
+    public bool unlocked;
+    public bool read;
 }

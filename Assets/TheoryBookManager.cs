@@ -11,7 +11,8 @@ public class TheoryBookManager : MonoBehaviour
     [SerializeField] GameObject historyOption_prefab;
     [SerializeField] PageController theoryBookPageController;
 
-    [SerializeField] List<PageObject> bookEntries;
+    //[SerializeField] List<PageObject> bookEntries;
+    [SerializeField] List<EntryObject> bookEntries;
 
     private void Start()
     {
@@ -20,27 +21,27 @@ public class TheoryBookManager : MonoBehaviour
 
     private void InitializePanel()
     {
-        foreach(PageObject newPage in bookEntries)
+        foreach(EntryObject entry in bookEntries)
         {
-            if(newPage.storyUnlocked)
+            if(entry.unlocked)
             {
-                GameObject newPageObject = (GameObject)Instantiate(historyOption_prefab, mainMenu_Viewport_gameobject.transform);
-                newPageObject.GetComponent<StoryOption_Decorator>().setUp_StoryOption(newPage);
-                newPageObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => StartCoroutine(storyOption_OnClick(newPage)));
+                GameObject entryObject = Instantiate(historyOption_prefab, mainMenu_Viewport_gameobject.transform);
+                //entryObject.GetComponent<EntryDecorator>()
+                //entryObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => StartCoroutine(storyOption_OnClick(entry)));
             }
         }
 
         historyPage_gameObject.GetComponent<HistoryPage_Decorator>().exitButton.onClick.AddListener(() => StartCoroutine(returnToMainMenu()));
             }
 
-    public IEnumerator storyOption_OnClick(PageObject storyToShow)
+    public IEnumerator storyOption_OnClick(EntryObject entryToShowContent)
     {
         theoryBookPageController.turnPageAnimationStart();
         yield return new WaitForSeconds(0.3f);
-        
-        storyToShow.viewedByUser = true;
+
+        entryToShowContent.read = true;
         historyPage_gameObject.SetActive(true);
-        historyPage_gameObject.GetComponent<HistoryPage_Decorator>().setUp_HistoryPage(storyToShow); //Dar el contenido asociado 
+        //historyPage_gameObject.GetComponent<HistoryPage_Decorator>().setUp_HistoryPage(storyToShow); //Dar el contenido asociado 
         mainMenu_gameObject.SetActive(false);
     }
 
