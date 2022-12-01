@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc8a2c4f533d9641a5ebbd4d0265fad, type: 3}
   m_Name: ActivacionFisica
   m_EditorClassIdentifier: 
-  title: 
+  title: "Activaci\xF3n F\xEDsica"
   content:
   - {fileID: 11400000, guid: 6b066d52a36f96748bc8cdbcef0f31fb, type: 2}
   - {fileID: 11400000, guid: 6e74505f614dbb04fa3a16ef8638e44c, type: 2}
   - {fileID: 11400000, guid: 6be62b5d7ddaee14fadddd65c9806cb4, type: 2}
   - {fileID: 11400000, guid: 9ef0509cc6f02f441a432c97b55eb59c, type: 2}
+  unlocked: 0
+  read: 0

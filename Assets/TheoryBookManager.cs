@@ -6,9 +6,9 @@ using UnityEngine;
 public class TheoryBookManager : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu_gameObject;
-    [SerializeField] GameObject historyPage_gameObject;
+    [SerializeField] GameObject bookPage;
     [SerializeField] GameObject mainMenu_Viewport_gameobject;
-    [SerializeField] GameObject historyOption_prefab;
+    [SerializeField] GameObject entryPrefab;
     [SerializeField] PageController theoryBookPageController;
 
     //[SerializeField] List<PageObject> bookEntries;
@@ -16,32 +16,32 @@ public class TheoryBookManager : MonoBehaviour
 
     private void Start()
     {
-        InitializePanel();
+        InitializeBookEntries();
     }
 
-    private void InitializePanel()
+    private void InitializeBookEntries()
     {
         foreach(EntryObject entry in bookEntries)
         {
             if(entry.unlocked)
             {
-                GameObject entryObject = Instantiate(historyOption_prefab, mainMenu_Viewport_gameobject.transform);
-                //entryObject.GetComponent<EntryDecorator>()
-                //entryObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => StartCoroutine(storyOption_OnClick(entry)));
+                GameObject entryObject = Instantiate(entryPrefab, mainMenu_Viewport_gameobject.transform);
+                entryObject.GetComponent<EntryDecorator>().SetUp(entry);
+                entryObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => StartCoroutine(EntryOnClick(entry)));
             }
         }
 
-        historyPage_gameObject.GetComponent<HistoryPage_Decorator>().exitButton.onClick.AddListener(() => StartCoroutine(returnToMainMenu()));
-            }
+        bookPage.GetComponent<PageDecorator>().exitButton.onClick.AddListener(() => StartCoroutine(returnToMainMenu()));
+    }
 
-    public IEnumerator storyOption_OnClick(EntryObject entryToShowContent)
+    public IEnumerator EntryOnClick(EntryObject entryToShowContent)
     {
         theoryBookPageController.turnPageAnimationStart();
         yield return new WaitForSeconds(0.3f);
 
         entryToShowContent.read = true;
-        historyPage_gameObject.SetActive(true);
-        //historyPage_gameObject.GetComponent<HistoryPage_Decorator>().setUp_HistoryPage(storyToShow); //Dar el contenido asociado 
+        bookPage.SetActive(true);
+        bookPage.GetComponent<PageDecorator>().SetUp(entryToShowContent);
         mainMenu_gameObject.SetActive(false);
     }
 
@@ -50,7 +50,7 @@ public class TheoryBookManager : MonoBehaviour
         theoryBookPageController.turnPageAnimationStart();
         yield return new WaitForSeconds(0.3f);
 
-        historyPage_gameObject.SetActive(false);
+        bookPage.SetActive(false);
         mainMenu_gameObject.SetActive(true);
         reInitializePanel();
     }
@@ -66,6 +66,6 @@ public class TheoryBookManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        InitializePanel();
+        InitializeBookEntries();
     }
 }

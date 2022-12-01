@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
-  m_Name: Actividad fisica
+  m_Name: Pag2-2
   m_EditorClassIdentifier: 
-  pageTitle: "Actividad f\xEDsica"
-  pageContent: []
-  viewedByUser: 1
-  storyUnlocked: 1
+  content: "3. \xBFQu\xE9 objetivos y qu\xE9 metas te gustar\xEDa lograr en tu vida,
+    tanto a corto como a largo plazo? Con la finalidad de potenciar tu compromiso
+    y motivaci\xF3n para el cambio intenta realizar los ejercicios que te presentamos
+    a continuaci\xF3n."

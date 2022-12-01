@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc8a2c4f533d9641a5ebbd4d0265fad, type: 3}
   m_Name: ActivacionConductual
   m_EditorClassIdentifier: 
-  title: 
+  title: "Activaci\xF3n Conductual"
   content:
   - {fileID: 11400000, guid: 9bc1728d57014d74eb99bbe764c23944, type: 2}
   - {fileID: 11400000, guid: 13b6fb535b7028c44ad47383b774b347, type: 2}
   - {fileID: 11400000, guid: addff84bb6826b145950f010890fe21d, type: 2}
   - {fileID: 11400000, guid: 2fd9c17c5f4f2814dbeeefcfe846c15c, type: 2}
   - {fileID: 11400000, guid: 120271e2023c3384a84113ba6f92c076, type: 2}
+  unlocked: 0
+  read: 0

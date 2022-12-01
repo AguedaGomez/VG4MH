@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc8a2c4f533d9641a5ebbd4d0265fad, type: 3}
   m_Name: FlexibilidadII
   m_EditorClassIdentifier: 
-  title: 
+  title: Flexibilidad II
   content:
   - {fileID: 11400000, guid: 15a828c1be197e844869bdc09af0238b, type: 2}
+  unlocked: 1
+  read: 0

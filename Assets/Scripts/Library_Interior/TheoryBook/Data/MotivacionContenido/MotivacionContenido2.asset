@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55f7c1720591418b448df2841f71d, type: 3}
   m_Name: MotivacionContenido2
   m_EditorClassIdentifier: 
-  title: 
-  pages: []
+  title: "Reflexiona para fomentar tu motivaci\xF3n"
+  pages:
+  - {fileID: 11400000, guid: dd2eee9e229a09547be574d510125637, type: 2}
+  - {fileID: 11400000, guid: 43f1af01d1ec84245ba4fceb575234ef, type: 2}

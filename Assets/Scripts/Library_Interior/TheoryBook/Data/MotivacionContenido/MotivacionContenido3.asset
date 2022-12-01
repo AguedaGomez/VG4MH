@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55f7c1720591418b448df2841f71d, type: 3}
   m_Name: MotivacionContenido3
   m_EditorClassIdentifier: 
-  title: 
-  pages: []
+  title: "Ejercicio de balance decisional para aumentar tu motivaci\xF3n"
+  pages:
+  - {fileID: 11400000, guid: f6c769a65b36e3c41927a41221f35a30, type: 2}
+  - {fileID: 11400000, guid: a8c21b8ca0497b14e8243d3fe010aadf, type: 2}
+  - {fileID: 11400000, guid: a34faa4fe381ae84099c7f3175dddf8f, type: 2}
