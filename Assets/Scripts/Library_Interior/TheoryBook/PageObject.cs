@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "History Page", menuName = "Library Objects", order = 1)]
+[CreateAssetMenu(fileName = "PageObject", menuName = "Library/Page", order = 1)]
 public class PageObject : ScriptableObject
 {
     public string pageTitle;
-    public string[] pageContent;
+    [TextArea(10,14)]public string[] pageContent;
 
     public bool viewedByUser;
     public bool storyUnlocked;

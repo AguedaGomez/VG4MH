@@ -11,7 +11,7 @@ public class TheoryBookManager : MonoBehaviour
     [SerializeField] GameObject historyOption_prefab;
     [SerializeField] PageController theoryBookPageController;
 
-    [SerializeField] List<PageObject> historiesToShow;
+    [SerializeField] List<PageObject> bookEntries;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class TheoryBookManager : MonoBehaviour
 
     private void InitializePanel()
     {
-        foreach(PageObject newPage in historiesToShow)
+        foreach(PageObject newPage in bookEntries)
         {
             if(newPage.storyUnlocked)
             {
@@ -40,7 +40,7 @@ public class TheoryBookManager : MonoBehaviour
         
         storyToShow.viewedByUser = true;
         historyPage_gameObject.SetActive(true);
-        historyPage_gameObject.GetComponent<HistoryPage_Decorator>().setUp_HistoryPage(storyToShow);
+        historyPage_gameObject.GetComponent<HistoryPage_Decorator>().setUp_HistoryPage(storyToShow); //Dar el contenido asociado 
         mainMenu_gameObject.SetActive(false);
     }
 

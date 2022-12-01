@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
-  m_Name: History Page 1
+  m_Script: {fileID: 11500000, guid: 25a55f7c1720591418b448df2841f71d, type: 3}
+  m_Name: FlexibilidadContenido1
   m_EditorClassIdentifier: 
-  pageTitle: Lunes
-  pageContent:
-  - asdfasd
-  - fcbvbcx
-  - sfdar
-  viewedByUser: 1
-  storyUnlocked: 1
+  title: 
+  pages: []
