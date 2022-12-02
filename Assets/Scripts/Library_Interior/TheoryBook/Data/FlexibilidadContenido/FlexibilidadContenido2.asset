@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a55f7c1720591418b448df2841f71d, type: 3}
+  m_Name: FlexibilidadContenido2
+  m_EditorClassIdentifier: 
+  title: Identificar las trampas de nuestros pensamientos
+  pages:
+  - {fileID: 11400000, guid: f4bc63e74c4c1eb46807f6c323c0e98a, type: 2}
+  - {fileID: 11400000, guid: 917831b40f7bf654998e79593205107a, type: 2}
+  - {fileID: 11400000, guid: 2fd79e0215a99c84195d1543453ad0c1, type: 2}
+  - {fileID: 11400000, guid: 4deb7e1786c6f9f47a1a1aad1980727e, type: 2}
+  - {fileID: 11400000, guid: 5c071f75b4873a5448c989533af20b88, type: 2}
+  - {fileID: 11400000, guid: 32ba1859daae53b45b5ace0261ac44dd, type: 2}
+  - {fileID: 11400000, guid: e4808a46fb866b14da1ab656196ded78, type: 2}

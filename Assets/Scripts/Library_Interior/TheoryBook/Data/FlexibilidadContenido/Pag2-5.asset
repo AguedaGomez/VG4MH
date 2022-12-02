@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
-  m_Name: Pag3-2
+  m_Name: Pag2-5
   m_EditorClassIdentifier: 
-  content: "En este ejercicio es importante que escribas los costes y beneficios
-    de seguir funcionando igual y los costes y beneficios del cambio. Esta tabla
-    te ayudar\xE1 a reflexionar sobre sus razones a favor y sus razones en contra,
-    tanto de cambiar como de seguir funcionando igual.\n"
+  content: "<i>Negar o evitar</i>: \u201Cno querer ver\u201D, no querer \u201Caceptar\u201D
+    las cosas que nos suceden, o \u201Cnegarse o evitar hacer algo\u201D porque se
+    cree que es demasiado dif\xEDcil o doloroso aceptar que algo ha ocurrido, o que
+    va a costar demasiado esfuerzo afrontarlo. \r"

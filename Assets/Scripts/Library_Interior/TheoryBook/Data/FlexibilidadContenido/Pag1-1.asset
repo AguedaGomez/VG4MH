@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
-  m_Name: Pag3-2
+  m_Name: Pag1-1
   m_EditorClassIdentifier: 
-  content: "En este ejercicio es importante que escribas los costes y beneficios
-    de seguir funcionando igual y los costes y beneficios del cambio. Esta tabla
-    te ayudar\xE1 a reflexionar sobre sus razones a favor y sus razones en contra,
-    tanto de cambiar como de seguir funcionando igual.\n"
+  content: "Hacemos interpretaciones autom\xE1ticas que se producen de forma no consciente.
+    Estas interpretaciones en gran medida se deben a nuestras experiencias pasadas.
+    Nuestras interpretaciones influyen en lo que esperamos que ocurra en una determinada
+    situaci\xF3n."

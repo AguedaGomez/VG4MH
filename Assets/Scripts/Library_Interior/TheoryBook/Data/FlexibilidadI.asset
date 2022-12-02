@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Flexibilidad I
   content:
-  - {fileID: 11400000, guid: 5b63b38d0704de544a3a9c9c986347ae, type: 2}
-  - {fileID: 11400000, guid: d6e13ca182a54f64891b090d9a667e2f, type: 2}
-  - {fileID: 11400000, guid: c7682a5aabf5f7c43acb2f8a7646f06d, type: 2}
-  unlocked: 0
-  read: 0
+  - {fileID: 11400000, guid: 15a828c1be197e844869bdc09af0238b, type: 2}
+  - {fileID: 11400000, guid: 8476547cac7e3234ca51e9a581e460c7, type: 2}
+  - {fileID: 11400000, guid: f9bc2d5e8fe4a7043a1a86ee364a1b01, type: 2}
+  unlocked: 1
+  read: 1

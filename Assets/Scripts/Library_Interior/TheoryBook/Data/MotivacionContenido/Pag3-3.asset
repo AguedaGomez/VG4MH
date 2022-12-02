@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
   m_Name: Pag3-3
   m_EditorClassIdentifier: 
-  content: "\xC9sta tabla te ayudar\xE1 a reflexionar sobre sus razones a favor y
-    sus razones en contra, tanto de cambiar como de seguir funcionando igual. Pensar
-    en los \u201Cpros\u201D y los \u201Ccontras\u201D de cambiar, y de seguir en
-    la misma situaci\xF3n, ayuda a considerar el porqu\xE9 de un posible cambio y
-    a que se sienta el proceso de cambio de manera m\xE1s manejable. "
+  content: 'CAMBIAR:
+
+    Pros/Beneficios->
+
+    Contras/Costes->
+
+
+    SEGUIR IGUAL:
+
+    Pros/Beneficios->
+
+    Contras/Costes->'

@@ -39,10 +39,12 @@ public class PageDecorator : MonoBehaviour
         currentEntryData = selectedEntry;
         currentContentData = currentEntryData.content[currentContentNum];
 
+        //finalContentNum = currentEntryData.content.Count == 1 ? currentEntryData.content.Count : currentEntryData.content.Count - 1;
+        //finalPageNum = currentContentData.pages.Count == 1 ? currentContentData.pages.Count : currentContentData.pages.Count - 1;
+
         finalContentNum = currentEntryData.content.Count - 1;
         finalPageNum = currentContentData.pages.Count - 1;
-        Debug.Log("final num content = " + finalContentNum);
-        Debug.Log("final num page = " + finalPageNum);
+
         UpdateContentVisualization();
         UpdatePageVisualization();
         UpdateButtonVisualization();
@@ -121,23 +123,25 @@ public class PageDecorator : MonoBehaviour
     private void UpdatePage(int num)
     {
         currentPageNum = currentPageNum + num;
-        Debug.Log(currentPageNum);
         if (currentPageNum > finalPageNum)
         {
             currentPageNum = 0;
             UpdateContent(1);
+            finalPageNum = currentContentData.pages.Count - 1;
         }
         else if (currentPageNum < 0)
         {
             UpdateContent(-1);
-            currentPageNum = currentContentData.pages.Count - 1;
+            finalPageNum = currentContentData.pages.Count - 1;
+            currentPageNum = finalPageNum;
         }
         
+
     }
 
     private void UpdateContent(int num)
     {
-        if (currentContentNum > 0 && currentContentNum <= finalContentNum)
+        if (currentContentNum >= 0 && currentContentNum <= finalContentNum)
         {
             currentContentNum = currentContentNum + num;
             currentContentData = currentEntryData.content[currentContentNum];
@@ -151,14 +155,14 @@ public class PageDecorator : MonoBehaviour
         {
             nextButton.interactable = false;
         }
-        if (currentContentNum == 0 && currentPageNum == 0)
+        else if (currentContentNum == 0 && currentPageNum == 0)
         {
             backButton.interactable = false;
         }
         else
         {
             nextButton.interactable = true;
-            backButton.interactable = false;
+            backButton.interactable = true;
         }
     }
 }

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25a55f7c1720591418b448df2841f71d, type: 3}
-  m_Name: MotivacionContenido4
+  m_Name: FlexibilidadContenido1
   m_EditorClassIdentifier: 
-  title: Identificando los objetivos y las metas
+  title: "Las interpretaciones que hacemos de las situaciones influyen en c\xF3mo
+    nos sentimos"
   pages:
-  - {fileID: 11400000, guid: 608356f59fc00f34aa8104695ca9cf53, type: 2}
-  - {fileID: 11400000, guid: 979bb574fe2ad9944b43fb4ed9810955, type: 2}
+  - {fileID: 11400000, guid: 29093c3a82916d94b9987c184ff4388c, type: 2}
+  - {fileID: 11400000, guid: ee95d5d73bcaa7d4188282ff9e089dd6, type: 2}

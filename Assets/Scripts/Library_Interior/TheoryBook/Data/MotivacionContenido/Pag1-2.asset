@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
   m_Name: Pag1-2
   m_EditorClassIdentifier: 
-  content: "A veces sentir\xE1s que el cambio es posible; en otros momentos te puedes
-    sentir como si no quisieras cambiar y que no vale la pena el tiempo y esfuerzo
-    que has dedicado. Es importante que sepas que es completamente normal tener estas
-    dudas."
+  content: "Es parte natural del proceso de cambio que tengas estos altibajos. A
+    veces sentir\xE1s que el cambio es posible; en otros momentos te puedes sentir
+    como si no quisieras cambiar y que no vale la pena el tiempo y esfuerzo que has
+    dedicado. "

@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
   m_Name: Pag3-1
   m_EditorClassIdentifier: 
-  content: El objetivo de este ejercicio es que reflexiones sobre si tu comportamiento
+  content: 'El objetivo de este ejercicio es que reflexiones sobre si tu comportamiento
     actual facilita o dificulta alcanzar lo que quieres conseguir en su vida. Para
-    ello puedes realizar una Tabla de Balance Decisional. En este ejercicio es importante
-    que escribas los costes y beneficios de seguir funcionando igual y los costes
-    y beneficios del cambio.
+    ello puedes realizar una Tabla de Balance Decisional. '
