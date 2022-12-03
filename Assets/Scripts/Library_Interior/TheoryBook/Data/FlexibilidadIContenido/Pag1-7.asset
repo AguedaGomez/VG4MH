@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: Pag1-7
+  m_EditorClassIdentifier: 
+  content: "Para practicar esta estrategia puedes seguir los siguientes pasos: \n\n1.
+    En primer lugar, se trata de detectar la interpretaci\xF3n o pensamiento autom\xE1tico
+    central (esto es, la trampa de pensamiento)."

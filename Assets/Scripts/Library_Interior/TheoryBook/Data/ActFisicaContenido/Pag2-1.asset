@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: Pag2-1
+  m_EditorClassIdentifier: 
+  content: "Si no has practicado nunca un deporte o hace ya mucho tiempo que no realizas
+    ejercicio f\xEDsico regular, \xA1no te preocupes!. Lo importante es:\r\n1. Identificar
+    alg\xFAn ejercicio que puedas adaptar a tu estado f\xEDsico actual.\r\n2. Que
+    no resulte agotador.\r\n3. Que puedas comenzar poco a poco. \r\n"

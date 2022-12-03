@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: Pag4-1
+  m_EditorClassIdentifier: 
+  content: "Es importante estar activo, pero tambi\xE9n es muy importante ser capaz
+    de disfrutar de las actividades que se realizan, tener algunas experiencias positivas
+    que permitan regular y mejorar el estado de \xE1nimo. Por eso, se tienen que
+    incorporar, paso a paso, actividades acordes con los objetivos y metas de vida. "

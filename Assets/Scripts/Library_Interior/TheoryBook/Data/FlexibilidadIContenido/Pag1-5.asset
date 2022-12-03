@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: Pag1-5
+  m_EditorClassIdentifier: 
+  content: "Por tanto, un primer paso para desmarcarte de estas trampas de pensamiento
+    es considerar las interpretaciones autom\xE1ticas no como \u201Cverdades absolutas
+    e inmutables\u201D, sino como posibles interpretaciones de la situaci\xF3n. "

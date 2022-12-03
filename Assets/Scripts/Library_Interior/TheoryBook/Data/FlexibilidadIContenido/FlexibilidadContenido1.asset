@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: FlexibilidadContenido1
   m_EditorClassIdentifier: 
   title: 
-  pages: []
+  pages:
+  - {fileID: 11400000, guid: d1c5942e49ad09f41a52d801db6b99d8, type: 2}
+  - {fileID: 11400000, guid: e4c485749e7eba34eac2d3e4529b1e67, type: 2}
+  - {fileID: 11400000, guid: 21c4a0910e4052640bc80ec7ae7ab0f7, type: 2}
+  - {fileID: 11400000, guid: 160ee302901469942b71a8934de777a8, type: 2}
+  - {fileID: 11400000, guid: e75ab8ace3833d34f8673d68bbc3fa5f, type: 2}
+  - {fileID: 11400000, guid: 7487ff8b5a423ee46ba721b7e42cd3e5, type: 2}
+  - {fileID: 11400000, guid: c7d7d84fc1a98544e9a69ac4c008d4b7, type: 2}
+  - {fileID: 11400000, guid: 1f35545b8170adc4c87af9da3de7864b, type: 2}

@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PageObject", menuName = "Library/Page", order = 1)]
 public class PageObject : ScriptableObject
 {
-    [TextArea(0, 5)] public string content;
+    [TextArea(10, 14)] public string content;
 }

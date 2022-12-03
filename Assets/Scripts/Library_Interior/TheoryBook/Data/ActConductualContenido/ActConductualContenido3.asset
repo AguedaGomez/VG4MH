@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55f7c1720591418b448df2841f71d, type: 3}
   m_Name: ActConductualContenido3
   m_EditorClassIdentifier: 
-  title: 
-  pages: []
+  title: La importancia del apoyo social para realizar actividades.
+  pages:
+  - {fileID: 11400000, guid: 53a7f84909de63147a3a6162cdd95cd4, type: 2}
+  - {fileID: 11400000, guid: f4a06b0980277c54b833ce8c71a7a383, type: 2}

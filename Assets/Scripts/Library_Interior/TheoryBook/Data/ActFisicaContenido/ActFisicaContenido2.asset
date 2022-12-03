@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55f7c1720591418b448df2841f71d, type: 3}
   m_Name: ActFisicaContenido2
   m_EditorClassIdentifier: 
-  title: 
-  pages: []
+  title: Tipo de actividades que puedes realizar
+  pages:
+  - {fileID: 11400000, guid: 0258c81e085b7ed4b84e9ff31a907daf, type: 2}
+  - {fileID: 11400000, guid: d6d2d71e898c8244e90175838e070833, type: 2}

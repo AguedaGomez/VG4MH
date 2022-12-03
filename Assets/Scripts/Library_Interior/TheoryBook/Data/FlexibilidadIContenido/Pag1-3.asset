@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: Pag1-3
+  m_EditorClassIdentifier: 
+  content: "Un material r\xEDgido se puede romper cuando es sometido a gran presi\xF3n;
+    un material flexible se adapta ante la presi\xF3n y es capaz de resistirla. La
+    flexibilidad cognitiva es una habilidad fundamental para poder afrontar adecuadamente
+    los problemas."

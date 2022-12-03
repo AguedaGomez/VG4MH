@@ -16,4 +16,3 @@ MonoBehaviour:
   pages:
   - {fileID: 11400000, guid: e1a9d11855fd781459a0eb01060c4798, type: 2}
   - {fileID: 11400000, guid: 19266adb60fbdb045a29195d41f416e4, type: 2}
-  - {fileID: 11400000, guid: 9956f3db6343d1f40b970e88b5d8b7c8, type: 2}

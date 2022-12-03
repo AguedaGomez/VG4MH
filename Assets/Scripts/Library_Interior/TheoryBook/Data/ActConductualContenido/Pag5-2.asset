@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
-  m_Name: Pag1-3
+  m_Name: Pag5-2
   m_EditorClassIdentifier: 
-  content: Es importante que sepas que es completamente normal tener estas dudas.
+  content: "Esto le ayudar\xE1 a: \r\nContar con una medida de referencia para comparar
+    tus avances a lo largo de todo el juego, darte cuenta de sus patrones de comportamiento
+    y reflexionar sobre qu\xE9 cosas podr\xEDas hacer o c\xF3mo podr\xEDas mejorar
+    estos patrones de funcionamiento para obtener un mayor grado de bienestar\r\n"

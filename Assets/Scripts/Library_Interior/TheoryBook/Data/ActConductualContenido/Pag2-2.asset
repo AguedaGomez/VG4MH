@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: Pag2-2
+  m_EditorClassIdentifier: 
+  content: "3. Atreverse y llevar a cabo el primer paso. Luego, los siguientes ser\xE1n
+    m\xE1s f\xE1ciles.\r\n4. Atender siempre a su \u201Cred social\u201D, ya que
+    esta red le puede ayudar. \r\n5. Retomar antiguas amistades.\r\n6. Encontrar
+    nuevas amistades.\r\n7. Trabajar nuevas relaciones.\r"

@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25a55f7c1720591418b448df2841f71d, type: 3}
-  m_Name: FlexibilidadContenido2
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: Pag5-1
   m_EditorClassIdentifier: 
-  title: 
-  pages: []
+  content: "Estar activo es muy importante para mejorar tu estado de \xE1nimo, en
+    el juego tendr\xE1s un registro de tu actividad diaria y como esta influye a
+    tus emociones. "

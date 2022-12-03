@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
   m_Name: Pag1-1
   m_EditorClassIdentifier: 
-  content: 
+  content: "Cuando nos aferramos a una \xFAnica interpretaci\xF3n de cualquier situaci\xF3n
+    estamos mostrando una forma de pensar r\xEDgida. Cuando esta rigidez se combina
+    con un estado de \xE1nimo negativo, nos quedamos atrapados en un c\xEDrculo vicioso
+    de emociones negativas y de interpretaciones catastr\xF3ficas que puede afectar
+    de forma importante nuestras vidas. "

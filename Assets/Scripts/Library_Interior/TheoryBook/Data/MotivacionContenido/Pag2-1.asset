@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
   m_Name: Pag2-1
   m_EditorClassIdentifier: 
-  content: "Te proponemos que reflexiones un momento acerca de las tres siguientes
+  content: "Te proponemos que reflexiones un momento acerca de las siguientes tres
     cuestiones: \r\n\n1. \xBFQu\xE9 cosas te gustar\xEDa que cambiaran en tu vida?
     \r\n2. \xBFQu\xE9 pretendes conseguir con tu cambio de comportamiento? \r\n"
