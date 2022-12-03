@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a55f7c1720591418b448df2841f71d, type: 3}
   m_Name: ActFisicaContenido4
   m_EditorClassIdentifier: 
-  title: 
-  pages: []
+  title: "Recomendaciones de actividad f\xEDsica"
+  pages:
+  - {fileID: 11400000, guid: 27efc8ebb7540c644978f330411c9e9c, type: 2}

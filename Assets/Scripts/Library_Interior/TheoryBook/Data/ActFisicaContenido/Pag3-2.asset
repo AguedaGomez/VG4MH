@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
   m_Name: Pag3-2
   m_EditorClassIdentifier: 
-  content: "Si adem\xE1s te resulta divertido y puedes practicarlo en compa\xF1\xEDa
-    de alguien \xA1mucho mejor!. \r\nSe sabe que para mejorar una depresi\xF3n se
-    necesitan varias semanas de pr\xE1ctica de actividad f\xEDsica, pero tambi\xE9n
-    sabemos que la actividad f\xEDsica produce efectos positivos en nuestro estado
-    de \xE1nimo que podemos notar mucho m\xE1s r\xE1pidamente.  "
+  content: "No hace falta realizar ejercicio de forma intensa para obtener beneficios
+    en salud y estado de \xE1nimo. Por ello nuestra indicaci\xF3n es que comiences
+    a realizar actividad f\xEDsica de intensidad ligera-moderada, es decir, aquella
+    que puedes hacer sin que suponga demasiado esfuerzo y en la que puedes hablar
+    mientras practicas."

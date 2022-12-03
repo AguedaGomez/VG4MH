@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
-  m_Name: Pag3-2
+  m_Name: Pag4-1
   m_EditorClassIdentifier: 
-  content: "Si adem\xE1s te resulta divertido y puedes practicarlo en compa\xF1\xEDa
-    de alguien \xA1mucho mejor!. \r\nSe sabe que para mejorar una depresi\xF3n se
-    necesitan varias semanas de pr\xE1ctica de actividad f\xEDsica, pero tambi\xE9n
-    sabemos que la actividad f\xEDsica produce efectos positivos en nuestro estado
-    de \xE1nimo que podemos notar mucho m\xE1s r\xE1pidamente.  "
+  content: "3-5 veces por semana\r. 30 minutos cada vez\r.\nEstas recomendaciones
+    sirven para la gran mayor\xEDa de casos, pero dependiendo de nuestra condici\xF3n
+    f\xEDsica, edad y estado de salud podr\xEDan tener algunas variaciones. \r\nPor
+    este motivo es central que atiendas a tu propio estado f\xEDsico para programar
+    tus actividades.\r\n"

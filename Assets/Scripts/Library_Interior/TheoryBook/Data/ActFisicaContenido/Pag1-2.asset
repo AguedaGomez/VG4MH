@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
   m_Name: Pag1-2
   m_EditorClassIdentifier: 
-  content: "BENEFICIOS DEL EJERCICIO F\xCDSICO:\n\nA CORTO PLAZO -> Aumenta el estado
-    de \xE1nimo, los niveles de energ\xEDa, la calidad del sue\xF1o.\n\xA1Se pueden
-    notar enseguida sus beneficios!"
+  content: "Te mostramos los BENEFICIOS del ejercicio f\xEDsico:\n\nA CORTO PLAZO
+    -> Aumenta el estado de \xE1nimo, los niveles de energ\xEDa, la calidad del sue\xF1o.\n\n\xA1Se
+    pueden notar enseguida sus beneficios!"

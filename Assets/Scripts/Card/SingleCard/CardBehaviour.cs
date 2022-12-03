@@ -14,7 +14,7 @@ public class CardBehaviour : MonoBehaviour
     private bool directionChosen;
     private bool touchingCard;
     private float rotationAngle;
-    private float minLong = 1.25f;
+    private float minLong = 2.5f;
     private Single.Direction currentDirection;
     private CardDisplay cardDisplay;
     private SingleCardRewardManager singleCardRewardManager;
@@ -77,6 +77,7 @@ public class CardBehaviour : MonoBehaviour
                         }
 
                         cardDisplay.ShowOption(currentDirection);
+                        //print(Mathf.Abs(direction.x));
                     }
 
                     break;
@@ -108,7 +109,7 @@ public class CardBehaviour : MonoBehaviour
                 }
                 directionChosen = false;
             }
-            Debug.Log(currentDirection);
+           
         }
     }
 

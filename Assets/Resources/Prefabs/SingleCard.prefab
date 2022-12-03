@@ -354,8 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decabc95c76dc1a4abf115c730731e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightOptionText: {fileID: 113285536275073067}
-  leftOptionText: {fileID: 7006428687660545275}
+  rightOptionText: {fileID: 0}
+  leftOptionText: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 32ed0ead28875964a8d0c8835459300b, type: 3}
   sceneModel: {fileID: 2011298900641622233, guid: e5bc2a40e55c7af45b742e96676cf963,
     type: 3}
