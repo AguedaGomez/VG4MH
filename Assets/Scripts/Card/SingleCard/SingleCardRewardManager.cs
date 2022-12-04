@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SingleCardRewardManager : MonoBehaviour
 {
-    private const int DECREMENT = -10;
-    private const int INCREMENT = 10;
+    private const int DECREMENT = -5;
+    private const int INCREMENT = 5;
     private Single currentCard;
     private RewardManager rewardManager;
     private CardManager cardManager;
@@ -53,6 +53,8 @@ public class SingleCardRewardManager : MonoBehaviour
 
     private bool OptionIsCorrect(Single.Direction directionChosen)
     {
+        if (currentCard.correctDirection == Card.Direction.BOTH)
+            return true;
         return currentCard.correctDirection == directionChosen;
       
     }

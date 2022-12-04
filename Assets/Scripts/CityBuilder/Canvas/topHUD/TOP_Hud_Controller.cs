@@ -17,6 +17,8 @@ public class TOP_Hud_Controller : MonoBehaviour
     [SerializeField] Text materialsText;
     bool isMaterialShining = false;
 
+    Card.Resource currentResource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,18 +54,21 @@ public class TOP_Hud_Controller : MonoBehaviour
             switch (resource)
             {
                 case Card.Resource.ACTIVATION:
-                    //StartPowerRValueUpdate(valueModifier > 0, actShining);
+                    StartPowerRValueUpdate(valueModifier > 0, valueModifier);
+                    Start_IconShining(Card.Resource.ACTIVATION);
                     //StartActValueUpdate(valueModifier > 0);
                     break;
                 case Card.Resource.FLEXIBILITY:
-                    //StartPowerRValueUpdate(valueModifier > 0, flexShining);
+                    StartPowerRValueUpdate(valueModifier > 0, valueModifier);
+                    Start_IconShining(Card.Resource.FLEXIBILITY);
                     break;
                 case Card.Resource.MOTIVATION:
                     StartPowerRValueUpdate(valueModifier > 0, valueModifier);
                     Start_IconShining(Card.Resource.MOTIVATION);
                     break;
                 case Card.Resource.POSITIVE:
-                    //StartPowerRValueUpdate(valueModifier > 0, posShining);
+                    StartPowerRValueUpdate(valueModifier > 0, valueModifier);
+                    Start_IconShining(Card.Resource.POSITIVE);
                     break;
                 case Card.Resource.NONE:
                     break;
@@ -95,7 +100,8 @@ public class TOP_Hud_Controller : MonoBehaviour
     IEnumerator update_PowerRSliderValue(float newPowerR)
     {
         float percentage_powerR = newPowerR / 100;
-        float prev_Percentage = power_R_Slider.GetComponent<Image>().fillAmount;
+        float prev_Percentage = power_R_Slider.GetComponent<Image>().fillAmount; //COGER VALOR DEL PLAYER?
+        percentage_powerR += prev_Percentage;
         RectTransform edgeRect = power_R_Slider.transform.GetChild(0).GetComponent<RectTransform>();
         ParticleSystem barParticles = power_R_Slider.transform.GetChild(0).GetComponent<ParticleSystem>();
         barParticles.Play();
@@ -116,6 +122,7 @@ public class TOP_Hud_Controller : MonoBehaviour
 
         barParticles.Stop();
         power_R_Slider.GetComponent<Image>().fillAmount = percentage_powerR;
+        Stop_IconShining(currentResource);
         yield return null;
     }
 
@@ -167,6 +174,7 @@ public class TOP_Hud_Controller : MonoBehaviour
 
     public void Start_IconShining(Card.Resource resource)
     {
+        currentResource = resource;
         switch (resource)
         {
             case Card.Resource.ACTIVATION:
