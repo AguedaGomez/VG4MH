@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleText: {fileID: 0}
+  subtitleText: {fileID: 0}
   contentText: {fileID: 0}
   exitButton: {fileID: 0}
   nextButton: {fileID: 0}
@@ -363,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8597607314827078774
 RectTransform:
   m_ObjectHideFlags: 0
@@ -746,8 +747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.484, y: 0.193}
-  m_SizeDelta: {x: 9.3, y: 2.82}
+  m_AnchoredPosition: {x: 0.47766, y: 0.21024}
+  m_SizeDelta: {x: 10.957382, y: 3.522016}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5894915588191477884
 CanvasRenderer:
@@ -770,21 +771,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9630864, b: 0.9009434, a: 1}
+  m_Color: {r: 0.3773585, g: 0.24599501, b: 0.012459958, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f9d888513569744498e2ac19bdfb4564, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: db471475194cad1448e1b42c25015ce6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 1
+  m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 145.95
 --- !u!114 &1128979352714069092
 MonoBehaviour:

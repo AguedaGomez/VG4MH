@@ -17,7 +17,7 @@ MonoBehaviour:
     una situaci\xF3n peliaguda. Creemos que deber\xEDamos trasladarnos y dejar este
     lugar pero nos da miedo tomar una mala decisi\xF3n. \xBFNos ayudas a ver qu\xE9
     es lo mejor?"
-  reward: 4
+  reward: 0
   type: 0
   image: {fileID: 0}
   model: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4, type: 3}
@@ -25,6 +25,6 @@ MonoBehaviour:
     type: 3}
   rightText: "S\xED, \xBFQu\xE9 supone quedarse?"
   leftText: "S\xED, \xBFQu\xE9 supone irse?"
-  correctDirection: 3
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}

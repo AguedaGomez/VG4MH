@@ -20,7 +20,7 @@ public class TOP_Hud_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //InitializeSliders();
+        InitializeSliders();
     }
 
     private void InitializeSliders()
@@ -59,7 +59,8 @@ public class TOP_Hud_Controller : MonoBehaviour
                     //StartPowerRValueUpdate(valueModifier > 0, flexShining);
                     break;
                 case Card.Resource.MOTIVATION:
-                    //StartPowerRValueUpdate(valueModifier > 0, motShining);
+                    StartPowerRValueUpdate(valueModifier > 0, valueModifier);
+                    Start_IconShining(Card.Resource.MOTIVATION);
                     break;
                 case Card.Resource.POSITIVE:
                     //StartPowerRValueUpdate(valueModifier > 0, posShining);

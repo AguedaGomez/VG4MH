@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 6080313362761198832}
   - component: {fileID: -4198390964849752248}
   m_Layer: 5
-  m_Name: NewStory
+  m_Name: Entry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -229,7 +229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title_Text: {fileID: 2758232372533560900}
   newStory_Image: {fileID: 390623655572888881}
-  referencedStoryPage: {fileID: 0}
 --- !u!1 &5482314075856121188
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,8 +263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0, y: 4.442}
-  m_SizeDelta: {x: 53.46888, y: 8.7}
+  m_AnchoredPosition: {x: -0.015, y: 4.185}
+  m_SizeDelta: {x: 56.963203, y: 12.943109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3207756765604071729
 CanvasRenderer:
@@ -295,12 +294,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d04a634d0bd83d946abab5b542a89a3e, type: 3}
-    m_FontSize: 100
+    m_Font: {fileID: 12800000, guid: 4ed20a33fecb42e4aa7205a759e106b0, type: 3}
+    m_FontSize: 250
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 100
+    m_MaxSize: 250
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
