@@ -6,14 +6,15 @@ using UnityEngine.UI;
 
 public class MultipleChoiceDisplay : MonoBehaviour
 {
-    private const string RIGHT_OPTION_NAME = "Right Chosen Option";
-    private const string LEFT_OPTION_NAME = "Left Chosen Option";
+    private const string RIGHT_OPTION_NAME = "Right";
+    private const string LEFT_OPTION_NAME = "Left";
 
     public CardManager cardManager;
     public List<Button> buttonOptionsList;
     public Button continueButton;
 
     private TextMeshProUGUI chosenOptionText;
+    private Transform directionTransform;
 
     private Dictionary<Button, Card> linkedCardWithButton = new Dictionary<Button, Card>();
     private Button lastButtonSelected;
@@ -42,12 +43,19 @@ public class MultipleChoiceDisplay : MonoBehaviour
                 countAnswers++;
 
                 if (cardManager.chosenDirection == Card.Direction.RIGHT)
-                    chosenOptionText = lastButtonSelected.transform.Find(RIGHT_OPTION_NAME).GetComponent<TextMeshProUGUI>();
-                else if (cardManager.chosenDirection == Card.Direction.LEFT)
-                    chosenOptionText = lastButtonSelected.transform.Find(LEFT_OPTION_NAME).GetComponent<TextMeshProUGUI>();
+                {
+                    directionTransform = lastButtonSelected.transform.Find(RIGHT_OPTION_NAME);
 
+                }
+                else if (cardManager.chosenDirection == Card.Direction.LEFT)
+                {
+                    directionTransform = lastButtonSelected.transform.Find(LEFT_OPTION_NAME);
+                    
+
+                }
+                chosenOptionText = directionTransform.GetComponentInChildren<TextMeshProUGUI>();
                 WriteOptionText(chosenOptionText);
-                ShowChosenOption(chosenOptionText, true);
+                ShowChosenOption(directionTransform, true);
                 ChangeTextColor(lastButtonSelected.GetComponentInChildren<TextMeshProUGUI>(), new Color(0.5f, 0.5f, 0.5f));
 
                 checkOptionList.Add(cardManager.islastOptionCorrect);
@@ -75,9 +83,10 @@ public class MultipleChoiceDisplay : MonoBehaviour
                         }
                         else
                         {
+                            //TODO REVISAR 4-12
                             chosenOptionText = lastButtonSelected.transform.Find(RIGHT_OPTION_NAME).GetComponent<TextMeshProUGUI>();
                             WriteOptionText(chosenOptionText);
-                            ShowChosenOption(chosenOptionText, true);
+                            ShowChosenOption(directionTransform, true);
                             ChangeTextColor(lastButtonSelected.GetComponentInChildren<TextMeshProUGUI>(), new Color(0.5f, 0.5f, 0.5f));
                             continueButton.gameObject.SetActive(true);
                             cardManager.ShowCharacterName(false);
@@ -96,7 +105,7 @@ public class MultipleChoiceDisplay : MonoBehaviour
         return textToFormat.Length < 30 ? textToFormat : textToFormat.Substring(0, 30) + "...";
     }
 
-    private void ShowChosenOption(TextMeshProUGUI textToShow, bool show)
+    private void ShowChosenOption(Transform textToShow, bool show)
     {
         textToShow.gameObject.SetActive(show);
     }

@@ -17,8 +17,9 @@ MonoBehaviour:
   reward: 0
   type: 0
   image: {fileID: 0}
-  model: {fileID: 0}
-  sceneModel: {fileID: 0}
+  model: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4, type: 3}
+  sceneModel: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4,
+    type: 3}
   rightText: "S\xED, tiene muchos m\xE1s beneficios que costes. \xBFQu\xE9 supone
     irse?"
   leftText: "No s\xE9 yo, \xBFqu\xE9 supone irse?"
