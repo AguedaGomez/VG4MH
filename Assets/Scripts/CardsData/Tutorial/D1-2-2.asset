@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: Dialog1_2_2
+  m_Name: D1-2-2
   m_EditorClassIdentifier: 
   characterName: Desconocida
   dialog: "De acuerdo, ya controlas la mec\xE1nica. De esta manera podr\xE1s ayudar
@@ -18,6 +18,12 @@ MonoBehaviour:
     informaci\xF3n?"
   reward: 4
   type: 0
-  choice: {fileID: 11400000, guid: bc6c3e676eb1d4e44a2d4d4e544ffd2c, type: 2}
-  nextCardIfRight: {fileID: 11400000, guid: f6523d23085b71b40aa244e57b911b7e, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: ca9bf741fe71cfe4396dde2e4d8c44ef, type: 2}
+  image: {fileID: 0}
+  model: {fileID: 919132149155446097, guid: 83bdcf642a179f04e8f7767c4b1372ea, type: 3}
+  sceneModel: {fileID: 6344134664747528452, guid: f8209e2f56989724bae9cd667f0bfa75,
+    type: 3}
+  rightText: "S\xED"
+  leftText: No
+  correctDirection: 3
+  nextCardIfRight: {fileID: 0}
+  nextCardIfLeft: {fileID: 0}

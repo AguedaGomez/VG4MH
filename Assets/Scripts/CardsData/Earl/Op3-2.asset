@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Op3-2
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: " Es m\xE1s dif\xEDcil irse a un sitio nuevo."
+  dialog: "Aqu\xED ya hay escasez de recursos. En un lugar nuevo, habr\xE1 recursos
+    para una larga temporada"
   reward: 0
   type: 0
   image: {fileID: 0}
@@ -22,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: Coste
   leftText: Beneficio
-  correctDirection: 0
+  correctDirection: 1
   nextCardIfRight: {fileID: 11400000, guid: d40ef89f4d25c294d9737adb54316801, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: d40ef89f4d25c294d9737adb54316801, type: 2}

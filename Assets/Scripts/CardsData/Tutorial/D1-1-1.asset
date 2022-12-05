@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: D1-1-1
+  m_EditorClassIdentifier: 
+  characterName: Desconocida
+  dialog: "Tu labor en estas tierras ser\xE1 ayudar a mantener el bienestar y el
+    equilibrio del pueblo asegurando su prograso. \xBFSabes lo que representan los
+    s\xEDmbolos y las barras de arriba?"
+  reward: 4
+  type: 0
+  image: {fileID: 0}
+  model: {fileID: 919132149155446097, guid: 83bdcf642a179f04e8f7767c4b1372ea, type: 3}
+  sceneModel: {fileID: 6344134664747528452, guid: f8209e2f56989724bae9cd667f0bfa75,
+    type: 3}
+  rightText: "S\xED"
+  leftText: No
+  correctDirection: 0
+  nextCardIfRight: {fileID: 11400000, guid: 11f82d7f97cb5dc4391560e40e477d98, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: a4ba0f906b0eaa64a8694091c30f1f3d, type: 2}
