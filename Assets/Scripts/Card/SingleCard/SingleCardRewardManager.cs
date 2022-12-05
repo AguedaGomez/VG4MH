@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SingleCardRewardManager : MonoBehaviour
 {
-    private const int DECREMENT = -5;
-    private const int INCREMENT = 5;
+    private const int DECREMENT = -1;
+    private const int INCREMENT = 1;
     private Single currentCard;
     private RewardManager rewardManager;
     private CardManager cardManager;

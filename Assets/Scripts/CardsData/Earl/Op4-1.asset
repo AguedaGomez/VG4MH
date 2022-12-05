@@ -23,5 +23,5 @@ MonoBehaviour:
   rightText: Coste
   leftText: Beneficio
   correctDirection: 1
-  nextCardIfRight: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
+  nextCardIfRight: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}

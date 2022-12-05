@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Op2-4
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "Nuestros amigos tambi\xE9n se est\xE1n trasladando. En un sitio nuevo
-    conoceremos a m\xE1s gente."
+  dialog: "Es muy cansado estar preocup\xE1ndonos de si hay suficientes recursos."
   reward: 0
   type: 0
   image: {fileID: 0}
@@ -23,6 +22,6 @@ MonoBehaviour:
     type: 3}
   rightText: Coste
   leftText: Beneficio
-  correctDirection: 1
-  nextCardIfRight: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
+  correctDirection: 0
+  nextCardIfRight: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}

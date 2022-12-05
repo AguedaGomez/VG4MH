@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: IrseCorrectas
+  m_Name: IrseCorrectas1
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "Hemos detectado tres beneficios frente a un coste. \xBFVemos que supondr\xEDa
-    quedarse?"
+  dialog: "Irse tiene tres beneficios y un coste. Quedarse, dos beneficios y dos
+    costes. Parece que lo mejor es irse, \xBFverdad?"
   reward: 0
   type: 0
   image: {fileID: 0}
   model: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4, type: 3}
   sceneModel: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4,
     type: 3}
-  rightText: "S\xED"
-  leftText: Sigo sin verlo claro. Vamos a pensarlo de nuevo
+  rightText: "S\xED, \xA1adelante!"
+  leftText: Sigo sin verlo claro. Vamos a pensarlo todo de nuevo
   correctDirection: 0
-  nextCardIfRight: {fileID: 11400000, guid: bdca6a10671c772419e70cc53bb8221f, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
+  nextCardIfRight: {fileID: 0}
+  nextCardIfLeft: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}

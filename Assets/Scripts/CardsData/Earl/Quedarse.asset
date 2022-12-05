@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Quedarse
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "\xBFCu\xE1les ser\xEDan los beneficios y costes de quedarnos? Pulsa en
-    cada una de las opciones para decidir conmigo."
+  dialog: "\xBFCu\xE1les ser\xEDan los beneficios y costes de quedarnos? \n\nPulsa
+    en cada una de las opciones para decidir conmigo."
   reward: 0
   type: 1
   options:

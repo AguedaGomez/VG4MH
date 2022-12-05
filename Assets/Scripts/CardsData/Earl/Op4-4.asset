@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: Op4-4
+  m_Name: Op4-3
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "Es muy cansado estar preocup\xE1ndonos de si hay suficientes recursos."
+  dialog: "Es m\xE1s c\xF3modo seguir aqu\xED; ya estamos instalados."
   reward: 0
   type: 0
   image: {fileID: 0}
@@ -22,6 +22,6 @@ MonoBehaviour:
     type: 3}
   rightText: Coste
   leftText: Beneficio
-  correctDirection: 0
-  nextCardIfRight: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
+  correctDirection: 1
+  nextCardIfRight: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}

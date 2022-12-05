@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Irse
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "\xBFCu\xE1les son los costes y beneficios de irse a un sitio nuevo? Pulsa
+  dialog: "\xBFCu\xE1les son los costes y beneficios de irse a un sitio nuevo? \n\nPulsa
     en cada una de las opciones para decidir conmigo."
   reward: 0
   type: 1
