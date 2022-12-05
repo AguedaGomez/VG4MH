@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: IrseCorrectas1
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "Irse tiene tres beneficios y un coste. Quedarse, dos beneficios y dos
-    costes. Parece que lo mejor es irse, \xBFverdad?"
+  dialog: "Despu\xE9s de hacer este ejercicio vemos que IRSE TIENE M\xC1S BENEFICIOS.
+    Parece que lo mejor es irse, \xBFverdad?"
   reward: 0
   type: 0
   image: {fileID: 0}
