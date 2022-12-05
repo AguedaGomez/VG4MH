@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: Dialog3
+  m_Name: QuedarseCorrectas 1
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "Parece que irse tiene m\xE1s beneficios que costes, \xBFno?"
+  dialog: "Hemos detectado dos beneficios y dos costes. \xBFVemos qu\xE9 supondr\xE1
+    irse?"
   reward: 0
   type: 0
   image: {fileID: 0}
   model: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4, type: 3}
   sceneModel: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4,
     type: 3}
-  rightText: "S\xED, tiene muchos m\xE1s beneficios que costes. \xBFQu\xE9 supone
-    irse?"
-  leftText: "No s\xE9 yo, \xBFqu\xE9 supone irse?"
-  correctDirection: 0
-  nextCardIfRight: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}
+  rightText: "S\xED, \xA1v\xE1monos!"
+  leftText: No, vamos a repasarlo de nuevo
+  correctDirection: 2
+  nextCardIfRight: {fileID: 0}
+  nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}

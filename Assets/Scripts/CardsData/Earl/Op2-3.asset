@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Op2-3
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: Os esperan nuevas experiencias.
+  dialog: Nos esperan nuevas experiencias.
   reward: 0
   type: 0
   image: {fileID: 0}
@@ -22,6 +22,6 @@ MonoBehaviour:
     type: 3}
   rightText: Coste
   leftText: Beneficio
-  correctDirection: 0
+  correctDirection: 1
   nextCardIfRight: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}

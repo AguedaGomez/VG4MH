@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 793c2232e06267243b435d1b3b909bfa, type: 3}
-  m_Name: Dialog2
+  m_Name: Irse
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "\xBFCu\xE1les son los costes y beneficios de irse a un sitio nuevo?"
+  dialog: "\xBFCu\xE1les son los costes y beneficios de irse a un sitio nuevo? Pulsa
+    en cada una de las opciones para decidir conmigo."
   reward: 0
   type: 1
   options:
@@ -22,4 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc4b147cf21661248a5f95a2bdf75a17, type: 2}
   - {fileID: 11400000, guid: 5307c67bda9f81241bb41ffa92210915, type: 2}
   nextCardIfRight: {fileID: 11400000, guid: 681f1b04c5ed5234a87b785628392ab2, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 681f1b04c5ed5234a87b785628392ab2, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 019e8d40f7755644d908d7f8baf22f2b, type: 2}

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 793c2232e06267243b435d1b3b909bfa, type: 3}
-  m_Name: Dialog4
+  m_Name: Quedarse
   m_EditorClassIdentifier: 
-  characterName: 
-  dialog: "\xBFCu\xE1les ser\xEDan los beneficios y costes de quedarnos?"
+  characterName: Earl Emory
+  dialog: "\xBFCu\xE1les ser\xEDan los beneficios y costes de quedarnos? Pulsa en
+    cada una de las opciones para decidir conmigo."
   reward: 0
   type: 1
   options:
@@ -21,5 +22,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6a3ca3dec27e2840a0b0622418fb486, type: 2}
   - {fileID: 11400000, guid: 1568bfb8c883de4419bc14496a99b3d1, type: 2}
   - {fileID: 11400000, guid: 115b7d60f771c0d4c9ec3ac462013c04, type: 2}
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: f0f861958f604994f9143588db15db82, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 1e2b424e1fba81146a965f00fc104921, type: 2}

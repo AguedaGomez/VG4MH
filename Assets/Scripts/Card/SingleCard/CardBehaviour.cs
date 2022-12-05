@@ -14,7 +14,7 @@ public class CardBehaviour : MonoBehaviour
     private bool directionChosen;
     private bool touchingCard;
     private float rotationAngle;
-    private float minLong = 2.5f;
+    private float minLong = 2f;
     private Single.Direction currentDirection;
     private CardDisplay cardDisplay;
     private SingleCardRewardManager singleCardRewardManager;

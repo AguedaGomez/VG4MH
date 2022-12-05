@@ -31,8 +31,12 @@ public class MultipleChoiceDisplay : MonoBehaviour
             for (int i = 0; i < buttonOptionsList.Count; i++)
             {
                 buttonOptionsList[i].interactable = true;
-                buttonOptionsList[i].GetComponentInChildren<TextMeshProUGUI>().text = TextToShowFormatter(currentCard.options[i].dialog);
+                TextMeshProUGUI buttonText = buttonOptionsList[i].GetComponentInChildren<TextMeshProUGUI>();
+                buttonText.text = TextToShowFormatter(currentCard.options[i].dialog);
+                ChangeTextColor(buttonText, new Color(1f, 1f, 1f));
                 linkedCardWithButton.Add(buttonOptionsList[i], currentCard.options[i]);
+                buttonOptionsList[i].transform.Find(RIGHT_OPTION_NAME).gameObject.SetActive(false);
+                buttonOptionsList[i].transform.Find(LEFT_OPTION_NAME).gameObject.SetActive(false);
             }
         }
         else
@@ -126,6 +130,7 @@ public class MultipleChoiceDisplay : MonoBehaviour
         linkedCardWithButton.Clear();
         checkOptionList.Clear();
         continueButton.gameObject.SetActive(false);
+        directionTransform = null;
 
     }
 

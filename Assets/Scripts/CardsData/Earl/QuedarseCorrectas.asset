@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: Op4-3
+  m_Name: QuedarseCorrectas
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "Aqu\xED empiezan a escasear los recursos, no s\xE9 cu\xE1nto tiempo podremos
-    vivir c\xF3modamente."
+  dialog: "Hemos detectado dos beneficios y dos costes. \xBFVemos qu\xE9 supondr\xE1
+    irse?"
   reward: 0
   type: 0
   image: {fileID: 0}
   model: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4, type: 3}
   sceneModel: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4,
     type: 3}
-  rightText: Coste
-  leftText: Beneficio
-  correctDirection: 0
-  nextCardIfRight: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
+  rightText: "S\xED"
+  leftText: Sigo sin verlo claro. Vamos a pensarlo de nuevo
+  correctDirection: 2
+  nextCardIfRight: {fileID: 11400000, guid: d40ef89f4d25c294d9737adb54316801, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 59ac8b2e0f746ad4496e9ff40c6ce75e, type: 2}

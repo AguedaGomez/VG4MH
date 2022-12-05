@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Op2-4
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "Vuestro amigos tambi\xE9n se est\xE1n trasladando. En un sitio nuevo conocer\xE9is
-    a m\xE1s gente."
+  dialog: "Nuestros amigos tambi\xE9n se est\xE1n trasladando. En un sitio nuevo
+    conoceremos a m\xE1s gente."
   reward: 0
   type: 0
   image: {fileID: 0}
@@ -23,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: Coste
   leftText: Beneficio
-  correctDirection: 0
+  correctDirection: 1
   nextCardIfRight: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}

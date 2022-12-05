@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Op4-4
   m_EditorClassIdentifier: 
   characterName: Earl Emory
-  dialog: "Debe ser muy cansado estar pendiente siempre de si tendr\xE9is suficientes
-    recursos."
+  dialog: "Es muy cansado estar preocup\xE1ndonos de si hay suficientes recursos."
   reward: 0
   type: 0
   image: {fileID: 0}
