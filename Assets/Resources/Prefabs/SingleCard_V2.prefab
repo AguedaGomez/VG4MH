@@ -67,7 +67,7 @@ MonoBehaviour:
   m_text: "Opci\xF3n izquierda a responder"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 681a321513aeb3d40a4d9bd81fc60f3e, type: 2}
-  m_sharedMaterial: {fileID: 327360378426931531, guid: 681a321513aeb3d40a4d9bd81fc60f3e,
+  m_sharedMaterial: {fileID: 6521902839241680789, guid: 681a321513aeb3d40a4d9bd81fc60f3e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_text: "Opci\xF3n derecha a responder"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 681a321513aeb3d40a4d9bd81fc60f3e, type: 2}
-  m_sharedMaterial: {fileID: 327360378426931531, guid: 681a321513aeb3d40a4d9bd81fc60f3e,
+  m_sharedMaterial: {fileID: 6521902839241680789, guid: 681a321513aeb3d40a4d9bd81fc60f3e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

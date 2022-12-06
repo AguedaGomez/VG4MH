@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e8450ebe75e189a42b90f92e05f16355
+guid: 79d8cfbc54d08ee46a59a54627116b31
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Enchanted Land
+  fontName: NT Vanilla
   fontNames:
-  - Enchanted Land
+  - NT Vanilla
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

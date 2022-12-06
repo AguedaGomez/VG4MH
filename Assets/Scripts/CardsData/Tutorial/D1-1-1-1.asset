@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: D1-1-1-1
   m_EditorClassIdentifier: 
   characterName: Desconocida
-  dialog: "\xA1No les quites ojo! Te dar\xE1n informaci\xF3n sobre los recursos psicol\xF3gicos
-    del pueblo. Para cumplir tu objetivo tienes que mantenerlos a buen nivel. \xBFLo
-    tienes todo claro?"
+  dialog: "\xA1No les quites ojo! Te dar\xE1n informaci\xF3n sobre lo resiliente
+    que es pueblo. Para cumplir tu objetivo tienes que iluminarlos para que as\xED
+    aumente la barra verde de poder R. \xBFLo tienes todo claro?"
   reward: 4
   type: 0
   image: {fileID: 0}
@@ -24,6 +24,6 @@ MonoBehaviour:
     type: 3}
   rightText: "S\xED"
   leftText: "\xBFQu\xE9 significaban los s\xEDmbolos?"
-  correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  correctDirection: 3
+  nextCardIfRight: {fileID: 11400000, guid: 295e5c74a223b0a43a2f3480e786569b, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: a4ba0f906b0eaa64a8694091c30f1f3d, type: 2}

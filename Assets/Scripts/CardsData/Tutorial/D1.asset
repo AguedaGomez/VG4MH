@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: D1
   m_EditorClassIdentifier: 
   characterName: Desconocida
-  dialog: "\xA1Hola! Estoy encantada de verte por aqu\xED. \xBFSab\xEDas que puedes
-    deslizarte con el dedo hacia la derecha o la izquierda para contestarme?\n"
+  dialog: "\xA1Hola! Estoy encantada de verte por aqu\xED. Llegas en el momento justo
+    para ayudar a nuestro pueblo. \xBFSab\xEDas que puedes deslizarte con el dedo
+    hacia la derecha o la izquierda para contestarme?\n"
   reward: 4
   type: 0
   image: {fileID: 0}
@@ -23,6 +24,6 @@ MonoBehaviour:
     type: 3}
   rightText: "S\xED"
   leftText: No
-  correctDirection: 0
+  correctDirection: 3
   nextCardIfRight: {fileID: 11400000, guid: b6e336a6f9f353a40a6952ae65a4fe18, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: bc0069cd58e24a7458270918b1d186ba, type: 2}

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: D1-1-1-2
   m_EditorClassIdentifier: 
   characterName: Desconocida
-  dialog: "El icono de arriba indica motivaci\xF3n, el de la derecha; flexibilidad,
-    el de abajo; positivismo, y el de la izquierda activaci\xF3n. Los cuatro forman
-    el poder R; poder Resiliencia. Este poder se indica con la barra verde."
-  reward: 4
+  dialog: "El icono de arriba indica motivaci\xF3n; el de la derecha, flexibilidad;
+    el de abajo, emociones positivas; y el de la izquierda, activaci\xF3n. Seg\xFAn
+    la conversaci\xF3n que mantengas con los habitantes, se iluminar\xE1 el que corresponda.
+    Pon atenci\xF3n cuando me respondas."
+  reward: 0
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 83bdcf642a179f04e8f7767c4b1372ea, type: 3}
@@ -24,6 +25,6 @@ MonoBehaviour:
     type: 3}
   rightText: "Cu\xE9ntame m\xE1s"
   leftText: Es suficiente
-  correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  correctDirection: 2
+  nextCardIfRight: {fileID: 11400000, guid: db25a358580fc43418d4b8917ebc84c3, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 295e5c74a223b0a43a2f3480e786569b, type: 2}

@@ -25,5 +25,5 @@ MonoBehaviour:
   rightText: "S\xED"
   leftText: No
   correctDirection: 3
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: 53494e39b0d723343b3b82ec92e344a0, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 295e5c74a223b0a43a2f3480e786569b, type: 2}

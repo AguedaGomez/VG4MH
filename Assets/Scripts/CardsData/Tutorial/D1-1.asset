@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: D1-1
   m_EditorClassIdentifier: 
   characterName: Desconocida
-  dialog: "\xA1Genial! De esta manera podr\xE1s hablar con la gente del pueblo. \xBFQuieres
-    m\xE1s informaci\xF3n?"
+  dialog: "\xA1Genial! De esta manera podr\xE1s ayudar a la gente \ndel pueblo que
+    necesitan tu consejo. \xBFQuieres m\xE1s informaci\xF3n?"
   reward: 4
   type: 0
   image: {fileID: 0}
@@ -23,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: "S\xED"
   leftText: No
-  correctDirection: 0
+  correctDirection: 3
   nextCardIfRight: {fileID: 11400000, guid: 53494e39b0d723343b3b82ec92e344a0, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 295e5c74a223b0a43a2f3480e786569b, type: 2}

@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: D1-1-1-2-1
   m_EditorClassIdentifier: 
   characterName: Desconocida
-  dialog: "Si quieres asegurar el bienestar del pueblo tendr\xE1s que conseguir buenos
-    niveles de estos recursos ayudando a uss gentes cuando te pidan consejo"
+  dialog: "En este caso, se ha iluminado un icono y la barra verde ha aumentado.
+    Esto significa que est\xE1s ayudando a fortalecer la Resiliencia de las personas
+    del pueblo; el poder R"
   reward: 4
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 83bdcf642a179f04e8f7767c4b1372ea, type: 3}
   sceneModel: {fileID: 6344134664747528452, guid: f8209e2f56989724bae9cd667f0bfa75,
     type: 3}
-  rightText: Empecemos
-  leftText: "Quiero repetir la explicaci\xF3n"
-  correctDirection: 0
-  nextCardIfRight: {fileID: 11400000, guid: b6e336a6f9f353a40a6952ae65a4fe18, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: bc0069cd58e24a7458270918b1d186ba, type: 2}
+  rightText: "Expl\xEDcame m\xE1s"
+  leftText: Me ha quedado claro
+  correctDirection: 3
+  nextCardIfRight: {fileID: 11400000, guid: cd48657f9a5e5e849a0950b11886f8a9, type: 2}
+  nextCardIfLeft: {fileID: 0}

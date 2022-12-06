@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Desconocida
   dialog: "Tu labor en estas tierras ser\xE1 ayudar a mantener el bienestar y el
-    equilibrio del pueblo asegurando su prograso. \xBFSabes lo que representan los
-    s\xEDmbolos y las barras de arriba?"
+    equilibrio del pueblo asegurando su progreso. \xBFSabes lo que representan los
+    s\xEDmbolos de arriba?"
   reward: 4
   type: 0
   image: {fileID: 0}
@@ -24,6 +24,6 @@ MonoBehaviour:
     type: 3}
   rightText: "S\xED"
   leftText: No
-  correctDirection: 0
+  correctDirection: 3
   nextCardIfRight: {fileID: 11400000, guid: 11f82d7f97cb5dc4391560e40e477d98, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: a4ba0f906b0eaa64a8694091c30f1f3d, type: 2}
