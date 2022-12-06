@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  buildingName: 
+  buildingName: Castillo
   specialCharacterPrefab: {fileID: 0}
   nLocals: 0
   row: 0
@@ -99,17 +99,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 02e5aad22800b474da2a7e03fc604ded,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.71829
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02e5aad22800b474da2a7e03fc604ded,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -57.736202
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02e5aad22800b474da2a7e03fc604ded,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3670502
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02e5aad22800b474da2a7e03fc604ded,
         type: 3}

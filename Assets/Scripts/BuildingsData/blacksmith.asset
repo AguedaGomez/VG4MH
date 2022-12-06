@@ -16,7 +16,7 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: 5e98cc07750050d43846fc32f1a76453, type: 3}
   prefab: {fileID: 1929065748608516357, guid: bbfec19558530654ca04f76842ef4515, type: 3}
   id: 3
-  cost: 100
+  cost: 0
   buildingName: "Herrer\xEDa"
   nLocals: 10
   activationRequired: 0

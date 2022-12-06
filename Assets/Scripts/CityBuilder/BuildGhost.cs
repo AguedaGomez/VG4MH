@@ -78,15 +78,18 @@ public class BuildGhost : MonoBehaviour
     private int CalculateDisplacement(int d) 
     {
         return (2 * d) + (2 * (d - 1));
+        //return (2 * d) + (2 * d);
     }
 
     private void ConstructCell(Vector2Int size)
     {
+        float mitadx = (4 * size.x);
+        float mitadz = (4 * size.y) ;
         var mesh = new Mesh();
         mesh.name = "BuildingCells";
 
         mesh.vertices = new Vector3[] {
-            new Vector3(-2, cellGroundOffset, -CalculateDisplacement(size.y)),
+            new Vector3(-2, cellGroundOffset, -CalculateDisplacement(size.y)), //aquí -2 en mitadx
             new Vector3(CalculateDisplacement(size.x), cellGroundOffset, -CalculateDisplacement(size.y)),
             new Vector3(CalculateDisplacement(size.x), cellThickness, -CalculateDisplacement(size.y)),
             new Vector3(-2, cellThickness, -CalculateDisplacement(size.y)),
