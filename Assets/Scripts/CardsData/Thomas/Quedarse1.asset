@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793c2232e06267243b435d1b3b909bfa, type: 3}
+  m_Name: Quedarse1
+  m_EditorClassIdentifier: 
+  characterName: Thomas Gruber
+  dialog: "\xBFCu\xE1les ser\xEDan los beneficios y costes de quedarnos? \n\nPulsa
+    en cada una de las opciones para decidir conmigo."
+  reward: 0
+  type: 1
+  options:
+  - {fileID: 11400000, guid: 97eef6c56e8c65d409005856022bdfcd, type: 2}
+  - {fileID: 11400000, guid: 6e05121be4684634c9b6ab6c11ecfd88, type: 2}
+  - {fileID: 11400000, guid: 19291481a022d45409f37ab61a8bb669, type: 2}
+  - {fileID: 11400000, guid: 8403282eb9bdb4349bb76de9a7f4a9f9, type: 2}
+  nextCardIfRight: {fileID: 11400000, guid: 10ab6c274f31bf14b8621cc46601cedf, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: b0ae21763e33b714cb90b52933140aa1, type: 2}

@@ -26,4 +26,4 @@ MonoBehaviour:
   leftText: Me ha quedado claro
   correctDirection: 3
   nextCardIfRight: {fileID: 11400000, guid: cd48657f9a5e5e849a0950b11886f8a9, type: 2}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfLeft: {fileID: 11400000, guid: 295e5c74a223b0a43a2f3480e786569b, type: 2}

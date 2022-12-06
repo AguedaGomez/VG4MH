@@ -36,7 +36,7 @@ public class SingleCardRewardManager : MonoBehaviour
         hudManager.Start_VisualResourceStatChange(currentResource, valueModifier);
 
         //Contemplar caso de que no haya siguiente currentcard en el dialogo
-        if (nextCard.characterName != currentCard.characterName)
+        if (nextCard.characterName != currentCard.characterName && nextCard.characterName != "Thomas Gruber")
         {
             GameManager.Instance.currentCard = nextCard;
             cardManager.LoadScene();
