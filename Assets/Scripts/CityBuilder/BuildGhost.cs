@@ -62,12 +62,18 @@ public class BuildGhost : MonoBehaviour
     {
         buildingMeshFilter.sharedMesh = currentMesh.sharedMesh;
         ScaleCollider();
-        //buildingMeshFilter.transform.position = new Vector3(buildingMeshFilter.transform.position.x,
-        //    buildingMeshFilter.transform.position.y + buildingMeshFilter.sharedMesh.bounds.size.y / 2, buildingMeshFilter.transform.position.z);
+        //buildingMeshFilter.transform.position = new Vector3(buildingMeshFilter.transform.position.x + cellsMeshFilter.transform.position.x,
+          //0, buildingMeshFilter.transform.position.z+ cellsMeshFilter.transform.position.z);
         //Bounds bounds = buildingMeshFilter.GetComponent<Renderer>().bounds;
         //Debug.Log("bound in y: " + bounds.size.y);
         //buildingCellBoxCollider.size = new Vector3(buildingCellBoxCollider.size.x, bounds.size.y, buildingCellBoxCollider.size.z);
         
+    }
+
+    public void DisplaceBuildingToCenter()
+    {
+        Transform buildingTransform = gameObject.transform.Find("SM_Base_Building_LOD0");
+        buildingTransform.position = Vector3.zero;
     }
     private int CalculateDisplacement(int d) 
     {

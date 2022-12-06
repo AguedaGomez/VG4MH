@@ -55,6 +55,7 @@ public class Board : MonoBehaviour
         bool availability = CheckSpaceAtPosition(building, position);
         ChangeBuildingColor(availability);
         GameObject currentBuilding = boardView.SetUpBuildingEditMode(building, availability, position);
+        //currentBuilding.GetComponent<BuildGhost>().DisplaceBuildingToCenter();
     }
 
     public bool CheckSpaceAtPosition(GameObject building, Vector3 position)
@@ -237,9 +238,9 @@ public class Board : MonoBehaviour
         else
         {
             // static buildings initial configuration. First time the game starts
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1, true);
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1, true);
-            AddBuilding(library, CalculateGridPosition(new Vector3(UnityEngine.Random.Range(1, 29), 0, UnityEngine.Random.Range(1, 29))), -1, true);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(16, 0, 26)), -1, true);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(15, 0, 16)), -1, true);
+            AddBuilding(library, CalculateGridPosition(new Vector3(23, 0, 26)), -1, true);
         }
 
     }

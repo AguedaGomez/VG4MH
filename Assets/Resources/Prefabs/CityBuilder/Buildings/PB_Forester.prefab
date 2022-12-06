@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6681268244422942282}
   - component: {fileID: 4625094337066862204}
+  - component: {fileID: 7225574245288332629}
   m_Layer: 0
   m_Name: PB_Forester
   m_TagString: Untagged
@@ -44,6 +45,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad521a67b5f8ac7489af9ceb46c68f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7225574245288332629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889200796470135822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a8ad6ab25819f4b98b6b62bd2e54f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  buildingName: "Caba\xF1a foresatal"
+  specialCharacterPrefab: {fileID: 0}
+  nLocals: 0
+  row: 0
+  col: 0
+  cellsInZ: 3
+  cellsInX: 3
+  materialsPerSecond: 0
+  type: 1
 --- !u!1001 &4826455612316303634
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -54,8 +54,8 @@ MonoBehaviour:
   nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 2
+  cellsInX: 2
   materialsPerSecond: 0
   type: 0
   indicatorText: {fileID: 5805947795622368036}
@@ -105,6 +105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 5672109404152847562}
+    - target: {fileID: 7556468291756862434, guid: b5fa7df78b82bc64e8eb281917a4f816,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PickMaterials
       objectReference: {fileID: 0}
     - target: {fileID: 7556468291756862444, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
@@ -179,7 +184,7 @@ PrefabInstance:
     - target: {fileID: 7556468292608109253, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.35
       objectReference: {fileID: 0}
     - target: {fileID: 7556468292608109253, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
@@ -204,12 +209,12 @@ PrefabInstance:
     - target: {fileID: 7556468292608109253, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 7556468292608109253, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4
+      value: 2.89
       objectReference: {fileID: 0}
     - target: {fileID: 7556468292608109253, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
