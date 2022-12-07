@@ -6,5 +6,4 @@ public class Local : MonoBehaviour
 {
 
     public string localName;
-    public Sprite localImage;
 }

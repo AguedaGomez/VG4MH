@@ -279,7 +279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 
   buildingName: Cultivo
-  specialCharacterPrefab: {fileID: 0}
+  specialCharacterPrefab: {fileID: 8883881510943616634, guid: b022d788af2381c4d846e707a212c041,
+    type: 3}
   nLocals: 0
   row: 0
   col: 0

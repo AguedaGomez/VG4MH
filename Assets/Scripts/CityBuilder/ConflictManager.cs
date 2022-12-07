@@ -17,7 +17,7 @@ public class ConflictManager : MonoBehaviour
         GameObject pj = transform.Find(currentConflict.characterName).gameObject;
         
         Local local = pj.GetComponentInChildren<Local>();
-        showPopUpConflict.FillPopUp(local.localImage, local.localName);
+        //showPopUpConflict.FillPopUp(local.localImage, local.localName);
         
         LocalsMessages messageScript = pj.GetComponentInChildren<LocalsMessages>();
         messageScript.ShowConflictExclamation(true);

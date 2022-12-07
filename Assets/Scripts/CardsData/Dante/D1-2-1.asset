@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: D1-2-1
+  m_EditorClassIdentifier: 
+  characterName: Campesino Dante
+  dialog: "Estoy muy triste. Seguro que si sigo en esta situaci\xF3n, no voy a poder
+    dar de comer nada a mi familia"
+  reward: 0
+  type: 0
+  image: {fileID: 0}
+  model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
+  sceneModel: {fileID: 7802163749547718320, guid: de56bb37dfcb9f54a8bd687057c672cc,
+    type: 3}
+  rightText: "\xBFPodr\xEDas plantar otra cosa?"
+  leftText: "Yo tambi\xE9n estar\xEDa muy triste"
+  correctDirection: 0
+  nextCardIfRight: {fileID: 0}
+  nextCardIfLeft: {fileID: 0}
