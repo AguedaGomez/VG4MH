@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: D1-1-3-2
   m_EditorClassIdentifier: 
   characterName: Campesino Dante
-  dialog: "Y, \xBFqu\xE9 puedo hacer entonces?"
+  dialog: "\xBFQu\xE9 otra cosa podr\xEDa probar? No veo qu\xE9 m\xE1s puedo hacer"
   reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
   sceneModel: {fileID: 7802163749547718320, guid: de56bb37dfcb9f54a8bd687057c672cc,
     type: 3}
-  rightText: Pregunta a Maeve, experta en el cultivo
-  leftText: No tengo ni idea de trigo
+  rightText: "Podr\xEDas plantar otro tipo de cereal"
+  leftText: "\xBFQu\xE9 tal si plantas habas?"
   correctDirection: 0
-  nextCardIfRight: {fileID: 11400000, guid: 20b82f3b4d0f6704bb36cc62325cc610, type: 2}
+  nextCardIfRight: {fileID: 11400000, guid: b6d3d4317056c12469501141ed731857, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: b6d3d4317056c12469501141ed731857, type: 2}
