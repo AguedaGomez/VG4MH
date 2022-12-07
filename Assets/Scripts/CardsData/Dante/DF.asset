@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Campesino Dante
   dialog: "Tienes raz\xF3n. Pensar as\xED s\xF3lo me impide tomar decisiones importantes.
     Ir\xE9 a preguntar. \xA1Gracias por tu ayuda!"
-  reward: 0
+  reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: D1-1
   m_EditorClassIdentifier: 
   characterName: Campesino Dante
-  dialog: "\xBFQu\xE9 m\xE1s podr\xEDa ser? Yo tengo la culpa de todo"
-  reward: 0
+  dialog: "\xBFQu\xE9 m\xE1s podr\xEDa ser? Yo tengo la culpa de todo, me siento
+    muy triste"
+  reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
@@ -22,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: Quien labra la tierra es quien tiene la culpa
   leftText: La falta de agua, por ejemplo
-  correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  correctDirection: 1
+  nextCardIfRight: {fileID: 11400000, guid: 1f946cc8b02b0ff4e93848ce1b44fcde, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 69c0f10f43c11a840a2ee604da2477bc, type: 2}

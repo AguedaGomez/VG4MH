@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: "\xBFY si a\xFAn as\xED siguiese sin trigo? Ya estoy cansado de esforzarme,
     creo que me quedar\xE9 todo el d\xEDa en la cama. Total, haga lo que haga no
     va a cambiar mi situaci\xF3n, \xBFverdad?"
-  reward: 0
+  reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
@@ -24,6 +24,6 @@ MonoBehaviour:
     type: 3}
   rightText: "Es verdad, qu\xE9date en la cama, no tienes nada que hacer"
   leftText: "Entiendo que est\xE9s triste, pero eso no te ayudar\xE1"
-  correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  correctDirection: 1
+  nextCardIfRight: {fileID: 11400000, guid: 1125e7d2c1429c24180a95e350487ede, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 21eead694c0ccec45a0efe5f0793b80a, type: 2}

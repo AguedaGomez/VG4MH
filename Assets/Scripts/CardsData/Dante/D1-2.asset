@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Campesino Dante
   dialog: "Pensar de esta manera me hace estar mucho m\xE1s triste. \xBFQu\xE9 va
     a ser de m\xED?"
-  reward: 0
+  reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
@@ -23,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: "Lo siento, pero es que no s\xE9 qu\xE9 puedes hacer"
   leftText: En el cultivo influyen muchos factores
-  correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  correctDirection: 1
+  nextCardIfRight: {fileID: 11400000, guid: 968cc6550079c3c41b62dbbd20942c2a, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 69c0f10f43c11a840a2ee604da2477bc, type: 2}

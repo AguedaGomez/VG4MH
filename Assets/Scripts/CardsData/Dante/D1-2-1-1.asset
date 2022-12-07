@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: "S\xED, podr\xEDa plantar otros alimentos. La verdad que hab\xEDa saltado
     de manera precipitada a la conclusi\xF3n de que no podr\xEDa darles de comer.
     \xA1Gracias!"
-  reward: 0
+  reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}

@@ -11,8 +11,8 @@ public class MaterialGeneratorBuilding : Building
     public Button materialsButton;
     //public int materialsPerSecond = 0; in parent due to board CHANGE
    
-    private const int MIN_MATERIALS = 2;
-    private const int SECONDS = 60;
+    private const int MIN_MATERIALS = 1;
+    private const int SECONDS = 2;
     private int timeOfGeneration = SECONDS;
     private const string cityTag = "city";
     private const string INDICATOR_BEGINNING = "";

@@ -3708,7 +3708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9777fa4e307a4744b929d2a44b7bd76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCard: {fileID: 11400000, guid: 6fa6f23882174664a964fdc9ef326baa, type: 2}
+  currentCard: {fileID: 11400000, guid: 9faf25edc3e8f0a4d9a9da2fa8c05033, type: 2}
   buildingInConstruction: {fileID: 0}
   interactingWithUI: 0
   buildingsInGameList: []
@@ -5252,7 +5252,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -4222990391322373185, guid: dc61da70330c29a4bae93169c09b277b,
+      objectReference: {fileID: -4408164901676378084, guid: 250f87fbc61d5ac49b80f61263ed7630,
         type: 3}
     - target: {fileID: 9154389991479124523, guid: e5bc2a40e55c7af45b742e96676cf963,
         type: 3}

@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: "Ya me ha pasado alguna vez que cuando estoy triste, s\xF3lo me apetece
     quedarme en la cama, y eso no me ha ayudado mucho, cada vez me he sentido m\xE1s
     triste. \xBFSe te ocurre otra cosa que pueda hacer?"
-  reward: 0
+  reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
@@ -25,5 +25,5 @@ MonoBehaviour:
   rightText: Pregunta a Maeve, experta en el cultivo
   leftText: No tengo ni idea de trigo
   correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: 20b82f3b4d0f6704bb36cc62325cc610, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: b6d3d4317056c12469501141ed731857, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Campesino Dante
   dialog: "No crece el trigo, soy un in\xFAtil. \xBFCrees que es por mi culpa?"
-  reward: 0
+  reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
@@ -23,5 +23,5 @@ MonoBehaviour:
   rightText: No es culpa tuya
   leftText: "Puede que s\xED"
   correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: 82152f1da53ffed46b7d6612f2a3786a, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 1f946cc8b02b0ff4e93848ce1b44fcde, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Campesino Dante
   dialog: "La verdad que pensar de esta manera, me hace sentir muy mal, y sin ver
     una posible soluci\xF3n. Mi familia depende de que el cultivo vaya bien."
-  reward: 0
+  reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
@@ -23,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: "Podr\xEDas plantar otro tipo de cereal"
   leftText: "\xBFQu\xE9 tal si plantas habas?"
-  correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  correctDirection: 2
+  nextCardIfRight: {fileID: 11400000, guid: 5f07e1d425664ce4cb13e780b0ef3f04, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 5f07e1d425664ce4cb13e780b0ef3f04, type: 2}

@@ -281,7 +281,7 @@ MonoBehaviour:
   buildingName: Cultivo
   specialCharacterPrefab: {fileID: 8883881510943616634, guid: b022d788af2381c4d846e707a212c041,
     type: 3}
-  nLocals: 0
+  nLocals: 5
   row: 0
   col: 0
   cellsInZ: 1
@@ -289,7 +289,7 @@ MonoBehaviour:
   materialsPerSecond: 0
   type: 0
   indicatorText: {fileID: 3803094065824809083}
-  maxMaterials: 40
+  maxMaterials: 20
   materialsButton: {fileID: 3803094065907406396}
 --- !u!1001 &6636821540705222110
 PrefabInstance:

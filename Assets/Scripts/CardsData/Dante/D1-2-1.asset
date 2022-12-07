@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Campesino Dante
   dialog: "Estoy muy triste. Seguro que si sigo en esta situaci\xF3n, no voy a poder
     dar de comer nada a mi familia"
-  reward: 0
+  reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   rightText: "\xBFPodr\xEDas plantar otra cosa?"
   leftText: "Yo tambi\xE9n estar\xEDa muy triste"
   correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: ead2ce17fc011ea46b7361726a7c8c7b, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 87939082e83d9404989835bb6c65fa24, type: 2}
