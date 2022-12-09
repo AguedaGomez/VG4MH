@@ -16,13 +16,13 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: 78bfd7e8e778ed84cba1e5518e8b39ba, type: 3}
   prefab: {fileID: 7280136556811652052, guid: 930094876cb0d104db1f3339d409317d, type: 3}
   id: 5
-  cost: 0
+  cost: 35
   buildingName: Cultivo
-  nLocals: 0
+  nLocals: 5
   activationRequired: 0
   cellsInZ: 1
   cellsInX: 1
   powerRIncrease: 0
   materialsPerSecond: 0
-  maximunMaterials: 0
-  type: 1
+  maximunMaterials: 15
+  type: 0

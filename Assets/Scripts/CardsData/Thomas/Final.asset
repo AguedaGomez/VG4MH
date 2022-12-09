@@ -24,5 +24,5 @@ MonoBehaviour:
   rightText: "S\xED, \xA1adelante!"
   leftText: No, vamos a repasarlo todo de nuevo
   correctDirection: 2
-  nextCardIfRight: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: 9faf25edc3e8f0a4d9a9da2fa8c05033, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
