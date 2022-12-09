@@ -13,17 +13,16 @@ MonoBehaviour:
   m_Name: D1-1-3
   m_EditorClassIdentifier: 
   characterName: Campesino Dante
-  dialog: "\xBFY si a\xFAn as\xED siguiese sin trigo? Ya estoy cansado de esforzarme,
-    creo que me quedar\xE9 todo el d\xEDa en la cama. Total, haga lo que haga no
-    va a cambiar mi situaci\xF3n, \xBFverdad?"
+  dialog: "\xBFY si a\xFAn as\xED siguiese sin trigo, qu\xE9 podr\xEDa pasar? Estoy
+    muy preocupado porque mi familia depende de que el cultivo vaya bien."
   reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
   sceneModel: {fileID: 7802163749547718320, guid: de56bb37dfcb9f54a8bd687057c672cc,
     type: 3}
-  rightText: "Es verdad, qu\xE9date en la cama, no tienes nada que hacer"
-  leftText: "Entiendo que est\xE9s triste, pero eso no te ayudar\xE1"
-  correctDirection: 1
+  rightText: Busquemos otras razones
+  leftText: "Habr\xE1 que probar otra cosa"
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: 1125e7d2c1429c24180a95e350487ede, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 21eead694c0ccec45a0efe5f0793b80a, type: 2}

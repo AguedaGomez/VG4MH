@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: D1-1-3-1-2
   m_EditorClassIdentifier: 
   characterName: Campesino Dante
-  dialog: "Vaya, \xBFy conoces a alguien que sepa algo sobre el cultivo de trigo?"
+  dialog: "Me doy cuenta de que puede haber muchas razones por las cuales el trigo
+    no crece. \xA1Gracias por haberme ayudado a verlas!"
   reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
   sceneModel: {fileID: 7802163749547718320, guid: de56bb37dfcb9f54a8bd687057c672cc,
     type: 3}
-  rightText: Pide ayuda a otra persona
-  leftText: Preguntar en el pueblo
+  rightText: Me alegra haberte ayudado
+  leftText: Nos vemos
   correctDirection: 0
   nextCardIfRight: {fileID: 0}
   nextCardIfLeft: {fileID: 0}
