@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: D1-2-1
+  m_EditorClassIdentifier: 
+  characterName: Elvira Gruber
+  dialog: "Me gustaba pasear, pero pensar todo el d\xEDa en el problema no me deja
+    disfrutarlo y por eso he dejado de hacerlo"
+  reward: 2
+  type: 0
+  image: {fileID: 0}
+  model: {fileID: 919132149155446097, guid: 42cda1b416d92284595fc26b50fc963f, type: 3}
+  sceneModel: {fileID: 3701454041783855837, guid: c50469195828f404585843811accf459,
+    type: 3}
+  rightText: "A m\xED tampoco me dejan disfrutar las preocupaciones"
+  leftText: Saliendo a pasear puedes encontrar un sitio para tu taller
+  correctDirection: 2
+  nextCardIfRight: {fileID: 11400000, guid: 574266c46df268447bc39da8b5b2510f, type: 2}
+  nextCardIfLeft: {fileID: 0}

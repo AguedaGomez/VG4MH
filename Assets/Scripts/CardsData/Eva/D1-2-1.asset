@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: D1-2-1
+  m_EditorClassIdentifier: 
+  characterName: Eva Gruber
+  dialog: "Me s\xE9 algunas canciones, pero me gustar\xEDa compartir esta afici\xF3n
+    que otras personas"
+  reward: 2
+  type: 0
+  image: {fileID: 0}
+  model: {fileID: 919132149155446097, guid: 39416e127f55be544bfd3df6fd83f73e, type: 3}
+  sceneModel: {fileID: 1615194306959157393, guid: b9c14419e9330ba44979d78ee83ddd0e,
+    type: 3}
+  rightText: "Ac\xE9rcate al tabl\xF3n de anuncios"
+  leftText: "He escuchado un la\xFAd"
+  correctDirection: 2
+  nextCardIfRight: {fileID: 0}
+  nextCardIfLeft: {fileID: 0}

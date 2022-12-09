@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: D1-1-1
+  m_EditorClassIdentifier: 
+  characterName: Eva Gruber
+  dialog: "La m\xFAsica me hace sentir bien, pero no conozco a nadie con quien compartirla "
+  reward: 2
+  type: 0
+  image: {fileID: 0}
+  model: {fileID: 919132149155446097, guid: 39416e127f55be544bfd3df6fd83f73e, type: 3}
+  sceneModel: {fileID: 1615194306959157393, guid: b9c14419e9330ba44979d78ee83ddd0e,
+    type: 3}
+  rightText: "He escuchado un la\xFAd"
+  leftText: "He escuchado una chirim\xEDa"
+  correctDirection: 2
+  nextCardIfRight: {fileID: 11400000, guid: 20970600e8b8b8945b9765dabd55c749, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 918815fe5bfdaf042b3ee89c2e760a55, type: 2}

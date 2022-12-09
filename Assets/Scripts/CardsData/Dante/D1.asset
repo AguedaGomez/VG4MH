@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: D1
   m_EditorClassIdentifier: 
   characterName: Campesino Dante
-  dialog: "No crece el trigo, soy un in\xFAtil. \xBFCrees que es por mi culpa?"
+  dialog: "\xA1Hola! Soy Dante. Siempre he sido campesino, pero desde un tiempo a
+    esta parte, no crece el trigo, soy un in\xFAtil. \xBFCrees que es por mi culpa?"
   reward: 1
   type: 0
   image: {fileID: 0}

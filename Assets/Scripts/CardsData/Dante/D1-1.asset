@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: D1-1
   m_EditorClassIdentifier: 
   characterName: Campesino Dante
-  dialog: "\xBFQu\xE9 m\xE1s podr\xEDa ser? Yo tengo la culpa de todo, me siento
+  dialog: "\xBFQu\xE9 m\xE1s podr\xEDa ser? Yo tengo la culpa de todo. Me siento
     muy triste"
   reward: 1
   type: 0
