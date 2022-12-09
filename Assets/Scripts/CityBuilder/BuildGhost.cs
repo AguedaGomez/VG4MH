@@ -64,7 +64,8 @@ public class BuildGhost : MonoBehaviour
     public void ChangeMesh(MeshFilter currentMesh)
     {
         buildingMeshFilter.sharedMesh = currentMesh.sharedMesh;
-        ScaleCollider();
+        
+        //ScaleCollider();
         //buildingMeshFilter.transform.position = new Vector3(buildingMeshFilter.transform.position.x + cellsMeshFilter.transform.position.x,
           //0, buildingMeshFilter.transform.position.z+ cellsMeshFilter.transform.position.z);
         //Bounds bounds = buildingMeshFilter.GetComponent<Renderer>().bounds;
