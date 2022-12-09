@@ -26240,7 +26240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d75017a382b1744a2be0ec4efa3399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editBuilding: {fileID: 7262558609466260145, guid: ae2c55ae7c49c20459c7daf7e76a7092,
+  editBuilding: {fileID: 1634192737352815254, guid: 161f83bd79ffc6b4693aa4852353d531,
     type: 3}
 --- !u!1001 &1945903361
 PrefabInstance:

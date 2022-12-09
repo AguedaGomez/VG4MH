@@ -55,6 +55,7 @@ MonoBehaviour:
   occupied: 0
   cellThickness: 0.1
   refreshSize: 0
+  cellObject: {fileID: 7481998223841051423}
 --- !u!1 &7481998223841051423
 GameObject:
   m_ObjectHideFlags: 0

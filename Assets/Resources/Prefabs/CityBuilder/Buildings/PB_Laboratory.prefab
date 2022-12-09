@@ -59,6 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 
   buildingName: 
+  specialCharacterPrefab: {fileID: 0}
   nLocals: 0
   row: 0
   col: 0
@@ -84,17 +85,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 56266a42f0c53e045b8faf414b71b809,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.403193
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56266a42f0c53e045b8faf414b71b809,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7000003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56266a42f0c53e045b8faf414b71b809,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.282253
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56266a42f0c53e045b8faf414b71b809,
         type: 3}

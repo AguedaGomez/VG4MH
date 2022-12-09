@@ -72,7 +72,8 @@ public class InteractionController : MonoBehaviour
                         RaycastHit hit;
                         if (Physics.Raycast(ray, out hit))
                         {
-                            Vector3 gridPosition = board.CalculateGridPosition(hit.point); 
+                           
+                            Vector3 gridPosition = board.CalculateGridPosition(hit.point, selectedBuildingScript.cellsInX); 
                             if (!board.CheckBoardLimits(gridPosition, selectedBuildingScript))
                             {
                                 currentBuilding.transform.parent.position = gridPosition;
@@ -196,7 +197,7 @@ public class InteractionController : MonoBehaviour
         //if(currentCollider!=null) Destroy(currentCollider.gameObject);
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 100.0f)) {
-            Vector3 gridPosition = board.CalculateGridPosition(hit.point);
+            Vector3 gridPosition = board.CalculateGridPosition(hit.point, selectedBuildingScript.cellsInX);
             
             board.AddBuildingInEditMode(selectedBuilding, gridPosition);
 

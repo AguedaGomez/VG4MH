@@ -228,7 +228,8 @@ public class TOP_Hud_Controller : MonoBehaviour
     {
         //Creating text object
         GameObject newText = new GameObject("text", typeof(RectTransform));
-        newText.transform.parent = materialsText.transform;
+        //newText.transform.parent = materialsText.transform;
+        newText.transform.SetParent(materialsText.transform);
         newText.transform.name = "incrementalText";
         if(!isMaterialShining)
         {

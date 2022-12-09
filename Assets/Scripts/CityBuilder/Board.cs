@@ -162,13 +162,17 @@ public class Board : MonoBehaviour
         return false;
     }
 
-    public Vector3 CalculateGridPosition(Vector3 position)
+    public Vector3 CalculateGridPosition(Vector3 position, int bSize)
     {
         int xCell = CalculateRowColumn(position.x);
         float yCell = .5f;
         int zCell = CalculateRowColumn(position.z);
 
-        return new Vector3(xCell*cellSize + (2/2)*cellSize, yCell, zCell*cellSize); // 2 número de celdas que ocupa el edificio
+        if (bSize % 2 == 0)
+            return new Vector3(xCell * cellSize-2, yCell, zCell * cellSize-2);
+
+        else 
+            return new Vector3(xCell*cellSize, yCell, zCell*cellSize); 
     }
     private Vector3 CalculatePosition(Vector3 gridPosition)
     {
@@ -238,9 +242,9 @@ public class Board : MonoBehaviour
         else
         {
             // static buildings initial configuration. First time the game starts
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(16, 0, 26)), -1, true);
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(15, 0, 16)), -1, true);
-            AddBuilding(library, CalculateGridPosition(new Vector3(23, 0, 26)), -1, true);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(16, 0, 26), 1), -1, true);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(15, 0, 16), 1), -1, true);
+            AddBuilding(library, CalculateGridPosition(new Vector3(23, 0, 26), 2), -1, true);
         }
 
     }
