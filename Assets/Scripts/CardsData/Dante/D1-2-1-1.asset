@@ -22,6 +22,6 @@ MonoBehaviour:
     type: 3}
   rightText: "Podr\xEDas plantar otro tipo de cereal"
   leftText: "Quiz\xE1 falta abono"
-  correctDirection: 0
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: 73bed8b3fcbcc1b44944f596aefe54d4, type: 2}
   nextCardIfLeft: {fileID: 0}

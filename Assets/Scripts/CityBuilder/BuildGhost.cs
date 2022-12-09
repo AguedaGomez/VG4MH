@@ -21,30 +21,34 @@ public class BuildGhost : MonoBehaviour
 
     [SerializeField] bool refreshSize = false;
 
+    //NUEVO
+    [SerializeField] GameObject cellObject;
+
     // Start is called before the first frame update
     private void OnEnable()
     {
-        ConstructCell(buildingSize);
+        //ConstructCell(buildingSize);
+        RescaleCell();
        
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //if (occupied)
-        //{
-        //    ghostMaterial.SetColor("_Color", colorOccupied);
-        //}
-        //else 
-        //{
-        //    ghostMaterial.SetColor("_Color", colorClear);
-        //}
-        //if (refreshSize) 
-        //{
-        //    ConstructCell(buildingSize);
-        //    refreshSize = !refreshSize; 
-        //}
-    }
+    //void Update()
+    //{
+    //    //if (occupied)
+    //    //{
+    //    //    ghostMaterial.SetColor("_Color", colorOccupied);
+    //    //}
+    //    //else 
+    //    //{
+    //    //    ghostMaterial.SetColor("_Color", colorClear);
+    //    //}
+    //    //if (refreshSize) 
+    //    //{
+    //    //    ConstructCell(buildingSize);
+    //    //    refreshSize = !refreshSize; 
+    //    //}
+    //}
 
     public void SetColor(bool available)
     {
@@ -70,6 +74,11 @@ public class BuildGhost : MonoBehaviour
         
     }
 
+    private void RescaleCell()
+    {
+        cellObject.transform.localScale=new Vector3(buildingSize.x*cellObject.transform.localScale.x, 0.4f, buildingSize.y*cellObject.transform.localScale.z);
+    }
+
     public void DisplaceBuildingToCenter()
     {
         Transform buildingTransform = gameObject.transform.Find("SM_Base_Building_LOD0");
@@ -81,49 +90,49 @@ public class BuildGhost : MonoBehaviour
         //return (2 * d) + (2 * d);
     }
 
-    private void ConstructCell(Vector2Int size)
-    {
-        float mitadx = (4 * size.x);
-        float mitadz = (4 * size.y) ;
-        var mesh = new Mesh();
-        mesh.name = "BuildingCells";
+   // private void ConstructCell(Vector2Int size)
+   // {
+   //     float mitadx = (4 * size.x);
+   //     float mitadz = (4 * size.y) ;
+   //     var mesh = new Mesh();
+   //     mesh.name = "BuildingCells";
 
-        mesh.vertices = new Vector3[] {
-            new Vector3(-2, cellGroundOffset, -CalculateDisplacement(size.y)), //aquí -2 en mitadx
-            new Vector3(CalculateDisplacement(size.x), cellGroundOffset, -CalculateDisplacement(size.y)),
-            new Vector3(CalculateDisplacement(size.x), cellThickness, -CalculateDisplacement(size.y)),
-            new Vector3(-2, cellThickness, -CalculateDisplacement(size.y)),
-            new Vector3(-2, cellThickness, 2),
-            new Vector3(CalculateDisplacement(size.x), cellThickness, 2),
-            new Vector3(CalculateDisplacement(size.x), cellGroundOffset, 2),
-            new Vector3(-2, cellGroundOffset, 2),
-        };
+   //     mesh.vertices = new Vector3[] {
+   //         new Vector3(-2, cellGroundOffset, -CalculateDisplacement(size.y)), //aquí -2 en mitadx
+   //         new Vector3(CalculateDisplacement(size.x), cellGroundOffset, -CalculateDisplacement(size.y)),
+   //         new Vector3(CalculateDisplacement(size.x), cellThickness, -CalculateDisplacement(size.y)),
+   //         new Vector3(-2, cellThickness, -CalculateDisplacement(size.y)),
+   //         new Vector3(-2, cellThickness, 2),
+   //         new Vector3(CalculateDisplacement(size.x), cellThickness, 2),
+   //         new Vector3(CalculateDisplacement(size.x), cellGroundOffset, 2),
+   //         new Vector3(-2, cellGroundOffset, 2),
+   //     };
 
-        mesh.triangles = new int[] {
-            0, 2, 1, //face front
-			0, 3, 2,
-            2, 3, 4, //face top
-			2, 4, 5,
-            1, 2, 5, //face right
-			1, 5, 6,
-            0, 7, 4, //face left
-			0, 4, 3,
-            5, 4, 7, //face back
-			5, 7, 6,
-            0, 6, 7, //face bottom
-			0, 1, 6
-        };
+   //     mesh.triangles = new int[] {
+   //         0, 2, 1, //face front
+			//0, 3, 2,
+   //         2, 3, 4, //face top
+			//2, 4, 5,
+   //         1, 2, 5, //face right
+			//1, 5, 6,
+   //         0, 7, 4, //face left
+			//0, 4, 3,
+   //         5, 4, 7, //face back
+			//5, 7, 6,
+   //         0, 6, 7, //face bottom
+			//0, 1, 6
+   //     };
 
-        mesh.Optimize();
-        mesh.RecalculateNormals();
-        //cellsMeshFilter.sharedMesh.Clear();
-        cellsMeshFilter.mesh = mesh;
-        ScaleCollider();
-        //buildingCellBoxCollider.center = new Vector3(buildingCellBoxCollider.center.x, buildingCellBoxCollider.center.y + buildingMeshFilter.sharedMesh.bounds.size.y / 2,
-           // buildingCellBoxCollider.center.z);
+   //     mesh.Optimize();
+   //     mesh.RecalculateNormals();
+   //     //cellsMeshFilter.sharedMesh.Clear();
+   //     cellsMeshFilter.mesh = mesh;
+   //     ScaleCollider();
+   //     //buildingCellBoxCollider.center = new Vector3(buildingCellBoxCollider.center.x, buildingCellBoxCollider.center.y + buildingMeshFilter.sharedMesh.bounds.size.y / 2,
+   //        // buildingCellBoxCollider.center.z);
         
         
-    }
+   // }
 
     private void ScaleCollider()
     {

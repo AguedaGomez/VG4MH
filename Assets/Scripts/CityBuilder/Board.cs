@@ -168,7 +168,7 @@ public class Board : MonoBehaviour
         float yCell = .5f;
         int zCell = CalculateRowColumn(position.z);
 
-        return new Vector3(xCell*cellSize, yCell, zCell*cellSize);
+        return new Vector3(xCell*cellSize + (2/2)*cellSize, yCell, zCell*cellSize); // 2 número de celdas que ocupa el edificio
     }
     private Vector3 CalculatePosition(Vector3 gridPosition)
     {
