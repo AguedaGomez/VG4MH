@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: DF
+  m_Name: D1-2-1-1-1
   m_EditorClassIdentifier: 
   characterName: Campesino Dante
-  dialog: "Tienes raz\xF3n. Pensar as\xED s\xF3lo me impide tomar decisiones importantes.
-    Ir\xE9 a preguntar. \xA1Gracias por tu ayuda!"
+  dialog: "S\xED, podr\xEDa plantar otros alimentos. La verdad que hab\xEDa saltado
+    de manera precipitada a la conclusi\xF3n de que no podr\xEDa darles de comer.
+    \xA1Gracias!"
   reward: 1
   type: 0
   image: {fileID: 0}
@@ -24,5 +25,5 @@ MonoBehaviour:
   rightText: Me alegra haberte ayudado
   leftText: Nos vemos
   correctDirection: 0
-  nextCardIfRight: {fileID: 11400000, guid: 7766d4d80fd1aed4187271f6a9f39160, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 7766d4d80fd1aed4187271f6a9f39160, type: 2}
+  nextCardIfRight: {fileID: 0}
+  nextCardIfLeft: {fileID: 0}

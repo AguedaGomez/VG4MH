@@ -24,5 +24,5 @@ MonoBehaviour:
   rightText: "Te entiendo. Yo tambi\xE9n saldr\xE9 a pasear"
   leftText: Puedes empezar paseando solo 10 min
   correctDirection: 2
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: dbcb6e9cf92148d4ba7e61f848cd7b6a, type: 2}
+  nextCardIfLeft: {fileID: 11400000}

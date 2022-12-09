@@ -23,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: Intenta hacer algo contratario a lo que te apetezca
   leftText: Descansa hasta que te lleguen las fuerzas
-  correctDirection: 1
-  nextCardIfRight: {fileID: 0}
+  correctDirection: 0
+  nextCardIfRight: {fileID: 11400000, guid: ae69ecdcf7026d64689e42e62534fcb4, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: bf2e241a87a4b174aab9b8a00489ff35, type: 2}

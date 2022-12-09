@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: D1-2-1-2
+  m_Name: D1-2-1-2-1
   m_EditorClassIdentifier: 
   characterName: Elvira Gruber
-  dialog: El pueblo no es muy grande, no hay muchos edificios construidos y no creo
-    que haya un taller.
+  dialog: "Si t\xFA lo dices, saldr\xE9 a ver ese nuevo edificio. \xBFMe dar\xEDas
+    energ\xEDa saliendo a pasear t\xFA tambi\xE9n?"
   reward: 2
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 42cda1b416d92284595fc26b50fc963f, type: 3}
   sceneModel: {fileID: 3701454041783855837, guid: c50469195828f404585843811accf459,
     type: 3}
-  rightText: Hace poco he visto un edificio posible
-  leftText: No lo sabremos si no paseas por el pueblo
+  rightText: Claro
+  leftText: "\xA1S\xED!"
   correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: 574266c46df268447bc39da8b5b2510f, type: 2}
   nextCardIfLeft: {fileID: 0}
