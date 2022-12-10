@@ -58,7 +58,7 @@ public class BuildGhost : MonoBehaviour
 
     public void SetBuilding(Building building) 
     {
-        buildingSize = new Vector2Int(building.cellsInX, building.cellsInZ);
+        buildingSize = new Vector2Int(building.GetCellsX(), building.GetCellsZ());
 
     }
 
@@ -67,19 +67,13 @@ public class BuildGhost : MonoBehaviour
         buildingMeshFilter.sharedMesh = currentMesh.sharedMesh;
         buildingMeshFilter.gameObject.transform.localScale = newScale;
         buildingMeshFilter.gameObject.transform.rotation = newRotation;
-        //ScaleCollider();
-        //buildingMeshFilter.transform.position = new Vector3(buildingMeshFilter.transform.position.x + cellsMeshFilter.transform.position.x,
-          //0, buildingMeshFilter.transform.position.z+ cellsMeshFilter.transform.position.z);
-        //Bounds bounds = buildingMeshFilter.GetComponent<Renderer>().bounds;
-        //Debug.Log("bound in y: " + bounds.size.y);
-        //buildingCellBoxCollider.size = new Vector3(buildingCellBoxCollider.size.x, bounds.size.y, buildingCellBoxCollider.size.z);
         
     }
 
     private void RescaleCell()
     {
         Vector3 scaleChange = cellObject.transform.localScale;
-        scaleChange.x = 4 * buildingSize.x;
+        scaleChange.x = 4 * buildingSize.x; // 4 is cellSize
         scaleChange.z = 4 * buildingSize.y;
         cellObject.transform.localScale = scaleChange;
     }

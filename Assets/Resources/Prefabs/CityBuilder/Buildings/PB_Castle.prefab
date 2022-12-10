@@ -46,16 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8ad6ab25819f4b98b6b62bd2e54f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: Castillo
+  dataBuilding: {fileID: 11400000, guid: e421db65bd31f204a946dd9e762a26fc, type: 2}
   specialCharacterPrefab: {fileID: 0}
-  nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 4
-  cellsInX: 4
   materialsPerSecond: 0
-  type: 1
 --- !u!114 &8091856031612397049
 MonoBehaviour:
   m_ObjectHideFlags: 0

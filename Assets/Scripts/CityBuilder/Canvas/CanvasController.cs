@@ -40,10 +40,10 @@ public class CanvasController : MonoBehaviour
         downHudController.ShowAndHideActionsMenu(downHudController.activeSubmenu);
     }
 
-    public void SaveBuildingToConstruct(Construction construct)
+    public void SaveBuildingToConstruct(Construction dataBuilding)
     {
         ShowConfirmationMessage();
-        interactionController.SaveBuildingToConstruct(construct);
+        interactionController.SaveBuildingToConstruct(dataBuilding);
     }
 
     public void BuildConfirmation()
@@ -82,6 +82,12 @@ public class CanvasController : MonoBehaviour
             GameObject newPanel = Instantiate(citizenTalkingPanel_Prefab, this.transform);
             newPanel.GetComponent<characterTalkPanel_Manager>().setUpPanel(citizenToTalk);
         }
+    }
+
+    void Update()
+    {
+        if (GameManager.Instance.buildingInConstruction != null) downHUD.SetActive(false);
+        else downHUD.SetActive(true);
     }
         
 }

@@ -167,14 +167,17 @@ public class City : MonoBehaviour
 
     private void CheckAvailableBuildings()
     {
-        Debug.Log("CheckAvailableBuilding");
         foreach (var b in GameManager.Instance.buildingsInGameList)
         {
-
-            if (b.energyRequired <= Activation && b.energyRequired >= 0)
+            if (b.buildingName!="Biblioteca")
             {
-                canvasController.UnlockBuilding(b.id);
-            }  
+                if (b.energyRequired <= Activation && b.energyRequired >= 0)
+                {
+                    canvasController.UnlockBuilding(b.id);
+                }
+            }
+
+
         }
         
     }

@@ -37,7 +37,6 @@ public class CitizensGenerator : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
             RaycastHit hit;
-            Debug.Log("Se ha tocado la pantalla");
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.transform.tag == "local")
@@ -89,12 +88,12 @@ public class CitizensGenerator : MonoBehaviour
 
     public void AddCitizens(Building building)
     {
-        totalCitizensInGame += building.nLocals;
+        totalCitizensInGame += building.GetNLocals();
         UpdateNumberOfCitizensOnBoard();
     }
     public void RemoveCitizens(Building building)
     {
-        totalCitizensInGame -= building.nLocals;
+        totalCitizensInGame -= building.GetNLocals();
         UpdateNumberOfCitizensOnBoard();
     }
 

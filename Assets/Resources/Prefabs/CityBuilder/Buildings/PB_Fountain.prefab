@@ -45,16 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8ad6ab25819f4b98b6b62bd2e54f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: Plaza
+  dataBuilding: {fileID: 11400000, guid: 535210f7bd14a2b42a21ab0b880d64c3, type: 2}
   specialCharacterPrefab: {fileID: 0}
-  nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 3
-  cellsInX: 3
   materialsPerSecond: 0
-  type: 1
 --- !u!114 &6743724254360548290
 MonoBehaviour:
   m_ObjectHideFlags: 0

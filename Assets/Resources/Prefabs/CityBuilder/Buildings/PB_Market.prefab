@@ -78,16 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: 
+  dataBuilding: {fileID: 11400000, guid: bcf964da57e03884ebcf74fbb95f969e, type: 2}
   specialCharacterPrefab: {fileID: 0}
-  nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 4
-  cellsInX: 4
   materialsPerSecond: 0
-  type: 0
   indicatorText: {fileID: 8977932283684344405}
   maxMaterials: 40
   materialsButton: {fileID: 8977932283770602514}

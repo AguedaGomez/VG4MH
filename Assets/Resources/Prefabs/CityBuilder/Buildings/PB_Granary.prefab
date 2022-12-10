@@ -75,16 +75,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: Granero
+  dataBuilding: {fileID: 11400000, guid: 6cf20a964b504a740ad56f6523a19579, type: 2}
   specialCharacterPrefab: {fileID: 0}
-  nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 2
-  cellsInX: 2
   materialsPerSecond: 0
-  type: 0
   indicatorText: {fileID: 7807473805286914326}
   maxMaterials: 60
   materialsButton: {fileID: 7807473805204909905}

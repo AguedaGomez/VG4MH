@@ -240,7 +240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7280136556811652052}
-  m_LocalRotation: {x: -0.0000017069738, y: -0.70709586, z: -0.0000017069211, w: 0.70711774}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 4, y: 0.53, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -248,7 +248,7 @@ Transform:
   - {fileID: 3803094066783950619}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -89.998, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &6589035632082334080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,17 +261,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: Cultivo
+  dataBuilding: {fileID: 11400000, guid: f6336b94b8a59064182cbc773775893a, type: 2}
   specialCharacterPrefab: {fileID: 8883881510943616634, guid: b022d788af2381c4d846e707a212c041,
     type: 3}
-  nLocals: 5
   row: 0
   col: 0
-  cellsInZ: 1
-  cellsInX: 1
   materialsPerSecond: 0
-  type: 0
   indicatorText: {fileID: 3803094065824809083}
   maxMaterials: 20
   materialsButton: {fileID: 3803094065907406396}

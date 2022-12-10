@@ -47,16 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: houseB
+  dataBuilding: {fileID: 11400000, guid: 1a35bb2d1587edc488f93f60935f788b, type: 2}
   specialCharacterPrefab: {fileID: 0}
-  nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 2
-  cellsInX: 2
   materialsPerSecond: 0
-  type: 0
   indicatorText: {fileID: 3626166917509463907}
   maxMaterials: 40
   materialsButton: {fileID: 3626166917456226596}

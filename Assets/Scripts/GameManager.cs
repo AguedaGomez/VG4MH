@@ -18,9 +18,6 @@ public class GameManager : MonoBehaviour
     public List<ActivityNotification> goalsToReach = new List<ActivityNotification>();
     public Dictionary<string, Construction> buildingsInGame= new Dictionary<string, Construction>();
 
-    private GameObject city;
-    private SaveAndLoadDataManager saveAndLoadDataManager;
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -70,9 +67,9 @@ public class GameManager : MonoBehaviour
     private void CreateDictionaryBuildingsInGame()
     {
         Debug.Log("Creando diccionario de edificios en el juego");
-        foreach (Construction construction in buildingsInGameList)
+        foreach (Construction buildingData in buildingsInGameList)
         {
-            buildingsInGame.Add(construction.id, construction);
+            buildingsInGame.Add(buildingData.id, buildingData);
         }
     }
 

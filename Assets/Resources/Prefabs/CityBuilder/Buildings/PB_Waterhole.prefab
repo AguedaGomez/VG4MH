@@ -73,16 +73,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8ad6ab25819f4b98b6b62bd2e54f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: Pozo
+  dataBuilding: {fileID: 11400000, guid: 5521ec693a6eb7c4cad851457f985c21, type: 2}
   specialCharacterPrefab: {fileID: 0}
-  nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 2
-  cellsInX: 2
   materialsPerSecond: 0
-  type: 1
 --- !u!1001 &7014610647779431666
 PrefabInstance:
   m_ObjectHideFlags: 0

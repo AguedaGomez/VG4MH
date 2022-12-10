@@ -19,10 +19,10 @@ MonoBehaviour:
   cost: 0
   buildingName: "Herrer\xEDa"
   nLocals: 10
-  activationRequired: 0
+  energyRequired: 0
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0
-  type: 1
+  type: 0

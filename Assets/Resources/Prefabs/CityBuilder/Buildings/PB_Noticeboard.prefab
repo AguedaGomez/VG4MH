@@ -74,16 +74,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8ad6ab25819f4b98b6b62bd2e54f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: NoticeBoard
+  dataBuilding: {fileID: 11400000, guid: 0b94adabb8fc69141a21acef0e07fc3b, type: 2}
   specialCharacterPrefab: {fileID: 0}
-  nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 2
-  cellsInX: 2
   materialsPerSecond: 0
-  type: 1
 --- !u!1001 &7835090338122353451
 PrefabInstance:
   m_ObjectHideFlags: 0
