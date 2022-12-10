@@ -19,7 +19,7 @@ public class BoardView : MonoBehaviour
         GameObject lod0 = FindGameObjectInChildWithTag(lodsGroup, "LOD0");
 
         MeshFilter currentMesh = lod0.GetComponent<MeshFilter>();
-        buildGhost.ChangeMesh(currentMesh);
+        buildGhost.ChangeMeshAndScale(currentMesh, lod0.transform.localScale, lod0.transform.rotation);
 
         Building buildingScript = building.GetComponent<Building>();
         buildGhost.SetBuilding(buildingScript);

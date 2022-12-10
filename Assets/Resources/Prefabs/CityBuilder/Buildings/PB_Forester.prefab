@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6681268244422942282}
   - component: {fileID: 4625094337066862204}
   - component: {fileID: 7225574245288332629}
+  - component: {fileID: 3827864968270744294}
   m_Layer: 0
   m_Name: PB_Forester
   m_TagString: Untagged
@@ -67,6 +68,22 @@ MonoBehaviour:
   cellsInX: 3
   materialsPerSecond: 0
   type: 1
+--- !u!208 &3827864968270744294
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889200796470135822}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2, y: 0.5, z: 2}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &4826455612316303634
 PrefabInstance:
   m_ObjectHideFlags: 0

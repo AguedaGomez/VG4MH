@@ -15,7 +15,7 @@ public class Building : MonoBehaviour
     public string buildingName;
     public GameObject specialCharacterPrefab; //Si está vacío significa que no tiene specialCharacter, si no, sí
     public int nLocals; // number of new inhabitants that attracks
-    //public int activationRequired; // minimun of activation to built it
+    //public int energyRequired; // minimun of activation to built it
     public int row; // row (z) in the board where it was built
     public int col; // col (x) in the board where it was built
     public int cellsInZ; // all the cells that it occupies in z, get from SO

@@ -14,6 +14,7 @@ public class BuildGhost : MonoBehaviour
     [SerializeField] BoxCollider buildingCellBoxCollider;
 
     [SerializeField] MeshFilter buildingMeshFilter; //meshfilter?
+
    // [SerializeField] MeshFilter cellsMeshFilter;
    // [SerializeField] bool occupied = false;
    // [SerializeField] float cellThickness = .1f;
@@ -61,10 +62,11 @@ public class BuildGhost : MonoBehaviour
 
     }
 
-    public void ChangeMesh(MeshFilter currentMesh)
+    public void ChangeMeshAndScale(MeshFilter currentMesh, Vector3 newScale, Quaternion newRotation)
     {
         buildingMeshFilter.sharedMesh = currentMesh.sharedMesh;
-        
+        buildingMeshFilter.gameObject.transform.localScale = newScale;
+        buildingMeshFilter.gameObject.transform.rotation = newRotation;
         //ScaleCollider();
         //buildingMeshFilter.transform.position = new Vector3(buildingMeshFilter.transform.position.x + cellsMeshFilter.transform.position.x,
           //0, buildingMeshFilter.transform.position.z+ cellsMeshFilter.transform.position.z);
