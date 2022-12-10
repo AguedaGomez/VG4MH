@@ -22,20 +22,24 @@ public class BuildingMenuController : MonoBehaviour
         Debug.Log("en CreateBuildingGrid");
         foreach (var construction in GameManager.Instance.buildingsInGameList)
         {
-            GameObject gridElement = Instantiate(bGridElement, GridWithBuildings.transform);
+            if (construction.buildingName != "Biblioteca")
+            {
+                GameObject gridElement = Instantiate(bGridElement, GridWithBuildings.transform);
 
-            //En cada script controlador del elemento de la grid, se incorpora el id de la construcción correspondiente
-            //Por defecto, no se puede contruir nada hasta, todos deben estar bloqueados
-            BGridElementController bGridElementController = gridElement.GetComponent<BGridElementController>();
-            bGridElementController.myId = construction.id;
-            bGridElementController.Lock();
+                //En cada script controlador del elemento de la grid, se incorpora el id de la construcción correspondiente
+                //Por defecto, no se puede contruir nada hasta, todos deben estar bloqueados
+                BGridElementController bGridElementController = gridElement.GetComponent<BGridElementController>();
+                bGridElementController.myId = construction.id;
+                bGridElementController.Lock();
 
-            Transform gridElementTransform = gridElement.transform;
-            gridElementTransform.Find("Build").GetComponent<Button>().onClick.AddListener(() => canvasController.SaveBuildingToConstruct(construction));
+                Transform gridElementTransform = gridElement.transform;
+                gridElementTransform.Find("Build").GetComponent<Button>().onClick.AddListener(() => canvasController.SaveBuildingToConstruct(construction));
 
-            //Para acceder al elemento de la lista que corresponde con una construcción concreta
-            gridElementsDic.Add(construction.id, bGridElementController);
+                //Para acceder al elemento de la lista que corresponde con una construcción concreta
+                gridElementsDic.Add(construction.id, bGridElementController);
+            }
         }
+
     }
 
     public void HideMenu()
