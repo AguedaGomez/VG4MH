@@ -72,7 +72,8 @@ public class InteractionController : MonoBehaviour
                         RaycastHit hit;
                         if (Physics.Raycast(ray, out hit))
                         {
-                            Vector3 gridPosition = board.CalculateGridPosition(hit.point); 
+                           
+                            Vector3 gridPosition = board.CalculateGridPosition(hit.point, selectedBuildingScript.GetCellsX()); 
                             if (!board.CheckBoardLimits(gridPosition, selectedBuildingScript))
                             {
                                 currentBuilding.transform.parent.position = gridPosition;
@@ -178,14 +179,15 @@ public class InteractionController : MonoBehaviour
 
     }
 
-    public void SaveBuildingToConstruct(Construction construction)
+    public void SaveBuildingToConstruct(Construction dataBuilding)
     {
-        GameManager.Instance.buildingInConstruction = construction;
+        GameManager.Instance.buildingInConstruction = dataBuilding;
         selectedBuilding = GameManager.Instance.buildingInConstruction.prefab;
+        selectedBuilding.GetComponent<Building>().InitializeBuildingPrefab(dataBuilding);
     }
     public void EnableBuilder()
     {
-        selectedBuildingScript = GameManager.Instance.buildingInConstruction.prefab.GetComponent<Building>();
+        selectedBuildingScript = selectedBuilding.GetComponent<Building>();
         AddBuildingInEditMode();
         GridUI.SetActive(true);
 
@@ -196,7 +198,7 @@ public class InteractionController : MonoBehaviour
         //if(currentCollider!=null) Destroy(currentCollider.gameObject);
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 100.0f)) {
-            Vector3 gridPosition = board.CalculateGridPosition(hit.point);
+            Vector3 gridPosition = board.CalculateGridPosition(hit.point, selectedBuildingScript.GetCellsX());
             
             board.AddBuildingInEditMode(selectedBuilding, gridPosition);
 

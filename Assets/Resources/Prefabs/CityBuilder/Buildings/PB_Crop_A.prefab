@@ -84,7 +84,8 @@ Transform:
   m_LocalRotation: {x: -0.7071069, y: -0, z: 0.00000002980238, w: 0.70710677}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 99.99998, z: 11.532686}
-  m_Children: []
+  m_Children:
+  - {fileID: 7084999663029052500}
   m_Father: {fileID: 2660245926876888222}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -160,12 +161,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6479603354198241072}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0.36565658, z: -1.6138101}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.016138107, z: 0.03170616}
+  m_LocalScale: {x: 1, y: 1, z: 8.671006}
   m_Children: []
-  m_Father: {fileID: 7945454807494971758}
-  m_RootOrder: 1
+  m_Father: {fileID: 2252513634989702348}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4714557212586137932
 MeshFilter:
@@ -223,8 +224,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7945454807494971758}
-  - component: {fileID: 163008931176546622}
   - component: {fileID: 6589035632082334080}
+  - component: {fileID: 2033855132085354740}
   m_Layer: 12
   m_Name: PB_Crop_A
   m_TagString: Untagged
@@ -239,32 +240,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7280136556811652052}
-  m_LocalRotation: {x: -0.0000017069738, y: -0.70709586, z: -0.0000017069211, w: 0.70711774}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 4, y: 0.53, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2660245926876888222}
-  - {fileID: 7084999663029052500}
   - {fileID: 3803094066783950619}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -89.998, z: 0}
---- !u!114 &163008931176546622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7280136556811652052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Size: {x: 4, y: 1, z: 4}
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Area: 1
-  m_AffectedAgents: ffffffff
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &6589035632082334080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,20 +261,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: Cultivo
+  dataBuilding: {fileID: 11400000, guid: f6336b94b8a59064182cbc773775893a, type: 2}
   specialCharacterPrefab: {fileID: 8883881510943616634, guid: b022d788af2381c4d846e707a212c041,
     type: 3}
-  nLocals: 5
   row: 0
   col: 0
-  cellsInZ: 1
-  cellsInX: 1
   materialsPerSecond: 0
-  type: 0
   indicatorText: {fileID: 3803094065824809083}
   maxMaterials: 20
   materialsButton: {fileID: 3803094065907406396}
+--- !u!208 &2033855132085354740
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7280136556811652052}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2, y: 0.5, z: 2}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &6636821540705222110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -326,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 7556468292608109253, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556468292608109253, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}

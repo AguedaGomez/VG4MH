@@ -12,7 +12,7 @@ public class Construction : ScriptableObject
     public int cost; // materials needed to built it
     public string buildingName;
     public int nLocals; // number of new inhabitants that attracks
-    public int activationRequired; // minimun of activation to built it
+    public int energyRequired; // minimun of activation to built it
     public int cellsInZ; // all the cells that it occupies in z
     public int cellsInX; // all the cells that it occupies in x
     public int powerRIncrease; // percentage of powerR that increases when it is built

@@ -19,7 +19,7 @@ MonoBehaviour:
   cost: 0
   buildingName: Laboratorio
   nLocals: 0
-  activationRequired: 50
+  energyRequired: 0
   cellsInZ: 0
   cellsInX: 0
   powerRIncrease: 0

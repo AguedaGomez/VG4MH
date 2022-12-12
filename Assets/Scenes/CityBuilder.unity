@@ -3454,12 +3454,12 @@ PrefabInstance:
     - target: {fileID: 1889056741350430465, guid: c3e8b784c155e194487f5c3e578934f6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -1220.1125
+      value: -1215.3125
       objectReference: {fileID: 0}
     - target: {fileID: 1889056741350430465, guid: c3e8b784c155e194487f5c3e578934f6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0015258789
+      value: -0.016967773
       objectReference: {fileID: 0}
     - target: {fileID: 2995048077576782299, guid: c3e8b784c155e194487f5c3e578934f6,
         type: 3}
@@ -6103,22 +6103,22 @@ MonoBehaviour:
   buildingInConstruction: {fileID: 0}
   interactingWithUI: 0
   buildingsInGameList:
+  - {fileID: 11400000, guid: 7e11e5325de81564c883bc97e07467d0, type: 2}
   - {fileID: 11400000, guid: 1a35bb2d1587edc488f93f60935f788b, type: 2}
-  - {fileID: 11400000, guid: 296ad40fb8478fb4cbf9daab108a359e, type: 2}
-  - {fileID: 11400000, guid: e421db65bd31f204a946dd9e762a26fc, type: 2}
   - {fileID: 11400000, guid: f6336b94b8a59064182cbc773775893a, type: 2}
   - {fileID: 11400000, guid: 830750a442455fa45893cc5f38e750ec, type: 2}
-  - {fileID: 11400000, guid: 66fc0280c334dd84e99e748047870963, type: 2}
   - {fileID: 11400000, guid: 535210f7bd14a2b42a21ab0b880d64c3, type: 2}
+  - {fileID: 11400000, guid: 66fc0280c334dd84e99e748047870963, type: 2}
+  - {fileID: 11400000, guid: 296ad40fb8478fb4cbf9daab108a359e, type: 2}
   - {fileID: 11400000, guid: 6cf20a964b504a740ad56f6523a19579, type: 2}
   - {fileID: 11400000, guid: 3962f4e55b7726943b85d318963fa322, type: 2}
-  - {fileID: 11400000, guid: bcf964da57e03884ebcf74fbb95f969e, type: 2}
   - {fileID: 11400000, guid: 0b94adabb8fc69141a21acef0e07fc3b, type: 2}
+  - {fileID: 11400000, guid: bcf964da57e03884ebcf74fbb95f969e, type: 2}
   - {fileID: 11400000, guid: 85b58d90077b9b848b8eaff6ded00736, type: 2}
-  - {fileID: 11400000, guid: 7e11e5325de81564c883bc97e07467d0, type: 2}
   - {fileID: 11400000, guid: 6735c39ea6e775642ab1a318ab076c79, type: 2}
-  - {fileID: 11400000, guid: 5521ec693a6eb7c4cad851457f985c21, type: 2}
   - {fileID: 11400000, guid: b37f3abf7cac23a44a3dcd6104b7284b, type: 2}
+  - {fileID: 11400000, guid: 5521ec693a6eb7c4cad851457f985c21, type: 2}
+  - {fileID: 11400000, guid: e421db65bd31f204a946dd9e762a26fc, type: 2}
   - {fileID: 11400000, guid: 5d0779a5e5078fd4282212fa997ff714, type: 2}
   goalsToReach:
   - {fileID: 11400000, guid: 4316ee1b2715dd54d9a24b6f3233aa99, type: 2}
@@ -10003,7 +10003,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: aa83aa76ea31f884ea6280d02cb15953,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.541
+      value: 2.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa83aa76ea31f884ea6280d02cb15953,
         type: 3}
@@ -26240,7 +26240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d75017a382b1744a2be0ec4efa3399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editBuilding: {fileID: 7262558609466260145, guid: ae2c55ae7c49c20459c7daf7e76a7092,
+  editBuilding: {fileID: 1634192737352815254, guid: 161f83bd79ffc6b4693aa4852353d531,
     type: 3}
 --- !u!1001 &1945903361
 PrefabInstance:

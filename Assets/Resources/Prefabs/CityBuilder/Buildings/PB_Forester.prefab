@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6681268244422942282}
   - component: {fileID: 4625094337066862204}
   - component: {fileID: 7225574245288332629}
+  - component: {fileID: 3827864968270744294}
   m_Layer: 0
   m_Name: PB_Forester
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6889200796470135822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.064194, y: 0.67109835, z: 17.376652}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5003985942016468729}
@@ -57,16 +58,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8ad6ab25819f4b98b6b62bd2e54f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  buildingName: "Caba\xF1a foresatal"
+  dataBuilding: {fileID: 11400000, guid: 66fc0280c334dd84e99e748047870963, type: 2}
   specialCharacterPrefab: {fileID: 0}
-  nLocals: 0
   row: 0
   col: 0
-  cellsInZ: 3
-  cellsInX: 3
   materialsPerSecond: 0
-  type: 1
+--- !u!208 &3827864968270744294
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889200796470135822}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2, y: 0.5, z: 2}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &4826455612316303634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,17 +94,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ff3618a5c1c7c5c48a8a743f2608ae31,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9358063
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ff3618a5c1c7c5c48a8a743f2608ae31,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.17109835
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ff3618a5c1c7c5c48a8a743f2608ae31,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.62334824
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ff3618a5c1c7c5c48a8a743f2608ae31,
         type: 3}

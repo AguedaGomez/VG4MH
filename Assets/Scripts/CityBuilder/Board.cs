@@ -83,14 +83,14 @@ public class Board : MonoBehaviour
             Quaternion buildingRotation = buildingTransform.rotation;
             GameObject createdBuilding = Instantiate(building, position, buildingRotation);
             Building buildingScript = createdBuilding.GetComponent<Building>();
-            createdBuilding.transform.name = buildingScript.buildingName;
+            createdBuilding.transform.name = buildingScript.GetName();
 
             int x = CalculateRowColumn(position.x);
             int z = CalculateRowColumn(position.z);
 
-            buildingScript.id = x + "" + z + "";
+            buildingScript.SetId(x + "" + z + "");
 
-            if (buildingScript.type == Construction.Type.MATERIALGENERATORBUILDING)
+            if (buildingScript.GetBType() == Construction.Type.MATERIALGENERATORBUILDING)
             {
                 MaterialGeneratorBuilding mGBScript = createdBuilding.GetComponent<MaterialGeneratorBuilding>();
                 buildings[x, z] = mGBScript;
@@ -142,9 +142,9 @@ public class Board : MonoBehaviour
 
     private bool CheckAvailableSpace(int x, int z, Building currentBuilding)
     {
-        for (int r = 0; r < currentBuilding.cellsInZ; r++)
+        for (int r = 0; r < currentBuilding.GetCellsX(); r++)
         {
-            for (int c = 0; c < currentBuilding.cellsInX; c++)
+            for (int c = 0; c < currentBuilding.GetCellsZ(); c++)
             {
                 if (boardOccupationStatus[x + r, z - c] == occupiedCell) // there isn't available space
                     return false;
@@ -157,18 +157,22 @@ public class Board : MonoBehaviour
     {
         int x = CalculateRowColumn(gridPosition.x);
         int z = CalculateRowColumn(gridPosition.z);
-        if (x < LEFT_LIMIT ||  z > UP_LIMIT || x + buildingScript.cellsInX > RIGHT_LIMIT || z - buildingScript.cellsInZ < DOWN_LIMIT) //out of the limits
+        if (x < LEFT_LIMIT ||  z > UP_LIMIT || x + buildingScript.GetCellsX() > RIGHT_LIMIT || z - buildingScript.GetCellsZ() < DOWN_LIMIT) //out of the limits
             return true;
         return false;
     }
 
-    public Vector3 CalculateGridPosition(Vector3 position)
+    public Vector3 CalculateGridPosition(Vector3 position, int bSize)
     {
         int xCell = CalculateRowColumn(position.x);
         float yCell = .5f;
         int zCell = CalculateRowColumn(position.z);
 
-        return new Vector3(xCell*cellSize + (2/2)*cellSize, yCell, zCell*cellSize); // 2 número de celdas que ocupa el edificio
+        if (bSize % 2 == 0)
+            return new Vector3(xCell * cellSize-2, yCell, zCell * cellSize-2);
+
+        else 
+            return new Vector3(xCell*cellSize, yCell, zCell*cellSize); 
     }
     private Vector3 CalculatePosition(Vector3 gridPosition)
     {
@@ -183,9 +187,10 @@ public class Board : MonoBehaviour
 
     public void SaveBoardStateInList(int x, int z)
     {
-        SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].buildingName);
-        //Debug.Log("guardando objeto con id: " + sB.id);
-        if (buildings[x, z].type == Construction.Type.MATERIALGENERATORBUILDING)
+        Debug.Log("En building x = " + x + " z= " + z + "hay: " + buildings[x, z].GetName());
+        SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].GetId());
+
+        if (buildings[x, z].GetBType() == Construction.Type.MATERIALGENERATORBUILDING)
             sB.currentMaterials = buildings[x, z].materialsPerSecond;
         else
             sB.currentMaterials = 0;
@@ -197,8 +202,8 @@ public class Board : MonoBehaviour
 
     private void SaveBoardStatus(int x, int z)
     {
-        int cellsInZ = buildings[x, z].cellsInZ;
-        int cellsInX = buildings[x, z].cellsInX;
+        int cellsInZ = buildings[x, z].GetCellsZ();
+        int cellsInX = buildings[x, z].GetCellsX();
         for (int r = 0; r < cellsInX; r++)
         {
             for (int c = 0; c < cellsInZ; c++)
@@ -238,9 +243,9 @@ public class Board : MonoBehaviour
         else
         {
             // static buildings initial configuration. First time the game starts
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(16, 0, 26)), -1, true);
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(15, 0, 16)), -1, true);
-            AddBuilding(library, CalculateGridPosition(new Vector3(23, 0, 26)), -1, true);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(16, 0, 26), 1), -1, true);
+            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(15, 0, 16), 1), -1, true);
+            AddBuilding(library, CalculateGridPosition(new Vector3(23, 0, 26), 2), -1, true);
         }
 
     }

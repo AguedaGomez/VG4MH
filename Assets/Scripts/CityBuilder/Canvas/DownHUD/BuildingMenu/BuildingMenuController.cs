@@ -20,22 +20,25 @@ public class BuildingMenuController : MonoBehaviour
     public void CreateBuildingGrid()
     {
         Debug.Log("en CreateBuildingGrid");
-        foreach (var construction in GameManager.Instance.buildingsInGameList)
+        foreach (var bData in GameManager.Instance.buildingsInGameList)
         {
-            GameObject gridElement = Instantiate(bGridElement, GridWithBuildings.transform);
+            if (bData.buildingName != "Biblioteca")
+            {
+                GameObject gridElement = Instantiate(bGridElement, GridWithBuildings.transform);
 
-            //En cada script controlador del elemento de la grid, se incorpora el id de la construcción correspondiente
-            //Por defecto, no se puede contruir nada hasta, todos deben estar bloqueados
-            BGridElementController bGridElementController = gridElement.GetComponent<BGridElementController>();
-            bGridElementController.myId = construction.id;
-            bGridElementController.Lock();
+                //En cada script controlador del elemento de la grid, se incorpora el id de la construcción correspondiente
+                //Por defecto, no se puede contruir nada hasta, todos deben estar bloqueados
+                BGridElementController bGridElementController = gridElement.GetComponent<BGridElementController>();
+                bGridElementController.myId = bData.id;
+                bGridElementController.Lock();
 
-            Transform gridElementTransform = gridElement.transform;
-            gridElementTransform.Find("Build").GetComponent<Button>().onClick.AddListener(() => canvasController.SaveBuildingToConstruct(construction));
-
-            //Para acceder al elemento de la lista que corresponde con una construcción concreta
-            gridElementsDic.Add(construction.id, bGridElementController);
+                Transform gridElementTransform = gridElement.transform;
+                gridElementTransform.Find("Build").GetComponent<Button>().onClick.AddListener(() => canvasController.SaveBuildingToConstruct(bData));
+                //Para acceder al elemento de la lista que corresponde con una construcción concreta
+                gridElementsDic.Add(bData.id, bGridElementController);
+            }
         }
+
     }
 
     public void HideMenu()

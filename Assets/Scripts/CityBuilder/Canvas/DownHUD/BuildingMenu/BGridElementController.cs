@@ -21,30 +21,30 @@ public class BGridElementController : MonoBehaviour
 
     private void SetUnlockData()
     {
-        Construction construction = GameManager.Instance.buildingsInGame[myId];
+        Construction bData = GameManager.Instance.buildingsInGame[myId];
 
-        transform.Find("Name").GetComponent<Text>().text = construction.buildingName;
-        transform.Find("Image").GetComponent<Image>().sprite = construction.image;
+        transform.Find("Name").GetComponent<Text>().text = bData.buildingName;
+        transform.Find("Image").GetComponent<Image>().sprite = bData.image;
         transform.Find("Image").GetComponent<Image>().SetNativeSize();
-        transform.Find("Mat Number").GetComponent<Text>().text = "" + construction.maximunMaterials;
+        //transform.Find("Mat Number").GetComponent<Text>().text = "" + construction.maximunMaterials; <-Revisar esto
         
         Transform buildButtonTransform = transform.Find("Build");
         buildButtonTransform.transform.Find("Lock icon").gameObject.SetActive(false);
         buildButtonTransform.GetComponent<Button>().interactable = true;
 
         Text buildText = transform.Find("Build").transform.Find("Text").GetComponent<Text>();
-        buildText.text = "" + construction.cost;
+        buildText.text = "" + bData.cost;
         buildText.gameObject.SetActive(true);
 
-        transform.Find("GridNumber").GetComponent<Text>().text = "" + construction.cellsInX + "x" + construction.cellsInZ;
+        transform.Find("GridNumber").GetComponent<Text>().text = "" + bData.cellsInX + "x" + bData.cellsInZ;
     }
 
     private void SetLockData()
     {
-        Construction construction = GameManager.Instance.buildingsInGame[myId];
+        Construction bData = GameManager.Instance.buildingsInGame[myId];
 
         transform.Find("Name").GetComponent<Text>().text = "??????";
-        transform.Find("Image").GetComponent<Image>().sprite = construction.silhouette;
+        transform.Find("Image").GetComponent<Image>().sprite = bData.silhouette;
         transform.Find("Image").GetComponent<Image>().SetNativeSize();
         transform.Find("Mat Number").GetComponent<Text>().text = "??";
 
@@ -56,7 +56,6 @@ public class BGridElementController : MonoBehaviour
     }
     public void Lock()
     {
-        Debug.Log("Lock building");
         SetLockData();
     }  
     public void UnLock()

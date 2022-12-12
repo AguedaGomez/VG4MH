@@ -14,12 +14,13 @@ public class BuildGhost : MonoBehaviour
     [SerializeField] BoxCollider buildingCellBoxCollider;
 
     [SerializeField] MeshFilter buildingMeshFilter; //meshfilter?
-    [SerializeField] MeshFilter cellsMeshFilter;
-    [SerializeField] bool occupied = false;
-    [SerializeField] float cellThickness = .1f;
-    [SerializeField] const float cellGroundOffset = -.01f;
 
-    [SerializeField] bool refreshSize = false;
+   // [SerializeField] MeshFilter cellsMeshFilter;
+   // [SerializeField] bool occupied = false;
+   // [SerializeField] float cellThickness = .1f;
+    //[SerializeField] const float cellGroundOffset = -.01f;
+
+  //  [SerializeField] bool refreshSize = false;
 
     //NUEVO
     [SerializeField] GameObject cellObject;
@@ -57,32 +58,24 @@ public class BuildGhost : MonoBehaviour
 
     public void SetBuilding(Building building) 
     {
-        //buildingMesh = building.
-        buildingSize = new Vector2Int(building.cellsInX, building.cellsInZ);
+        buildingSize = new Vector2Int(building.GetCellsX(), building.GetCellsZ());
 
     }
 
-    public void ChangeMesh(MeshFilter currentMesh)
+    public void ChangeMeshAndScale(MeshFilter currentMesh, Vector3 newScale, Quaternion newRotation)
     {
         buildingMeshFilter.sharedMesh = currentMesh.sharedMesh;
-        ScaleCollider();
-        //buildingMeshFilter.transform.position = new Vector3(buildingMeshFilter.transform.position.x + cellsMeshFilter.transform.position.x,
-          //0, buildingMeshFilter.transform.position.z+ cellsMeshFilter.transform.position.z);
-        //Bounds bounds = buildingMeshFilter.GetComponent<Renderer>().bounds;
-        //Debug.Log("bound in y: " + bounds.size.y);
-        //buildingCellBoxCollider.size = new Vector3(buildingCellBoxCollider.size.x, bounds.size.y, buildingCellBoxCollider.size.z);
+        buildingMeshFilter.gameObject.transform.localScale = newScale;
+        buildingMeshFilter.gameObject.transform.rotation = newRotation;
         
     }
 
     private void RescaleCell()
     {
-        cellObject.transform.localScale=new Vector3(buildingSize.x*cellObject.transform.localScale.x, 0.4f, buildingSize.y*cellObject.transform.localScale.z);
-    }
-
-    public void DisplaceBuildingToCenter()
-    {
-        Transform buildingTransform = gameObject.transform.Find("SM_Base_Building_LOD0");
-        buildingTransform.position = Vector3.zero;
+        Vector3 scaleChange = cellObject.transform.localScale;
+        scaleChange.x = 4 * buildingSize.x; // 4 is cellSize
+        scaleChange.z = 4 * buildingSize.y;
+        cellObject.transform.localScale = scaleChange;
     }
     private int CalculateDisplacement(int d) 
     {
