@@ -13,6 +13,7 @@ TagManager:
   - LOD_group
   - LOD0
   - ui
+  - BuildingCells
   layers:
   - Default
   - TransparentFX
