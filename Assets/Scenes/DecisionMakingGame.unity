@@ -3708,7 +3708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9777fa4e307a4744b929d2a44b7bd76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCard: {fileID: 11400000, guid: 9faf25edc3e8f0a4d9a9da2fa8c05033, type: 2}
+  currentCard: {fileID: 11400000, guid: 7766d4d80fd1aed4187271f6a9f39160, type: 2}
   buildingInConstruction: {fileID: 0}
   interactingWithUI: 0
   buildingsInGameList: []

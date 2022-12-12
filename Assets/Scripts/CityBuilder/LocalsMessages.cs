@@ -18,7 +18,7 @@ public class LocalsMessages : MonoBehaviour
     private string[] generalMessages = { "Hola, ¿qué tal?", "¡Qué buen día hace hoy!", "¡Qué bien!, tú por aquí",
     "¿Has visitado ya la biblioteca?", "¿Cómo te va?"};
     private string[] generalMissionMessages = { "¿Puedes ayudarme?", "Tengo algo que consultarte, ¿Tienes un momento?", 
-    "¿Puedes ayudar a decidirme qué es lo mejor?", "Te necesitamos para ayudar al pueblo, ¿Puedes?"};
+    "¿Puedes echarme una mano?", "¿Me ayudas?"};
 
 
     // Start is called before the first frame update

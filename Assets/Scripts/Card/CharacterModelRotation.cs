@@ -8,7 +8,7 @@ public class CharacterModelRotation : MonoBehaviour
     private Vector2 touchPosition;
     private Quaternion rotationY;
     private Quaternion initialRotation;
-    private float rotateSpeedModifier = 0.05f;
+    private float rotateSpeedModifier = 0.09f;
 
     void Start()
     {

@@ -15,7 +15,7 @@ public class CitizensGenerator : MonoBehaviour
     List<GameObject> onBoardCitizens = new List<GameObject>();
     List<GameObject> onBoardOutstandingCitizens = new List<GameObject>();
 
-    string[] randomNames = { "Norman" , "Alex", "Andy", "Ash", "Bay", "Cri﻿s", "Mel", "Reyes", "Robin", "Gael", "Zoel", "Zuri", "Dani" };
+    string[] randomNames = { "Ana" , "Andreas", "Catalina", "Ash", "Bay", "Cri﻿s", "Mel", "Reyes", "Robin", "Gael", "Zoel", "Zuri", "Dani" };
     string[] randomLastnames = { "Miller", "Brown", "Williams", "Jones", "Davis", "Rodriguez", "Clark", "Lewis", "Morris", "Ortiz", "Morgan", "Foster" };
 
     int totalCitizensInGame = 0;
@@ -41,13 +41,10 @@ public class CitizensGenerator : MonoBehaviour
             {
                 if (hit.transform.tag == "local")
                 {
-                    //Hacer algo con el ciudadano
-                    Debug.Log("Has tocado un ciudadano");
                     hit.transform.gameObject.GetComponentInChildren<LocalsMessages>().citizen_OnClick(hit.transform.gameObject);
                 }
                 else
                 {
-                    Debug.Log("No se ha tocado nada");
                 }
             }
         }

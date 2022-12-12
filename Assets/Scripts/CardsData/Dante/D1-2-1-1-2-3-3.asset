@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Campesino Dante
   dialog: "\xA1Tienes raz\xF3n! Me doy cuenta de que hay varias razones por las que
-    el trigo no crece. \xA1Gracias por haberme ayudado a verlas!"
+    puede ser que el trigo no crece, y no es por mi culpa. \xA1Gracias por haberme
+    ayudado a verlas!"
   reward: 1
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 250f87fbc61d5ac49b80f61263ed7630, type: 3}
   sceneModel: {fileID: 7802163749547718320, guid: de56bb37dfcb9f54a8bd687057c672cc,
     type: 3}
-  rightText: Me alegra haberte ayudado
-  leftText: Nos vemos
+  rightText: Me alegra haberte ayudado a ver otras posibles causas
+  leftText: Genial que puedas ver otras opciones, nos vemos
   correctDirection: 2
-  nextCardIfRight: {fileID: 11400000, guid: 73bed8b3fcbcc1b44944f596aefe54d4, type: 2}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: 7766d4d80fd1aed4187271f6a9f39160, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 7766d4d80fd1aed4187271f6a9f39160, type: 2}
