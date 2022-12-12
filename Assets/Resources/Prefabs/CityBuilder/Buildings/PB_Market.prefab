@@ -78,8 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataBuilding: {fileID: 11400000, guid: bcf964da57e03884ebcf74fbb95f969e, type: 2}
-  specialCharacterPrefab: {fileID: 0}
+  specialCharacterPrefab: {fileID: 8000352323702927126, guid: 1f928090c4b92574f8d309078e431a58,
+    type: 3}
   row: 0
   col: 0
   materialsPerSecond: 0

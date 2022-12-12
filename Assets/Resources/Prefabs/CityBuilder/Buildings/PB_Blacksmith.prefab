@@ -47,8 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataBuilding: {fileID: 11400000, guid: 296ad40fb8478fb4cbf9daab108a359e, type: 2}
-  specialCharacterPrefab: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4,
+  specialCharacterPrefab: {fileID: 3701454041783855837, guid: c50469195828f404585843811accf459,
     type: 3}
   row: 0
   col: 0
