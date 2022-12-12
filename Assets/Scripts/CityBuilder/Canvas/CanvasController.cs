@@ -22,7 +22,6 @@ public class CanvasController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Start canvascontroller");
         downHudController = downHUD.GetComponent<DownHudController>();
         buildingMenuController.CreateBuildingGrid();
         topHudController = topHUD.GetComponent<TOP_Hud_Controller>();

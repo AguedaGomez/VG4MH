@@ -19,7 +19,6 @@ public class BuildingMenuController : MonoBehaviour
 
     public void CreateBuildingGrid()
     {
-        Debug.Log("en CreateBuildingGrid");
         foreach (var bData in GameManager.Instance.buildingsInGameList)
         {
             if (bData.buildingName != "Biblioteca")

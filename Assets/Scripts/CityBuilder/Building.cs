@@ -30,7 +30,6 @@ public class Building : MonoBehaviour
 
     public void InitializeBuildingPrefab(Construction data)
     {
-        Debug.Log("InitializeBuildingPrefab");
         buildingName = data.buildingName;
         cost = data.cost;
         nLocals = data.nLocals;

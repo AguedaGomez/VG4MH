@@ -5,9 +5,8 @@ using Random = UnityEngine.Random;
 
 public class Board : MonoBehaviour
 {
-    // TODO: configuracion inicial
-    public GameObject staticBuildingA;
-    public GameObject library;
+    private string idSmallHouse = "1";
+    private string idLibrary = "17";
     public City city; //Eliminar city de aquí?
 
     private const int UP_LIMIT = 29;
@@ -55,7 +54,6 @@ public class Board : MonoBehaviour
         bool availability = CheckSpaceAtPosition(building, position);
         ChangeBuildingColor(availability);
         GameObject currentBuilding = boardView.SetUpBuildingEditMode(building, availability, position);
-        //currentBuilding.GetComponent<BuildGhost>().DisplaceBuildingToCenter();
     }
 
     public bool CheckSpaceAtPosition(GameObject building, Vector3 position)
@@ -63,9 +61,6 @@ public class Board : MonoBehaviour
         int x = CalculateRowColumn(position.x);
         int z = CalculateRowColumn(position.z);
         Building buildingScript = building.GetComponent<Building>();
-
-        //bool availableSpace = CheckAvailableSpace(x, z, buildingScript);
-        //bool buildingAtPosition = CheckForBuildingAtPosition(position);
         return CheckAvailableSpace(x, z, buildingScript) && CheckForBuildingAtPosition(position);
        
     }
@@ -83,6 +78,7 @@ public class Board : MonoBehaviour
             Quaternion buildingRotation = buildingTransform.rotation;
             GameObject createdBuilding = Instantiate(building, position, buildingRotation);
             Building buildingScript = createdBuilding.GetComponent<Building>();
+            buildingScript.InitializeBuildingPrefab(GameManager.Instance.buildingInConstruction);
             createdBuilding.transform.name = buildingScript.GetName();
 
             int x = CalculateRowColumn(position.x);
@@ -187,7 +183,6 @@ public class Board : MonoBehaviour
 
     public void SaveBoardStateInList(int x, int z)
     {
-        Debug.Log("En building x = " + x + " z= " + z + "hay: " + buildings[x, z].GetName());
         SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].GetId());
 
         if (buildings[x, z].GetBType() == Construction.Type.MATERIALGENERATORBUILDING)
@@ -243,9 +238,12 @@ public class Board : MonoBehaviour
         else
         {
             // static buildings initial configuration. First time the game starts
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(16, 0, 26), 1), -1, true);
-            AddBuilding(staticBuildingA, CalculateGridPosition(new Vector3(15, 0, 16), 1), -1, true);
-            AddBuilding(library, CalculateGridPosition(new Vector3(23, 0, 26), 2), -1, true);
+            GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[idSmallHouse];
+            AddBuilding(GameManager.Instance.buildingInConstruction.prefab, CalculateGridPosition(new Vector3(16, 0, 26), 1), -1, true);
+            AddBuilding(GameManager.Instance.buildingInConstruction.prefab, CalculateGridPosition(new Vector3(15, 0, 16), 1), -1, true);
+            GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[idLibrary];
+            AddBuilding(GameManager.Instance.buildingInConstruction.prefab, CalculateGridPosition(new Vector3(23, 0, 26), 2), -1, true);
+            GameManager.Instance.buildingInConstruction = null;
         }
 
     }
