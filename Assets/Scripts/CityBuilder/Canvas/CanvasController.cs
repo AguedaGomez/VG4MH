@@ -16,6 +16,7 @@ public class CanvasController : MonoBehaviour
 
     private DownHudController downHudController;
     private TOP_Hud_Controller topHudController;
+    private GameObject actionButtons;
     public bool showingConversation = false;
 
     
@@ -25,6 +26,7 @@ public class CanvasController : MonoBehaviour
         downHudController = downHUD.GetComponent<DownHudController>();
         buildingMenuController.CreateBuildingGrid();
         topHudController = topHUD.GetComponent<TOP_Hud_Controller>();
+        actionButtons = downHUD.transform.Find("Actions Button").gameObject;
     }
 
     public void ShowQuestionnaireConfirmationMssg()
@@ -85,8 +87,8 @@ public class CanvasController : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.buildingInConstruction != null) downHUD.SetActive(false);
-        else downHUD.SetActive(true);
+        if (GameManager.Instance.buildingInConstruction != null) actionButtons.SetActive(false);
+        else actionButtons.SetActive(true);
     }
         
 }
