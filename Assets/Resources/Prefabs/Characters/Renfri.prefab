@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conflictExclamation: {fileID: 7802163750768163597}
   specialCitizenWithConflict: 0
+  isSpecialCitizen: 0
 --- !u!114 &8757874882876115799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localName: Earl Emory
-  localImage: {fileID: 21300000, guid: 32319b7d8a982154fa3fccb1750270f3, type: 3}
 --- !u!1 &7802163749547718320
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,5 +26,5 @@ MonoBehaviour:
   rightText: Me alegra haberte hecho ver la importancia de vivir el presente
   leftText: "Espero que a partir de ahora tus d\xEDas sen algo m\xE1s que tus responsabilidades"
   correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: 6fa6f23882174664a964fdc9ef326baa, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 6fa6f23882174664a964fdc9ef326baa, type: 2}

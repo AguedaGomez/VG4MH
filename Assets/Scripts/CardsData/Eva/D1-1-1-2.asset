@@ -21,8 +21,8 @@ MonoBehaviour:
   model: {fileID: 919132149155446097, guid: 39416e127f55be544bfd3df6fd83f73e, type: 3}
   sceneModel: {fileID: 1615194306959157393, guid: b9c14419e9330ba44979d78ee83ddd0e,
     type: 3}
-  rightText: Me alegra haberte ayudado
-  leftText: Hasta luego
+  rightText: "Espero que est\xE9s m\xE1s animada empezando a hacer cosas que te gustan"
+  leftText: "Espero que est\xE9s m\xE1s animada empezando a hacer cosas que te gustan"
   correctDirection: 2
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: 75e2ecebba158fa42857f6d2f0cd0db9, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 75e2ecebba158fa42857f6d2f0cd0db9, type: 2}

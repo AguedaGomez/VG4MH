@@ -120,6 +120,7 @@ public class Board : MonoBehaviour
 
                 if (buildingScript.specialCharacterPrefab != null)
                 {
+                    Debug.Log("special character es " + buildingScript.specialCharacterPrefab.name);
                     citizensGenerator.AddSpecialCitizen(buildingScript.specialCharacterPrefab);
                 }
             }
