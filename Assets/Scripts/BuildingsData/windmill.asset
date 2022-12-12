@@ -16,12 +16,13 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: e4117ab3e7d3cf34cb02d6e77d80a819, type: 3}
   prefab: {fileID: 6542561628278900347, guid: 7d491b47fb10ea049be99ccab5a62f92, type: 3}
   id: 16
+  idData: windmill
   cost: 0
   buildingName: Molino
   nLocals: 0
   energyRequired: 0
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 1
+  cellsInX: 1
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0

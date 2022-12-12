@@ -16,12 +16,13 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: 8bac8103fcabd6c408d12ecd6f8d6dc0, type: 3}
   prefab: {fileID: 8559105290182259244, guid: a0fec8e6c520a3f4d87056b3b331836d, type: 3}
   id: 15
+  idData: waterhole
   cost: 0
   buildingName: Pozo
   nLocals: 0
   energyRequired: 0
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 1
+  cellsInX: 1
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0

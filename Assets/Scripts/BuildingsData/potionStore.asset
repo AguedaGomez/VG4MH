@@ -16,10 +16,11 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: b45b5971e550d1748a9ac7a93728ff33, type: 3}
   prefab: {fileID: 7224124414346300926, guid: 5a62fb2a0d7047045a1f7a1bde842781, type: 3}
   id: 13
+  idData: potionStore
   cost: 0
   buildingName: Botica
   nLocals: 0
-  activationRequired: 0
+  energyRequired: 0
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0

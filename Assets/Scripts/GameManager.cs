@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Creando diccionario de edificios en el juego");
         foreach (Construction buildingData in buildingsInGameList)
         {
-            buildingsInGame.Add(buildingData.id, buildingData);
+            buildingsInGame.Add(buildingData.idData, buildingData);
         }
     }
 

@@ -17,6 +17,7 @@ public class Building : MonoBehaviour
     private int cellsInZ; // all the cells that it occupies in z, get from SO
     private int cellsInX; // all the cells that it occupies in x, get from SO
     private int powerRIncrease; // percentage of powerR that increases when built
+    private string idData;
     private int energyRequired;
 
     private Sprite silhouette;
@@ -30,6 +31,7 @@ public class Building : MonoBehaviour
 
     public void InitializeBuildingPrefab(Construction data)
     {
+        Debug.Log("en initialize el data es " + data);
         buildingName = data.buildingName;
         cost = data.cost;
         nLocals = data.nLocals;
@@ -38,7 +40,7 @@ public class Building : MonoBehaviour
         type = data.type;
         energyRequired = data.energyRequired;
         silhouette = data.silhouette;
-        
+        idData = data.idData;
     }
 
     public string GetId() { return id;  }
@@ -52,6 +54,8 @@ public class Building : MonoBehaviour
     public Construction.Type GetBType() { return type; }
     public Sprite GetSilouette() { return silhouette;  }
     public Sprite GetImage() { return image;  }
+
+    public string GetIdData() { return idData;  }
 
 
 }

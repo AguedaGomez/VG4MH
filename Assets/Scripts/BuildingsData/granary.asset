@@ -16,10 +16,11 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: fd986c2ccd9302047a4ec5f7baa8fc2b, type: 3}
   prefab: {fileID: 2206300734052722678, guid: e8624b9c7008c1441969df3bb32034b2, type: 3}
   id: 9
+  idData: granary
   cost: 0
   buildingName: Granero
   nLocals: 0
-  activationRequired: 0
+  energyRequired: 0
   cellsInZ: 2
   cellsInX: 1
   powerRIncrease: 0

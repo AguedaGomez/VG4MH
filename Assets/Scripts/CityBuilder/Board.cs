@@ -5,8 +5,8 @@ using Random = UnityEngine.Random;
 
 public class Board : MonoBehaviour
 {
-    private string idSmallHouse = "1";
-    private string idLibrary = "17";
+    private string idSmallHouse = "smallHouse";
+    private string idLibrary = "library";
     public City city; //Eliminar city de aquí?
 
     private const int UP_LIMIT = 29;
@@ -184,7 +184,7 @@ public class Board : MonoBehaviour
 
     public void SaveBoardStateInList(int x, int z)
     {
-        SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].GetId());
+        SavedBuilding sB = new SavedBuilding(x, z, buildings[x, z].GetIdData());
 
         if (buildings[x, z].GetBType() == Construction.Type.MATERIALGENERATORBUILDING)
             sB.currentMaterials = buildings[x, z].materialsPerSecond;
@@ -192,6 +192,7 @@ public class Board : MonoBehaviour
             sB.currentMaterials = 0;
 
         SaveBoardStatus(x, z);
+        Debug.Log("Guardando el edificio " + sB.idData + " en las coordenadas " + sB.row + sB.col);
         SaveObject.Instance.buildingsInBoard.Add(sB);
 
     }
@@ -218,14 +219,13 @@ public class Board : MonoBehaviour
         if (savedBoardState.Count != 0)
         {
             Camera mainCamera = Camera.main;
-            //Debug.Log("Se ha encontrado la cámara, ahora se setea en el objeto");
 
             foreach (SavedBuilding b in savedBoardState)
             {
-                string path = buildingsPath + "/" + b.idDic;
+                //string path = buildingsPath + "/" + b.idData;
                 //Debug.Log("Se ha mirado la dirección del prefab: " + path);
-
-                GameObject prefabToInstantiate = Resources.Load<GameObject>(path);
+                Debug.Log("prefab id " + b.idData);
+                GameObject prefabToInstantiate = GameManager.Instance.buildingsInGame[b.idData].prefab;
                 //Debug.Log("Se ha encontrado " + prefabToInstantiate.name);
 
 

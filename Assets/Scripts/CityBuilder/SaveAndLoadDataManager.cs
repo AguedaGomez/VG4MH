@@ -48,7 +48,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
         city = FindObjectOfType<City>();
         board = FindObjectOfType<Board>();
 
-        Debug.Log("Existe city" + city.gameObject + " , Existe Board: " + board.gameObject);
+        //Debug.Log("Existe city" + city.gameObject + " , Existe Board: " + board.gameObject);
         if (SaveAndLoadData.LoadFromFile("state-game.json", out var content))
         {
             //Comprobar si ha pasado un día para activar la posibilidad de volver 

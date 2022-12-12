@@ -16,10 +16,11 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: 58313e8d6b97f294292e2d0c8931cf6c, type: 3}
   prefab: {fileID: 2969668293588128673, guid: e77752760cfc62c41b56461fe466d10b, type: 3}
   id: 8
+  idData: fountain
   cost: 0
   buildingName: Plaza
   nLocals: 0
-  activationRequired: 0
+  energyRequired: 0
   cellsInZ: 4
   cellsInX: 4
   powerRIncrease: 0
