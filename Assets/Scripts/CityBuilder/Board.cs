@@ -23,7 +23,7 @@ public class Board : MonoBehaviour
     private bool[,] boardOccupationStatus;
     private bool occupiedCell = true;
     
-    private string buildingsPath = "Prefabs/CityBuilder/Buildings"; //es necesario?
+    private string buildingsPath = "Prefabs/CityBuilder/Buildings"; //coge los prefabs de GameManager
     [SerializeField] private NavMeshSurface navMesh;
     [SerializeField] private CitizensGenerator citizensGenerator;
 
@@ -85,6 +85,7 @@ public class Board : MonoBehaviour
             int z = CalculateRowColumn(position.z);
 
             buildingScript.SetId(x + "" + z + "");
+            GameManager.Instance.buildingInConstruction = null;
 
             if (buildingScript.GetBType() == Construction.Type.MATERIALGENERATORBUILDING)
             {
@@ -241,6 +242,7 @@ public class Board : MonoBehaviour
             // static buildings initial configuration. First time the game starts
             GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[idSmallHouse];
             AddBuilding(GameManager.Instance.buildingInConstruction.prefab, CalculateGridPosition(new Vector3(16, 0, 26), 1), -1, true);
+            GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[idSmallHouse];
             AddBuilding(GameManager.Instance.buildingInConstruction.prefab, CalculateGridPosition(new Vector3(15, 0, 16), 1), -1, true);
             GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[idLibrary];
             AddBuilding(GameManager.Instance.buildingInConstruction.prefab, CalculateGridPosition(new Vector3(23, 0, 26), 2), -1, true);
