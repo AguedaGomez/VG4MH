@@ -227,7 +227,7 @@ public class Board : MonoBehaviour
                 Debug.Log("prefab id " + b.idData);
                 GameObject prefabToInstantiate = GameManager.Instance.buildingsInGame[b.idData].prefab;
                 //Debug.Log("Se ha encontrado " + prefabToInstantiate.name);
-
+                GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[b.idData];
 
                 prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = mainCamera;
                 Vector3 position = new Vector3(b.row, 0f, b.col);

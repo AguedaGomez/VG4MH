@@ -230,8 +230,6 @@ public class CameraController : MonoBehaviour
 
         Vector3 zoomPosition = Vector3.Lerp(zoomOutPosition, zoomInPosition, T);
 
-        Debug.Log(zoomPosition);
-
         Camera.main.transform.position = zoomPosition;
 
         Touch touchZero = Input.GetTouch(0);
