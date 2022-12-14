@@ -39,12 +39,14 @@ public class GameManager : MonoBehaviour
     {
         //FindCity();
         //saveAndLoadDataManager.SaveGame();
+        Debug.Log("SaveGame");
         gameObject.GetComponent<SaveAndLoadDataManager>().SaveGame();
     }
 
     public void LoadGame()
     {
         //SceneManager.LoadScene("CityBuilder");
+        Debug.Log("LoadGame");
         StartCoroutine(LoadYourAsyncScene());
         gameObject.GetComponent<SaveAndLoadDataManager>().LoadGame();
 

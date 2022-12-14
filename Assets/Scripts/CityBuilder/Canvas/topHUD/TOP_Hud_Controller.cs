@@ -27,14 +27,17 @@ public class TOP_Hud_Controller : MonoBehaviour
 
     private void InitializeSliders()
     {
-        float powerR = PlayerData.resources[Card.Resource.MOTIVATION];
-        float activation = PlayerData.resources[Card.Resource.ACTIVATION];
+        //float powerR = SaveObject.Instance.powerR;
+        updatePowerR_SliderValue(SaveObject.Instance.powerR);
+        update_ActivationSliderValue(SaveObject.Instance.activationValue);
+        //float activation = SaveObject.Instance.activationValue;
 
-        float percentage_PowerR = powerR / 100;
-        float percentage_Activation = activation / 100;
 
-        power_R_Slider.GetComponent<Image>().fillAmount = percentage_PowerR;
-        activation_Slider.GetComponent<Image>().fillAmount = percentage_Activation;
+        //float percentage_PowerR = powerR / 100;
+        //float percentage_Activation = activation / 100;
+
+        //power_R_Slider.GetComponent<Image>().fillAmount = percentage_PowerR;
+        //activation_Slider.GetComponent<Image>().fillAmount = percentage_Activation;
     }
 
     public void updateActivationSliderValue(float newValue)
@@ -122,6 +125,7 @@ public class TOP_Hud_Controller : MonoBehaviour
 
         barParticles.Stop();
         power_R_Slider.GetComponent<Image>().fillAmount = percentage_powerR;
+        Debug.Log("porcentaje de powerR: " + percentage_powerR);
         Stop_IconShining(currentResource);
         yield return null;
     }

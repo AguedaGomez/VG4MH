@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TheoryBookManager : MonoBehaviour
 {
@@ -23,15 +24,17 @@ public class TheoryBookManager : MonoBehaviour
     {
         foreach(EntryObject entry in bookEntries)
         {
-            if (GameManager.Instance.checkPointsStory.Contains(entry.typeContent))
-            {
-                entry.unlocked = true;
-            }
+            //Descomentar para probar toda la secuencia
+            //if (GameManager.Instance.checkPointsStory.Contains(entry.typeContent))
+            //{
+            //    entry.unlocked = true;
+            //}
             if(entry.unlocked)
             {
                 GameObject entryObject = Instantiate(entryPrefab, mainMenu_Viewport_gameobject.transform);
                 entryObject.GetComponent<EntryDecorator>().SetUp(entry);
-                entryObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => StartCoroutine(EntryOnClick(entry)));
+                Button entryButton = entryObject.GetComponent<Button>();
+                entryButton.onClick.AddListener(() => StartCoroutine(EntryOnClick(entry)));
             }
         }
 

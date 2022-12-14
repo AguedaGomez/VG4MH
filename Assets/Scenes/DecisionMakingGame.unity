@@ -3549,7 +3549,7 @@ PrefabInstance:
     - target: {fileID: 805603276723740699, guid: a01390f69d26a184a811f5c8100b698e,
         type: 3}
       propertyPath: m_FillAmount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5887728926449806984, guid: a01390f69d26a184a811f5c8100b698e,
         type: 3}
@@ -3669,7 +3669,7 @@ PrefabInstance:
     - target: {fileID: 6978743635800121004, guid: a01390f69d26a184a811f5c8100b698e,
         type: 3}
       propertyPath: m_FillAmount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a01390f69d26a184a811f5c8100b698e, type: 3}
@@ -3713,6 +3713,7 @@ MonoBehaviour:
   interactingWithUI: 0
   buildingsInGameList: []
   goalsToReach: []
+  checkPointsStory: 
 --- !u!4 &1714829275
 Transform:
   m_ObjectHideFlags: 0

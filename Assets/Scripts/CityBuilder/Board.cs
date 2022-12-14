@@ -229,8 +229,8 @@ public class Board : MonoBehaviour
                 GameObject prefabToInstantiate = GameManager.Instance.buildingsInGame[b.idData].prefab;
                 //Debug.Log("Se ha encontrado " + prefabToInstantiate.name);
                 GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[b.idData];
-
-                prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = mainCamera;
+                if (GameManager.Instance.buildingsInGame[b.idData].type == Construction.Type.MATERIALGENERATORBUILDING)
+                    prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = mainCamera;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
                 //Debug.Log("currentMaterials de building añadidos: " + b.currentMaterials);
                 AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials, false);

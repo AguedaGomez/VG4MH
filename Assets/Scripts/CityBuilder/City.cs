@@ -30,7 +30,7 @@ public class City : MonoBehaviour
     {
         Materials = SaveObject.Instance.materials;
         powerR = SaveObject.Instance.powerR;
-        activationValue = SaveObject.Instance.activationValue;
+        Activation = SaveObject.Instance.activationValue;
 
         InitializeCity(); //esto creo que no funcionará
     }
@@ -57,7 +57,7 @@ public class City : MonoBehaviour
 
     private void UpdateTopHUD()
     {
-        canvasController.updateSlidersValue(activationValue, powerR);
+        canvasController.updateSlidersValue(Activation, powerR);
         updateMaterialsOnCanvas();
     }
 
