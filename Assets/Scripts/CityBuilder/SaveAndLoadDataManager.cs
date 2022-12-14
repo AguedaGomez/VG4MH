@@ -45,14 +45,15 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     public void LoadGame()
     {
-        city = FindObjectOfType<City>();
-        board = FindObjectOfType<Board>();
+
 
         //Debug.Log("Existe city" + city.gameObject + " , Existe Board: " + board.gameObject);
         if (SaveAndLoadData.LoadFromFile("state-game.json", out var content))
         {
             //Comprobar si ha pasado un día para activar la posibilidad de volver 
             SaveDataToObject(JsonUtility.FromJson<SaveObject>(content));
+            city = FindObjectOfType<City>();
+            board = FindObjectOfType<Board>();
             //Debug.Log("en Load game cuando se traduce el json: " + SaveObject.Instance.boardState.Count);
         }
             

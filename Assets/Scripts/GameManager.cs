@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     private void CreateDictionaryBuildingsInGame()
     {
+        buildingsInGameList = Resources.LoadAll("Data/BuildingsData", typeof(Construction)).Cast<Construction>().ToList();
         Debug.Log("Creando diccionario de edificios en el juego");
         foreach (Construction buildingData in buildingsInGameList)
         {
