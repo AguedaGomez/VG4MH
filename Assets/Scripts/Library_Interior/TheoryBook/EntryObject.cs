@@ -9,4 +9,5 @@ public class EntryObject : ScriptableObject
     public List<Content> content;
     public bool unlocked;
     public bool read;
+    public Card.Resource typeContent;
 }

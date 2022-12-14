@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public List<ActivityNotification> goalsToReach = new List<ActivityNotification>();
     public Dictionary<string, Construction> buildingsInGame= new Dictionary<string, Construction>();
 
+    public List<Card.Resource> checkPointsStory = new List<Card.Resource>();
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -106,4 +108,5 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
 }

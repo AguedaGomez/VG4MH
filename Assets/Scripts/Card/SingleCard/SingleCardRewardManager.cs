@@ -38,6 +38,8 @@ public class SingleCardRewardManager : MonoBehaviour
         //Contemplar caso de que no haya siguiente currentcard en el dialogo
         if (nextCard.characterName != currentCard.characterName && nextCard.characterName != "Thomas Gruber")
         {
+            Card.Resource checkpoint = currentResource;
+            if (!GameManager.Instance.checkPointsStory.Contains(checkpoint)) GameManager.Instance.checkPointsStory.Add(checkpoint);
             GameManager.Instance.currentCard = nextCard;
             cardManager.LoadScene();
         }

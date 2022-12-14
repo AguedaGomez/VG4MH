@@ -15,5 +15,7 @@ public static class PlayerData
 
     };
 
+    public static List<Card.Resource> checkPointsStory = new List<Card.Resource>();
+
 }
 
