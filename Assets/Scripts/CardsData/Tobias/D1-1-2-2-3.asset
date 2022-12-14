@@ -21,8 +21,8 @@ MonoBehaviour:
   model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}
   sceneModel: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b,
     type: 3}
-  rightText: Centrarse en el presente es un aspecto fundamental de aprender a vivir
-  leftText: "Es importante saber localizar y disfrutar de los peque\xF1os momentos
+  rightText: Saborear esos momentos es un aspecto fundamental para sentirte mejor
+  leftText: "Es importante saber atrapar y disfrutar de los peque\xF1os momentos
     del d\xEDa"
   correctDirection: 0
   nextCardIfRight: {fileID: 11400000, guid: f904f251074343f48b6e868a6fd65a9b, type: 2}

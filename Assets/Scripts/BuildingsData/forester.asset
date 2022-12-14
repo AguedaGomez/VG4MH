@@ -21,8 +21,8 @@ MonoBehaviour:
   buildingName: Casa forestal
   nLocals: 0
   energyRequired: 0
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 2
+  cellsInX: 2
   powerRIncrease: 0
   materialsPerSecond: 0
   maximunMaterials: 0

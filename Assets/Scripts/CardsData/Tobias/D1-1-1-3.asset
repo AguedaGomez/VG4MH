@@ -23,7 +23,7 @@ MonoBehaviour:
   sceneModel: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b,
     type: 3}
   rightText: "Disfrutar de esas peque\xF1as cosas le da sentido a nuestro d\xEDa"
-  leftText: "Vivir tambi\xE9n es disfrutar de los buenos momentos que nos proporciona
+  leftText: "Vivir tambi\xE9n es saborear de los buenos momentos que nos proporciona
     la vida de esta manera"
   correctDirection: 0
   nextCardIfRight: {fileID: 11400000, guid: f904f251074343f48b6e868a6fd65a9b, type: 2}

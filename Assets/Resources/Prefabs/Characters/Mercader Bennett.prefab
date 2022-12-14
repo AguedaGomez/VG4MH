@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7913129261694378522}
   - component: {fileID: 8847906774474658545}
   m_Layer: 0
-  m_Name: Renfri
+  m_Name: Bennet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conflictExclamation: {fileID: 8000352322499060395}
   specialCitizenWithConflict: 0
+  isSpecialCitizen: 0
 --- !u!114 &8847906774474658545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,8 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaf26cbb2349054ca9750dfbbed91ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localName: Earl Emory
-  localImage: {fileID: 21300000, guid: 32319b7d8a982154fa3fccb1750270f3, type: 3}
+  localName: Mercader Bennett
 --- !u!1 &8000352321988146088
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 7708601880345345980}
   - component: {fileID: 2167395655787149119}
   m_Layer: 0
-  m_Name: Merchant
+  m_Name: Mercader Bennett
   m_TagString: local
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

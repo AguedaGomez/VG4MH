@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3324555104852418114, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_Name
-      value: Earl
+      value: Thomas
       objectReference: {fileID: 0}
     - target: {fileID: 7358302312231035128, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 7802163749547718320, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
       propertyPath: m_Name
-      value: Earl
+      value: Thomas
       objectReference: {fileID: 0}
     - target: {fileID: 7802163749547718324, guid: de56bb37dfcb9f54a8bd687057c672cc,
         type: 3}
@@ -92,6 +92,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757874882876115799, guid: de56bb37dfcb9f54a8bd687057c672cc,
+        type: 3}
+      propertyPath: localName
+      value: Thomas Gruber
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de56bb37dfcb9f54a8bd687057c672cc, type: 3}

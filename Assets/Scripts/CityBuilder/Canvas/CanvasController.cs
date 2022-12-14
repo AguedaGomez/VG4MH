@@ -56,6 +56,7 @@ public class CanvasController : MonoBehaviour
     public void BuildNegation()
     {
         confirmationMessage.SetActive(false);
+        GameManager.Instance.buildingInConstruction = null;
     }
 
     public void UnlockBuilding(string id)
