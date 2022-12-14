@@ -9,6 +9,7 @@ public class Construction : ScriptableObject
     public Sprite silhouette;
     public GameObject prefab;
     public string id; // id when building GO is created (string composed xz coordinates)
+    public string idData;
     public int cost; // materials needed to built it
     public string buildingName;
     public int nLocals; // number of new inhabitants that attracks

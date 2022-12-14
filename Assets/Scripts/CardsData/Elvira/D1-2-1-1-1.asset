@@ -26,5 +26,5 @@ MonoBehaviour:
     sentir bien"
   leftText: Me alegra haberte ayudado
   correctDirection: 2
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: e452b281cbc5d4b4c821f8b0474d6380, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: e452b281cbc5d4b4c821f8b0474d6380, type: 2}

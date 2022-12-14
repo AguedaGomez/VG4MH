@@ -28,7 +28,7 @@ public class BuildingMenuController : MonoBehaviour
                 //En cada script controlador del elemento de la grid, se incorpora el id de la construcción correspondiente
                 //Por defecto, no se puede contruir nada hasta, todos deben estar bloqueados
                 BGridElementController bGridElementController = gridElement.GetComponent<BGridElementController>();
-                bGridElementController.myId = bData.id;
+                bGridElementController.myId = bData.idData;
                 bGridElementController.Lock();
 
                 Transform gridElementTransform = gridElement.transform;

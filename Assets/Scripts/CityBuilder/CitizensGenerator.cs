@@ -169,9 +169,6 @@ public class CitizensGenerator : MonoBehaviour
                 var randomPoint = Board.GetRandomPoint();
                 GameObject newCitizen = Instantiate(standardCitizen, randomPoint, Quaternion.identity);
 
-                Debug.Log(charInfo.modelMesh);
-                Debug.Log(charInfo.modelMaterial);
-
                 newCitizen.GetComponentInChildren<Local>().localName = charInfo.characterName;
                 newCitizen.transform.GetChild(0).GetComponent<MeshFilter>().mesh = charInfo.modelMesh;
                 newCitizen.transform.GetChild(0).GetComponent<MeshRenderer>().material = charInfo.modelMaterial;

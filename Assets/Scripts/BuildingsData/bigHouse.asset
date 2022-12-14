@@ -16,10 +16,11 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: 7b814fd786569df40b67cc3eeddaa57c, type: 3}
   prefab: {fileID: 6130454796031494610, guid: 04efe742af06af4449026d0c8ac6b389, type: 3}
   id: 2
+  idData: bigHouse
   cost: 0
   buildingName: Casa 4 pers.
   nLocals: 4
-  activationRequired: 0
+  energyRequired: 0
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0

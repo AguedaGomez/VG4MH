@@ -16,10 +16,11 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: ddd6190a519fcae48a8e98516be4214d, type: 3}
   prefab: {fileID: 7479114484671606169, guid: ec5fa1ca96f60bc47b8076c8e65b433d, type: 3}
   id: 11
+  idData: market
   cost: 0
   buildingName: Mercado
   nLocals: 0
-  activationRequired: 0
+  energyRequired: 0
   cellsInZ: 3
   cellsInX: 3
   powerRIncrease: 0

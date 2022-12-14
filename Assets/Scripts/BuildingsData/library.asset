@@ -16,6 +16,7 @@ MonoBehaviour:
   silhouette: {fileID: 0}
   prefab: {fileID: 8464561809356661064, guid: a8f7d884d53be82468a6bd5e102e2ed6, type: 3}
   id: 17
+  idData: library
   cost: 0
   buildingName: Biblioteca
   nLocals: 0

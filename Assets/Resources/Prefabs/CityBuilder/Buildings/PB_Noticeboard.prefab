@@ -74,8 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8ad6ab25819f4b98b6b62bd2e54f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataBuilding: {fileID: 11400000, guid: 0b94adabb8fc69141a21acef0e07fc3b, type: 2}
-  specialCharacterPrefab: {fileID: 0}
+  specialCharacterPrefab: {fileID: 1615194306959157393, guid: b9c14419e9330ba44979d78ee83ddd0e,
+    type: 3}
   row: 0
   col: 0
   materialsPerSecond: 0

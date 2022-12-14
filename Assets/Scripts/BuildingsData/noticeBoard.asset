@@ -16,10 +16,11 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: 8c6b72e16328b084d9812fec5074a99d, type: 3}
   prefab: {fileID: 8652423548927499805, guid: f2ec97b26e6f9394fabcb8afc762ac6f, type: 3}
   id: 12
+  idData: noticeBoard
   cost: 0
   buildingName: "Tabl\xF3n de anuncios"
   nLocals: 0
-  activationRequired: 0
+  energyRequired: 0
   cellsInZ: 1
   cellsInX: 1
   powerRIncrease: 0

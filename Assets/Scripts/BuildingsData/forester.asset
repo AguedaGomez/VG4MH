@@ -16,6 +16,7 @@ MonoBehaviour:
   silhouette: {fileID: 21300000, guid: 0d08e02ca4227a241af0de4d6385cc79, type: 3}
   prefab: {fileID: 6889200796470135822, guid: b350fe457660de44a8e43c84fdfba8d9, type: 3}
   id: 7
+  idData: forester
   cost: 0
   buildingName: Casa forestal
   nLocals: 0

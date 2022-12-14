@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataBuilding: {fileID: 11400000, guid: 7e11e5325de81564c883bc97e07467d0, type: 2}
   specialCharacterPrefab: {fileID: 0}
   row: 0
   col: 0

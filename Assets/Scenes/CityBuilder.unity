@@ -26222,9 +26222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda878a73c8be1b49bc1b61e22c02ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staticBuildingA: {fileID: 5305152718561655634, guid: 50305df1d5f0c2049b605c767d629740,
-    type: 3}
-  library: {fileID: 8464561809356661064, guid: a8f7d884d53be82468a6bd5e102e2ed6, type: 3}
   city: {fileID: 1538201032}
   navMesh: {fileID: 1079958587}
   citizensGenerator: {fileID: 1538201034}
@@ -27265,7 +27262,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133577847}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2133577849
 Camera:
   m_ObjectHideFlags: 0

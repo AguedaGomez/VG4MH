@@ -8,7 +8,7 @@ public class SavedBuilding
 {
     public int row;
     public int col;
-    public string idDic;
+    public string idData;
     public int currentMaterials;
     public string id;
 
@@ -16,7 +16,7 @@ public class SavedBuilding
     {
         this.row = row;
         this.col = col;
-        this.idDic = idDic;
+        this.idData = idDic;
         this.currentMaterials = -1; // it will change if the building generates materiales
         id = row +"" + col + "";
     }

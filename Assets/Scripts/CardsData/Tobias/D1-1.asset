@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: D1-1
+  m_EditorClassIdentifier: 
+  characterName: "Tabernero Tob\xEDas"
+  dialog: "S\xED, \xBFverdad? pero no debo descuidarme de la taberna. Aunque no pueda
+    tomarme d\xEDas de vacaciones, me gustar\xEDa poder frenar un poco la intensidad
+    de mis d\xEDas y disfrutar de lo que hago, pero no s\xE9 por d\xF3nde empezar."
+  reward: 3
+  type: 0
+  image: {fileID: 0}
+  model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}
+  sceneModel: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b,
+    type: 3}
+  rightText: "Piensa en algo que hagas en tu d\xEDa a d\xEDa que te guste"
+  leftText: "Elije un momento del d\xEDa que puedas dedicarte a ti"
+  correctDirection: 2
+  nextCardIfRight: {fileID: 11400000, guid: bfec4f9e4fdae60458af9a7a10435581, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 831f1499a0905f7439fd63eb8fcc7d35, type: 2}

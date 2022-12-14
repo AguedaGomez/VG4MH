@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
+  m_Name: D1-1-1
+  m_EditorClassIdentifier: 
+  characterName: "Tabernero Tob\xEDas"
+  dialog: "Todas las ma\xF1anas al despertarme, tomo caf\xE9. Ese momento me gusta
+    aunque normalmente no lo disfruto porque me lo tomo con rapidez y me voy a trabajar"
+  reward: 3
+  type: 0
+  image: {fileID: 0}
+  model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}
+  sceneModel: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b,
+    type: 3}
+  rightText: A partir de ahora intenta saborear ese momento
+  leftText: Exprimamos ese momento
+  correctDirection: 0
+  nextCardIfRight: {fileID: 11400000, guid: 727b109a62221474aac55dbb75e375c6, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 1704b32a8244c474c83f546299adc8ac, type: 2}
