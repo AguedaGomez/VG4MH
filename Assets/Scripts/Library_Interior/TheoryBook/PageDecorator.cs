@@ -47,6 +47,8 @@ public class PageDecorator : MonoBehaviour
 
         UpdateContentVisualization();
         UpdatePageVisualization();
+        nextButton.interactable = true;
+        backButton.interactable = true;
         UpdateButtonVisualization();
 
         //if (selectedEntry.content.Count == 1)
