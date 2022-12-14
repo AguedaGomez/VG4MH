@@ -18,9 +18,9 @@ MonoBehaviour:
   reward: 0
   type: 1
   options:
-  - {fileID: 11400000, guid: ab39b926ea60b9946ae77d21ca7634b1, type: 2}
-  - {fileID: 11400000, guid: 967f062fadcba2743a2d5626c2aa567b, type: 2}
-  - {fileID: 11400000, guid: dc4b147cf21661248a5f95a2bdf75a17, type: 2}
-  - {fileID: 11400000, guid: 5307c67bda9f81241bb41ffa92210915, type: 2}
+  - {fileID: 11400000, guid: b7eb82bfc328e2347a5082bdf5d009f8, type: 2}
+  - {fileID: 11400000, guid: 49e05a33ea9c665489add9144481c338, type: 2}
+  - {fileID: 11400000, guid: 14d5b177ac0434145b2ca621b27d987f, type: 2}
+  - {fileID: 11400000, guid: 8a4b6ad4f7f258742b7b24f1101db874, type: 2}
   nextCardIfRight: {fileID: 11400000, guid: 681f1b04c5ed5234a87b785628392ab2, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 019e8d40f7755644d908d7f8baf22f2b, type: 2}
