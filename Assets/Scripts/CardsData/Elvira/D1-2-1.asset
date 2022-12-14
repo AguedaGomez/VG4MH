@@ -22,7 +22,8 @@ MonoBehaviour:
   sceneModel: {fileID: 3701454041783855837, guid: c50469195828f404585843811accf459,
     type: 3}
   rightText: "A m\xED tampoco me dejan disfrutar las preocupaciones"
-  leftText: Saliendo a pasear puedes encontrar un sitio para tu taller
+  leftText: "Saliendo a pasear, notar\xE1s est\xEDmulos agradables (sol, aire) y
+    puedes encontrar un sitio para tu taller"
   correctDirection: 1
   nextCardIfRight: {fileID: 11400000, guid: 574266c46df268447bc39da8b5b2510f, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 3446b793b340cec44b39e1d50fece45a, type: 2}

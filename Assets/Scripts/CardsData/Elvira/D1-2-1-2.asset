@@ -13,16 +13,20 @@ MonoBehaviour:
   m_Name: D1-2-1-2
   m_EditorClassIdentifier: 
   characterName: Elvira Gruber
-  dialog: El pueblo no es muy grande, no hay muchos edificios construidos y no creo
+  dialog: 'El pueblo no es muy grande, no hay muchos edificios construidos y no creo
     que haya un taller.
+
+    Pero es verdad que caminar me puede sentar bien'
   reward: 2
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 42cda1b416d92284595fc26b50fc963f, type: 3}
   sceneModel: {fileID: 3701454041783855837, guid: c50469195828f404585843811accf459,
     type: 3}
-  rightText: Hace poco he visto un edificio posible
-  leftText: No lo sabremos si no paseas por el pueblo
+  rightText: "Claro, estar activa ayuda a mejor estado de \xE1nimo! adem\xE1s, hace
+    poco he visto un edificio posible"
+  leftText: "Caminar te sentar\xE1 bien, adem\xE1s no lo sabremos si no sales a pasear
+    por el pueblo"
   correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: 7d19fd5b4ce0f73468a71dcd1a458c23, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 574266c46df268447bc39da8b5b2510f, type: 2}

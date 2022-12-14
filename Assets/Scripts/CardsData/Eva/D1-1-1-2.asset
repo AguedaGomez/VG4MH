@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: D1-1-1-2
   m_EditorClassIdentifier: 
   characterName: Eva Gruber
-  dialog: "\xBFUna chirim\xEDa? \xA1Qu\xE9 interesante! Espero encontrar a quien
-    la toca para poder aprender. Esto me hace ilusi\xF3n. \xA1Gracias por tu ayuda!"
+  dialog: "\xA1Es verdad! Me acercar\xE9 al tabl\xF3n de anuncios. Espero encontrar
+    a quien toca para poder aprender. Esto me hace ilusi\xF3n. \xA1Gracias por tu
+    ayuda!"
   reward: 2
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 39416e127f55be544bfd3df6fd83f73e, type: 3}
   sceneModel: {fileID: 1615194306959157393, guid: b9c14419e9330ba44979d78ee83ddd0e,
     type: 3}
-  rightText: Me alegra haberte ayudado
-  leftText: Hasta luego
+  rightText: "Me alegra haberte ayudado a saber cu\xE1l es el primer paso"
+  leftText: "Espero que est\xE9s m\xE1s animada empezando a hacer cosas que te gustan"
   correctDirection: 2
   nextCardIfRight: {fileID: 0}
   nextCardIfLeft: {fileID: 0}
