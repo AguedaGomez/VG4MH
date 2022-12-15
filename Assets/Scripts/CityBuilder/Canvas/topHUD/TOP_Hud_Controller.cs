@@ -19,6 +19,8 @@ public class TOP_Hud_Controller : MonoBehaviour
 
     Card.Resource currentResource;
 
+    private float currentPowerR, currentEnergy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,25 +29,26 @@ public class TOP_Hud_Controller : MonoBehaviour
 
     private void InitializeSliders()
     {
-        //float powerR = SaveObject.Instance.powerR;
-        updatePowerR_SliderValue(SaveObject.Instance.powerR);
-        update_ActivationSliderValue(SaveObject.Instance.activationValue);
-        //float activation = SaveObject.Instance.activationValue;
 
+        UpdateValueSlider(power_R_Slider, SaveObject.Instance.powerR);
+        currentPowerR = SaveObject.Instance.powerR;
 
-        //float percentage_PowerR = powerR / 100;
-        //float percentage_Activation = activation / 100;
+        UpdateValueSlider(activation_Slider, SaveObject.Instance.energy);
+        currentEnergy = SaveObject.Instance.energy;
 
-        //power_R_Slider.GetComponent<Image>().fillAmount = percentage_PowerR;
-        //activation_Slider.GetComponent<Image>().fillAmount = percentage_Activation;
     }
 
-    public void updateActivationSliderValue(float newValue)
+    private void UpdateValueSlider (GameObject slider, float value)
+    {
+        slider.GetComponent<Image>().fillAmount = value / 100;
+    }
+
+    public void UpdateEnergySliderwithAnimation(float newValue)
     {
         StartActValueUpdate(true, newValue);
     }
 
-    public void updatePowerR_SliderValue(float newValue)
+    public void UpdatePowerRSliderwithAnimation(float newValue)
     {
         StartPowerRValueUpdate(true, newValue);
     }
@@ -59,7 +62,6 @@ public class TOP_Hud_Controller : MonoBehaviour
                 case Card.Resource.ACTIVATION:
                     StartPowerRValueUpdate(valueModifier > 0, valueModifier);
                     Start_IconShining(Card.Resource.ACTIVATION);
-                    //StartActValueUpdate(valueModifier > 0);
                     break;
                 case Card.Resource.FLEXIBILITY:
                     StartPowerRValueUpdate(valueModifier > 0, valueModifier);
@@ -83,20 +85,15 @@ public class TOP_Hud_Controller : MonoBehaviour
     {
         if (increasing)
         {
-            //iconAnimation.GetComponent<Image>().color = Color.white;
             var Shape = power_R_Slider.transform.GetChild(0).GetComponent<ParticleSystem>().shape;
             Shape.rotation = new Vector3(0, 90, 0);
         }
         else
         {
-            //iconAnimation.GetComponent<Image>().color = Color.red;
             var Shape = power_R_Slider.transform.GetChild(0).GetComponent<ParticleSystem>().shape;
             Shape.rotation = new Vector3(0, -90, 0);
         }
 
-        //Ejecutar la animación correspondiente
-        //iconAnimation.SetBool("finishedSliderUpdating", false);
-        //iconAnimation.Play("StartShining");
         StartCoroutine(update_PowerRSliderValue(newValue));
     }
 
@@ -105,6 +102,7 @@ public class TOP_Hud_Controller : MonoBehaviour
         float percentage_powerR = newPowerR / 100;
         float prev_Percentage = power_R_Slider.GetComponent<Image>().fillAmount; //COGER VALOR DEL PLAYER?
         percentage_powerR += prev_Percentage;
+
         RectTransform edgeRect = power_R_Slider.transform.GetChild(0).GetComponent<RectTransform>();
         ParticleSystem barParticles = power_R_Slider.transform.GetChild(0).GetComponent<ParticleSystem>();
         barParticles.Play();
@@ -117,6 +115,7 @@ public class TOP_Hud_Controller : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float newValue = Mathf.Lerp(prev_Percentage, percentage_powerR, (elapsedTime / timeToGo));
             power_R_Slider.GetComponent<Image>().fillAmount = newValue;
+            SaveObject.Instance.powerR = newValue * 100;
             edgeRect.anchorMin = new Vector2(newValue, newValue);
             edgeRect.anchoredPosition = new Vector2(0, 0);
 
@@ -125,7 +124,9 @@ public class TOP_Hud_Controller : MonoBehaviour
 
         barParticles.Stop();
         power_R_Slider.GetComponent<Image>().fillAmount = percentage_powerR;
-        Debug.Log("porcentaje de powerR: " + percentage_powerR);
+        SaveObject.Instance.powerR = percentage_powerR * 100;
+
+        //Debug.Log("porcentaje de powerR: " + percentage_powerR);
         Stop_IconShining(currentResource);
         yield return null;
     }
@@ -266,5 +267,19 @@ public class TOP_Hud_Controller : MonoBehaviour
         isMaterialShining = false;
 
         yield return null;
+    }
+
+    private void Update()
+    {
+        //if (SaveObject.Instance.powerR != currentPowerR)
+        //{
+        //    UpdatePowerRSliderwithAnimation(SaveObject.Instance.powerR);
+        //    currentPowerR = SaveObject.Instance.powerR;
+        //}
+        //if (SaveObject.Instance.energy != currentEnergy)
+        //{
+        //    UpdateEnergySliderwithAnimation(SaveObject.Instance.energy);
+        //    currentEnergy = SaveObject.Instance.powerR;
+        //}
     }
 }

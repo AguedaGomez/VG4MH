@@ -30,7 +30,7 @@ public class City : MonoBehaviour
     {
         Materials = SaveObject.Instance.materials;
         powerR = SaveObject.Instance.powerR;
-        Activation = SaveObject.Instance.activationValue;
+        Activation = SaveObject.Instance.energy;
 
         InitializeCity(); //esto creo que no funcionará
     }
@@ -50,7 +50,7 @@ public class City : MonoBehaviour
             CheckInactiveTime(SaveObject.Instance.date);
         CalculateActivation(); //Also call to calclulatepowerR
                                //Actualizar los materiales de los edificios
-        UpdateTopHUD();
+        //UpdateTopHUD();
 
         LanzarCuestionarioAlUsuario();
     }
@@ -103,16 +103,6 @@ public class City : MonoBehaviour
         }
     }
 
-    //public void dailyQuestionsConfirmation_Yes()
-    //{
-    //    Instantiate(dailyQuestionsPanel_Prefab, canvasController.transform);
-    //    Destroy(dailyQuestion_ConfirmationPanel);
-    //}
-
-    //public void dailyQuestionsConfirmation_No()
-    //{
-    //    Destroy(dailyQuestion_ConfirmationPanel);
-    //}
 
     public void CalculatePopulation (Building newBuilding)
     {
@@ -150,7 +140,7 @@ public class City : MonoBehaviour
     }
     public void CalculatePhysicalActivity()
     {
-        //activationValue = 100 * currentSteps / DAILY_STEPS;
+        //energy = 100 * currentSteps / DAILY_STEPS;
         print("activación por los pasos dados: " + currentSteps);
         CalculateActivation();
     }
@@ -243,7 +233,7 @@ public class City : MonoBehaviour
         {
             activationValue = 0;
         }
-        SaveObject.Instance.activationValue = activationValue;
+        SaveObject.Instance.energy = activationValue;
 
         UpdateTopHUD();
     }

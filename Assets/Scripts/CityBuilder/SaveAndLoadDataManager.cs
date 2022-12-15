@@ -65,7 +65,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     public void SaveGame()
     {
-        ObjectToSaveData();
+        //ObjectToSaveData();
         SaveAndLoadData.SaveinFile("state-game.json", JsonUtility.ToJson(SaveObject.Instance));
         //SaveObject.Instance.buildingsInBoard.Clear();
         print("app cerrada");
@@ -77,7 +77,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
         {
             foreach (Cuestionario quest in SaveObject.Instance.questionnairesDoneByUser)
             {
-                Debug.Log("Questionario : " + quest.dateOfQuestionaire + " , " + quest.activationValue);
+                Debug.Log("Questionario : " + quest.dateOfQuestionaire + " , " + quest.energy);
             }
         }else
         {
@@ -107,11 +107,11 @@ public class SaveAndLoadDataManager : MonoBehaviour
         board = FindObjectOfType<Board>();
         //SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         SaveObject.Instance.date = DateTime.Now.ToString();
-        SaveObject.Instance.activationValue = city.Activation;
+        SaveObject.Instance.energy = city.Activation;
         
        // Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard.Count + " , " + SaveObject.Instance.questionnairesDoneByUser.Count);
 
-        //Debug.Log("Activacion actual: " + SaveObject.Instance.activationValue);
+        //Debug.Log("Activacion actual: " + SaveObject.Instance.energy);
         //Debug.Log("GUARDANDO Fecha guardada: " + SaveObject.Instance.date);
         //Debug.Log("Items que guarda el tablero: " + SaveObject.Instance.boardState.Count);
     }
@@ -123,7 +123,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
         SaveObject.Instance.date = loadedSaveObject.date;
         Debug.Log("1. guardando fecha en objeto " + SaveObject.Instance.date);
         SaveObject.Instance.powerR = loadedSaveObject.powerR;
-        SaveObject.Instance.activationValue = loadedSaveObject.activationValue;
+        SaveObject.Instance.energy = loadedSaveObject.energy;
         SaveObject.Instance.activityRunning = loadedSaveObject.activityRunning;
         SaveObject.Instance.dailyActivityCompleted = loadedSaveObject.dailyActivityCompleted;
         SaveObject.Instance.dailyCompletedSteps = loadedSaveObject.dailyCompletedSteps;

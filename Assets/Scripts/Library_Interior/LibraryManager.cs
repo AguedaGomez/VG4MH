@@ -12,7 +12,7 @@ public class LibraryManager : MonoBehaviour
         if (SaveObject.Instance.enterInLibraryToday == false)
         {
             SaveObject.Instance.enterInLibraryToday = true;
-            SaveObject.Instance.activationValue += 10;
+            SaveObject.Instance.energy += 10;
            // SaveObject.Instance.updateActivationValueOnLastQuestionnaire();
             popUp_manager.addNotificationToQueue(activationNotification);
         }

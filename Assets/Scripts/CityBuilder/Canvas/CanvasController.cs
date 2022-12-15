@@ -68,11 +68,11 @@ public class CanvasController : MonoBehaviour
     {
         if (newActivationValue > 0)
         {
-            topHudController.updateActivationSliderValue(newActivationValue);
+            topHudController.UpdateEnergySliderwithAnimation(newActivationValue);
         }
         if (newPowerR_Value > 0)
         {
-            topHudController.updatePowerR_SliderValue(newPowerR_Value);
+            topHudController.UpdatePowerRSliderwithAnimation(newPowerR_Value);
         }
     }
 

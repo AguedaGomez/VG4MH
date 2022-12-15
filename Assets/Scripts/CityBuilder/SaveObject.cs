@@ -11,7 +11,7 @@ public sealed class SaveObject
 
     public int materials;
     public float powerR;
-    public float activationValue;
+    public float energy;
     public string date;
     public List<SavedBuilding> buildingsInBoard; //id al construir e id de datos
     public List<AnswerFullQuestionnaire> questionnairesDoneByUser;
@@ -27,14 +27,14 @@ public sealed class SaveObject
     private SaveObject()
     {
         materials = 0;
-        powerR = 0;
+        powerR = 20;
         date = "";
         buildingsInBoard = new List<SavedBuilding>();
         questionnairesDoneByUser = new List<AnswerFullQuestionnaire>();
         charactersInTheCity = new List<CharacterInfo>();
         activityRunning = false;
         enterInLibraryToday = false;
-        activationValue = 0;
+        energy = 0;
         dailyActivityCompleted = false;
         dailyQuestions_Done = false;
         dailyCompletedSteps = 0;
@@ -148,7 +148,7 @@ public sealed class SaveObject
     //{
     //    if(dailyQuestions_Done)
     //    {
-    //        questionnairesDoneByUser.Last().activationValue = activationValue;
+    //        questionnairesDoneByUser.Last().energy = energy;
     //    }
     //}
 }

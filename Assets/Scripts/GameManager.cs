@@ -53,6 +53,13 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void SaveVariables(float powerRValue, float energyValue, int materialsValue)
+    {
+        SaveObject.Instance.powerR = powerRValue;
+        SaveObject.Instance.energy = energyValue;
+        SaveObject.Instance.materials = materialsValue;
+    }
+
     IEnumerator LoadYourAsyncScene()
     {
         // The Application loads the Scene in the background as the current Scene runs.

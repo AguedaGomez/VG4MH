@@ -67,6 +67,7 @@ public class CardManager : MonoBehaviour
 
     public void LoadScene()
     {
+        GameManager.Instance.SaveGame();
         GameManager.Instance.LoadGame();
         //SceneManager.LoadScene("CityBuilder");
     }
