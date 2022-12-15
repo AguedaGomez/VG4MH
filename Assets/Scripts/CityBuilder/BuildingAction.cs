@@ -14,6 +14,7 @@ public class BuildingAction : MonoBehaviour
 
     public void BacktoTown()
     {
+        GameManager.Instance.SaveGame();
         GameManager.Instance.LoadGame();
     }
 
