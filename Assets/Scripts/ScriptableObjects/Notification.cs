@@ -6,6 +6,6 @@ using UnityEngine;
 public class Notification : ScriptableObject
 {
     public Sprite imageNotification;
-    public string textNotification;
+    [TextArea(10,14)]public string textNotification;
 
 }
