@@ -10,7 +10,7 @@ public class City : MonoBehaviour
     public float powerR = 0;
     public float activationValue = 0;
     public float powerRLastCheckPoint = 0;
-    public List<string> availableBuildingsId = new List<string>(); // only those available (depending on the activation)
+    //public List<string> availableBuildingsId = new List<string>(); // only those available (depending on the activation)
     public CanvasController canvasController;
     //public GameObject dailyQuestionsPanel_Prefab;
     //public GameObject dailyQuestion_ConfirmationPanel;
