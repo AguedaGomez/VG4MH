@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class City : MonoBehaviour
 {
-    public float Activation { get; set; }
+    public float Energy { get; set; }
     public int Materials { get; set; }
     public float powerR = 0;
     public float activationValue = 0;
@@ -16,31 +16,25 @@ public class City : MonoBehaviour
     //public GameObject dailyQuestion_ConfirmationPanel;
 
     private const int DAILY_STEPS = 3000;
-    private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number
-    //public?
-    private int population;
+    private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number ELIMINAR NO ES NECESARIO?
+
+
+    private int population; //ELIMINAR?
     private int questionaryDone = 0;
     private int libraryAccess = 0;
     private int currentSteps = 0;
     private bool fullActivation = false;
-    private float esencias = 0;
+    private float esencias = 0; //ELIMINAR?
     public TimeSpan inactiveTime;
 
     void Start()
     {
         Materials = SaveObject.Instance.materials;
         powerR = SaveObject.Instance.powerR;
-        Activation = SaveObject.Instance.energy;
+        Energy = SaveObject.Instance.energy;
 
         InitializeCity(); //esto creo que no funcionará
     }
-
-    //public void InitializeCity(string lastAccess)
-    //{
-    //    if (lastAccess != "")
-    //        CheckInactiveTime(lastAccess);
-    //    CalculateActivation(); //Also call to calclulatepowerR
-    //}
 
     public void InitializeCity()
     {
@@ -48,16 +42,19 @@ public class City : MonoBehaviour
         //Debug.Log("fecha guardada: " + SaveObject.Instance.date);
         if (SaveObject.Instance.date != "")
             CheckInactiveTime(SaveObject.Instance.date);
-        CalculateActivation(); //Also call to calclulatepowerR
+        else
+            increaseActivationValue(10);
+
+        //CalculateActivation(); //Also call to calclulatepowerR
                                //Actualizar los materiales de los edificios
         //UpdateTopHUD();
 
         LanzarCuestionarioAlUsuario();
     }
 
-    private void UpdateTopHUD()
+    private void UpdateTopHUD(bool updateEnergy, bool updatePowerR)
     {
-        canvasController.updateSlidersValue(Activation, powerR);
+        canvasController.updateSlidersValue(updateEnergy, updatePowerR);
         updateMaterialsOnCanvas();
     }
 
@@ -76,7 +73,7 @@ public class City : MonoBehaviour
         if(lA.Date != today.Date)
         {
             //Día diferente
-            //Se permite al usuario volver a hacer actividad
+            //Se permite al usuario volver a recoger energía
             SaveObject.Instance.dailyActivityCompleted = false;
             SaveObject.Instance.dailyQuestions_Done = false;
             SaveObject.Instance.enterInLibraryToday = false;
@@ -84,8 +81,8 @@ public class City : MonoBehaviour
             SaveObject.Instance.dailyCompletedSteps = 0;
             GameManager.Instance.resetActivityNotifications();
             increaseActivationValue(-100);
-            
-            if(inactiveTime.Days > 1)
+            increaseActivationValue(10);
+            if (inactiveTime.Days > 1)
             {
                 //Aplicar penalización por no haber iniciado la aplicación
                 ApplyPenalization(inactiveTime.Days);
@@ -115,11 +112,11 @@ public class City : MonoBehaviour
     {
         if (!fullActivation)
         {
-            Activation = 10 + 10 * questionaryDone + 10 * libraryAccess + 0.7f * activationValue;
+            Energy = 10 + 10 * questionaryDone + 10 * libraryAccess + 0.7f * activationValue;
             CalculatePowerR();
-            if (Activation >= 100)
+            if (Energy >= 100)
             {
-                Activation = 100;
+                Energy = 100;
                 fullActivation = true;
             }
             CheckAvailableBuildings();
@@ -161,7 +158,7 @@ public class City : MonoBehaviour
         {
             if (b.buildingName!="Biblioteca")
             {
-                if (b.energyRequired <= Activation && b.energyRequired >= 0)
+                if (b.energyRequired <= Energy && b.energyRequired >= 0)
                 {
                     canvasController.UnlockBuilding(b.id);
                 }
@@ -179,7 +176,7 @@ public class City : MonoBehaviour
 
     public void CalculatePowerR()
     {
-        //powerR = powerRLastCheckPoint + esencias * (1 + Activation / 100); // taking to account penalization
+        //powerR = powerRLastCheckPoint + esencias * (1 + Energy / 100); // taking to account penalization
     }
 
     private void ApplyPenalization(int inactiveDays)
@@ -227,14 +224,15 @@ public class City : MonoBehaviour
 
     public void increaseActivationValue(float addition)
     {
-        activationValue += addition;
+        Energy += addition;
 
-        if(activationValue < 0)
+        if(Energy < 0)
         {
-            activationValue = 0;
+            Energy = 0;
         }
-        SaveObject.Instance.energy = activationValue;
+        SaveObject.Instance.energy = Energy;
 
-        UpdateTopHUD();
+        UpdateTopHUD(true, false);
+        CheckAvailableBuildings();
     }
 }

@@ -107,7 +107,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
         board = FindObjectOfType<Board>();
         //SaveObject.Instance.date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         SaveObject.Instance.date = DateTime.Now.ToString();
-        SaveObject.Instance.energy = city.Activation;
+        SaveObject.Instance.energy = city.Energy;
         
        // Debug.Log("Buildings , cuestionarios: " + SaveObject.Instance.buildingsInBoard.Count + " , " + SaveObject.Instance.questionnairesDoneByUser.Count);
 

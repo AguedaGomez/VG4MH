@@ -64,16 +64,12 @@ public class CanvasController : MonoBehaviour
         buildingMenuController.UnlockGridElement(id);
     }
 
-    public void updateSlidersValue(float newActivationValue = -1, float newPowerR_Value = -1)
+    public void updateSlidersValue(bool updateEnergy, bool updatePowerR)
     {
-        if (newActivationValue > 0)
-        {
-            topHudController.UpdateEnergySliderwithAnimation(newActivationValue);
-        }
-        if (newPowerR_Value > 0)
-        {
-            topHudController.UpdatePowerRSliderwithAnimation(newPowerR_Value);
-        }
+        if (updateEnergy) topHudController.UpdateEnergySliderwithAnimation(SaveObject.Instance.energy);
+
+        if (updatePowerR) topHudController.UpdatePowerRSliderwithAnimation(SaveObject.Instance.powerR);
+
     }
 
     public void createCitizenConversation(GameObject citizenToTalk)

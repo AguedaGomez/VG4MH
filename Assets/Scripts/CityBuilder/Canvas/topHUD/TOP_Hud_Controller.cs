@@ -36,6 +36,8 @@ public class TOP_Hud_Controller : MonoBehaviour
         UpdateValueSlider(activation_Slider, SaveObject.Instance.energy);
         currentEnergy = SaveObject.Instance.energy;
 
+        
+
     }
 
     private void UpdateValueSlider (GameObject slider, float value)

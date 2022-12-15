@@ -49,7 +49,7 @@ public class UIController : MonoBehaviour
     }
     private void ShowActivation()
     {
-        activationSlider.value = city.Activation;
+        activationSlider.value = city.Energy;
     }
     private void ShowMaterials()
     {
