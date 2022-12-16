@@ -3546,6 +3546,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1657417122, guid: a01390f69d26a184a811f5c8100b698e, type: 3}
+      propertyPath: materialsText
+      value: 
+      objectReference: {fileID: 1657417117}
     - target: {fileID: 805603276723740699, guid: a01390f69d26a184a811f5c8100b698e,
         type: 3}
       propertyPath: m_FillAmount
@@ -3684,6 +3688,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1657417115}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1657417117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5887728926732111038, guid: a01390f69d26a184a811f5c8100b698e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1657417115}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1714829272
 GameObject:
   m_ObjectHideFlags: 0

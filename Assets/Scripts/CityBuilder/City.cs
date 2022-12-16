@@ -42,6 +42,7 @@ public class City : MonoBehaviour
             increaseActivationValue(10);
             LanzarCuestionarioAlUsuario();
         }
+        CheckAvailableBuildings();
 
     }
 
