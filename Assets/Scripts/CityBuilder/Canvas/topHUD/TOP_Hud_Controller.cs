@@ -36,7 +36,7 @@ public class TOP_Hud_Controller : MonoBehaviour
         UpdateValueSlider(activation_Slider, SaveObject.Instance.energy);
         currentEnergy = SaveObject.Instance.energy;
 
-        
+        updateMaterials_Text(SaveObject.Instance.materials);
 
     }
 

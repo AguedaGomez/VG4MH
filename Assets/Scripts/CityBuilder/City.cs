@@ -35,19 +35,14 @@ public class City : MonoBehaviour
 
     public void InitializeCity()
     {
-        //Debug.Log("En initializeCity");
-        //Debug.Log("fecha guardada: " + SaveObject.Instance.date);
         if (SaveObject.Instance.date != "")
             CheckInactiveTime(SaveObject.Instance.date);
         else
+        { // Nuevo juego
             increaseActivationValue(10);
+            LanzarCuestionarioAlUsuario();
+        }
 
-        //CalculateActivation(); //Also call to calclulatepowerR
-        //Actualizar los materiales de los edificios
-        //UpdateTopHUD();
-        UpdateMaterialsText();
-
-        LanzarCuestionarioAlUsuario();
     }
 
     private void UpdateTopHUD(bool updateEnergy, bool updatePowerR)
@@ -58,19 +53,14 @@ public class City : MonoBehaviour
 
     private void CheckInactiveTime(string lastAccess)
     {
-        //Debug.Log("City lastAccess: " + lastAccess);
-        //Debug.Log("Tryparse " + DateTime.TryParse(lastAccess, out DateTime r) + r);
         DateTime.TryParse(lastAccess, out DateTime lA);
         inactiveTime = DateTime.Now.Subtract(lA);
-        /*Debug.Log("City>CheckInactiveTime Inactive time in seconds: " + inactiveTime.TotalSeconds);
-        ApplyPenalization(inactiveTime.Days);*/
 
         //Nueva versión, sin sustituir lo de arriba
         DateTime today = DateTime.Now.Date;
 
-        if(lA.Date != today.Date)
+        if(lA.Date != today.Date) // Día diferente
         {
-            //Día diferente
             //Se permite al usuario volver a recoger energía
             SaveObject.Instance.dailyActivityCompleted = false;
             SaveObject.Instance.dailyQuestions_Done = false;
@@ -86,9 +76,9 @@ public class City : MonoBehaviour
                 ApplyPenalization(inactiveTime.Days);
             }
         }
-        else
+        else //mismo día
         {
-            
+            // Lanzar cuestionario solo cuando pase un determinado tiempo
         }
 
     }
