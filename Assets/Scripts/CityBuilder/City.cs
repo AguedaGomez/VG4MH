@@ -10,10 +10,7 @@ public class City : MonoBehaviour
     public float powerR = 0;
     public float activationValue = 0;
     public float powerRLastCheckPoint = 0;
-    //public List<string> availableBuildingsId = new List<string>(); // only those available (depending on the activation)
     public CanvasController canvasController;
-    //public GameObject dailyQuestionsPanel_Prefab;
-    //public GameObject dailyQuestion_ConfirmationPanel;
 
     private const int DAILY_STEPS = 3000;
     private const float SOLVED_CONFLICT_VALUE = 1f; // calculate depending on cards number ELIMINAR NO ES NECESARIO?
@@ -33,7 +30,7 @@ public class City : MonoBehaviour
         powerR = SaveObject.Instance.powerR;
         Energy = SaveObject.Instance.energy;
 
-        InitializeCity(); //esto creo que no funcionará
+        InitializeCity();
     }
 
     public void InitializeCity()
@@ -46,8 +43,9 @@ public class City : MonoBehaviour
             increaseActivationValue(10);
 
         //CalculateActivation(); //Also call to calclulatepowerR
-                               //Actualizar los materiales de los edificios
+        //Actualizar los materiales de los edificios
         //UpdateTopHUD();
+        UpdateMaterialsText();
 
         LanzarCuestionarioAlUsuario();
     }
@@ -55,7 +53,7 @@ public class City : MonoBehaviour
     private void UpdateTopHUD(bool updateEnergy, bool updatePowerR)
     {
         canvasController.updateSlidersValue(updateEnergy, updatePowerR);
-        updateMaterialsOnCanvas();
+        //updateMaterialsOnCanvas();
     }
 
     private void CheckInactiveTime(string lastAccess)
@@ -213,13 +211,18 @@ public class City : MonoBehaviour
             return 0;
     }
 
-    public void updateMaterialsOnCanvas(int increment = 0)
+    public void UpdateMaterialsWithAnimation(int increment)
     {
         canvasController.topHUD.GetComponent<TOP_Hud_Controller>().updateMaterials_Text(Materials);
-        if(increment != 0)
+        if (increment != 0)
         {
             canvasController.topHUD.GetComponent<TOP_Hud_Controller>().increaseMaterialsOnCanvas(increment);
         }
+    }
+
+    private void UpdateMaterialsText()
+    {
+        canvasController.topHUD.GetComponent<TOP_Hud_Controller>().updateMaterials_Text(Materials);
     }
 
     public void increaseActivationValue(float addition)

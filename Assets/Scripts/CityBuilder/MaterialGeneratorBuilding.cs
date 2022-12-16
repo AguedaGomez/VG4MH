@@ -105,7 +105,7 @@ public class MaterialGeneratorBuilding : Building
         int incremental = materialsPerSecond;
         cityScript.Materials += materialsPerSecond;
         SaveObject.Instance.materials = cityScript.Materials;
-        cityScript.updateMaterialsOnCanvas(incremental);
+        cityScript.UpdateMaterialsWithAnimation(incremental);
         materialsPerSecond = 0;
         UpdateMaterialsInSaveObject();
         materialsButton.interactable = false;

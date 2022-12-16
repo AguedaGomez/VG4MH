@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: lbraryNotification
   m_EditorClassIdentifier: 
   imageNotification: {fileID: 21300000, guid: 7aa4c1196b83d4f4aabd601c70e2aef2, type: 3}
-  textNotification: "Has entrado a la biblioteca por primera vez en el d\xEDa. Se
-    te recompensar\xE1 con una cantidad de Activaci\xF3n."
+  textNotification: "\xA1Bien hecho! Has entrado en la biblioteca por primera vez
+    en el d\xEDa. Has conseguido m\xE1s energ\xEDa para el pueblo."
