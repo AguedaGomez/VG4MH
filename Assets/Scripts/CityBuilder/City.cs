@@ -86,6 +86,10 @@ public class City : MonoBehaviour
                 ApplyPenalization(inactiveTime.Days);
             }
         }
+        else
+        {
+            
+        }
 
     }
 

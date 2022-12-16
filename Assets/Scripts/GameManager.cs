@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         //FindCity();
         //saveAndLoadDataManager.SaveGame();
         Debug.Log("SaveGame");
-        SaveObject.Instance.date = DateTime.Now.Date.ToString("dd/MM/yyyy");
+        SaveObject.Instance.date = DateTime.Now.ToString();
         gameObject.GetComponent<SaveAndLoadDataManager>().SaveGame();
     }
 

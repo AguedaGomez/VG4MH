@@ -101,7 +101,7 @@ public class Board : MonoBehaviour
                 else
                 {
                     SaveBoardStatus(x, z); //esto es asi?
-                    mGBScript.SetCurrentMaterials(currentMaterials, Math.Floor(city.inactiveTime.TotalSeconds));
+                    mGBScript.SetCurrentMaterials(currentMaterials, city.inactiveTime.Seconds);
                 }
                     
             } else
