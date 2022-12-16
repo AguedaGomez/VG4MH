@@ -4840,12 +4840,12 @@ PrefabInstance:
     - target: {fileID: 3004728433255937892, guid: d4a4316afaab1084d85823d85aecdcc4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3004728433255937892, guid: d4a4316afaab1084d85823d85aecdcc4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.6
+      value: -22.7
       objectReference: {fileID: 0}
     - target: {fileID: 3004728433255937892, guid: d4a4316afaab1084d85823d85aecdcc4,
         type: 3}
@@ -6190,6 +6190,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee9c3ed4c56971a4b9cf66de3cfeb68d, type: 2}
   - {fileID: 11400000, guid: fab4fe8a46db4cc40af8a576a5c66cf7, type: 2}
   - {fileID: 11400000, guid: 78b1737ad5b5b2f49a22bd8e9fdf7761, type: 2}
+  checkPointsStory: 
 --- !u!4 &1052362989
 Transform:
   m_ObjectHideFlags: 0
@@ -8755,7 +8756,6 @@ MonoBehaviour:
   powerR: 0
   activationValue: 0
   powerRLastCheckPoint: 0
-  availableBuildingsId: []
   canvasController: {fileID: 1146041105}
 --- !u!4 &1538201033
 Transform:

@@ -57,7 +57,6 @@ public class City : MonoBehaviour
         DateTime.TryParse(lastAccess, out DateTime lA);
         inactiveTime = DateTime.Now.Subtract(lA);
 
-        //Nueva versión, sin sustituir lo de arriba
         DateTime today = DateTime.Now.Date;
 
         if(lA.Date != today.Date) // Día diferente
