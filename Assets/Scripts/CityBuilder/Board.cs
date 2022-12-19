@@ -193,20 +193,27 @@ public class Board : MonoBehaviour
             sB.currentMaterials = 0;
 
         SaveBoardStatus(x, z);
-        Debug.Log("Guardando el edificio " + sB.idData + " en las coordenadas " + sB.row + sB.col);
+        //Debug.Log("Guardando el edificio " + sB.idData + " en las coordenadas " + sB.row + sB.col);
         SaveObject.Instance.buildingsInBoard.Add(sB);
 
     }
 
-    private void SaveBoardStatus(int x, int z)
+    private void SaveBoardStatus(int x, int z) //celdas in x y z son iguales
     {
         int cellsInZ = buildings[x, z].GetCellsZ();
         int cellsInX = buildings[x, z].GetCellsX();
-        for (int r = 0; r < cellsInX; r++)
+        int inicio = 0;
+        int i = 0;
+        if ((cellsInX / 2) % 2 != 0) inicio = -cellsInX / 2;
+        else inicio = -cellsInX / 2 - 1;
+        if (cellsInX == 2) inicio = 0;
+        //Debug.Log("coordenadas x: " + x + " z: " + z);
+        //Debug.Log("empezar por " + inicio);
+        for (int r = inicio; r < cellsInX; r++)
         {
-            for (int c = 0; c < cellsInZ; c++)
+            for (int c = inicio; c < cellsInZ; c++)
             {
-                boardOccupationStatus[x + r, z - c] = true;
+                boardOccupationStatus[x + r, z + c] = true;
             }
         }
     }

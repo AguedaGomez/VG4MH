@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
+  m_Name: Pag1-1
+  m_EditorClassIdentifier: 
+  content: "Es importante pensar en qu\xE9 puedes hacer cada d\xEDa te guste. Ese
+    momento\r es precioso, es s\xF3lo para ti, es tu \u201Cmomento\u201D. Por ejemplo,
+    tomar un caf\xE9 o\r una cerveza, o un helado, hacer una peque\xF1a excursi\xF3n,
+    hacer deporte, o\xEDr\r m\xFAsica, ver un programa de la televisi\xF3n que te
+    gusta, dar un paseo, llamar a\r\nalguien por tel\xE9fono, tomar un ba\xF1o con
+    agua templada, ir a la peluquer\xEDa etc.\r\n"
