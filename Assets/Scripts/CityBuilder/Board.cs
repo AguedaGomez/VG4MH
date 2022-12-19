@@ -189,7 +189,6 @@ public class Board : MonoBehaviour
         xCell = CalculateRowColumn(position.x);
         float yCell = .5f;
         zCell = CalculateRowColumn(position.z);
-        Debug.Log("posición en tablero: x = " + xCell + " z = " + zCell);
 
         if (bSize % 2 == 0)
             return new Vector3(xCell * cellSize-2, yCell, zCell * cellSize-2);
@@ -197,10 +196,13 @@ public class Board : MonoBehaviour
         else 
             return new Vector3(xCell*cellSize, yCell, zCell*cellSize); 
     }
-    private Vector3 CalculatePosition(Vector3 gridPosition)
+    private Vector3 CalculatePosition(Vector3 gridPosition, int bSize)
     {
+        if (bSize % 2 == 0)
+            return new Vector3(gridPosition.x * cellSize - 2, .5f, gridPosition.z * cellSize - 2);
 
-        return new Vector3(gridPosition.x * cellSize, .5f, gridPosition.z * cellSize);
+        else
+            return new Vector3(gridPosition.x * cellSize, .5f, gridPosition.z * cellSize);
     }
 
     public int CalculateRowColumn(float cordPosition)
@@ -240,9 +242,6 @@ public class Board : MonoBehaviour
         {
             for (int c = -cellsInZMitad; c <= final; c++)
             {
-                int fila = x + c;
-                int col = z + r;
-                Debug.Log("Ocupada la celda x: " + fila + " z: " + col);
                 boardOccupationStatus[x + c, z + r] = true;
             }
         }
@@ -270,7 +269,7 @@ public class Board : MonoBehaviour
                     prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = mainCamera;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
                 //Debug.Log("currentMaterials de building añadidos: " + b.currentMaterials);
-                AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials, false, b.row, b.col);
+                AddBuilding(prefabToInstantiate, CalculatePosition(position, GameManager.Instance.buildingsInGame[b.idData].cellsInX), b.currentMaterials, false, b.row, b.col);
             }
             
         }
