@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.ProBuilder.AutoUnwrapSettings;
 using Random = UnityEngine.Random;
 
 public class Board : MonoBehaviour
@@ -49,20 +50,20 @@ public class Board : MonoBehaviour
         InitializeBoard();
     }
 
-    public void AddBuildingInEditMode(GameObject building, Vector3 position)
+    public void AddBuildingInEditMode(GameObject building, Vector3 positioninCells, int xCell, int zCell)
     {
-        bool availability = CheckSpaceAtPosition(building, position);
+        bool availability = CheckSpaceAtPosition(building, xCell, zCell);
         ChangeBuildingColor(availability);
-        GameObject currentBuilding = boardView.SetUpBuildingEditMode(building, availability, position);
+        GameObject currentBuilding = boardView.SetUpBuildingEditMode(building, availability, positioninCells);
     }
 
-    public bool CheckSpaceAtPosition(GameObject building, Vector3 position)
+    public bool CheckSpaceAtPosition(GameObject building, int xCell, int zCell)
     {
-        int x = CalculateRowColumn(position.x);
-        int z = CalculateRowColumn(position.z);
+        //int x = CalculateRowColumn(position.x);
+        //int z = CalculateRowColumn(position.z);
         Building buildingScript = building.GetComponent<Building>();
-        return CheckAvailableSpace(x, z, buildingScript) && CheckForBuildingAtPosition(position);
-       
+        //return CheckAvailableSpace((xCell, zCell, buildingScript) && CheckForBuildingAtPosition(position);
+        return CheckAvailableSpace(xCell, zCell, buildingScript);
     }
 
     public void ChangeBuildingColor(bool availability)
@@ -70,10 +71,11 @@ public class Board : MonoBehaviour
         boardView.ColorDependingAvailability(availability);
     }
 
-    public void AddBuilding(GameObject building, Vector3 position, int currentMaterials, bool newBuilding)
+    public void AddBuilding(GameObject building, Vector3 position, int currentMaterials, bool newBuilding, int x, int z)
     {
-        if (CheckSpaceAtPosition(building, position))
+        if (CheckSpaceAtPosition(building, x, z))
         {
+            Debug.Log("Current position: " + position);
             Transform buildingTransform = building.GetComponent<Transform>();
             Quaternion buildingRotation = buildingTransform.rotation;
             GameObject createdBuilding = Instantiate(building, position, buildingRotation);
@@ -81,8 +83,10 @@ public class Board : MonoBehaviour
             buildingScript.InitializeBuildingPrefab(GameManager.Instance.buildingInConstruction);
             createdBuilding.transform.name = buildingScript.GetName();
 
-            int x = CalculateRowColumn(position.x);
-            int z = CalculateRowColumn(position.z);
+            //int x = CalculateRowColumn(position.x);
+            //int z = CalculateRowColumn(position.z);
+
+            Debug.Log("Introduciendo building en x: " + x + "z: " + z);
 
             buildingScript.SetId(x + "" + z + "");
             GameManager.Instance.buildingInConstruction = null;
@@ -135,17 +139,36 @@ public class Board : MonoBehaviour
 
     public bool CheckForBuildingAtPosition(Vector3 position)
     {
-        return buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] == null;
+        //return buildings[CalculateRowColumn(position.x), CalculateRowColumn(position.z)] == null;
+        return buildings[(int)position.x, (int)(position.z)] == null;
     }
 
     private bool CheckAvailableSpace(int x, int z, Building currentBuilding)
     {
-        for (int r = 0; r < currentBuilding.GetCellsX(); r++)
+        //for (int r = 0; r < currentBuilding.GetCellsX(); r++)
+        //{
+        //    for (int c = 0; c < currentBuilding.GetCellsZ(); c++)
+        //    {
+        //        if (boardOccupationStatus[x + r, z - c] == occupiedCell) // there isn't available space
+        //            return false;
+        //    }
+        //}
+        //return true;
+        int cellsInZ = currentBuilding.GetCellsX();
+        int cellsInX = currentBuilding.GetCellsZ();
+
+        int cellsInZMitad = cellsInZ / 2;
+        int cellsInXMitad = cellsInX / 2;
+        int final;
+
+        if (cellsInZ % 2 == 0) final = cellsInZMitad - 1;
+        else final = cellsInZMitad;
+
+        for (int r = -cellsInXMitad; r <= final; r++)
         {
-            for (int c = 0; c < currentBuilding.GetCellsZ(); c++)
+            for (int c = -cellsInZMitad; c <= final; c++)
             {
-                if (boardOccupationStatus[x + r, z - c] == occupiedCell) // there isn't available space
-                    return false;
+                if (boardOccupationStatus[x + c, z + r] == occupiedCell) return false;
             }
         }
         return true;
@@ -160,11 +183,12 @@ public class Board : MonoBehaviour
         return false;
     }
 
-    public Vector3 CalculateGridPosition(Vector3 position, int bSize)
+    public Vector3 CalculateGridPosition(Vector3 position, int bSize, out int xCell, out int zCell)
     {
-        int xCell = CalculateRowColumn(position.x);
+        //Debug.Log("Posición a convertir: " + position);
+        xCell = CalculateRowColumn(position.x);
         float yCell = .5f;
-        int zCell = CalculateRowColumn(position.z);
+        zCell = CalculateRowColumn(position.z);
         Debug.Log("posición en tablero: x = " + xCell + " z = " + zCell);
 
         if (bSize % 2 == 0)
@@ -175,10 +199,11 @@ public class Board : MonoBehaviour
     }
     private Vector3 CalculatePosition(Vector3 gridPosition)
     {
+
         return new Vector3(gridPosition.x * cellSize, .5f, gridPosition.z * cellSize);
     }
 
-    private int CalculateRowColumn(float cordPosition)
+    public int CalculateRowColumn(float cordPosition)
     {
         return Mathf.RoundToInt(cordPosition / cellSize); // number of cell
     }
@@ -203,17 +228,22 @@ public class Board : MonoBehaviour
     {
         int cellsInZ = buildings[x, z].GetCellsZ();
         int cellsInX = buildings[x, z].GetCellsX();
-        int inicio = 0;
-        if ((cellsInX / 2) % 2 != 0) inicio = -cellsInX / 2;
-        else inicio = -((cellsInX / 2) - 1);
-        if (cellsInX == 2) inicio = 0;
-        //Debug.Log("coordenadas x: " + x + " z: " + z);
-        //Debug.Log("empezar por " + inicio);
-        for (int r = inicio; r < cellsInX; r++)
+
+        int cellsInZMitad = cellsInZ/2;
+        int cellsInXMitad = cellsInX/2;
+        int final;
+
+        if (cellsInZ % 2 == 0) final = cellsInZMitad - 1;
+        else final = cellsInZMitad;
+
+        for (int r = -cellsInXMitad; r <= final; r++)
         {
-            for (int c = inicio; c < cellsInZ; c++)
+            for (int c = -cellsInZMitad; c <= final; c++)
             {
-                boardOccupationStatus[x - r, z - c] = true;
+                int fila = x + c;
+                int col = z + r;
+                Debug.Log("Ocupada la celda x: " + fila + " z: " + col);
+                boardOccupationStatus[x + c, z + r] = true;
             }
         }
     }
@@ -240,19 +270,26 @@ public class Board : MonoBehaviour
                     prefabToInstantiate.GetComponentInChildren<Canvas>().worldCamera = mainCamera;
                 Vector3 position = new Vector3(b.row, 0f, b.col);
                 //Debug.Log("currentMaterials de building añadidos: " + b.currentMaterials);
-                AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials, false);
+                AddBuilding(prefabToInstantiate, CalculatePosition(position), b.currentMaterials, false, b.row, b.col);
             }
             
         }
         else
         {
+            int xCell, zCell;
+            Vector3 currentPosition;
             // static buildings initial configuration. First time the game starts
             GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[idSmallHouse];
-            AddBuilding(GameManager.Instance.buildingInConstruction.prefab, CalculateGridPosition(new Vector3(16, 0, 26), 1), -1, true);
+            currentPosition = CalculateGridPosition(new Vector3(16, 0, 26), 1, out xCell, out zCell);
+
+            AddBuilding(GameManager.Instance.buildingInConstruction.prefab, currentPosition, -1, true, xCell, zCell);
             GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[idSmallHouse];
-            AddBuilding(GameManager.Instance.buildingInConstruction.prefab, CalculateGridPosition(new Vector3(15, 0, 16), 1), -1, true);
+            currentPosition = CalculateGridPosition(new Vector3(15, 0, 16), 1, out xCell, out zCell);
+
+            AddBuilding(GameManager.Instance.buildingInConstruction.prefab, currentPosition, -1, true, xCell, zCell);
             GameManager.Instance.buildingInConstruction = GameManager.Instance.buildingsInGame[idLibrary];
-            AddBuilding(GameManager.Instance.buildingInConstruction.prefab, CalculateGridPosition(new Vector3(23, 0, 26), 2), -1, true);
+            currentPosition = CalculateGridPosition(new Vector3(23, 0, 26), 2, out xCell, out zCell);
+            AddBuilding(GameManager.Instance.buildingInConstruction.prefab, currentPosition, -1, true, xCell, zCell);
             GameManager.Instance.buildingInConstruction = null;
         }
 

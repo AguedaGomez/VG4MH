@@ -22,8 +22,11 @@ public class InteractionController : MonoBehaviour
 
     private GameObject currentBuilding;
     private Vector3 currentBuildingPosition;
+    private Vector3 positionInCells;
     private GameObject selectedBuilding;
     private Building selectedBuildingScript;
+    private int xCell, zCell;
+    private float yCell = .5f;
 
     private void OnEnable()
     {
@@ -72,12 +75,13 @@ public class InteractionController : MonoBehaviour
                         RaycastHit hit;
                         if (Physics.Raycast(ray, out hit))
                         {
-                           
-                            Vector3 gridPosition = board.CalculateGridPosition(hit.point, selectedBuildingScript.GetCellsX()); 
+
+                            Vector3 gridPosition = board.CalculateGridPosition(hit.point, selectedBuildingScript.GetCellsX(), out xCell, out zCell);
+                            
                             if (!board.CheckBoardLimits(gridPosition, selectedBuildingScript))
                             {
                                 currentBuilding.transform.parent.position = gridPosition;
-                                currentBuildingPosition = currentBuilding.transform.parent.position;
+                                currentBuildingPosition = currentBuilding.transform.parent.position; //posición en grid fila, col
                                 CheckInBoard();
                             }
                             
@@ -142,12 +146,12 @@ public class InteractionController : MonoBehaviour
     void CheckInBoard()
     {
         //Debug.Log("check in board");
-        bool availability = board.CheckSpaceAtPosition(selectedBuilding, currentBuildingPosition);
+        bool availability = board.CheckSpaceAtPosition(selectedBuilding, xCell, zCell);
         board.ChangeBuildingColor(availability);
     }
     void InteractWithBoard()
     {
-        if (board.CheckSpaceAtPosition(selectedBuilding, currentBuildingPosition))
+        if (board.CheckSpaceAtPosition(selectedBuilding, xCell, zCell))
         {
             Building buildingScript = selectedBuilding.GetComponent<Building>();
             city.CalculatePopulation(buildingScript);
@@ -198,9 +202,9 @@ public class InteractionController : MonoBehaviour
         //if(currentCollider!=null) Destroy(currentCollider.gameObject);
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 100.0f)) {
-            Vector3 gridPosition = board.CalculateGridPosition(hit.point, selectedBuildingScript.GetCellsX());
-            
-            board.AddBuildingInEditMode(selectedBuilding, gridPosition);
+            Vector3 gridPosition = board.CalculateGridPosition(hit.point, selectedBuildingScript.GetCellsX(), out xCell, out zCell);
+
+            board.AddBuildingInEditMode(selectedBuilding, gridPosition, xCell, zCell);
 
             currentBuildingPosition = gridPosition;
         }
@@ -209,7 +213,7 @@ public class InteractionController : MonoBehaviour
 
     private void AddBuilding()
     {
-        board.AddBuilding(GameManager.Instance.buildingInConstruction.prefab, currentBuildingPosition, -1,true);
+        board.AddBuilding(GameManager.Instance.buildingInConstruction.prefab, currentBuildingPosition, -1,true, xCell, zCell);
         Destroy(currentBuilding.transform.parent.gameObject);
         GridUI.SetActive(false);
         GameManager.Instance.buildingInConstruction = null;
