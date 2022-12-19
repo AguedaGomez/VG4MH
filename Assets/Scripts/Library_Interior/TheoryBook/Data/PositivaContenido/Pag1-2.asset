@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
   m_Name: Pag1-2
   m_EditorClassIdentifier: 
-  content: "Intenta elegir aquello que te resulte agradable, algo que te haga sentir
-    bien.\r Mientras lo disfrutas intenta concentrarte y vivirlo plenamente. Despu\xE9s
-    de\r disfrutar de \u201Ctu momento\u201D agradable, recapacita c\xF3mo te has
-    sentido y piensa\r si lo repetir\xEDas de nuevo o si cambiar\xEDas o a\xF1adir\xEDas
-    algo. \r\n"
+  content: "Por ejemplo, tomar un caf\xE9 o\r una cerveza, o un helado, hacer una
+    peque\xF1a excursi\xF3n, hacer deporte, o\xEDr\r m\xFAsica, ver un programa de
+    la televisi\xF3n que te gusta, dar un paseo, llamar a\r alguien por tel\xE9fono,
+    tomar un ba\xF1o con agua templada, ir a la peluquer\xEDa etc.\r"

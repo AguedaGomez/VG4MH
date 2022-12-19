@@ -165,6 +165,7 @@ public class Board : MonoBehaviour
         int xCell = CalculateRowColumn(position.x);
         float yCell = .5f;
         int zCell = CalculateRowColumn(position.z);
+        Debug.Log("posición en tablero: x = " + xCell + " z = " + zCell);
 
         if (bSize % 2 == 0)
             return new Vector3(xCell * cellSize-2, yCell, zCell * cellSize-2);
@@ -203,9 +204,8 @@ public class Board : MonoBehaviour
         int cellsInZ = buildings[x, z].GetCellsZ();
         int cellsInX = buildings[x, z].GetCellsX();
         int inicio = 0;
-        int i = 0;
         if ((cellsInX / 2) % 2 != 0) inicio = -cellsInX / 2;
-        else inicio = -cellsInX / 2 - 1;
+        else inicio = -((cellsInX / 2) - 1);
         if (cellsInX == 2) inicio = 0;
         //Debug.Log("coordenadas x: " + x + " z: " + z);
         //Debug.Log("empezar por " + inicio);
@@ -213,7 +213,7 @@ public class Board : MonoBehaviour
         {
             for (int c = inicio; c < cellsInZ; c++)
             {
-                boardOccupationStatus[x + r, z + c] = true;
+                boardOccupationStatus[x - r, z - c] = true;
             }
         }
     }
