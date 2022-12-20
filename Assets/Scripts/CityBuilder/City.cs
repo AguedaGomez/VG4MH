@@ -38,8 +38,9 @@ public class City : MonoBehaviour
         if (SaveObject.Instance.date != "")
             CheckInactiveTime(SaveObject.Instance.date);
         else
-        { // Nuevo juego
+        { // Nuevo juego no llega a llamarse nunca?
             increaseActivationValue(10);
+            SaveObject.Instance.firstTimeInGameToday = true;
             LanzarCuestionarioAlUsuario();
         }
         CheckAvailableBuildings();
@@ -62,14 +63,11 @@ public class City : MonoBehaviour
         if(lA.Date != today.Date) // Día diferente
         {
             //Se permite al usuario volver a recoger energía
-            SaveObject.Instance.dailyActivityCompleted = false;
-            SaveObject.Instance.dailyQuestions_Done = false;
-            SaveObject.Instance.enterInLibraryToday = false;
-            SaveObject.Instance.actualSessionSteps = 0;
-            SaveObject.Instance.dailyCompletedSteps = 0;
+            SaveObject.Instance.ResetDay();
             GameManager.Instance.resetActivityNotifications();
             increaseActivationValue(-100);
             increaseActivationValue(10);
+            SaveObject.Instance.firstTimeInGameToday = true;
             if (inactiveTime.Days > 1)
             {
                 //Aplicar penalización por no haber iniciado la aplicación
@@ -79,6 +77,17 @@ public class City : MonoBehaviour
         else //mismo día
         {
             // Lanzar cuestionario solo cuando pase un determinado tiempo
+            if (!SaveObject.Instance.firstTimeInGameToday)
+            {
+                increaseActivationValue(10);
+                SaveObject.Instance.firstTimeInGameToday = true;
+            }
+            if (SaveObject.Instance.firstTimeInLibrary && !SaveObject.Instance.enterInLibraryToday)
+            {
+                increaseActivationValue(10);
+                SaveObject.Instance.enterInLibraryToday = true;
+            }
+                
         }
 
     }

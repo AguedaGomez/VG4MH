@@ -20,6 +20,8 @@ public sealed class SaveObject
     public bool dailyQuestions_Done;
     public bool enterInLibraryToday;
     public bool dailyActivityCompleted;
+    public bool firstTimeInLibrary;
+    public bool firstTimeInGameToday;
     public int dailyCompletedSteps;
     public int actualSessionSteps;
     
@@ -27,13 +29,15 @@ public sealed class SaveObject
     private SaveObject()
     {
         materials = 0;
-        powerR = 20;
+        powerR = 10;
         date = "";
         buildingsInBoard = new List<SavedBuilding>();
         questionnairesDoneByUser = new List<AnswerFullQuestionnaire>();
         charactersInTheCity = new List<CharacterInfo>();
         activityRunning = false;
         enterInLibraryToday = false;
+        firstTimeInGameToday = false;
+        firstTimeInLibrary = false;
         energy = 0;
         dailyActivityCompleted = false;
         dailyQuestions_Done = false;
@@ -116,6 +120,16 @@ public sealed class SaveObject
         }*/
 
         //return newListToReturn;
+    }
+    public void ResetDay()
+    {
+        dailyActivityCompleted = false;
+        dailyQuestions_Done = false;
+        enterInLibraryToday = false;
+        firstTimeInGameToday = false;
+        firstTimeInLibrary = false;
+        actualSessionSteps = 0;
+        dailyCompletedSteps = 0;
     }
 
     public List<string> GetQuestionnaireDates()

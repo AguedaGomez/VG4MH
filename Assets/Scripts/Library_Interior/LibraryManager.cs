@@ -9,10 +9,10 @@ public class LibraryManager : MonoBehaviour
 
     private void Awake()
     {
-        if (SaveObject.Instance.enterInLibraryToday == false)
+        if (SaveObject.Instance.firstTimeInLibrary == false)
         {
-            SaveObject.Instance.enterInLibraryToday = true;
-            SaveObject.Instance.energy += 10;
+            SaveObject.Instance.firstTimeInLibrary = true;
+            //SaveObject.Instance.energy += 10;
            // SaveObject.Instance.updateActivationValueOnLastQuestionnaire();
             popUp_manager.addNotificationToQueue(activationNotification);
         }
