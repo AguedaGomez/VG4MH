@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 03f2b069aed4bd24c86b194384b17e6d
   - enabled: 1
-    path: Assets/Scenes/CityBuilder.unity
-    guid: e3dd3ef55f2c239469f532b0fc553252
-  - enabled: 1
     path: Assets/Scenes/DecisionMakingGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/CityBuilder.unity
+    guid: e3dd3ef55f2c239469f532b0fc553252
   - enabled: 1
     path: Assets/Scenes/Library_Interior.unity
     guid: 6e526af7264d9bc46b00ecb15ca726ea

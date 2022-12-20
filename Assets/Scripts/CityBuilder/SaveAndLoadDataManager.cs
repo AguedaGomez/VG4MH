@@ -118,7 +118,7 @@ public class SaveAndLoadDataManager : MonoBehaviour
 
     private void SaveDataToObject(SaveObject loadedSaveObject)
     {
-        SceneManager.LoadScene("CityBuilder");
+        SceneManager.LoadScene(SaveObject.Instance.currentScene);
         SaveObject.Instance.materials = loadedSaveObject.materials;
         SaveObject.Instance.date = loadedSaveObject.date;
         Debug.Log("1. guardando fecha en objeto " + SaveObject.Instance.date);

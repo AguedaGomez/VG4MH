@@ -13,6 +13,7 @@ public sealed class SaveObject
     public float powerR;
     public float energy;
     public string date;
+    public string currentScene;
     public List<SavedBuilding> buildingsInBoard; //id al construir e id de datos
     public List<AnswerFullQuestionnaire> questionnairesDoneByUser;
     public List<CharacterInfo> charactersInTheCity;
@@ -45,6 +46,7 @@ public sealed class SaveObject
         dailyQuestions_Done = false;
         dailyCompletedSteps = 0;
         actualSessionSteps = 0;
+        currentScene = "MainMenu";
     }
 
     public List<Vector2> GetQuestionnaireValues(string idQuestionnaire)
