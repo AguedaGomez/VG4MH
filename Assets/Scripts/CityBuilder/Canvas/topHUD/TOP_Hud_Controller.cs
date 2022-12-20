@@ -76,7 +76,8 @@ public class TOP_Hud_Controller : MonoBehaviour
                     break;
                 case Card.Resource.PHYSICALACT:
                     StartPowerRValueUpdate(valueModifier > 0, valueModifier);
-                    StartActValueUpdate(valueModifier > 0, valueModifier);
+                    SaveObject.Instance.energy += valueModifier;
+                    UpdateEnergySliderwithAnimation(SaveObject.Instance.energy);
                     Start_IconShining(Card.Resource.ACTIVATION);
                     break;
                 case Card.Resource.POSITIVE:
@@ -172,6 +173,7 @@ public class TOP_Hud_Controller : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float newValue = Mathf.Lerp(prev_Percentage, percentage_Activation, (elapsedTime / timeToGo));
             activation_Slider.GetComponent<Image>().fillAmount = newValue;
+            //SaveObject.Instance.energy = newValue * 100;
             edgeRect.anchorMin = new Vector2(newValue, newValue);
             edgeRect.anchoredPosition = new Vector2(0, 0);
 
@@ -182,6 +184,7 @@ public class TOP_Hud_Controller : MonoBehaviour
         barParticles.Stop();
         //iconAnimation.SetBool("finishedSliderUpdating", true);
         activation_Slider.GetComponent<Image>().fillAmount = percentage_Activation;
+        //SaveObject.Instance.energy = percentage_Activation * 100;
         yield return null;
     }
 
