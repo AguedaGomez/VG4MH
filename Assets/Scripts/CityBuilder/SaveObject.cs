@@ -22,6 +22,7 @@ public sealed class SaveObject
     public bool dailyActivityCompleted;
     public bool firstTimeInLibrary;
     public bool firstTimeInGameToday;
+    public bool firstTimeInGame;
     public int dailyCompletedSteps;
     public int actualSessionSteps;
     
@@ -38,6 +39,7 @@ public sealed class SaveObject
         enterInLibraryToday = false;
         firstTimeInGameToday = false;
         firstTimeInLibrary = false;
+        firstTimeInGame = true;
         energy = 0;
         dailyActivityCompleted = false;
         dailyQuestions_Done = false;

@@ -25,10 +25,11 @@ public class MainMenuManager : MonoBehaviour
     }
     public void StartGame ()
     {
-        if (SaveObject.Instance.date == "")
+        if (SaveObject.Instance.firstTimeInGame)
         {
             GameManager.Instance.currentCard = tutorial;
-
+            SaveObject.Instance.firstTimeInGame = false;
+            GameManager.Instance.SaveGame();
             SceneManager.LoadScene("DecisionMakingGame");
         } else
         {

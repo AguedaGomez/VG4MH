@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: "S\xED, \xBFverdad? pero no debo descuidarme de la taberna. Aunque no pueda
     tomarme d\xEDas de vacaciones, me gustar\xEDa poder frenar un poco la intensidad
     de mis d\xEDas y disfrutar de lo que hago, pero no s\xE9 por d\xF3nde empezar."
-  reward: 3
+  reward: 4
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}

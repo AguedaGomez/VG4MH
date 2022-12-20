@@ -87,7 +87,8 @@ public class City : MonoBehaviour
                 increaseActivationValue(10);
                 SaveObject.Instance.enterInLibraryToday = true;
             }
-                
+            LanzarCuestionarioAlUsuario();
+
         }
 
     }

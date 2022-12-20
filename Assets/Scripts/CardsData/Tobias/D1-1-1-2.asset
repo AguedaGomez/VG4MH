@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: "Tabernero Tob\xEDas"
   dialog: "\xBFA qu\xE9 te refieres con saborear ese momento? \xBFC\xF3mo puedo disfrutar
     m\xE1s de tomar caf\xE9 por las ma\xF1anas?"
-  reward: 3
+  reward: 4
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}

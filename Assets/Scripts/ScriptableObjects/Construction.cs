@@ -17,6 +17,7 @@ public class Construction : ScriptableObject
     public int cellsInZ; // all the cells that it occupies in z
     public int cellsInX; // all the cells that it occupies in x
     public int powerRIncrease; // percentage of powerR that increases when it is built
+    [TextArea(10,2)]public string description;
 
     public int materialsPerSecond = 0;
     public int maximunMaterials; // maximun materials that construction can collect

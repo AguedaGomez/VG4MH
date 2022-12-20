@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: "Tabernero Tob\xEDas"
   dialog: "\xA1Buenas! Soy Tob\xEDas, el tabernero, he tenido una semana intensa
     de trabajo. Abrir la taberna requiere un esfuerzo muy grande y gran implicaci\xF3n."
-  reward: 3
+  reward: 4
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}

@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: "No s\xE9 qu\xE9 momento podr\xEDa ser. Como te dec\xEDa, mi d\xEDa a d\xEDa
     se centra en mis responsabilidades. \xBFQu\xE9 momento podr\xEDa dedicarme a
     m\xED?"
-  reward: 3
+  reward: 4
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}

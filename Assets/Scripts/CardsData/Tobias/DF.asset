@@ -17,7 +17,7 @@ MonoBehaviour:
     grandes cosas. Me doy cuenta de que tengo que aprender a disfrutar m\xE1s de
     los peque\xF1os momentos que me gustan del d\xEDa y as\xED les dar\xE9 m\xE1s
     sentido. \xA1Gracias por ayudarme!"
-  reward: 3
+  reward: 4
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}
