@@ -74,6 +74,11 @@ public class TOP_Hud_Controller : MonoBehaviour
                     StartPowerRValueUpdate(valueModifier > 0, valueModifier);
                     Start_IconShining(Card.Resource.MOTIVATION);
                     break;
+                case Card.Resource.PHYSICALACT:
+                    StartPowerRValueUpdate(valueModifier > 0, valueModifier);
+                    StartActValueUpdate(valueModifier > 0, valueModifier);
+                    Start_IconShining(Card.Resource.ACTIVATION);
+                    break;
                 case Card.Resource.POSITIVE:
                     StartPowerRValueUpdate(valueModifier > 0, valueModifier);
                     Start_IconShining(Card.Resource.POSITIVE);
@@ -186,6 +191,10 @@ public class TOP_Hud_Controller : MonoBehaviour
         switch (resource)
         {
             case Card.Resource.ACTIVATION:
+                actShining.SetBool("finishedSliderUpdating", false);
+                actShining.Play("StartShining");
+                break;
+            case Card.Resource.PHYSICALACT:
                 actShining.SetBool("finishedSliderUpdating", false);
                 actShining.Play("StartShining");
                 break;
