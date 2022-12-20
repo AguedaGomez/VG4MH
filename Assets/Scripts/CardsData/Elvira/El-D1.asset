@@ -17,7 +17,7 @@ MonoBehaviour:
     de trasladarnos aqu\xED ten\xEDa mucho trabajo. Ahora, tengo que empezar de nuevo.
     No tengo taller ni nadie que me haga encargos. Esta situaci\xF3n me abruma y
     me deja sin energ\xEDa. \xBFQu\xE9 puedo hacer?"
-  reward: 2
+  reward: 3
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 42cda1b416d92284595fc26b50fc963f, type: 3}

@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Elvira Gruber
   dialog: "Esto es lo que normalmente hago cuando me siento as\xED porque es lo \xFAnico
     que me pide el cuerpo. Aun as\xED, no me hace sentirme mejor"
-  reward: 2
+  reward: 3
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 42cda1b416d92284595fc26b50fc963f, type: 3}

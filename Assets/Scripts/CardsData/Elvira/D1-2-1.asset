@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Elvira Gruber
   dialog: "Me gustaba pasear, pero pensar todo el d\xEDa en el problema no me deja
     disfrutarlo y por eso he dejado de hacerlo"
-  reward: 2
+  reward: 3
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 42cda1b416d92284595fc26b50fc963f, type: 3}

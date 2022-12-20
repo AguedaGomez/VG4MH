@@ -18,14 +18,20 @@ public class PageDecorator : MonoBehaviour
     private int currentContentNum;
     private int finalContentNum;
     private int finalPageNum;
+    private string totalNumPages;
+    private int globalNumPage;
 
     private Content currentContentData;
     private EntryObject currentEntryData;
+
+    private Text paginator;
 
     private void Awake()
     {
         nextButton.onClick.AddListener(() => StartCoroutine(nextPageCoroutine()));
         backButton.onClick.AddListener(() => StartCoroutine(backPageCoroutine()));
+
+        paginator = transform.Find("Paginator").GetComponent<Text>();
     }
 
     public void SetUp(EntryObject selectedEntry)
@@ -44,7 +50,9 @@ public class PageDecorator : MonoBehaviour
 
         finalContentNum = currentEntryData.content.Count - 1;
         finalPageNum = currentContentData.pages.Count - 1;
+        totalNumPages = SetPaginator();
 
+        UpdatePaginator();
         UpdateContentVisualization();
         UpdatePageVisualization();
         nextButton.interactable = true;
@@ -82,6 +90,7 @@ public class PageDecorator : MonoBehaviour
         UpdatePage(1);
         UpdatePageVisualization();
         UpdateButtonVisualization();
+        UpdatePaginator();
         //currentPageNum++;
         //contentText.text = pagesToShow.pageContent[currentPageNum];
 
@@ -100,6 +109,7 @@ public class PageDecorator : MonoBehaviour
         UpdatePage(-1);
         UpdatePageVisualization();
         UpdateButtonVisualization();
+        UpdatePaginator();
 
         //if(currentPageNum == 0)
         //{
@@ -109,6 +119,25 @@ public class PageDecorator : MonoBehaviour
         //{
         //    nextButton.interactable = true;
         //}
+    }
+
+    private void UpdatePaginator()
+    {
+        paginator.text = globalNumPage + "/" + totalNumPages;
+    }
+
+    private string SetPaginator()
+    {
+        globalNumPage = 1;
+        int totalPages = 0;
+        foreach (var content in currentEntryData.content)
+        {
+            foreach (var page in content.pages)
+            {
+                totalPages++;
+            }
+        }
+        return "" + totalPages;
     }
 
     private void UpdatePageVisualization()
@@ -125,6 +154,7 @@ public class PageDecorator : MonoBehaviour
     private void UpdatePage(int num)
     {
         currentPageNum = currentPageNum + num;
+        globalNumPage += num;
         if (currentPageNum > finalPageNum)
         {
             currentPageNum = 0;

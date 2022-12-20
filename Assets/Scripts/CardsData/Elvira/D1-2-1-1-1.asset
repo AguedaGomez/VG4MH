@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Elvira Gruber
   dialog: "Gracias, que tu tambi\xE9n salgas a pasear, dar\xE1 energ\xEDa. De esta
-    manera poco a poco conseguir\xE9 sentirme mejor y ser\xE9 m\xE1s fuerte para
-    afrontar lo problemas. \xA1Muchas gracias por ayudarme!"
-  reward: 2
+    manera, poco a poco conseguir\xE9 sentirme mejor y ser\xE9 m\xE1s fuerte para
+    afrontar los problemas. \xA1Muchas gracias por ayudarme!"
+  reward: 3
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: 42cda1b416d92284595fc26b50fc963f, type: 3}

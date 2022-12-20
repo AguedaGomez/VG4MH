@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
-  m_Name: Dialog9
+  m_Name: Dialog12
   m_EditorClassIdentifier: 
   characterName: Thomas Gruber
-  dialog: "Dir\xEDa que irse tiene tres beneficios y un coste. \xBFVemos qu\xE9 supone
-    quedarse? "
+  dialog: "Dir\xEDa que irse tiene tres beneficios y un coste. \xBFQuieres revisarlos? "
   reward: 0
   type: 0
   image: {fileID: 0}
@@ -22,7 +21,7 @@ MonoBehaviour:
   sceneModel: {fileID: 3004728433255937888, guid: d4a4316afaab1084d85823d85aecdcc4,
     type: 3}
   rightText: "S\xED"
-  leftText: "No, vamos a ver cu\xE1les son concretamente"
+  leftText: No
   correctDirection: 0
-  nextCardIfRight: {fileID: 11400000, guid: bdca6a10671c772419e70cc53bb8221f, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: 76e4e05ff4d6922468a9227f8889f948, type: 2}
+  nextCardIfRight: {fileID: 11400000, guid: d40ef89f4d25c294d9737adb54316801, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 10ab6c274f31bf14b8621cc46601cedf, type: 2}

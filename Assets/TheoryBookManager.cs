@@ -25,10 +25,10 @@ public class TheoryBookManager : MonoBehaviour
         foreach(EntryObject entry in bookEntries)
         {
             //Descomentar para probar toda la secuencia
-            if (GameManager.Instance.checkPointsStory.Contains(entry.typeContent))
-            {
-                entry.unlocked = true;
-            }
+            //if (GameManager.Instance.checkPointsStory.Contains(entry.typeContent))
+            //{
+            //    entry.unlocked = true;
+            //}
             if (entry.unlocked)
             {
                 GameObject entryObject = Instantiate(entryPrefab, mainMenu_Viewport_gameobject.transform);
