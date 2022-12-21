@@ -58,4 +58,9 @@ public class BuildingMenuController : MonoBehaviour
             gridElementsDic[i + ""].Lock();
         }
     }
+
+    public void ShowEnoughMaterials(string id)
+    {
+        gridElementsDic[id].ShowMaterialsMssg();
+    }
 }

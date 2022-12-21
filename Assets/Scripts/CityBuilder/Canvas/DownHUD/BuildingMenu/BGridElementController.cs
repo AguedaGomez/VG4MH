@@ -14,14 +14,18 @@ public class BGridElementController : MonoBehaviour
     }
     public State myState;
 
+    private Construction bData;
+    private Button buildButton;
+
     void Start()
     {
-        
+        bData = GameManager.Instance.buildingsInGame[myId];
+        buildButton = transform.Find("Build").GetComponent<Button>();
     }
 
     private void SetUnlockData()
     {
-        Construction bData = GameManager.Instance.buildingsInGame[myId];
+        bData = GameManager.Instance.buildingsInGame[myId];
 
         transform.Find("Name").GetComponent<Text>().text = bData.buildingName;
         transform.Find("Image").GetComponent<Image>().sprite = bData.image;
@@ -67,4 +71,15 @@ public class BGridElementController : MonoBehaviour
         SetUnlockData();
     }
 
+    public void ShowMaterialsMssg()
+    {
+        transform.Find("MaterialMssg").gameObject.SetActive(true);
+        StartCoroutine(ShowErrorMessage());
+    }
+
+    private IEnumerator ShowErrorMessage()
+    {
+        yield return new WaitForSeconds(1f);
+        transform.Find("MaterialMssg").gameObject.SetActive(false);
+    }
 }

@@ -49,6 +49,10 @@ public class CanvasController : MonoBehaviour
             UpdateMaterials(dataBuilding.cost);
             interactionController.SaveBuildingToConstruct(dataBuilding);
         }
+        else
+        {
+            buildingMenuController.ShowEnoughMaterials(dataBuilding.id);
+        }
 
     }
 

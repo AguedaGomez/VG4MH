@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
     private void CreateDictionaryBuildingsInGame()
     {
         buildingsInGameList = Resources.LoadAll("Data/BuildingsData", typeof(Construction)).Cast<Construction>().ToList();
+        buildingsInGameList.Sort((x, y) => x.cost.CompareTo(y.cost));
         //Debug.Log("Creando diccionario de edificios en el juego");
         foreach (Construction buildingData in buildingsInGameList)
         {
