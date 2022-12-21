@@ -17,13 +17,14 @@ MonoBehaviour:
   prefab: {fileID: 4962213173863401293, guid: 9677425291b63424f89bcf4618dbae0f, type: 3}
   id: 10
   idData: laboratory
-  cost: 0
+  cost: 900
   buildingName: Laboratorio
   nLocals: 0
   energyRequired: 0
-  cellsInZ: 0
-  cellsInX: 0
+  cellsInZ: 2
+  cellsInX: 2
   powerRIncrease: 0
+  description: 
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 1
