@@ -45,7 +45,7 @@ public class DailyQuestionsPanel_Decorator : MonoBehaviour
     public void confirmButton_Pressed()
     {
         SaveObject.Instance.dailyQuestions_Done = true;
-        FindObjectOfType<City>().increaseActivationValue(20);
+        FindObjectOfType<City>().increaseActivationValue(10);
 
         CreateAnswerFullQuestionnaire();
         gameObject.SetActive(false);
@@ -53,7 +53,7 @@ public class DailyQuestionsPanel_Decorator : MonoBehaviour
 
     private void CreateAnswerFullQuestionnaire()
     {
-        string currentDate = DateTime.Now.ToString("d \nMMMM");
+        string currentDate = DateTime.Now.ToString("dd/MM");
         AnswerFullQuestionnaire answerFullQuestionnaire = new AnswerFullQuestionnaire(currentDate, FindObjectOfType<City>().activationValue);
 
         foreach (QuestionnaireDecorator questionnaire in questionnaires)

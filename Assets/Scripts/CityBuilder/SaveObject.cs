@@ -47,8 +47,21 @@ public sealed class SaveObject
         dailyCompletedSteps = 0;
         actualSessionSteps = 0;
         currentScene = "MainMenu";
+
+        FillFakeQuestionnaire();
     }
 
+    private void FillFakeQuestionnaire ()
+    {
+        AnswerFullQuestionnaire fakeQues = new AnswerFullQuestionnaire("12/12", 50f);
+        fakeQues.score.Add("phq", 3);
+        fakeQues.score.Add("gad", 4);
+        questionnairesDoneByUser.Add(fakeQues);
+        AnswerFullQuestionnaire fakeQues1 = new AnswerFullQuestionnaire("15/12", 30f);
+        fakeQues1.score.Add("phq", 2);
+        fakeQues1.score.Add("gad", 4);
+        questionnairesDoneByUser.Add(fakeQues1);
+    }
     public List<Vector2> GetQuestionnaireValues(string idQuestionnaire)
     {
         List<Vector2> scoreListQuestionnaire = new List<Vector2>(); //lista de score de un cuestionario específico
