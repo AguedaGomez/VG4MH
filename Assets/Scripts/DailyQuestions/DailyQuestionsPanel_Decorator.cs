@@ -54,7 +54,7 @@ public class DailyQuestionsPanel_Decorator : MonoBehaviour
     private void CreateAnswerFullQuestionnaire()
     {
         string currentDate = DateTime.Now.ToString("dd/MM");
-        AnswerFullQuestionnaire answerFullQuestionnaire = new AnswerFullQuestionnaire(currentDate, FindObjectOfType<City>().activationValue);
+        AnswerFullQuestionnaire answerFullQuestionnaire = new AnswerFullQuestionnaire(currentDate, SaveObject.Instance.energy);
 
         foreach (QuestionnaireDecorator questionnaire in questionnaires)
         {

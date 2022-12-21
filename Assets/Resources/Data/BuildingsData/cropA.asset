@@ -17,7 +17,7 @@ MonoBehaviour:
   prefab: {fileID: 7280136556811652052, guid: 930094876cb0d104db1f3339d409317d, type: 3}
   id: 5
   idData: cropA
-  cost: 35
+  cost: 70
   buildingName: Cultivo
   nLocals: 1
   energyRequired: 10
@@ -27,5 +27,5 @@ MonoBehaviour:
   description: "Los campos de cultivo adem\xE1s de dar recursos, permiten atraer
     a m\xE1s poblaci\xF3n. Tambi\xE9n son muy est\xE9ticos."
   materialsPerSecond: 0
-  maximunMaterials: 10
+  maximunMaterials: 15
   type: 0

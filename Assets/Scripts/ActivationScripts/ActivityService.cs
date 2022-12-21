@@ -105,11 +105,12 @@ public class ActivityService : MonoBehaviour
         //Corutina que se encarga de comprobar los pasos dados cada "x" tiempo de forma continua
         while (SaveObject.Instance.activityRunning)
         {
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1.5f);
 
             //Se actualiza el valor desde el servicio y posteriormente se actualiza en el canvas
             GetCurrentSteps();
             checkIfGoalIsReached();
+            //stepsInThisSession += 10;
             saveActualStepsOnSavedata(actualSteps + stepsInThisSession);
 
             if (activityPanel.isActiveAndEnabled)
@@ -165,14 +166,16 @@ public class ActivityService : MonoBehaviour
 
     public void giveActivityRewardToUser()
     {
-        int activationReward = (int)(actualSteps / 10);
+        int activationReward = (int)(actualSteps/10);
         SaveObject.Instance.dailyCompletedSteps += actualSteps;
         actualSteps = 0;
         SaveObject.Instance.actualSessionSteps = 0;
 
         //Debug.Log(activationReward);
         //GameManager.Instance.gameObject.GetComponent<RewardManager>().UpdateResource(Card.Resource.ACTIVATION, activationReward);
+        if (activationReward < 10) activationReward = 10;
         FindObjectOfType<City>().increaseActivationValue(activationReward);
-        topHud_Controller.Start_VisualResourceStatChange(Card.Resource.ACTIVATION, activationReward);
+        //topHud_Controller.Start_VisualResourceStatChange(Card.Resource.ACTIVATION, activationReward);
+        topHud_Controller.Stop_IconShining(Card.Resource.ACTIVATION);
     }
 }

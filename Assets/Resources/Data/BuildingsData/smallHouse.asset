@@ -24,7 +24,7 @@ MonoBehaviour:
   cellsInZ: 1
   cellsInX: 1
   powerRIncrease: 20
-  description: 
+  description: "Peque\xF1a vivienda. Alberga a unas pocas personas. Genera materiales"
   materialsPerSecond: 2
   maximunMaterials: 10
   type: 0

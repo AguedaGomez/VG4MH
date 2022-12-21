@@ -25,4 +25,4 @@ MonoBehaviour:
   leftText: "No, dime cu\xE1ntos ves t\xFA"
   correctDirection: 0
   nextCardIfRight: {fileID: 11400000, guid: bdca6a10671c772419e70cc53bb8221f, type: 2}
-  nextCardIfLeft: {fileID: 11400000, guid: b1af11a14ea52fe448479ac26d876ee7, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 8cc43c434ccf8324f970575c4f52a829, type: 2}

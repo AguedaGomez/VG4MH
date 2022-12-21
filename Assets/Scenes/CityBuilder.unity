@@ -27593,6 +27593,10 @@ PrefabInstance:
       propertyPath: canvasController
       value: 
       objectReference: {fileID: 1146041105}
+    - target: {fileID: 2044133432, guid: ae520fd963568f24690fa789298bf758, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1175329255601523561, guid: ae520fd963568f24690fa789298bf758,
         type: 3}
       propertyPath: m_Pivot.x

@@ -17,10 +17,10 @@ MonoBehaviour:
   prefab: {fileID: 3159729830286734271, guid: e8b0d7ee4c6538e4983e44d4e9e98334, type: 3}
   id: 14
   idData: tavern
-  cost: 600
+  cost: 100
   buildingName: Taberna
   nLocals: 5
-  energyRequired: 40
+  energyRequired: 35
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0

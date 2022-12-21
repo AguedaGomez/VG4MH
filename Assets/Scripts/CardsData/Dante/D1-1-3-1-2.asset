@@ -23,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: Me alegra haberte ayudado a ver otras posibles causas
   leftText: Genial que puedas ver otras opciones. Nos vemos
-  correctDirection: 0
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: 2bd6edb06ee5fdd47a6632600a6b21f3, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 2bd6edb06ee5fdd47a6632600a6b21f3, type: 2}

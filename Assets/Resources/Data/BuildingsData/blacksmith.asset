@@ -17,10 +17,10 @@ MonoBehaviour:
   prefab: {fileID: 1929065748608516357, guid: bbfec19558530654ca04f76842ef4515, type: 3}
   id: 3
   idData: blackSmith
-  cost: 70
+  cost: 80
   buildingName: "Herrer\xEDa"
-  nLocals: 10
-  energyRequired: 0
+  nLocals: 5
+  energyRequired: 20
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0

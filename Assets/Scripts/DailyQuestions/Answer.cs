@@ -12,6 +12,6 @@ public class Answer
     public Answer(string id)
     {
         this.id = id;
-        value = -1; //No hay contestación
+        value = 0; //No hay contestación
     }
 }

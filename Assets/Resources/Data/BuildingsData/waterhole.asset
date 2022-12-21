@@ -24,7 +24,7 @@ MonoBehaviour:
   cellsInZ: 1
   cellsInX: 1
   powerRIncrease: 0
-  description: 
+  description: El pozo proporciona materiales
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 1

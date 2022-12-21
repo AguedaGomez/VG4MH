@@ -76,14 +76,15 @@ public class ActivityPanel_Decorator : MonoBehaviour
         activationPanel.transform.GetChild(0).gameObject.SetActive(true);
     }
 
-    public void setInformationOnPanel(double distanceRunned, double distanceToRun = 50)
+    public void setInformationOnPanel(double distanceRunned, double distanceToRun = 600)
     {
         //Actualiza la información de la interfaz
         activityCompletedPercent = distanceRunned / distanceToRun;
 
-        //activityInformation_Text.text = "Distancia recorrida:\n\n" + distanceRunned + " Pasos / " + distanceToRun + " Pasos";
-        activityPercentage_Image.fillAmount = (float)activityCompletedPercent;
-        if (activityPercentage_Image.fillAmount == 0) { activityPercentage_Image.fillAmount += 5; }
+        activityInformation_Text.text = distanceRunned + " Pasos";
+        // activityPercentage_Image.fillAmount = (float)activityCompletedPercent;
+        activityPercentage_Image.fillAmount = (float)distanceRunned;
+        //if (activityPercentage_Image.fillAmount == 0) { activityPercentage_Image.fillAmount += 5; }
     }
 
     public void changeConfirmationButtonState(bool newState)
