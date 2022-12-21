@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
     public InputField idInputField;
     public Card tutorial;
 
-    private string ID = "123456";
+    private string ID = "1234";
     
     // Start is called before the first frame update
     void Start()
@@ -25,17 +25,23 @@ public class MainMenuManager : MonoBehaviour
     }
     public void StartGame ()
     {
-        if (SaveObject.Instance.firstTimeInGame)
+        if (idInputField.text == ID)
         {
-            GameManager.Instance.currentCard = tutorial;
-            SaveObject.Instance.firstTimeInGame = false;
-            GameManager.Instance.SaveGame();
-            SceneManager.LoadScene("DecisionMakingGame");
-        } else
-        {
-            //SceneManager.LoadScene("CityBuilder");
-            GameManager.Instance.SaveGame();
-            GameManager.Instance.LoadGame();
+            if (SaveObject.Instance.firstTimeInGame)
+            {
+                GameManager.Instance.currentCard = tutorial;
+                SaveObject.Instance.currentScene = "DecisionMakingGame";
+                GameManager.Instance.SaveGame();
+
+                SceneManager.LoadScene(SaveObject.Instance.currentScene);
+            }
+            else
+            {
+                SaveObject.Instance.currentScene = "CityBuilder";
+                GameManager.Instance.SaveGame();
+                GameManager.Instance.LoadGame();
+            }
         }
+
     }
 }

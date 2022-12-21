@@ -7,6 +7,7 @@ public class BuildingAction : MonoBehaviour
 {
     public void ChangeScene (string nameScene)
     {
+        SaveObject.Instance.currentScene = nameScene;
         GameManager.Instance.SaveGame();
 
         SceneManager.LoadScene(nameScene);
@@ -14,6 +15,7 @@ public class BuildingAction : MonoBehaviour
 
     public void BacktoTown()
     {
+        SaveObject.Instance.currentScene = "CityBuilder";
         GameManager.Instance.SaveGame();
         GameManager.Instance.LoadGame();
     }

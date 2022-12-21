@@ -12,8 +12,6 @@ public class LibraryManager : MonoBehaviour
         if (SaveObject.Instance.firstTimeInLibrary == false)
         {
             SaveObject.Instance.firstTimeInLibrary = true;
-            //SaveObject.Instance.energy += 10;
-           // SaveObject.Instance.updateActivationValueOnLastQuestionnaire();
             popUp_manager.addNotificationToQueue(activationNotification);
         }
     }
