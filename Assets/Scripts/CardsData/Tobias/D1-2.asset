@@ -25,5 +25,5 @@ MonoBehaviour:
   rightText: "Piensa en algo que hagas en tu d\xEDa a d\xEDa que te guste"
   leftText: "Elije un momento del d\xEDa que puedas dedicarte a ti"
   correctDirection: 0
-  nextCardIfRight: {fileID: 0}
-  nextCardIfLeft: {fileID: 0}
+  nextCardIfRight: {fileID: 11400000, guid: bfec4f9e4fdae60458af9a7a10435581, type: 2}
+  nextCardIfLeft: {fileID: 11400000, guid: 831f1499a0905f7439fd63eb8fcc7d35, type: 2}

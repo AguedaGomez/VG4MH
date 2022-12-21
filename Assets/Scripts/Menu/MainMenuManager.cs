@@ -31,6 +31,7 @@ public class MainMenuManager : MonoBehaviour
             {
                 GameManager.Instance.currentCard = tutorial;
                 SaveObject.Instance.currentScene = "DecisionMakingGame";
+                SaveObject.Instance.firstTimeInGame = false;
                 GameManager.Instance.SaveGame();
 
                 SceneManager.LoadScene(SaveObject.Instance.currentScene);

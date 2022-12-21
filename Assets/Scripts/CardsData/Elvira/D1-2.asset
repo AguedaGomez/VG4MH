@@ -21,7 +21,7 @@ MonoBehaviour:
   model: {fileID: 919132149155446097, guid: 42cda1b416d92284595fc26b50fc963f, type: 3}
   sceneModel: {fileID: 3701454041783855837, guid: c50469195828f404585843811accf459,
     type: 3}
-  rightText: Intenta hacer algo contratario a lo que te apetezca
+  rightText: "Aunque no te apetezca, si te mueves, ver\xE1 como te sientes mejor"
   leftText: Descansa hasta que te lleguen las fuerzas
   correctDirection: 0
   nextCardIfRight: {fileID: 11400000, guid: ae69ecdcf7026d64689e42e62534fcb4, type: 2}

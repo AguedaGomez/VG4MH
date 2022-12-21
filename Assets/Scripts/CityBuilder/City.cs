@@ -222,6 +222,7 @@ public class City : MonoBehaviour
         {
             canvasController.topHUD.GetComponent<TOP_Hud_Controller>().increaseMaterialsOnCanvas(increment);
         }
+        SaveObject.Instance.materials = Materials;
     }
 
     private void UpdateMaterialsText()

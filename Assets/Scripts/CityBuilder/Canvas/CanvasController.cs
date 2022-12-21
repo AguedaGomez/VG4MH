@@ -43,8 +43,13 @@ public class CanvasController : MonoBehaviour
 
     public void SaveBuildingToConstruct(Construction dataBuilding)
     {
-        ShowConfirmationMessage();
-        interactionController.SaveBuildingToConstruct(dataBuilding);
+        if (SaveObject.Instance.materials>=dataBuilding.cost)
+        {
+            ShowConfirmationMessage();
+            UpdateMaterials(dataBuilding.cost);
+            interactionController.SaveBuildingToConstruct(dataBuilding);
+        }
+
     }
 
     public void BuildConfirmation()
@@ -80,6 +85,13 @@ public class CanvasController : MonoBehaviour
             GameObject newPanel = Instantiate(citizenTalkingPanel_Prefab, this.transform);
             newPanel.GetComponent<characterTalkPanel_Manager>().setUpPanel(citizenToTalk);
         }
+    }
+
+    public void UpdateMaterials(int cost)
+    {
+        int newMaterials = SaveObject.Instance.materials - cost;
+        SaveObject.Instance.materials = newMaterials;
+        topHudController.updateMaterials_Text(newMaterials);
     }
 
     void Update()
