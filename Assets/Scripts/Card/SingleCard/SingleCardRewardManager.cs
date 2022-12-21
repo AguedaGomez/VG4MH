@@ -42,6 +42,7 @@ public class SingleCardRewardManager : MonoBehaviour
             Card.Resource checkpoint = currentResource;
             if (!GameManager.Instance.checkPointsStory.Contains(checkpoint)) GameManager.Instance.checkPointsStory.Add(checkpoint);
             GameManager.Instance.currentCard = nextCard;
+            SaveObject.Instance.currentScene = "CityBuilder";
             cardManager.LoadScene();
         }
         else

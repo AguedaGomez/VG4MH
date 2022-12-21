@@ -17,13 +17,14 @@ MonoBehaviour:
   prefab: {fileID: 7224124414346300926, guid: 5a62fb2a0d7047045a1f7a1bde842781, type: 3}
   id: 13
   idData: potionStore
-  cost: 0
+  cost: 4000
   buildingName: Botica
   nLocals: 0
-  energyRequired: 0
+  energyRequired: 65
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0
+  description: 
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 1

@@ -17,13 +17,15 @@ MonoBehaviour:
   prefab: {fileID: 1929065748608516357, guid: bbfec19558530654ca04f76842ef4515, type: 3}
   id: 3
   idData: blackSmith
-  cost: 0
+  cost: 70
   buildingName: "Herrer\xEDa"
   nLocals: 10
   energyRequired: 0
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0
+  description: "Construyendo la herrer\xEDa puedes mejorar los servicios disponibles
+    en el pueblo."
   materialsPerSecond: 0
-  maximunMaterials: 0
+  maximunMaterials: 60
   type: 0

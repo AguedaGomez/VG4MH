@@ -33,8 +33,10 @@ public class BGridElementController : MonoBehaviour
         buildButtonTransform.GetComponent<Button>().interactable = true;
 
         Text buildText = transform.Find("Build").transform.Find("Text").GetComponent<Text>();
-        buildText.text = "" + bData.cost;
+        buildText.text = bData.cost + "";
         buildText.gameObject.SetActive(true);
+
+        transform.Find("Description").GetComponent<Text>().text = bData.description;
 
         transform.Find("GridNumber").GetComponent<Text>().text = "" + bData.cellsInX + "x" + bData.cellsInZ;
     }
@@ -51,6 +53,8 @@ public class BGridElementController : MonoBehaviour
         Transform buildButtonTransform = transform.Find("Build");
         buildButtonTransform.transform.Find("Lock icon").gameObject.SetActive(true);
         buildButtonTransform.GetComponent<Button>().interactable = false;
+
+        transform.Find("Description").GetComponent<Text>().text = bData.description;
 
         transform.Find("GridNumber").GetComponent<Text>().text = "????";
     }

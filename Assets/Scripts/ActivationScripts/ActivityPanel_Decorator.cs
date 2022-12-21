@@ -81,7 +81,7 @@ public class ActivityPanel_Decorator : MonoBehaviour
         //Actualiza la información de la interfaz
         activityCompletedPercent = distanceRunned / distanceToRun;
 
-        activityInformation_Text.text = "Distancia recorrida:\n\n" + distanceRunned + " Pasos / " + distanceToRun + " Pasos";
+        //activityInformation_Text.text = "Distancia recorrida:\n\n" + distanceRunned + " Pasos / " + distanceToRun + " Pasos";
         activityPercentage_Image.fillAmount = (float)activityCompletedPercent;
     }
 
@@ -92,7 +92,7 @@ public class ActivityPanel_Decorator : MonoBehaviour
         if(!newState)
         {
             //Cambiar texto
-            confirmationText.text = "Ya se ha completado la actividad diaria. Vuelve mañana a por más.";
+            confirmationText.text = "¡Enhorabuena! Has acumulado la energía diaria. Mañana podrás acumular energía de nuevo";
         }
     }
 

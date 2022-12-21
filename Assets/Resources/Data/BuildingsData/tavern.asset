@@ -17,13 +17,15 @@ MonoBehaviour:
   prefab: {fileID: 3159729830286734271, guid: e8b0d7ee4c6538e4983e44d4e9e98334, type: 3}
   id: 14
   idData: tavern
-  cost: 10
+  cost: 600
   buildingName: Taberna
   nLocals: 5
-  energyRequired: 0
+  energyRequired: 40
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0
+  description: "La taberna atrae a m\xE1s poblaci\xF3n. Los habitantes podr\xE1n
+    reunirse y socializar entre ellos."
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 1

@@ -21,7 +21,7 @@ public class ActivityService : MonoBehaviour
 
     public int actualSteps = 0;
     public int stepsInThisSession = 0;
-    int stepsToGo = 600;
+    int stepsToGo = 10000;
     [SerializeField]GameObject activityDecorator;
     [SerializeField]TOP_Hud_Controller topHud_Controller;
     [SerializeField] Notification startActivityNotification;
@@ -105,7 +105,7 @@ public class ActivityService : MonoBehaviour
         //Corutina que se encarga de comprobar los pasos dados cada "x" tiempo de forma continua
         while (SaveObject.Instance.activityRunning)
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1.0f);
 
             //Se actualiza el valor desde el servicio y posteriormente se actualiza en el canvas
             GetCurrentSteps();

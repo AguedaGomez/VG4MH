@@ -17,13 +17,15 @@ MonoBehaviour:
   prefab: {fileID: 6130454796031494610, guid: 04efe742af06af4449026d0c8ac6b389, type: 3}
   id: 2
   idData: bigHouse
-  cost: 0
+  cost: 150
   buildingName: Casa 4 pers.
   nLocals: 4
-  energyRequired: 0
+  energyRequired: 10
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0
+  description: "Este edificio puede albergar a m\xE1s gente. Atraer\xE1 m\xE1s poblaci\xF3n
+    y generar\xE1 materiales."
   materialsPerSecond: 0
   maximunMaterials: 60
   type: 0

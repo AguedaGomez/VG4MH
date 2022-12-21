@@ -17,13 +17,14 @@ MonoBehaviour:
   prefab: {fileID: 2206300734052722678, guid: e8624b9c7008c1441969df3bb32034b2, type: 3}
   id: 9
   idData: granary
-  cost: 0
+  cost: 100
   buildingName: Granero
   nLocals: 0
-  energyRequired: 0
+  energyRequired: 50
   cellsInZ: 2
   cellsInX: 1
   powerRIncrease: 0
+  description: 
   materialsPerSecond: 0
-  maximunMaterials: 0
+  maximunMaterials: 50
   type: 1

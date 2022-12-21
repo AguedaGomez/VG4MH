@@ -17,13 +17,14 @@ MonoBehaviour:
   prefab: {fileID: 5305152718561655634, guid: 50305df1d5f0c2049b605c767d629740, type: 3}
   id: 1
   idData: smallHouse
-  cost: 0
+  cost: 100
   buildingName: Casa 2 pers.
-  nLocals: 2
-  energyRequired: 0
+  nLocals: 1
+  energyRequired: 10
   cellsInZ: 1
   cellsInX: 1
   powerRIncrease: 20
+  description: 
   materialsPerSecond: 2
   maximunMaterials: 10
   type: 0

@@ -17,13 +17,14 @@ MonoBehaviour:
   prefab: {fileID: 6542561628278900347, guid: 7d491b47fb10ea049be99ccab5a62f92, type: 3}
   id: 16
   idData: windmill
-  cost: 0
+  cost: 100
   buildingName: Molino
   nLocals: 0
-  energyRequired: 0
+  energyRequired: 30
   cellsInZ: 1
   cellsInX: 1
   powerRIncrease: 0
+  description: 
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 1

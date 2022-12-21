@@ -17,13 +17,15 @@ MonoBehaviour:
   prefab: {fileID: 8652423548927499805, guid: f2ec97b26e6f9394fabcb8afc762ac6f, type: 3}
   id: 12
   idData: noticeBoard
-  cost: 0
+  cost: 60
   buildingName: "Tabl\xF3n de anuncios"
   nLocals: 0
-  energyRequired: 0
+  energyRequired: 30
   cellsInZ: 1
   cellsInX: 1
   powerRIncrease: 0
+  description: "Es interesante construir un tabl\xF3n de anuncios para que el pueblo
+    pueda colgar noticias o anuncios llamativos para el resto."
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 1

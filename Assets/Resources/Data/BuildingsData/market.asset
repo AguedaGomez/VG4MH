@@ -17,13 +17,15 @@ MonoBehaviour:
   prefab: {fileID: 7479114484671606169, guid: ec5fa1ca96f60bc47b8076c8e65b433d, type: 3}
   id: 11
   idData: market
-  cost: 0
+  cost: 1500
   buildingName: Mercado
-  nLocals: 0
-  energyRequired: 0
+  nLocals: 9
+  energyRequired: 40
   cellsInZ: 3
   cellsInX: 3
   powerRIncrease: 0
+  description: "\xA1Un mercado! Con el mercado, la poblaci\xF3n podr\xE1 vender y
+    comprar. Enriquecer\xE1 la poblaci\xF3n"
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 0

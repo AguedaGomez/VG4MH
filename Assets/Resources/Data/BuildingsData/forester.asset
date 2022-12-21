@@ -17,13 +17,14 @@ MonoBehaviour:
   prefab: {fileID: 6889200796470135822, guid: b350fe457660de44a8e43c84fdfba8d9, type: 3}
   id: 7
   idData: forester
-  cost: 0
+  cost: 1000
   buildingName: Casa forestal
   nLocals: 0
-  energyRequired: 0
+  energyRequired: 60
   cellsInZ: 2
   cellsInX: 2
   powerRIncrease: 0
+  description: 
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 1

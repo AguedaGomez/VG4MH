@@ -17,13 +17,15 @@ MonoBehaviour:
   prefab: {fileID: 7038552632299767393, guid: 97b3cb98fcad279479f463786cf5dc02, type: 3}
   id: 6
   idData: cropB
-  cost: 0
+  cost: 45
   buildingName: Cultivo
-  nLocals: 0
-  energyRequired: 0
+  nLocals: 2
+  energyRequired: 10
   cellsInZ: 1
   cellsInX: 1
   powerRIncrease: 0
+  description: "Este es un campo de cultivo de bayas. Una forma distinta de mejorar
+    el bienestar del pueblo con otro tipo de plantaci\xF3n."
   materialsPerSecond: 0
-  maximunMaterials: 0
-  type: 1
+  maximunMaterials: 20
+  type: 0

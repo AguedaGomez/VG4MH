@@ -17,13 +17,15 @@ MonoBehaviour:
   prefab: {fileID: 2969668293588128673, guid: e77752760cfc62c41b56461fe466d10b, type: 3}
   id: 8
   idData: fountain
-  cost: 0
+  cost: 400
   buildingName: Plaza
   nLocals: 0
-  energyRequired: 0
+  energyRequired: 55
   cellsInZ: 4
   cellsInX: 4
   powerRIncrease: 0
+  description: "Construir una plaza siempre es buena opci\xF3n para que los habitantes
+    se puedan reunir. La fuente es refrescante y aumenta la calidad de vida."
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 1

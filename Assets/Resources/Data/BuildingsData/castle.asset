@@ -17,13 +17,15 @@ MonoBehaviour:
   prefab: {fileID: 650800268668684004, guid: 9e0b0490424ac784fbafa943af682cc3, type: 3}
   id: 4
   idData: castle
-  cost: 0
+  cost: 10000
   buildingName: Castillo
   nLocals: 60
-  energyRequired: 0
+  energyRequired: 95
   cellsInZ: 4
   cellsInX: 4
   powerRIncrease: 0
+  description: "El castillo es la mayor construcci\xF3n que se puede conseguir. Es
+    la muestra del fortalecimiento del poder R"
   materialsPerSecond: 0
   maximunMaterials: 0
   type: 1
