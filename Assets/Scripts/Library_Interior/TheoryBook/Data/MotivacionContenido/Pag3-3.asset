@@ -12,18 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d3db97473b2c429bfb9f566aaf216, type: 3}
   m_Name: Pag3-3
   m_EditorClassIdentifier: 
-  content: 'CAMBIAR:
-
-    Pros/Beneficios->
-
-    Contras/Costes->
-
-
-    SEGUIR IGUAL:
-
-    Pros/Beneficios->
-
-    Contras/Costes->
-
-
-'
+  content: "CAMBIAR:\nPros/Beneficios->\nContras/Costes->\n\nSEGUIR IGUAL:\nPros/Beneficios->\nContras/Costes->\n\n\xBFQu\xE9
+    pesa m\xE1s?"

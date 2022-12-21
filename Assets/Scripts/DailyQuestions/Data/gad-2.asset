@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ef76c11e4481143a13f095d2371112, type: 3}
   m_Name: gad-2
   m_EditorClassIdentifier: 
-  description: "2. Ser incapaz de dejar de preocuparse o de controlar la preocupaci\xF3n."
+  description: "2. Ser incapaz de dejar de preocuparte o de controlar la preocupaci\xF3n."
   id: gad2

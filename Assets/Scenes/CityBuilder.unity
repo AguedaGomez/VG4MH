@@ -1027,8 +1027,8 @@ Transform:
   m_Children:
   - {fileID: 4419893974793000488}
   - {fileID: 1544713080}
-  - {fileID: 7070232489487631704}
   - {fileID: 1397546559}
+  - {fileID: 7070232489487631704}
   - {fileID: 90013687}
   - {fileID: 1437403359}
   m_Father: {fileID: 0}
@@ -27564,6 +27564,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1146041102}
     m_Modifications:
+    - target: {fileID: 167691219, guid: ae520fd963568f24690fa789298bf758, type: 3}
+      propertyPath: m_Text
+      value: "Acumular energ\xEDa"
+      objectReference: {fileID: 0}
+    - target: {fileID: 376455773, guid: ae520fd963568f24690fa789298bf758, type: 3}
+      propertyPath: m_Text
+      value: "Es genial que te est\xE9s moviendo. \xA1Enhorabuena!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246523536, guid: ae520fd963568f24690fa789298bf758, type: 3}
+      propertyPath: m_Text
+      value: "\xBFQuieres comenzar a realizar actividad f\xEDsica?\n\nAl hacer ejercicio
+        acumular\xE1s energ\xEDa y mejorar\xE1 tu estado de \xE1nimo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257827448, guid: ae520fd963568f24690fa789298bf758, type: 3}
+      propertyPath: m_Text
+      value: "Acumulando energ\xEDa"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552918189, guid: ae520fd963568f24690fa789298bf758, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1721037051, guid: ae520fd963568f24690fa789298bf758, type: 3}
       propertyPath: cameraToMove
       value: 
@@ -27681,6 +27702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DownHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357606061615854460, guid: ae520fd963568f24690fa789298bf758,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3357606061615854462, guid: ae520fd963568f24690fa789298bf758,
         type: 3}

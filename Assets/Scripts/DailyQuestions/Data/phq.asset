@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: phq
   title: "Estado de \xE1nimo"
-  description: "Durante las \xFAltimas 24 horas, \xBFqu\xE9 tan seguido ha tenido
+  description: "Durante las \xFAltimas 24 horas, \xBFqu\xE9 tan seguido has tenido
     molestias debido a los siguiente problemas?\n"
   scaleExplanation: "0=Ning\xFAn d\xEDa, 1=Varios d\xEDas, 2=M\xE1s de la mitad de
     los d\xEDas, 3=Casi todos los d\xEDas"
