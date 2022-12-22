@@ -131,6 +131,10 @@ public class SaveAndLoadDataManager : MonoBehaviour
         SaveObject.Instance.dailyQuestions_Done = loadedSaveObject.dailyQuestions_Done;
         SaveObject.Instance.enterInLibraryToday = loadedSaveObject.enterInLibraryToday;
         SaveObject.Instance.buildingsInBoard = loadedSaveObject.buildingsInBoard;
+        SaveObject.Instance.currentScene = loadedSaveObject.currentScene;
+        SaveObject.Instance.firstTimeInGame = loadedSaveObject.firstTimeInGame;
+        SaveObject.Instance.firstTimeInGameToday = loadedSaveObject.firstTimeInGameToday;
+        SaveObject.Instance.firstTimeInLibrary = loadedSaveObject.firstTimeInLibrary;
  //       SaveObject.Instance.questionnairesDoneByUser = loadedSaveObject.questionnairesDoneByUser;
         SaveObject.Instance.charactersInTheCity = loadedSaveObject.charactersInTheCity;
 

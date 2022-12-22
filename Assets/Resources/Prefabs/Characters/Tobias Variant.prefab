@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 8000352323702927126, guid: 1f928090c4b92574f8d309078e431a58,
         type: 3}
       propertyPath: m_Name
-      value: Tobias
+      value: Tobias Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8000352323702927126, guid: 1f928090c4b92574f8d309078e431a58,
         type: 3}
@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 8847906774474658545, guid: 1f928090c4b92574f8d309078e431a58,
         type: 3}
       propertyPath: localName
-      value: "Tabernero Tob\xEDas"
+      value: Tabernero Tobias
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f928090c4b92574f8d309078e431a58, type: 3}

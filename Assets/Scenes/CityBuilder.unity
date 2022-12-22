@@ -27589,10 +27589,18 @@ PrefabInstance:
       propertyPath: cameraToMove
       value: 
       objectReference: {fileID: 513711713}
+    - target: {fileID: 1824274486, guid: ae520fd963568f24690fa789298bf758, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1999965036, guid: ae520fd963568f24690fa789298bf758, type: 3}
       propertyPath: canvasController
       value: 
       objectReference: {fileID: 1146041105}
+    - target: {fileID: 2008083179, guid: ae520fd963568f24690fa789298bf758, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2044133432, guid: ae520fd963568f24690fa789298bf758, type: 3}
       propertyPath: m_FillAmount
       value: 0

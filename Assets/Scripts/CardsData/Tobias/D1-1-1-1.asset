@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
   m_Name: D1-1-1-1
   m_EditorClassIdentifier: 
-  characterName: "Tabernero Tob\xEDas"
+  characterName: Tabernero Tobias
   dialog: "\xBFA qu\xE9 te refieres con saborear ese momento? \xBFC\xF3mo puedo disfrutar
     m\xE1s de tomar caf\xE9 por las ma\xF1anas?"
   reward: 4
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}
-  sceneModel: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b,
+  sceneModel: {fileID: 5115326524721694407, guid: 6d39c3871cd60624dab4291dcfc5b8dd,
     type: 3}
   rightText: "Cuando tomes el caf\xE9, c\xE9ntrate en su olor"
   leftText: "Cuando tomes el caf\xE9, c\xE9ntrate en el calor que desprende la taza"

@@ -81,9 +81,9 @@ public class ActivityPanel_Decorator : MonoBehaviour
         //Actualiza la información de la interfaz
         activityCompletedPercent = distanceRunned / distanceToRun;
 
-        activityInformation_Text.text = distanceRunned + " Pasos";
+        //activityInformation_Text.text = distanceRunned + " Pasos";
         // activityPercentage_Image.fillAmount = (float)activityCompletedPercent;
-        activityPercentage_Image.fillAmount = (float)distanceRunned;
+        //activityPercentage_Image.fillAmount = (float)distanceRunned;
         //if (activityPercentage_Image.fillAmount == 0) { activityPercentage_Image.fillAmount += 5; }
     }
 

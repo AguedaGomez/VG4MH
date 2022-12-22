@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
   m_Name: D1-1-2-2-3
   m_EditorClassIdentifier: 
-  characterName: "Tabernero Tob\xEDas"
+  characterName: Tabernero Tobias
   dialog: "No me hab\xEDa parado a pensar en disfrutar de las peque\xF1as cosas del
     d\xEDa de esta manera. A partir de ahora tomar una ducha tendr\xE1 otro sentido."
   reward: 4
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}
-  sceneModel: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b,
+  sceneModel: {fileID: 5115326524721694407, guid: 6d39c3871cd60624dab4291dcfc5b8dd,
     type: 3}
   rightText: Saborear esos momentos es un aspecto fundamental para sentirte mejor
   leftText: "Es importante saber atrapar y disfrutar de los peque\xF1os momentos

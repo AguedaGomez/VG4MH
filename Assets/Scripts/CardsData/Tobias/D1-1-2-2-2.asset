@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddc7ee30a388d8478b125464d364079, type: 3}
   m_Name: D1-1-2-2-2
   m_EditorClassIdentifier: 
-  characterName: "Tabernero Tob\xEDas"
+  characterName: Tabernero Tobias
   dialog: "\xBFC\xF3mo podr\xEDa exprimir ese momento de tomar una ducha por la ma\xF1ana?"
   reward: 4
   type: 0
   image: {fileID: 0}
   model: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b, type: 3}
-  sceneModel: {fileID: 919132149155446097, guid: f0dd304ce6d1c3c41bc27f209ef1978b,
+  sceneModel: {fileID: 5115326524721694407, guid: 6d39c3871cd60624dab4291dcfc5b8dd,
     type: 3}
   rightText: A partir de ahora intenta saborear ese momento
   leftText: Exprimamos ese momento
