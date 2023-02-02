@@ -173,7 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f39516fad5a3141aa9a23033b5d526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataBuilding: {fileID: 11400000, guid: 830750a442455fa45893cc5f38e750ec, type: 2}
   specialCharacterPrefab: {fileID: 0}
   row: 0
   col: 0
@@ -208,11 +207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7038552632299767393}
+      objectReference: {fileID: 8501672057985934432}
     - target: {fileID: 7556468291756862434, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: PickMaterials
       objectReference: {fileID: 0}
     - target: {fileID: 7556468292608109252, guid: b5fa7df78b82bc64e8eb281917a4f816,
         type: 3}

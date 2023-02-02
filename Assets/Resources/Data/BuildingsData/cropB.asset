@@ -17,7 +17,7 @@ MonoBehaviour:
   prefab: {fileID: 7038552632299767393, guid: 97b3cb98fcad279479f463786cf5dc02, type: 3}
   id: 6
   idData: cropB
-  cost: 80
+  cost: 100
   buildingName: Cultivo
   nLocals: 2
   energyRequired: 10
