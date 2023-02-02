@@ -46,7 +46,7 @@ public class CanvasController : MonoBehaviour
         if (SaveObject.Instance.materials>=dataBuilding.cost)
         {
             ShowConfirmationMessage();
-            UpdateMaterials(dataBuilding.cost);
+            //UpdateMaterials(dataBuilding.cost);
             interactionController.SaveBuildingToConstruct(dataBuilding);
         }
         else
@@ -59,6 +59,7 @@ public class CanvasController : MonoBehaviour
     public void BuildConfirmation()
     {
         confirmationMessage.SetActive(false);
+        UpdateMaterials(GameManager.Instance.buildingInConstruction.cost);
         interactionController.EnableBuilder(); //No es necesario buscar si están en la lista ni pasar el id porque está todo el SO accesible en GAmeManager
     }
 
