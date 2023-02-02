@@ -22,6 +22,6 @@ MonoBehaviour:
     type: 3}
   rightText: A partir de ahora intenta saborear ese momento
   leftText: Exprimamos ese momento
-  correctDirection: 0
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: 0584010a654860b4aad42f7168e60279, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 0584010a654860b4aad42f7168e60279, type: 2}

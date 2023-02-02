@@ -24,6 +24,6 @@ MonoBehaviour:
     type: 3}
   rightText: "\xBFQu\xE9 tal algo que te guste hacer al despertarte?"
   leftText: "\xBFQu\xE9 tal cuando hagas algo que te guste hacer antes de dormir?"
-  correctDirection: 0
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: bfec4f9e4fdae60458af9a7a10435581, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: f8c2a63eb2a66e5418d9eb9f4337238a, type: 2}

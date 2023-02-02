@@ -23,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: "Cuando tomes el caf\xE9, c\xE9ntrate en su olor"
   leftText: "Cuando tomes el caf\xE9, c\xE9ntrate en el calor que desprende la taza"
-  correctDirection: 0
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: a7202218ee6da2642a3f2ea056fef1ed, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: a7202218ee6da2642a3f2ea056fef1ed, type: 2}

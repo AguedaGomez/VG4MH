@@ -25,6 +25,6 @@ MonoBehaviour:
   rightText: "Disfrutar de esas peque\xF1as cosas le da sentido a nuestro d\xEDa"
   leftText: "Vivir tambi\xE9n es saborear de los buenos momentos que nos proporciona
     la vida de esta manera"
-  correctDirection: 0
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: f904f251074343f48b6e868a6fd65a9b, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: f904f251074343f48b6e868a6fd65a9b, type: 2}

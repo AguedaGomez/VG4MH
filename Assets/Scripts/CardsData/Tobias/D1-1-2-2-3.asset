@@ -24,6 +24,6 @@ MonoBehaviour:
   rightText: Saborear esos momentos es un aspecto fundamental para sentirte mejor
   leftText: "Es importante saber atrapar y disfrutar de los peque\xF1os momentos
     del d\xEDa"
-  correctDirection: 0
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: f904f251074343f48b6e868a6fd65a9b, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: f904f251074343f48b6e868a6fd65a9b, type: 2}

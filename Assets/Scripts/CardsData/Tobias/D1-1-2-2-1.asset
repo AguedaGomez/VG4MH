@@ -23,6 +23,6 @@ MonoBehaviour:
     type: 3}
   rightText: "Cuando te duches c\xE9ntrate en la sensaci\xF3n del agua cayendo"
   leftText: "Cuando te duches c\xE9ntrate en el sonido que hace el agua"
-  correctDirection: 0
+  correctDirection: 2
   nextCardIfRight: {fileID: 11400000, guid: 0584010a654860b4aad42f7168e60279, type: 2}
   nextCardIfLeft: {fileID: 11400000, guid: 0584010a654860b4aad42f7168e60279, type: 2}
