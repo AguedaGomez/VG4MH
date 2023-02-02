@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: startActivity_Notification
   m_EditorClassIdentifier: 
   imageNotification: {fileID: 21300000, guid: eee36c6c486af5e46ad43454338cefe3, type: 3}
-  textNotification: "Estas realizando la \"actividad\". No cierres la aplicaci\xF3n
+  textNotification: "\xA1Est\xE1s acumulando ENERG\xCDA!. No cierres la aplicaci\xF3n
     del todo mientras est\xE1s haciendo ejercicio. Puedes bloquear el m\xF3vil si
     quieres."
