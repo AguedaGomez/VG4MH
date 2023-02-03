@@ -117,6 +117,7 @@ public class Board : MonoBehaviour
             }
 
             navMesh.BuildNavMesh();
+            GameManager.Instance.buildingInConstruction = null;
 
             //Si es false significa que está cargando desde el SaveObject por lo que no requiere generar ciudadanos
             if (newBuilding)

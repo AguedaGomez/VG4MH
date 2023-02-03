@@ -214,10 +214,15 @@ public class InteractionController : MonoBehaviour
     private void AddBuilding()
     {
         board.AddBuilding(GameManager.Instance.buildingInConstruction.prefab, currentBuildingPosition, -1,true, xCell, zCell);
-        Destroy(currentBuilding.transform.parent.gameObject);
-        GridUI.SetActive(false);
-        GameManager.Instance.buildingInConstruction = null;
-        cameraController.Status = CityBuilderResources.Status.Game;
+        if (GameManager.Instance.buildingInConstruction == null)
+        {
+            Destroy(currentBuilding.transform.parent.gameObject);
+            GridUI.SetActive(false);
+            cameraController.Status = CityBuilderResources.Status.Game;
+        }
+        
+        //GameManager.Instance.buildingInConstruction = null;
+        
     }
 
 

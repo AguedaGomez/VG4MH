@@ -2470,8 +2470,8 @@ MonoBehaviour:
   panLimitZoomIn: {x: 60, y: 60}
   panCenterZoomIn: {x: 58, y: 58}
   groundLayer: 9
-  zoomIn: 6
-  zoomOut: 24.9
+  zoomIn: 10
+  zoomOut: 25
   zoomOffset: 10
   joystickBound: 400
   joystickSpeed: 20
